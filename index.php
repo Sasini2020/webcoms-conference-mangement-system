@@ -49,7 +49,7 @@
 					header('location:reviewerhomepage.php');
 				}
 				else if($qualification=="Author"){
-					header('location:authorhomepage.php');
+					header('location:Author_homepage.php');
 				}
 				else if($qualification=="Conference_chair"){
 					header('location:conferencechairhomepage.php');
