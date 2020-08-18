@@ -29,7 +29,6 @@
 	</ul>
 	</li>
 	
-	<li><a href="authorhomepage.php">Submit paper</a></li>
 	<li><a href="index.php">Register</a></li>
 	<li><a href="help.html">Help</a></li>
 	<li><a href="contactUs.html">Contact Us</a></li>
@@ -53,13 +52,13 @@
 
 	<table>
 	<tr>
+		<th>ID</th>
 	   <th>Conference</th>
 	   <th>Venue</th>
 	   <th>Start date</th>
 	   <th>End date</th>
 	   <th>Deadline</th>
 	   <th>Sposer details</th>
-	   <th>Submit</th>
 
 
 	</tr>
@@ -88,14 +87,14 @@
 		die("Connection failed:". $conn-> connect_error);
 	}
 	
-	$sql = "SELECT name, venue,start_date,end_date,deadline_date,sponsor_details from conferences ";
+	$sql = "SELECT * from conferences ";
 	$result = $conn-> query($sql);
 
 
 	
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
-			echo "<tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"] ."</td><td>" . $row["sponsor_details"] ."</td><td>";
+			echo "<tr><td>". $row["id"] ."</td><td>".$row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"] ."</td><td>" . $row["sponsor_details"];
 		}
 		echo "</table>";
 	}
