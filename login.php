@@ -59,7 +59,6 @@ li a:hover:not(.active) {
 
 <ul>
   <li><a class="active" href="index.php">WebCOMS</a></li>
-	<li><a href="index.php">Home</a></li>
 	<li><a href="login.php">Login</a></li>
 	<li><a href="register.php">Register</a></li>
 	<li><a href="help.html">Help</a></li>
