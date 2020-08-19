@@ -71,10 +71,10 @@ li a:hover:not(.active) {
 
 
 </div>
-	
+	</br></br>
 	
 		<center>
-			<h2>Registration Form</br></br></br></br></h2>
+			<h2>Registration Form</br></br></br></h2>
 			
 		</center>
 	
