@@ -4,28 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Author Home Page</title>
+<title>Submit a Paper</title>
 <link rel="stylesheet" href="css/sty.css">
 
-<script type="text/javascript">
 
-    function Previewfile() {
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("filelink").files[0]);
-
-        oFReader.onload = function (oFREvent) {
-            document.getElementById("uploadPreview").src = oFREvent.target.result;
-        };
-    };
-
-</script>
 </head>
-<body style="background-color:#192a56">
+<body style="background-color:#ffff">
 	
-	<form class="myform" action="register.php"method="post" enctype="multipart/form-data" >
+	<form class="myform" action="authorhomepage.php"method="post" enctype="multipart/form-data" >
 		<div id="main-wrapper">
 		<center>
-			<h2>Author Home Page</h2>
+			<h2>Submit a Paper</h2>
 			<img id="uploadPreview" src="imgs/webc.png" class="avatar"/><br>
 			<input type="file" id="filelink" name="filelink" accept="application/pdf" onchange="Previewfile();"/>
 		</center>
