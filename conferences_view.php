@@ -1,41 +1,67 @@
+<?php
+	require 'dbconfig/config.php';
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
 
 
+<style>
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #6495ED;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+
  <link rel="stylesheet" href="css/mychanged.css">
 
 <title>Created conferences by conference chairs</title>
 	<link rel="stylesheet" href="css/styleNavbar.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 </head>
 <body>
 <!-- Remove commenting and get multicolorsfor backgorund
 <div class="filter">
 </div>	 -->
-<div>
-<nav>
-		<label class="logo">WebComs</label>
-		<ul>
-	<!-- <li><a class="active" href="#">Home</a></li> -->
 
-	<li><a class="active" href="#">Home
-			<i class="fas fa-caret-down"></i>
-			</a>
-			<ul>
-	<li><a href="index.php">Log out</a></li>
-	
-	</ul>
-	</li>
-	
-	<li><a href="index.php">Register</a></li>
+
+<div>
+<ul>
+  <li><a class="active" href="index.php">WebComs</a></li>
 	<li><a href="help.html">Help</a></li>
 	<li><a href="contactUs.html">Contact Us</a></li>
+</ul>
 
+</br></br></br></br></br></br>
 
-	</ul>
-</nav>
 
 </div>
 <section>
@@ -48,10 +74,29 @@
 		
 		<!-- In mychanged.css file css file-> myButton class -->
 		<input class="myButton" name="button" type="submit" id="button" value="Back"/><br>	
+		
+		</br></br></br></br></br></br></br></br>
+		
 	</form>
 
-	<table>
+
+<div class="row">
+                    <div class="col-sm-12">
+                        <div class="card-box table-responsive">
+                           <div class="panel panel-primary">
+                               <div class="panel-heading"> <i class="fa fa-desktop"> </i> <strong></strong></div>
+                               <div class="panel-body">
+                            <p class="text-muted font-13 m-b-30">
+                               
+                            </p>
+
+
+
+	<table id="datatable-buttons" class="table table-striped table-bordered" >
+    <thead>
 	<tr>
+	
+
 		<th>ID</th>
 	   <th>Conference</th>
 	   <th>Venue</th>
@@ -59,13 +104,90 @@
 	   <th>End date</th>
 	   <th>Deadline</th>
 	   <th>Sposer details</th>
+	   <th>Manage</th>
 
 
 	</tr>
 	<br>
+
+
+<tbody>       </tr>
+                                </thead>
+                                    <?php
+                                        $sql = mysqli_query($con, "select * from conferences") or die(mysqli_error($con));
+                                        $counter = 1;
+                                        while ($row = mysqli_fetch_assoc($sql)) {?>
+                                            
+                                 <tr id="row<?php echo $row['id'];?>">
+                                    <td><?=$counter?></td>
+                                    <td id="conference<?php echo $row['id'] ?>"><?=$row['name']?></td>
+                                    <td id="venue<?php echo $row['id'] ?>"><?=$row['venue']?></td>
+                                    <td id="start_date<?php echo $row['id'] ?>"><?=$row['start_date']?></td>
+									<td id="end_date<?php echo $row['id'] ?>"><?=$row['end_date']?></td>
+									<td id="deadline_date<?php echo $row['id'] ?>"><?=$row['deadline_date']?></td>
+                                    <td id="sponsor_details<?php echo $row['id'] ?>"><?=$row['sponsor_details']?></td>
+                                    
+
+                                    <td style="padding-left: 20px;">
+                                        <!-- <a href="#"  class="on-editing save" id="save_button<?php echo $row['id'];?>" onclick="save_row('<?php echo $row['id'];?>');"><i class="fa fa-save"></i></a>
+
+                                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a> -->
+										
+										<input type="button" name="delete" value="delete">
+										<button type="button" class="button">Add</button>
+
+
+
+
+                                    </td>
+                                </tr>
+                                </tbody>
+								<?php
+                               $counter++;}
+                                    ?>
+											<?php
+	
+		if($_GET){
+    if(isset($_GET['delete'])){
+        delete();
+    }//elseif(isset($_GET['select'])){
+        //select();
+    //}
+}
+
+    function delete()
+    {
+    	$delete1 =("DELETE * FROM `conferences` WHERE id = '$id'");
+        $result = mysqli_query($conn,$delete1) or die(mysqli_error());
+        
+	echo "record deleted";
+   
+   
+ 
+    }
+	
+	?>
+	
+	</table>
+	
+
+
+	
+	   </div>
+                           </div>
+                        </div>
+                    </div>
+</div>
+<!-- </td> -->
+
+	
+</section>
+
+		<?php
 	
 	
-	<?php
+
+	
 	
 	 if(isset($_POST['back']))
 			{
@@ -73,44 +195,10 @@
 				header('location:adminhomepage.php');
 	}
 	
-	if (isset($_GET['del'])) {
-	$id = $_GET['del'];
-	mysqli_query($db, "DELETE FROM info WHERE id=$id");
-	$_SESSION['message'] = "Conference deleted!"; 
-	header('location: conference_view.php');
-}
-
-
 	
-	$conn = mysqli_connect("localhost","root","","samplelogindb");
-	if ($conn-> connect_error) {
-		die("Connection failed:". $conn-> connect_error);
-	}
-	
-	$sql = "SELECT * from conferences ";
-	$result = $conn-> query($sql);
-
-
-	
-	if ($result-> num_rows> 0){
-		while ($row = $result-> fetch_assoc()){
-			echo "<tr><td>". $row["id"] ."</td><td>".$row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"] ."</td><td>" . $row["sponsor_details"];
-		}
-		echo "</table>";
-	}
-	else {
-		echo "0 result";
-	}
-	$conn-> close();
 	?>
+	
 
 
-	
-	</table>
-</div>
-<!-- </td> -->
-	
-	
-</section>
 </body>
 </html>
