@@ -2,44 +2,61 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+body {
+  margin: 0;
+}
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #6495ED;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
 
  <link rel="stylesheet" href="css/mychanged.css">
 
 
 <title>Athor Home</title>
 	<link rel="stylesheet" href="css/styleNavbar.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 </head>
 <body>
+
+<ul>
+  <li><a class="active" href="index.php">WebComs</a></li>
+	<li><a href="index.php">Log out</a></li>
+	<li><a href="help.html">Help</a></li>
+	<li><a href="contactUs.html">Contact Us</a></li>
+</ul>
 <!-- Remove commenting and get multicolorsfor backgorund
 <div class="filter">
 </div>	 -->
-<div>
-<nav>
-		<label class="logo">WebComs</label>
-		<ul>
-	<!-- <li><a class="active" href="#">Home</a></li> -->
-
-	<li><a class="active" href="#">Home
-			<i class="fas fa-caret-down"></i>
-			</a>
-			<ul>
-	<li><a href="index.php">Log out</a></li>
-	
-	</ul>
-	</li>
-	
-	<li><a href="authorhomepage.php">Submit paper</a></li>
-	<li><a href="index.php">Register</a></li>
-	<li><a href="help.html">Help</a></li>
-	<li><a href="contactUs.html">Contact Us</a></li>
 
 
-	</ul>
-</nav>
 
-</div>
 <section>
 
   <div>
@@ -58,7 +75,7 @@
 	   <th>End date</th>
 	   <th>Deadline</th>
 	   <th>Sposer details</th>
-	   <th>Submit</th>
+	   <th>Submit a Paper</th>
 
 
 	</tr>
