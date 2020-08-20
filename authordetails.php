@@ -7,23 +7,77 @@
    table {
 	   border-collapse: collapse;
 	   width: 100%;
-	   color: #d96459;
+	   color: #1e1919;
 	   font-family: monospace;
 	   font-size: 25px;
 	   text-align: left;
    }
    
    th {
-	   background-color: #d96459;
+	   background-color: #6495ED;
 	   color: white;
    }
    
    tr:nth-child(even) {background-color: #f2f2f2}
+   ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #6495ED;
+}
+.logout_btn{
+	margin-top:10px;
+	background-color:#DC143C;
+	padding:5px;
+	border-radius:28px;
+	color:white;
+	width:10%;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+	margin-bottom:20px;
+}
 </style>
 <link rel="stylesheet" href="css/sty.css">
 </head>
-<body style="background-color:#bdc3c7">
+<body style="background-color:#ffff">
     
+	
+	<div>
+
+
+<ul>
+  <li><a class="active" href="index.php">WebCOMS</a></li>
+	<li><a href="conferences_view.php">Conferences</a></li>
+	<li><a href="authordetails.php">Author details</a></li>
+	<li><a href="help.html">Help</a></li>
+	<li><a href="contactUs.html">Contact Us</a></li>
+</ul>
+
+</br></br>
+
+</div>
 
 	<table>
 	<tr>
