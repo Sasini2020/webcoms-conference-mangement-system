@@ -4,10 +4,54 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<style>
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #6495ED;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+
+
 <title>Create a new conference</title>
 <link rel="stylesheet" href="css/sty.css">
 </head>
-<body style="background-color:#C0C0C0">
+<body style="background-color:#ffff">
+
+
+<ul>
+  <li><a class="active" href="index.php">WebComs</a></li>
+	<li><a href="logout.php">Logout</a></li>
+	<li><a href="help.html">Help</a></li>
+	<li><a href="contactUs.html">Contact Us</a></li>
+</ul>
 	
 	<div id="main-wrapper">
 		<center>
