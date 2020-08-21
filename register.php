@@ -85,7 +85,6 @@ li a:hover:not(.active) {
 			<input type="radio" class="radiobtns" name="gender" value="male" required> Female<br>
 			<label><b>User Role</b></label>
 			<select class="qualification" name="qualification">
-			  <option value="Admin">Admin</option>
 			  <option value="Author">Author</option>
 			  <option value="Reviewer">Reviewer</option>
 			  <option value="Conference_chair">Conference chair</option>
