@@ -40,7 +40,7 @@ li a:hover:not(.active) {
 	padding:5px;
 	border-radius:28px;
 	color:white;
-	width:10%;
+	width:40%;
 	text-align:center;
 	font-size:18px;
 	font-weight:bold;
@@ -64,6 +64,7 @@ li a:hover:not(.active) {
 	<li><a href="authordetails.php">Author details</a></li>
 	<li><a href="help.html">Help</a></li>
 	<li><a href="contactUs.html">Contact Us</a></li>
+	<li><a href="index.php">Log Out</a></li>
 </ul>
 
 </br></br>
@@ -83,19 +84,12 @@ li a:hover:not(.active) {
 		<form class="myform" action="adminhomepage.php" method="post">
 			
 
-			<input name="logout" type="submit" id="logout_btn" value="Log Out"/><br>
+
 			
 			
 		</form>
 		
-		<?php
-			if(isset($_POST['logout']))
-			{
-				session_destroy();
-				header('location:index.php');
-			}
 
-		?>
 	</div>
 </body>
 </html>
