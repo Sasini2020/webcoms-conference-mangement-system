@@ -1,100 +1,100 @@
 <?php
 	require 'dbconfig/config.php';
-?>
+?>		
+
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
+		<title>Registration</title>
 
+		<link rel="stylesheet" href="css/main_style.css">
+		<link rel="stylesheet" href="css/form_style.css">
+		
+		<!--<link rel="stylesheet" href="css/sty.css">
+		<link rel="stylesheet" href="css/styleNavbar.css">
 
+		<style>
+			body {
+			margin: 0;
+			}
 
+			ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			width: 25%;
+			background-color: #f1f1f1;
+			position: fixed;
+			height: 100%;
+			overflow: auto;
+			}
 
+			li a {
+			display: block;
+			color: #000;
+			padding: 8px 16px;
+			text-decoration: none;
+			}
 
+			li a.active {
+			background-color: #6495ED;
+			color: white;
+			}
 
-<style>
-body {
-  margin: 0;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 25%;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-li a.active {
-  background-color: #6495ED;
-  color: white;
-}
-
-li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-</style>
-
-
-
-
-
-
-
-<title>Registration Page</title>
-<link rel="stylesheet" href="css/sty.css">
-<link rel="stylesheet" href="css/styleNavbar.css">
-
+			li a:hover:not(.active) {
+			background-color: #555;
+			color: white;
+			}
+		</style>
+		-->
 </head>
-<body style="background-color:#ffff">
 
+<body>
 
-<ul>
-  <li><a class="active" href="index.php">WebComs</a></li>
-	<li><a href="login.php">Login</a></li>
-	<li><a href="register.php">Register</a></li>
-	<li><a href="help.html">Help</a></li>
-	<li><a href="contactUs.html">Contact Us</a></li>
-</ul>
+	<!--Navigation bar -->
+	<nav>
+		<ul>
+		<li><a class="active" href="index.php">WebCOMS</a></li>
+			<li><a href="login.php">Login</a></li>
+			<li><a href="register.php">Register</a></li>
+			<li><a href="help.php">Help</a></li>
+			<li><a href="contactUs.php">Contact Us</a></li>
+		</ul>
+		<br /><br />
+	</nav>
 
-<div>
-
-
-</div>
-	</br></br>
-	
+	<!--Registration form-->
+	<div id="main-wrapper">
 		<center>
-			<h2>Registration Form</br></br></br></h2>
-			
+			<h2>Registration Form</br><br><br></h2>	
 		</center>
 	
 		<form class="myform" action="register.php"method="post">
-			<label><b>Full Name:</b></label><br>
-			<input name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
+			<label for="fname"><b>Full Name:</b></label><br>
+			<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
+			
 			<label><b>Gender:</b></label>
-			<input type="radio" class="radiobtns" name="gender" value="male" checked required> Male
-			<input type="radio" class="radiobtns" name="gender" value="male" required> Female<br>
-			<label><b>User Role</b></label>
-			<select class="qualification" name="qualification">
-			  <option value="Author">Author</option>
-			  <option value="Reviewer">Reviewer</option>
-			  <option value="Conference_chair">Conference chair</option>
-			</select><br>
-			<label><b>Email:</b></label><br>
-			<input name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
-			<label><b>Password:</b></label><br>
-			<input name="password" type="password" class="inputvalues" placeholder="Your password" required/><br>
-			<label><b>Confirm Password:</b></label><br>
-			<input name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>
+			<input id="Gmale" type="radio" class="radiobtns" name="gender" value="male" checked required> 
+			<label for="Gmale">Male</label>
+			<input id="GFemale" type="radio" class="radiobtns" name="gender" value="female" required>
+			<label for="GFemale">Female</label><br>
+			
+			<label for="actor"><b>User Role: </b></label>
+				<select id="actor" class="" name="qualification">
+					<option value="Author">Author</option>
+					<option value="Reviewer">Reviewer</option>
+					<option value="Conference_chair">Conference chair</option>
+				</select><br>
+			
+			<label for="Email"><b>Email:</b></label><br>
+			<input id="Email" name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
+			
+			<label for="passW"><b>Password:</b></label><br>
+			<input id="passW" name="password" type="password" class="inputvalues" placeholder="Your password" required/><br>
+			
+			<label for="CpassW"><b>Confirm Password:</b></label><br>
+			<input id="CpassW" name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>
+			
 			<input name="submit_btn" type="submit" id="signup_btn" value="Sign Up"/><br>
 			<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>
 		</form>
@@ -150,6 +150,7 @@ li a:hover:not(.active) {
 				
 			}
 		?>
-	
+	</div>
+
 </body>
 </html>
