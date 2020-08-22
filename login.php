@@ -55,29 +55,35 @@
 				$email=$_POST['email'];
 				$password=$_POST['password'];
 				
+				$encrypted_password = md5($password);
 				
 				//$query="select * from userinfotable WHERE email='$email' AND password='$password'";
 				
-				$select_query = mysqli_query($con, "select * from userinfotable WHERE email='$email' AND password='$password'");
+				$select_query = mysqli_query($con, "select * from userinfotable WHERE email='$email' AND password='$encrypted_password'");
 				$select_row = mysqli_fetch_assoc($select_query);
-				$qualification = $select_row['qualification'];
+				$user_type = $select_row['user_type'];
 				
 				//$query_run = mysqli_query($con,$query);
 				if(mysqli_num_rows($select_query)>0)
 				{
 					// valid
-					$_SESSION['email']= $email;
-					if($qualification=="Admin"){
+					//$_SESSION['email']= $email;
+					
+					$_SESSION['login_s'] = '1';
+
+					if($user_type=="Admin"){
 						header('location:adminhomepage.php');
 					}
-					else if($qualification=="Reviewer"){
+					else if($user_type=="Reviewer"){
 						header('location:reviewerhomepage.php');
 					}
-					else if($qualification=="Author"){
-						header('location:authorhomepage.php');
+					else if($user_type=="Author"){
+						header('location:author_home.php');
 					}
-					else if($qualification=="Conference_chair"){
+					else if($user_type=="Conference_chair"){
 						header('location:conferencechairhomepage.php');
+					}else{
+						echo '<script type="text/javascript"> alert("Invalid User") </script>';
 					}
 					
 					
