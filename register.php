@@ -80,7 +80,7 @@
 			<label for="GFemale">Female</label><br>
 			
 			<label for="actor"><b>User Role: </b></label>
-				<select id="actor" class="" name="qualification">
+				<select id="actor" class="" name="usertype">
 					<option value="Author">Author</option>
 					<option value="Reviewer">Reviewer</option>
 					<option value="Conference_chair">Conference chair</option>
@@ -109,13 +109,15 @@
 				$password = $_POST['password'];
 				$cpassword = $_POST['cpassword'];
 				$gender = $_POST['gender'];
-				$qualification = $_POST['qualification'];
+				$usertype = $_POST['usertype'];
 
 				//echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
 				//echo '<script type="text/javascript"> alert("'.$fullname.' ---'.$username.' --- '.$password.' --- '.$gender.' --- '.$qualification.'"  ) </script>';
 
 				if($password==$cpassword)
 				{
+					$encrypted_pass = md5($password);	//password encrypted
+
 					$query= "select * from userinfotable WHERE email='$email'";
 					$query_run = mysqli_query($con,$query);
 					
@@ -126,7 +128,8 @@
 					}
 					else
 					{
-						$query= "insert into userinfotable values('','$email','$fullname','$gender','$qualification','$password')";
+						$query= "insert into userinfotable (email, full_name, gender, user_type, password) 
+						values('$email','$fullname','$gender','$usertype','$encrypted_pass')";
 						$query_run = mysqli_query($con,$query);
 						
 						if($query_run)
