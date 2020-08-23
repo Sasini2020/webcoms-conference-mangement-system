@@ -61,7 +61,7 @@
 	<nav>
 		<ul>
 			<!--<li><a class="active" href="index.php">WebCOMS</a></li>-->
-			<li><a href="conferences_view.php">Conferences</a></li>
+			<li><a href="requested_conferences.php">Requested conferences</a></li>
 			<li><a href="authordetails.php">Author details</a></li>
 			<!--<li><a href="help.html">Help</a></li>
 			<li><a href="contactUs.html">Contact Us</a></li>-->	

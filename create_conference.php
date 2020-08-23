@@ -107,7 +107,7 @@
 				//$query= "select * from conferences '";
 				//$query_run = mysqli_query($con,$query);					
 					
-				$query= "insert into conferences values(NULL,'$name','$venue','$start_date','$end_date','$deadline','$sponsor_details')";
+				$query= "insert into conferences values(NULL,'$name','$venue','$start_date','$end_date','$deadline','$sponsor_details','0')";
 				$query_run = mysqli_query($con,$query);
 						
 				if($query_run)
