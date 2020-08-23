@@ -1,5 +1,9 @@
 <?php
-	require 'dbconfig/config.php';
+  session_start();
+  require 'dbconfig/config.php';
+  if($_SESSION['login_s'] != '1'){
+    header('location:login.php');
+  }
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +88,7 @@
       
     </form>-->
 
-    <table id="datatable-buttons" class="table table-striped table-bordered" >
+    <table>
       <thead>
 	      <tr>
           <th>ID</th>
@@ -116,10 +120,7 @@
 
               <td style="padding-left: 20px;">
                 <form action="requested_conferences.php" method="post">
-                  <?php
-                    $_POST['action'] = 'a';
-                    $_POST['id'] = 'i';
-                  ?>										
+									
 							    <input type="submit" name="action" value="Delete" />
                   <input type="submit" name="action" Value="Accept" />
                   <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
@@ -134,10 +135,21 @@
       
 
       <?php
-        if($_POST['action'] && $_POST['id']){
+
+        //function del_d($id){
+        //  $qur = mysqli_query($con,"delete from conferences where id='$id'");
+        //  header('location:requested_conferences.php');
+        //}
+        if(isset($_POST['action']) && isset($_POST['id'])){
           if($_POST['action'] == 'Delete'){
             $r_id = $_POST['id'];
-            echo '<script type="text/javascript"> alert("Invalid User") </script>';
+            $qur = mysqli_query($con,"delete from conferences where id='$r_id'");
+            header('location:requested_conferences.php');
+          }
+          elseif($_POST['action'] == 'Accept'){
+            $r_id = $_POST['id'];
+            $qur = mysqli_query($con,"update conferences set Accepted = '1' where id='$r_id'");
+            header('location:requested_conferences.php');
           }
         }
       ?>

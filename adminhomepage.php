@@ -62,6 +62,7 @@
 		<ul>
 			<!--<li><a class="active" href="index.php">WebCOMS</a></li>-->
 			<li><a href="requested_conferences.php">Requested conferences</a></li>
+			<li><a href="conference_list.php">Conference List</a></li>
 			<li><a href="authordetails.php">Author details</a></li>
 			<!--<li><a href="help.html">Help</a></li>
 			<li><a href="contactUs.html">Contact Us</a></li>-->	
