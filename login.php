@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="css/styleNavbar.css">-->
 
 		<link rel="stylesheet" href="css/main_style.css">
-		<link rel="stylesheet" href="css/form_style.css">
+		<link rel="stylesheet" href="css/sty.css">
 
 	</head>
 

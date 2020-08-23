@@ -8,7 +8,7 @@
 		<title>Registration</title>
 
 		<link rel="stylesheet" href="css/main_style.css">
-		<link rel="stylesheet" href="css/form_style.css">
+		<link rel="stylesheet" href="css/sty.css">
 		
 		<!--<link rel="stylesheet" href="css/sty.css">
 		<link rel="stylesheet" href="css/styleNavbar.css">
@@ -96,7 +96,7 @@
 			<input id="CpassW" name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>
 			
 			<input name="submit_btn" type="submit" id="signup_btn" value="Sign Up"/><br>
-			<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>
+			<!--<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>-->
 		</form>
 		
 		<?php

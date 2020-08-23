@@ -10,7 +10,7 @@
 	<title>Author details</title>
 	<link rel="stylesheet" href="css/table_style.css">
 	<link rel="stylesheet" href="css/main_style.css">
-	<link rel="stylesheet" href="css/form_style.css">
+	<link rel="stylesheet" href="css/sty.css">
 
 	<!--
 	<style type "text/css">
