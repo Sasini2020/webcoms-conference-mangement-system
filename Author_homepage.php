@@ -11,7 +11,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 25%;
+  width: 15%;
   background-color: #f1f1f1;
   position: fixed;
   height: 100%;
@@ -51,17 +51,12 @@ li a:hover:not(.active) {
 	<li><a href="help.html">Help</a></li>
 	<li><a href="contactUs.html">Contact Us</a></li>
 </ul>
-<!-- Remove commenting and get multicolorsfor backgorund
-<div class="filter">
-</div>	 -->
-
-
 
 <section>
 
   <div>
 	  <br><br>
-  <form class="myform" action="adminhomepage.php" method="post">
+  <form class="myform" action="Author_homepage.php" method="post">
 		
 	
 	</form>
@@ -87,19 +82,12 @@ li a:hover:not(.active) {
 	 if(isset($_POST['back']))
 			{
 				session_destroy();
-				header('location:adminhomepage.php');
+				header('location:.php');
 	}
-	
-	if (isset($_GET['del'])) {
-	$id = $_GET['del'];
-	mysqli_query($db, "DELETE FROM info WHERE id=$id");
-	$_SESSION['message'] = "Conference deleted!"; 
-	header('location: Author_homepage.php');
-}
 
 
 	
-	$conn = mysqli_connect("localhost","root","","samplelogindb");
+	$conn = mysqli_connect("localhost","root","","webcomsdb");
 	if ($conn-> connect_error) {
 		die("Connection failed:". $conn-> connect_error);
 	}
@@ -112,8 +100,7 @@ li a:hover:not(.active) {
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
 			echo "<tr><td>". $row["id"] ."</td><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"] ."</td><td>" . $row["sponsor_details"] ."</td><td>";
-         //   echo "<button>Submit</button>";
-        echo "<a href='authorhomepage.php?id=". $row['id'] ."' title='submit paper' ><span ></span>+</a>";
+			echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='imgs/submit icon.PNG' height='25' width='25' /></a>";
        
         }
 		echo "</table>";
