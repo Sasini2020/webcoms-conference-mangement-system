@@ -6,60 +6,40 @@
 body {
   margin: 0;
 }
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 15%;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-li a.active {
-  background-color: #6495ED;
-  color: white;
-}
-
-li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
+.topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+   
 </style>
 
  <link rel="stylesheet" href="css/mychanged.css">
+ <link rel="stylesheet" href="css/main_style.css">
 
-
-<title>Athor Home</title>
-	<link rel="stylesheet" href="css/styleNavbar.css">
+<title>Author Home</title>
 
 </head>
 <body>
 
-<ul>
-  <li><a class="active" href="index.php">WebComs</a></li>
-	<li><a href="index.php">Log out</a></li>
-	<li><a href="help.html">Help</a></li>
-	<li><a href="contactUs.html">Contact Us</a></li>
-</ul>
-
-<section>
-
-  <div>
-	  <br><br>
-  <form class="myform" action="Author_homepage.php" method="post">
+	<nav class="topnav">
+			<ul>
+				<li><a class="active" href="index.php">WebComs</a></li>
+				<li><a href="index.php">Log out</a></li>
+				<li><a href="help.html">Help</a></li>
+				<li><a href="contactUs.html">Contact Us</a></li>
+				<input type="text" placeholder="Search..">
+				
+			</ul>
+			
 		
-	
-	</form>
+		
+  </nav>
+
+  <br><br>
 
 	<table>
 	<tr>
@@ -69,7 +49,7 @@ li a:hover:not(.active) {
 	   <th>Start date</th>
 	   <th>End date</th>
 	   <th>Deadline</th>
-	   <th>Sposer details</th>
+	   <th>Sponser details</th>
 	   <th>Submit a Paper</th>
 
 
@@ -118,6 +98,6 @@ li a:hover:not(.active) {
 <!-- </td> -->
 	
 	
-</section>
+<!-- </section> -->
 </body>
 </html>
