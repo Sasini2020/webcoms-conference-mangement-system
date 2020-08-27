@@ -10,6 +10,7 @@ body {
     float: right;
     padding: 6px;
     border: none;
+    border-radius: 15px;
     margin-top: 8px;
     margin-right: 16px;
     font-size: 17px;
