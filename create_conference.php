@@ -16,50 +16,14 @@
 	<link rel="stylesheet" href="css/main_style.css">
 	<link rel="stylesheet" href="css/sty.css">
 
-	<!--
-	<style>
-	body {
-	margin: 0;
-	}
 
-	ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	width: 25%;
-	background-color: #f1f1f1;
-	position: fixed;
-	height: 100%;
-	overflow: auto;
-	}
-
-	li a {
-	display: block;
-	color: #000;
-	padding: 8px 16px;
-	text-decoration: none;
-	}
-
-	li a.active {
-	background-color: #6495ED;
-	color: white;
-	}
-
-	li a:hover:not(.active) {
-	background-color: #555;
-	color: white;
-	}
-	</style>-->
 </head>
 <body>
 
 	<nav>
 		<ul>
 			<li><a href="conferencechairhomepage.php">Back to Home</a></li>
-			<!--<li><a class="active" href="index.php">WebComs</a></li>
-			<li><a href="logout.php">Logout</a></li>
-			<li><a href="help.html">Help</a></li>
-			<li><a href="contactUs.html">Contact Us</a></li>-->
+			
 		</ul>
 	</nav>
 
@@ -78,14 +42,14 @@
 			<label><b>Venue:</b></label><br>
 			<input name="venue" type="text" class="inputvalues" placeholder="Venue" required/><br>
 			
-			<label><b>Start date:</b></label><br>
-			<input name="start_date" type="date" class="inputvalues" placeholder="dd-mm-yyyy" required/><br>
+			<label ><b>Start date:</b></label><br>
+			<input name="start_date" required type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2020-10-15" required/><br>
 			
 			<label><b>End date:</b></label><br>
-			<input name="end_date" type="date" class="inputvalues" placeholder="dd-mm-yyyy" required/><br>
+			<input name="end_date" type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2021-01-15" required/><br>
 			
 			<label><b>Dead line:</b></label><br>
-			<input name="deadline" type="date" class="inputvalues" placeholder="dd-mm-yyyy" required/><br>
+			<input name="deadline" type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2021-02-15" required/><br>
 			
 			<label><b>Sponsor/s details:</b></label><br>
 			<input name="sponsor_details" type="text" class="inputvalues" cols="30" placeholder="Sponsor's details" required/><br>
