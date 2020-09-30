@@ -78,7 +78,7 @@
 						header('location:reviewerhomepage.php');
 					}
 					else if($user_type=="Author"){
-						header('location:author_home.php');
+						header('location:Author_homepage.php');
 					}
 					else if($user_type=="Conference_chair"){
 						header('location:conferencechairhomepage.php');
