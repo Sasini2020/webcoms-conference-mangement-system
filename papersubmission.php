@@ -50,15 +50,7 @@
 				$target_file = $directory.$file_name;
 				
 				
-					$query= "select * from fileuploadtable WHERE id='$id'";
-					$query_run = mysqli_query($con,$query);
-					
-					if(mysqli_num_rows($query_run)>0)
-					{
-						// there is already a user with the same username
-						echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
-					}
-					else if(file_exists($target_file))
+					if(file_exists($target_file))
 					{
 						echo '<script type="text/javascript"> alert("file already exists.. Try another file") </script>';
 					}
