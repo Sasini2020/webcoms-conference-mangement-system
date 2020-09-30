@@ -11,7 +11,7 @@
 </head>
 <body style="background-color:#ffff">
 	
-	<form class="myform" action="authorhomepage.php"method="post" enctype="multipart/form-data" >
+	<form class="myform" action="papersubmission.php"method="post" enctype="multipart/form-data" >
 		<div id="main-wrapper">
 		<center>
 			<h2>Submit a Paper</h2>
