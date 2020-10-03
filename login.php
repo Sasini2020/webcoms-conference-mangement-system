@@ -68,10 +68,9 @@
 				{
 					// valid
 					//$_SESSION['email']= $email;
-					
-					$_SESSION['login_s'] = '1';
 
 					if($user_type=="Admin"){
+						$_SESSION['login_s'] = '1';
 						header('location:adminhomepage.php');
 					}
 					else if($user_type=="Reviewer"){
@@ -81,6 +80,7 @@
 						header('location:Author_homepage.php');
 					}
 					else if($user_type=="Conference_chair"){
+						$_SESSION['login_s'] = '4';
 						header('location:conferencechairhomepage.php');
 					}else{
 						echo '<script type="text/javascript"> alert("Invalid User") </script>';

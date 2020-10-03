@@ -83,7 +83,6 @@
 				<select id="actor" class="" name="usertype">
 					<option value="Author">Author</option>
 					<option value="Reviewer">Reviewer</option>
-					<option value="Conference_chair">Conference chair</option>
 				</select><br>
 			
 			<label for="Email"><b>Email:</b></label><br>
