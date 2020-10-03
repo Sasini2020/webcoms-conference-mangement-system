@@ -77,7 +77,8 @@
 						header('location:reviewerhomepage.php');
 					}
 					else if($user_type=="Author"){
-						header('location:Author_homepage.php');
+						$_SESSION['login_s'] = '3';
+						header('location:Author_home.php');
 					}
 					else if($user_type=="Conference_chair"){
 						$_SESSION['login_s'] = '4';

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if($_SESSION['login_s'] != '1'){
+    if($_SESSION['login_s'] != '3'){
         header('location:login.php');
     }
 ?>
@@ -8,8 +8,16 @@
 <html>
 <head>
     <title>Author Home</title>
+    <link rel="stylesheet" href="css/main_style.css">
 </head>
 <body>
+<nav>
+    <ul>
+      <li><a href="ConferenceListForA.php">Conference List</a></li>
+    </ul>
+  </nav>
+
+  <br><br>
 
     <p> Welcome Author </p><br><br>
 
