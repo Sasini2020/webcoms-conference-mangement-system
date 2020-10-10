@@ -66,12 +66,13 @@
 				$start_date = $_POST['start_date'];
 				$end_date = $_POST['end_date'];
 				$deadline = $_POST['deadline'];
-				$sponsor_details = $_POST['sponsor_details'];				
+				$sponsor_details = $_POST['sponsor_details'];
+				$c_Email = $_SESSION['c_email'];			
 		
 				//$query= "select * from conferences '";
 				//$query_run = mysqli_query($con,$query);					
 					
-				$query= "insert into conferences values(NULL,'$name','$venue','$start_date','$end_date','$deadline','$sponsor_details','0')";
+				$query= "insert into conferences values(NULL,'$name','$venue','$start_date','$end_date','$deadline','$sponsor_details','0','$c_Email')";
 				$query_run = mysqli_query($con,$query);
 						
 				if($query_run)

@@ -82,8 +82,14 @@
 					}
 					else if($user_type=="Conference_chair"){
 						$_SESSION['login_s'] = '4';
+						$_SESSION['c_email'] = $email;
 						header('location:conferencechairhomepage.php');
-					}else{
+					}
+					else if($user_type=="Track_chair"){
+						$_SESSION['login_s'] = '5';
+						header('location:conferencechairhomepage.php');
+					}
+					else{
 						echo '<script type="text/javascript"> alert("Invalid User") </script>';
 					}
 					

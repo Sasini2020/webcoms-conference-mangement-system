@@ -43,12 +43,23 @@
           <th>End date</th>
           <th>Deadline</th>
           <th>Sposer details</th>
+          <th>Conference Chair</th>
       	</tr>
       </thead>
 
       <tbody>                                     
         <?php
-          $sql = mysqli_query($con, "select * from conferences where Accepted='1';") or die(mysqli_error($con));
+          $sql = mysqli_query($con, "select conferences.id,
+          conferences.name,
+          conferences.venue,
+          conferences.start_date,
+          conferences.end_date,
+          conferences.deadline_date,
+          conferences.sponsor_details,
+          userinfotable.full_name
+          from conferences
+          inner join userinfotable on conferences.C_chairEmail = userinfotable.email
+          where Accepted='1';") or die(mysqli_error($con));
           $counter = 1;
           while ($row = mysqli_fetch_assoc($sql)) {
         ?>                                            
@@ -61,6 +72,7 @@
 							<td><?=$row['end_date']?></td>
 							<td><?=$row['deadline_date']?></td>
               <td><?=$row['sponsor_details']?></td>
+              <td><?=$row['full_name']?></td>
             </tr>
       </tbody>
 			<?php
