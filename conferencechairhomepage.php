@@ -56,6 +56,7 @@
     <ul>
       <!--<li><a class="active" href="conferencechairhomepage.php">WebCOMS</a></li>-->
       <li><a href="create_conference.php">Create a Conference</a></li>
+      <li><a href="viewConferencesForCC.php">View Conferences</a></li>
       <li><a href="#conferences_view.php">Define notification templates</a></li>
       <li><a href="#authordetails.php">Bulk Upload User Details</a></li>
       <!--<li><a href="#help.html">Send messages</a></li>
