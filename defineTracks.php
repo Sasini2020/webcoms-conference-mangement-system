@@ -26,7 +26,7 @@
 
 <div id="main-wrapper">
 		<center>
-			<h2>Registration Form</br><br><br></h2>	
+			<h2>Define Track Name</br><br><br></h2>	
 		</center>
 
     <form class="myform" action="defineTracks.php"method="post">
