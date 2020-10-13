@@ -85,7 +85,7 @@
 						$_SESSION['c_email'] = $email;
 						header('location:conferencechairhomepage.php');
 					}
-					else if($user_type=="Track_chair"){
+					else if($user_type=="TrackChair"){
 						$_SESSION['login_s'] = '5';
 						header('location:conferencechairhomepage.php');
 					}

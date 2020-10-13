@@ -83,10 +83,21 @@
 				<select id="actor" class="" name="usertype">
 					<option value="Author">Author</option>
 					<option value="Reviewer">Reviewer</option>
+					<option value="TrackChair">Track Chair</option>
+					<option value="PublicationChair">Publication Chair</option>
 				</select><br>
 			
 			<label for="Email"><b>Email:</b></label><br>
 			<input id="Email" name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
+
+			<label for="University"><b>University:</b></label><br>
+			<input id="University" name="University" type="text" class="inputvalues" placeholder="Type your University" required/><br>
+
+			<label for="ContactDetails"><b>Contact Details:</b></label><br>
+			<input id="ContactDetails" name="ContactDetails" type="text" class="inputvalues" placeholder="Type your Contact Details" required/><br>
+
+			<label for="ContactLinks"><b>Contact Links:</b></label><br>
+			<input id="ContactLinks" name="ContactLinks" type="text" class="inputvalues" placeholder="Type your Contact Links" required/><br>
 			
 			<label for="passW"><b>Password:</b></label><br>
 			<input id="passW" name="password" type="password" class="inputvalues" placeholder="Your password" required/><br>
@@ -109,6 +120,9 @@
 				$cpassword = $_POST['cpassword'];
 				$gender = $_POST['gender'];
 				$usertype = $_POST['usertype'];
+				$University = $_POST['University'];
+				$ContactDetails = $_POST['ContactDetails'];
+				$ContactLinks = $_POST['ContactLinks'];
 
 				//echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
 				//echo '<script type="text/javascript"> alert("'.$fullname.' ---'.$username.' --- '.$password.' --- '.$gender.' --- '.$qualification.'"  ) </script>';
@@ -130,8 +144,33 @@
 						$query= "insert into userinfotable (email, full_name, gender, user_type, password) 
 						values('$email','$fullname','$gender','$usertype','$encrypted_pass')";
 						$query_run = mysqli_query($con,$query);
+
+						switch($usertype){
+							case "Author":
+								$query2= "insert into author 
+									values('$email','$fullname','$University','$ContactDetails','$ContactLinks','$gender','$encrypted_pass','$email')";
+								$query_run2 = mysqli_query($con,$query2);
+								break;
+							case "Reviewer":
+								$query2= "insert into reviewer 
+									values('$email','$fullname','$gender','$encrypted_pass','$email')";
+								$query_run2 = mysqli_query($con,$query2);
+								break;
+							case "TrackChair":
+								$query2= "insert into trackchair 
+									values('$email','$fullname','$gender','$encrypted_pass','$email')";
+								$query_run2 = mysqli_query($con,$query2);
+								break;
+							case "PublicationChair":
+								$query2= "insert into publicationchair 
+									values('$email','$fullname','$encrypted_pass','$gender','$email')";
+								$query_run2 = mysqli_query($con,$query2);
+								break;
+							default:
+								$query_run2 = false;
+						}
 						
-						if($query_run)
+						if($query_run and $query_run2)
 						{
 							echo '<script type="text/javascript"> alert("User Registered.. Go to login page to login") </script>';
 						}
