@@ -1,5 +1,8 @@
 <?php
 	session_start();
+    if($_SESSION['login_s'] != '6'){
+        header('location:login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,14 +14,14 @@
 	
 	<div id="main-wrapper">
 		<center>
-			<h2>Admin Home Page</h2>
+			<h2>Publication Chair Home Page</h2>
 			<h3>Welcome
 				
 			</h3>
 			<img src="imgs/webc.png" class="avatar"/>
 		</center>
 	
-		<form class="myform" action="homepage.php" method="post">
+		<form class="myform" action="publicationchairhomepage.php" method="post">
 			<input name="logout" type="submit" id="logout_btn" value="Log Out"/><br>
 			
 		</form>
