@@ -56,10 +56,10 @@
           conferences.end_date,
           conferences.deadline_date,
           conferences.sponsor_details,
-          userinfotable.full_name
+          conferencechair.fullname
           from conferences
-          inner join userinfotable on conferences.C_chairEmail = userinfotable.email
-          where Accepted='1';") or die(mysqli_error($con));
+          inner join conferencechair on conferences.emailconfchair = conferencechair.emailconfchair
+          where conferences.Accepted='1';") or die(mysqli_error($con));
           $counter = 1;
           while ($row = mysqli_fetch_assoc($sql)) {
         ?>                                            
@@ -72,31 +72,13 @@
 							<td><?=$row['end_date']?></td>
 							<td><?=$row['deadline_date']?></td>
               <td><?=$row['sponsor_details']?></td>
-              <td><?=$row['full_name']?></td>
+              <td><?=$row['fullname']?></td>
             </tr>
       </tbody>
 			<?php
         $counter++;}
       ?>
 
-      
-
-      <?php
-
-        if(isset($_POST['action']) && isset($_POST['id'])){
-          if($_POST['action'] == 'Delete'){
-            $r_id = $_POST['id'];
-            $qur = mysqli_query($con,"delete from conferences where id='$r_id'");
-            header('location:requested_conferences.php');
-          }
-          elseif($_POST['action'] == 'Accept'){
-            $r_id = $_POST['id'];
-            $qur = mysqli_query($con,"update conferences set Accepted = '1' where id='$r_id'");
-            header('location:requested_conferences.php');
-          }
-        }
-      ?>
-	
 	  </table>	
   </div>
 

@@ -42,6 +42,7 @@
 
 				$Tname =$_POST['Tname'];
 				$c_id = $_SESSION['c_id'];
+				$c_email = $_SESSION['c_email'];
 
 					$query= "select * from conferencetrack WHERE (Name='$Tname')and(conferenceID=$c_id)";
 					$query_run = mysqli_query($con,$query);
@@ -54,7 +55,7 @@
 					else
 					{
 						$query= "insert into conferencetrack
-						values(NULL,'$Tname',$c_id)";
+						values(NULL,'$Tname',$c_id,'$c_email')";
 						$query_run = mysqli_query($con,$query);
 						
 						if($query_run)

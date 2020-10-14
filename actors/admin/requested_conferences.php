@@ -112,10 +112,10 @@
             conferences.end_date,
             conferences.deadline_date,
             conferences.sponsor_details,
-            userinfotable.full_name
+            conferencechair.fullname
             from conferences
-            inner join userinfotable on conferences.C_chairEmail = userinfotable.email
-            where Accepted='0';") or die(mysqli_error($con));
+            inner join conferencechair on conferences.emailconfchair = conferencechair.emailconfchair
+            where conferences.Accepted='0';") or die(mysqli_error($con));
           $counter = 1;
           while ($row = mysqli_fetch_assoc($sql)) {
         ?>                                            
@@ -128,7 +128,7 @@
 							<td><?=$row['end_date']?></td>
 							<td><?=$row['deadline_date']?></td>
               <td><?=$row['sponsor_details']?></td>
-              <td><?=$row['full_name']?></td>                                   
+              <td><?=$row['fullname']?></td>                                   
 
               <td style="padding-left: 20px;">
                 <form action="requested_conferences.php" method="post">
