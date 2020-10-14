@@ -54,7 +54,7 @@
      <input type="submit" value="cancel"><br><br>
      <a href="trackchairhomepage.php"><button class="button home"> Back <buttton></a>
   </form>
-</div>
-</body>
+ </div>
+ </body>
 
 </html>
