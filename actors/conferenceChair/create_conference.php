@@ -1,10 +1,10 @@
 <?php
 	session_start();
 
-	require 'dbconfig/config.php';
+	require '../../dbconfig/config.php';
 
 	if($_SESSION['login_s'] != '4'){
-		header('location:login.php');
+		header('location:../../login.php');
 	}
 ?>
 <!DOCTYPE html>
@@ -13,8 +13,8 @@
 
 	<title>Create a new conference</title>
 
-	<link rel="stylesheet" href="css/main_style.css">
-	<link rel="stylesheet" href="css/sty.css">
+	<link rel="stylesheet" href="../../css/main_style.css">
+	<link rel="stylesheet" href="../../css/sty.css">
 
 
 </head>
@@ -32,7 +32,7 @@
 	<div id="main-wrapper">
 		<center>
 			<h2>Create a Conference</h2>
-			<img src="imgs/webc.png" class="avatar"/>
+			<img src="../../imgs/webc.png" class="avatar"/>
 		</center>
 	
 		<form class="myform" action="create_conference.php"method="post">

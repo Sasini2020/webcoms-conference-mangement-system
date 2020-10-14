@@ -84,15 +84,15 @@
 					else if($user_type=="Conference_chair"){
 						$_SESSION['login_s'] = '4';
 						$_SESSION['c_email'] = $email;
-						header('location:conferencechairhomepage.php');
+						header('location:actors/conferenceChair/conferencechairhomepage.php');
 					}
 					else if($user_type=="TrackChair"){
 						$_SESSION['login_s'] = '5';
-						header('location:trackchairhomepage.php');
+						header('location:actors/trackChair/trackchairhomepage.php');
 					}
 					else if($user_type=="PublicationChair"){
 						$_SESSION['login_s'] = '6';
-						header('location:publicationchairhomepage.php');
+						header('location:actors/publicationChair/publicationchairhomepage.php');
 					}
 					else{
 						echo '<script type="text/javascript"> alert("Invalid User") </script>';

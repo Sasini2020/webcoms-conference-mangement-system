@@ -1,7 +1,7 @@
 <?php
   session_start();
   if($_SESSION['login_s'] != '4'){
-    header('location:login.php');
+    header('location:../../login.php');
   }
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 <head>
   <title>Conference Chair Home</title>
 
-  <link rel="stylesheet" href="css/main_style.css">
+  <link rel="stylesheet" href="../../css/main_style.css">
   <!--
   <link rel="stylesheet" href="css/sty.css">
   
@@ -75,7 +75,7 @@
     <?php
       if(isset($_POST['logout'])){
         session_destroy();
-        header('location:index.php');
+        header('location:../../index.php');
        }
     ?>
   </div>

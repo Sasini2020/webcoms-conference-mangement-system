@@ -1,11 +1,15 @@
 <?php
-	require 'dbconfig/config.php';
+	session_start();
+    if($_SESSION['login_s'] != '3'){
+        header('location:../../login.php');
+    }
+	require '../../dbconfig/config.php';
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Submit a Paper</title>
-<link rel="stylesheet" href="css/sty.css">
+<link rel="stylesheet" href="../../css/sty.css">
 
 
 </head>
@@ -15,7 +19,7 @@
 		<div id="main-wrapper">
 		<center>
 			<h2>Submit a Paper</h2>
-			<img id="uploadPreview" src="imgs/webc.png" class="avatar"/><br>
+			<img id="uploadPreview" src="../../imgs/webc.png" class="avatar"/><br>
 			<input type="file" id="filelink" name="filelink" accept="application/pdf" onchange="Previewfile();"/>
 		</center>
 	
@@ -30,7 +34,7 @@
 			<label><b>Other links:</b></label><br>
 			<input name="otherlinks" type="text" class="inputvalues" placeholder="Other links"><br>
 			<input name="submit_btn" type="submit" id="signup_btn" value="Submit"/><br>
-			<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>
+			<a href="../../index.php"><input type="button" id="back_btn" value="Back"/></a>
 		</form>
 		
 		<?php
@@ -46,7 +50,7 @@
 				$file_size =$_FILES['filelink']['size'];
 			    $file_tmp =$_FILES['filelink']['tmp_name'];
 				
-				$directory = 'uploads/';
+				$directory = '../../uploads/';
 				$target_file = $directory.$file_name;
 				
 				

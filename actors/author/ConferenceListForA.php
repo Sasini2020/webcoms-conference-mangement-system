@@ -82,7 +82,7 @@ body {
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
 			echo "<tr><td>". $row["id"] ."</td><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"] ."</td><td>" . $row["sponsor_details"] ."</td><td>";
-			echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='imgs/submit icon.PNG' height='25' width='25' /></a>";
+			echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/submit icon.PNG' height='25' width='25' /></a>";
        
         }
 		echo "</table>";

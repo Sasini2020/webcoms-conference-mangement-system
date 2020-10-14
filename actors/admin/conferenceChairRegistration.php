@@ -89,8 +89,12 @@
 						$query= "insert into userinfotable (email, full_name, gender, user_type, password) 
 						values('$email','$fullname','$gender','$usertype','$encrypted_pass')";
 						$query_run = mysqli_query($con,$query);
+
+						$query2= "insert into conferencechair 
+									values('$email','$fullname','$gender','$encrypted_pass','$email')";
+						$query_run2 = mysqli_query($con,$query2);
 						
-						if($query_run)
+						if($query_run and $query_run2)
 						{
 							echo '<script type="text/javascript"> alert("User Registered.. Go to login page to login") </script>';
 						}

@@ -1,8 +1,8 @@
 <?php
   session_start();
-  require 'dbconfig/config.php';
+  require '../../dbconfig/config.php';
   if($_SESSION['login_s'] != '4'){
-    header('location:login.php');
+    header('location:../../login.php');
   }
 ?>
 <!DOCTYPE html>
@@ -10,8 +10,8 @@
 <head>
   <title>Track List</title>
 
-  <link rel="stylesheet" href="css/main_style.css">
-  <link rel="stylesheet" href="css/table_style.css">
+  <link rel="stylesheet" href="../../css/main_style.css">
+  <link rel="stylesheet" href="../../css/table_style.css">
   
 </head>
 <body>
