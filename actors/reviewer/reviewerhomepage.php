@@ -71,6 +71,39 @@ input[type=submit]:hover {
     margin-top: 0;
   }
 }
+.button {
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.check {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.check:hover {
+  background-color: #008CBA;
+  color: white;
+}
+.wrapper {
+  margin-right: auto;
+  margin-left:  auto;
+
+  max-width: 900px;
+
+  padding-right: 8px;
+  padding-left:  5px;
+}
+
 </style>
 
 <title>Home Page</title>
@@ -96,25 +129,9 @@ input[type=submit]:hover {
             }
        ?>
 	   <form action="reviewercheck.php" method="post">
-        <a href="authordetails.php"> Check papers </a></br></br>
-		<h4> Paper review comment </h4>
-		<div class="row">
-    <div class="col-25">
-      <label for="name">Paper Name</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="name" name="name" placeholder="paper name....">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="comment">comment</label>
-    </div>
-    <div class="col-75">
-      <textarea id="comment" name="comment" placeholder="comment.." style="height:200px"></textarea>
-    </div>
-  </div>
-		<input type="submit" value="submit" name="submit"></br>
+      <div id="wrapper">
+        <a href="paperlist.php"><button class="button check"> Check papers <buttton></a>
+      </div>  
         </form>
 
 		
