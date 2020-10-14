@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if($_SESSION['login_s'] != '1'){
-        header('location:login.php');
+        header('location:../../login.php');
     }
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 <head>
 	<title>Admin Home</title>
 
-	<link rel="stylesheet" href="css/main_style.css">
+	<link rel="stylesheet" href="../../css/main_style.css">
 
 	<!--<link rel="stylesheet" href="css/sty.css">
 
@@ -78,7 +78,7 @@
 		<?php
 			if(isset($_POST['logout'])){
 				session_destroy();
-				header('location:index.php');
+				header('location:../../index.php');
 			}
 		?>
 	</div>
@@ -89,7 +89,7 @@
 			<h3>Welcome
 				
 			</h3>
-			<img src="imgs/webc.png" class="avatar"/>
+			<img src="../../imgs/webc.png" class="avatar"/>
 		</center>
 	
 		<!--	

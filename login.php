@@ -71,14 +71,15 @@
 
 					if($user_type=="Admin"){
 						$_SESSION['login_s'] = '1';
-						header('location:adminhomepage.php');
+						header('location:actors/admin/adminhomepage.php');
 					}
 					else if($user_type=="Reviewer"){
-						header('location:reviewerhomepage.php');
+						$_SESSION['login_s'] = '2';
+						header('location:actors/reviewer/reviewerhomepage.php');
 					}
 					else if($user_type=="Author"){
 						$_SESSION['login_s'] = '3';
-						header('location:Author_home.php');
+						header('location:actors/author/Author_home.php');
 					}
 					else if($user_type=="Conference_chair"){
 						$_SESSION['login_s'] = '4';

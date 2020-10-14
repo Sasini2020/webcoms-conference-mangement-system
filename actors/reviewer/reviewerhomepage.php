@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	if($_SESSION['login_s'] != '2'){
+        header('location:../../login.php');
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -71,7 +74,7 @@ input[type=submit]:hover {
 </style>
 
 <title>Home Page</title>
-<link rel="stylesheet" href="css/sty.css">
+<link rel="stylesheet" href="../../css/sty.css">
 </head>
 <body style="background-color:#bdc3c7">
 	
@@ -81,7 +84,7 @@ input[type=submit]:hover {
 			<h3>Welcome
 				
 			</h3>
-			<img src="imgs/webc.png" class="avatar"/>
+			<img src="../../imgs/webc.png" class="avatar"/>
 		</center>
 		<?php
 		if(isset($_post['submit'])){
@@ -115,7 +118,7 @@ input[type=submit]:hover {
         </form>
 
 		
-		<form class="myform" action="homepage.php" method="post">
+		<form class="myform" action="reviewerhomepage.php" method="post">
 		
 		
 			<input name="logout" type="submit" id="logout_btn" value="Log Out"/><br>
@@ -126,7 +129,7 @@ input[type=submit]:hover {
 			if(isset($_POST['logout']))
 			{
 				session_destroy();
-				header('location:index.php');
+				header('location:../../index.php');
 			}
 		?>
 	</div>

@@ -1,7 +1,7 @@
 <?php
     session_start();
     if($_SESSION['login_s'] != '3'){
-        header('location:login.php');
+        header('location:../../login.php');
     }
 ?>
 <!DOCTYPE html>
@@ -11,8 +11,8 @@
 	<title>Conference List</title>
 
 
- <link rel="stylesheet" href="css/mychanged.css">
- <link rel="stylesheet" href="css/main_style.css">
+ <link rel="stylesheet" href="../../css/mychanged.css">
+ <link rel="stylesheet" href="../../css/main_style.css">
 
 
 <style>
@@ -64,7 +64,6 @@ body {
 	
 	 if(isset($_POST['back']))
 			{
-				session_destroy();
 				header('location:.php');
 	}
 

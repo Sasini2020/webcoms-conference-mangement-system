@@ -1,16 +1,16 @@
 <?php
 	session_start();
-	if($_SESSION['login_s'] != '1'){
-        header('location:login.php');
+	if($_SESSION['login_s'] != '2'){
+        header('location:../../login.php');
     }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Author details</title>
-	<link rel="stylesheet" href="css/table_style.css">
-	<link rel="stylesheet" href="css/main_style.css">
-	<link rel="stylesheet" href="css/sty.css">
+	<link rel="stylesheet" href="../../css/table_style.css">
+	<link rel="stylesheet" href="../../css/main_style.css">
+	<link rel="stylesheet" href="../../css/sty.css">
 
 	<!--
 	<style type "text/css">
@@ -76,7 +76,7 @@
 	
 	<nav>
 		<ul>
-			<li><a href="adminhomepage.php">Back to Home page</a></li>
+			<li><a href="reviewerhomepage.php">Back to Home page</a></li>
 			<!--<li><a class="active" href="index.php">WebCOMS</a></li>
 			<li><a href="conferences_view.php">Conferences</a></li>
 			<li><a href="authordetails.php">Author details</a></li>
@@ -98,8 +98,7 @@
 	
 	 if(isset($_POST['back']))
 			{
-				session_destroy();
-				header('location:adminhomepage.php');
+				header('location:reviewerhomepage.php');
 			}
 	
 	$conn = mysqli_connect("localhost","root","","webcomsdb");
@@ -125,7 +124,7 @@
 	</table>
 
 	<br/>	
-	<form class="myform" action="adminhomepage.php" method="post">
+	<form class="myform" action="authordetails.php" method="post">
 		<input name="back" type="submit" id="back_btn" value="Back"/><br>		
 	</form>
 	
