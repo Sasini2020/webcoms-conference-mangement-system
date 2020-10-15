@@ -76,7 +76,7 @@
 						}
 						else
 						{
-							echo '<script type="text/javascript"> alert("Error!") </script>';
+							echo '<script type="text/javascript"> alert("Paper Submited!") </script>';
 						}
 					}	
 					
