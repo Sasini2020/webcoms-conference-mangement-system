@@ -36,7 +36,7 @@ body {
 
 <nav>
     <ul>
-      <li><a href="reviewerhomepagenew.php">Back to Home</a></li>
+      <li><a href="reviewerhomepage.php">Back to Home</a></li>
     </ul>
   </nav>
 
