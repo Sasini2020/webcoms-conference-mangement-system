@@ -5,85 +5,67 @@
     }
 	require '../../dbconfig/config.php';
 ?>
+
+<?php include 'filesLogic.php';?>
 <!DOCTYPE html>
-<html>
-<head>
-<title>Submit a Paper</title>
-<link rel="stylesheet" href="../../css/sty.css">
+<html lang="en">
+  <head>
+
+  <!-- paste   here  ../../css/ -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/main_style.css">
+
+    <title>Files Upload and Download</title>
+  </head>
+  <body>
+
+<!-- navbar -->
+  <nav>
+    <ul>
+    <li><a href="ConferenceListForA.php">Back</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="#">Help</a></li>
+
+    </ul>
+    <br /><br />
+  </nav>
 
 
-</head>
-<body style="background-color:#ffff">
-	
-	<form class="myform" action="papersubmission.php"method="post" enctype="multipart/form-data" >
-		<div id="main-wrapper">
-		<center>
-			<h2>Submit a Paper</h2>
-			<img id="uploadPreview" src="../../imgs/webc.png" class="avatar"/><br>
-			<input type="file" id="filelink" name="filelink" accept="application/pdf" onchange="Previewfile();"/>
-		</center>
-	
-		 
-			<label><b>Full Name:</b></label><br>
-			<input name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
+
+
+    <div class="container">
+      <div class="row">
+        <form action="papersubmission.php" method="post" enctype="multipart/form-data" >
+          <h2 style="color:#41BBB0;">Submit a Paper</h2><br><br>
+
+          <input type="file" name="myfile"> <br>
+
+<!-- newely added -->
+          <label><b>Full Name:</b></label><br>
+		  	  <input name="full_name" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 			
-			<label><b>University:</b></label><br>
-			<input name="university" type="text" class="inputvalues" placeholder="Type your university" required/><br>
-			<label><b>Contact 	Details:</b></label><br>
-			<input name="contactdetails" type="text" class="inputvalues" placeholder="Your Contact Details" required/><br>
-			<label><b>Other links:</b></label><br>
-			<input name="otherlinks" type="text" class="inputvalues" placeholder="Other links"><br>
-			<input name="submit_btn" type="submit" id="signup_btn" value="Submit"/><br>
-			<a href="../../index.php"><input type="button" id="back_btn" value="Back"/></a>
-		</form>
-		
-		<?php
-			if(isset($_POST['submit_btn']))
-			{
-				
-				$fullname =$_POST['fullname'];
-				$university = $_POST['university'];
-				$contactdetails = $_POST['contactdetails'];
-				$otherlinks = $_POST['otherlinks'];
-				
-				$file_name = $_FILES['filelink']['name'];
-				$file_size =$_FILES['filelink']['size'];
-			    $file_tmp =$_FILES['filelink']['tmp_name'];
-				
-				$directory = '../../uploads/';
-				$target_file = $directory.$file_name;
-				
-				
-					if(file_exists($target_file))
-					{
-						echo '<script type="text/javascript"> alert("file already exists.. Try another file") </script>';
-					}
-					
-					else if($file_size>2097152)
-					{
-						echo '<script type="text/javascript"> alert("file size larger than 2 MB.. Try another file") </script>';
-					}
-					
-					else
-					{
-						move_uploaded_file($file_tmp,$target_file); 	
-						$query= "insert into fileuploadtable values('','$fullname','$university','$contactdetails','$otherlinks','$target_file')";
-						$query_run = mysqli_query($con,$query);
-						
-						if($query_run)
-						{
-							echo '<script type="text/javascript"> alert("User Registered.. Go to login page to login") </script>';
-						}
-						else
-						{
-							echo '<script type="text/javascript"> alert("Paper Submited!") </script>';
-						}
-					}	
-					
-					
-				}
-				
-		?>
-	</div>
-</body>
+          <label><b>University:</b></label><br>
+          <input name="university" type="text" class="inputvalues" placeholder="Type your university" required/><br>
+          <label><b>Contact 	Details:</b></label><br>
+          <input name="contact_details" type="text" class="inputvalues" placeholder="Your Contact Details" required/><br>
+          <label><b>Other links:</b></label><br>
+          <input name="other_links" type="text" class="inputvalues" placeholder="Other links"><br>
+
+
+          <button type="submit" id="save_btn" name="save">upload</button>
+          <!-- <button type="submit" id="" name="">Cancel</button> -->
+          <button type="cancel" onclick="javascript:window.location='papersubmission.php';">Cancel</button>
+
+        </form>
+
+
+   <!-- newely added -->
+
+  
+
+
+
+      </div>
+    </div>
+  </body>
 </html>
