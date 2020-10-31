@@ -109,7 +109,7 @@
           $sql = mysqli_query($con, "select conferences.id,
             conferences.name,
             conferences.venue,
-            conferences.start_date,
+            conferences.start_date, 
             conferences.end_date,
             conferences.deadline_date,
             conferences.sponsor_details,
@@ -146,7 +146,7 @@
       ?>
 
       
-
+   
       <?php
 
         //function del_d($id){
