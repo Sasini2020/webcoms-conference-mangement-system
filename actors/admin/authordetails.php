@@ -24,6 +24,7 @@
 			text-align: left;
 		}
 		
+
 		th {
 			background-color: #6495ED;
 			color: white;
