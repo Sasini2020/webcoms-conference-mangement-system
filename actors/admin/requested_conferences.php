@@ -3,7 +3,8 @@
   require '../../dbconfig/config.php';
   if($_SESSION['login_s'] != '1'){
     header('location:../../login.php');
-  }
+  }  
+
 ?>
 
 <!DOCTYPE html>
