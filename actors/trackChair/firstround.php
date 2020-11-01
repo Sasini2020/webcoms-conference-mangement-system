@@ -6,6 +6,7 @@
 ?>
 <!-- Accessing the FilesLogic.php -->
 <?php include 'filesLogic.php';?>
+
 <!DOCTYPE html>
 <html>
 <head>
