@@ -10,6 +10,7 @@
     <title>Reviewer Home</title>
     <link rel="stylesheet" href="../../css/main_style.css">
 </head>
+    
 <body>
 <nav>
     <ul>
