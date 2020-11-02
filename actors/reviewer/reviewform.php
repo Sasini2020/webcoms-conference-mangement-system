@@ -22,5 +22,5 @@
     </div>
   </div>
 		<input type="submit" value="submit" name="submit"></br>
-  </boy>
+  </body>
   </html>
