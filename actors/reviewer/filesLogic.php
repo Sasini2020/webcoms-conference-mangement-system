@@ -1,7 +1,6 @@
 <?php
 // connect to the database
 $conn = mysqli_connect('localhost', 'root', '', 'webcomsdb');
-
 $sql = "SELECT * FROM files";
 $result = mysqli_query($conn, $sql);
 
