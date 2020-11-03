@@ -14,7 +14,6 @@
  <link rel="stylesheet" href="../../css/mychanged.css">
  <link rel="stylesheet" href="../../css/main_style.css">
 
-
 <style>
 body {
   margin: 0;
