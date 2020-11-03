@@ -28,7 +28,6 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     // $other_links = $_POST['other_links'];	
 
 
-
     if (!in_array($extension, ['pdf'])) {
         echo "You file extension must be .pdf ";
     } elseif ($_FILES['myfile']['size'] > 1000000) { // file shouldn't be larger than 1MB
