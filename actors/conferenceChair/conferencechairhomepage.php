@@ -3,6 +3,7 @@
   if($_SESSION['login_s'] != '4'){
     header('location:../../login.php');
   }
+
 ?>
 <!DOCTYPE html>
 <html>
