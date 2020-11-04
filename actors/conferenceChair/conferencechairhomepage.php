@@ -66,7 +66,8 @@
     </ul>
   </nav>
 
-  <br><br>
+  <br>
+  <br>
 
   <div>
     <form action="conferencechairhomepage.php" method="post">
