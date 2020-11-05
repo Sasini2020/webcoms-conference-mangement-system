@@ -40,7 +40,7 @@
 	
 		<form class="myform" action="login.php" method="post">
 			<label for="Uname"><b>Email:</b></label><br>
-			<input id="Uname" name="e mail" type="text" class="inputvalues" placeholder="Type your email" required/><br>
+			<input id="Uname" name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
 			
 			<label for="UpassW"><b>Password:</b></label><br>
 			<input id="UpassW" name="password" type="password" class="inputvalues" placeholder="Type your password" required/><br>
