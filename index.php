@@ -5,7 +5,36 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+.p {
+	color:white;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("try.jpg");
+  height: 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+</style>
     <title> WebCOMS - Conference Management System </title>
 
     <!--<link rel="stylesheet" href="css/sty.css">
@@ -18,6 +47,7 @@
 
 <body>
 
+ <div class="hero-image"> 
   <!--Navigation bar-->
   <nav>
     <ul>
@@ -29,8 +59,13 @@
     </ul>
     <br /><br />
   </nav>
+  <div class="hero-text">
+    <h1 style="font-size:50px">Web-COMS</h1>
+    <p>Conference management system</p>
+  </div>
 
-  <p> WebComs Home page </p>
+  </div>
 
+ 
 </body>
 </html>
