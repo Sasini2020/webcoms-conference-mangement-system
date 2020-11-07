@@ -13,12 +13,9 @@
     <title>Conference Chair Registration</title>
 
     <link rel="stylesheet" href="../../css/main_style.css">
-    <link rel="stylesheet" href="../../css/main_style.css">
-	<link rel="stylesheet" href="../../css/sty.css">
-
-	
+	<link rel="stylesheet" href="../../css/style_footer.css">
+	<link rel="stylesheet" href="../../css/reg_form_style.css">
 </head>
-	
 <body>
   
   <nav>
@@ -30,32 +27,40 @@
 
 	<!--Conference Chair Registration form-->
 	<div id="main-wrapper">
-		<center>
+		<!-- <center>
 			<h2>Conference Chair Registration Form</br><br><br></h2>	
-		</center>
+		</center> -->
 	
-		<form class="myform" action="conferenceChairRegistration.php"method="post">
-			<label for="fname"><b>Full Name:</b></label><br>
+		<form action="conferenceChairRegistration.php" method="post">
+		<br><br>
+			<h1>Conf Chair Registration</h1>
+			<fieldset>
+      		<legend><span class="number">1</span>Personal Information</legend><br>
+		
+			<label for="fname">Full Name:</label><br>
 			<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 			
-			<label><b>Gender:</b></label>
-			<input id="Gmale" type="radio" class="radiobtns" name="gender" value="male" checked required> 
-			<label for="Gmale">Male</label>
-			<input id="GFemale" type="radio" class="radiobtns" name="gender" value="female" required>
-			<label for="GFemale">Female</label><br>
+			<label>Gender:</label><br>
+			<input id="Gmale" type="radio" name="gender" value="male" checked required> 
+			<label for="Gmale" class="light">Male</label><br>
+			<input id="GFemale" type="radio" name="gender" value="female" required>
+			<label for="GFemale" class="light">Female</label><br>
 
             <input type="hidden" name="usertype" value="Conference_chair">
-			
-			<label for="Email"><b>Email:</b></label><br>
+			</fieldset>
+		<fieldset>
+      	<legend><span class="number">2</span>Login Information</legend><br>
+			<label for="Email">Email:</label><br>
 			<input id="Email" name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
 			
-			<label for="passW"><b>Password:</b></label><br>
+			<label for="passW">Password:</label><br>
 			<input id="passW" name="password" type="password" class="inputvalues" placeholder="Your password" required/><br>
 			
-			<label for="CpassW"><b>Confirm Password:</b></label><br>
+			<label for="CpassW">Confirm Password:</label><br>
 			<input id="CpassW" name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>
-			
-			<input name="submit_btn" type="submit" id="signup_btn" value="Sign Up"/><br>
+		</fieldset>
+	
+			<button name="submit_btn" type="submit" id="signup_btn" value="Sign Up">Register</button<br>
 			<!--<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>-->
 		</form>
 		
@@ -115,5 +120,11 @@
 		?>
 	</div>
 
+	
+	
+<!-- footer section -->
+<footer>
+    <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+  </footer> <!--end of footer section -->
 </body>
 </html>
