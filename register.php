@@ -8,8 +8,10 @@
 		<title>Registration</title>
 
 		<link rel="stylesheet" href="css/main_style.css">
-		<link rel="stylesheet" href="css/sty.css">
-		
+		<!-- <link rel="stylesheet" href="css/sty.css"> -->
+		<link rel="stylesheet" href="css/style_footer.css">
+		<link rel="stylesheet" href="css/reg_form_style.css">
+
 		<!--<link rel="stylesheet" href="css/sty.css">
 		<link rel="stylesheet" href="css/styleNavbar.css">
 
@@ -65,7 +67,7 @@
 
 	<!--Registration form-->
 	<div id="main-wrapper">
-		<center>
+		<!-- <center>
 			<h2>Registration Form</br><br><br></h2>	
 		</center>
 	
@@ -106,9 +108,62 @@
 			<input id="CpassW" name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>
 			
 			<input name="submit_btn" type="submit" id="signup_btn" value="Sign Up"/><br>
+			Here is a comment<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>-->
+		<!-- </form> --> 
+		
+		<!-- <center>
+			<h2>Registration Form</br><br><br></h2>	
+		</center>
+	 -->
+		<form action="register.php"method="post">
+
+			<br><h1>Register</h1>
+			<fieldset>
+      		<legend><span class="number">1</span>Your Basic Information</legend><br>
+			
+			<label for="fname">Full Name:</label><br>
+			<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
+			
+			<label>Gender:</label><br>
+			<input id="Gmale" type="radio" name="gender" value="male" checked required><label for="Gmale" class="light">Male</label><br><br>
+			<input id="GFemale" type="radio"  name="gender" value="female" required><label for="GFemale" class="light">Female</label>
+			<br><br>
+			<label for="actor">User Role:</label><br>
+				<select id="actor" class="" name="usertype">
+					<option value="Author">Author</option>
+					<option value="Reviewer">Reviewer</option>
+					<option value="TrackChair">Track Chair</option>
+					<option value="PublicationChair">Publication Chair</option>
+				</select><br>
+			
+			<label for="University">University:</label><br>
+			<input id="University" name="University" type="text" class="inputvalues" placeholder="Type your University" required/><br>
+
+			<label for="ContactDetails">Contact Details:</label><br>
+			<input id="ContactDetails" name="ContactDetails" type="text" class="inputvalues" placeholder="Type your Contact Details" required/><br>
+
+			<label for="ContactLinks">Contact Links:</label><br>
+			<input id="ContactLinks" name="ContactLinks" type="text" class="inputvalues" placeholder="Type your Contact Links" required/><br>
+		   
+		</fieldset>
+		<fieldset>
+      	<legend><span class="number">2</span>Your Login Information</legend><br>
+			<label for="Email">Email:</label><br>
+			<input id="Email" name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
+
+			<label for="passW">Password:</label><br>
+			<input id="passW" name="password" type="password" class="inputvalues" placeholder="Your password" required/><br>
+			
+			<label for="CpassW">Confirm Password:</label><br>
+			<input id="CpassW" name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>
+		</fieldset>
+	
+			<button name="submit_btn" type="submit" id="signup_btn" value="Sign Up">Register</button<br>
 			<!--<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>-->
 		</form>
-		
+
+
+
 		<?php
 			if(isset($_POST['submit_btn']))
 			{
@@ -192,6 +247,7 @@
 			}
 		?>
 	</div>
+	<?php include "footer.html" ?></body>
 
 </body>
 </html>
