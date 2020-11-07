@@ -42,7 +42,8 @@ body, html {
     <link rel="stylesheet" href="css/styleNavbar.css">-->
 
     <link rel="stylesheet" href="css/main_style.css">
-  
+    <link rel="stylesheet" href="css/style_footer.css">
+
   </head>
 
 <body>
@@ -65,6 +66,7 @@ body, html {
   </div>
 
   </div>
+  <?php include "footer.html" ?></body>
 
  
 </body>
