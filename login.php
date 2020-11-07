@@ -13,7 +13,8 @@
 		<link rel="stylesheet" href="css/styleNavbar.css">-->
 
 		<link rel="stylesheet" href="css/main_style.css">
-		<link rel="stylesheet" href="css/sty.css">
+		<link rel="stylesheet" href="css/style_login_form.css">
+		<link rel="stylesheet" href="css/style_footer.css">
 
 	</head>
 
@@ -33,12 +34,12 @@
 
 	<!-- Login Form -->
 	<div id="main-wrapper">
-		<center>
+		<!-- <center>
 			<h2>Login Form</h2>
 			<img src="imgs/webc.png" class="avatar"/>
-		</center>
+		</center> -->
 	
-		<form class="myform" action="login.php" method="post">
+		<!-- <form class="register-form" action="login.php" method="post">
 			<label for="Uname"><b>Email:</b></label><br>
 			<input id="Uname" name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
 			
@@ -46,8 +47,30 @@
 			<input id="UpassW" name="password" type="password" class="inputvalues" placeholder="Type your password" required/><br>
 			
 			<input name="login" type="submit" id="login_btn" value="Login"/><br>
-			
-		</form>
+			<p class="message">Not registered? <a href="register.php">Create an account</a></p>
+		</form> -->
+	<div class="login-page">
+  		<div class="form">
+
+  <!-- For Registration FORM -->
+    <!-- <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+	</form> -->
+
+<!-- For Login FORM -->
+			<form class="login-form" action="login.php" method="post">
+			<input id="Uname" name="email" type="text" placeholder="E-mail"/>
+			<input id="UpassW" name="password" type="password" placeholder="Password"/>
+			<button name="login" type="submit" id="login_btn" value="Login">login</button>
+			<!-- <input name="login" type="submit" id="login_btn" value="Login"/><br>  -->
+			<p class="message">Not registered? <a href="register.php">Create an account</a></p>
+			</form>
+  		</div>
+	</div>
 
 		<?php
 			if(isset($_POST['login']))
@@ -75,7 +98,7 @@
 					}
 					else if($user_type=="Reviewer"){
 						$_SESSION['login_s'] = '2';
-						header('location:actors/reviewer/reviewerhomepage.php');
+						header('location:actors/reviewer/reviewerhomepagenew.php');
 					}
 					else if($user_type=="Author"){
 						$_SESSION['login_s'] = '3';
@@ -112,6 +135,7 @@
 		?>
 		
 	</div>
-	
+	<?php include "footer.html" ?></body>
+
 </body>
 </html>
