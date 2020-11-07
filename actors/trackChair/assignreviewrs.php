@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<h1> Assign reviewers for papers </h1>
+<link rel="stylesheet" href="../../css/main_style.css">
 <link rel="stylesheet" href="../../css/sty.css">
 </head>
   
@@ -33,7 +33,21 @@
 
 </style>
 
+
 <body style="background-color:#bdc3c7">
+
+<nav>
+    <ul>
+      <li><a href="trackchairhomepage.php">Back</a></li>
+    </ul>
+  </nav>
+
+ <center>
+    <h1> Assign reviewers for papers </h1>
+ </center>
+ 
+
+<br><br>
 
 <div id="main-wrapper">
 
@@ -53,7 +67,6 @@
 
      <input type="submit" value="Save">
      <input type="submit" value="cancel"><br><br>
-     <a href="trackchairhomepage.php"><button class="button home"> Back <buttton></a>
   </form>
  </div>
  </body>
