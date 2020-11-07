@@ -11,27 +11,45 @@
 	<title>Conference List</title>
 
 
- <link rel="stylesheet" href="../../css/mychanged.css">
+ <link rel="stylesheet" href="../../css/style.css">
  <link rel="stylesheet" href="../../css/main_style.css">
+ <link rel="stylesheet" href="../../css/style_footer.css">
 
+<!-- Added css to style tag to style table -->
 <style>
-body {
-  margin: 0;
+#papersDownloads {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
-.topnav input[type=text] {
-    float: right;
-    padding: 6px;
-    bord: none;
-    border-radius: 15px;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-  }
-   
+
+#papersDownloads td, #papersDownloads th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#papersDownloads tr:nth-child(even){background-color: #f2f2f2;}
+
+#papersDownloads tr:hover {background-color: #ddd;}
+
+#papersDownloads th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #5DADE2;
+  color: white;
+}
+a {
+  color: #5DADE2;
+}
+/* mouse over link */
+a:hover {
+  color: blue;
+}
 </style>
 
+
 </head>
-	
 <body>
 
 <nav>
@@ -44,7 +62,7 @@ body {
 
   <h2 align="center">Conference List</h2>
 
-	<table>
+	<table id="papersDownloads">
 	<tr>
         <th>ID</th>
 	   <th>Conference</th>
@@ -54,6 +72,8 @@ body {
 	   <th>Deadline</th>
 	   <th>Sponser details</th>
 	   <th>Submit a Paper</th>
+	   <th>Submit camera ready copy</th>
+
 
 
 	</tr>
@@ -82,7 +102,9 @@ body {
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
 			echo "<tr><td>". $row["id"] ."</td><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"] ."</td><td>" . $row["sponsor_details"] ."</td><td>";
-			echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/submit icon.PNG' height='25' width='25' /></a>";
+			echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />upload</a>";
+			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />upload</a></td>";
+
        
         }
 		echo "</table>";
@@ -101,5 +123,12 @@ body {
 	
 	
 <!-- </section> -->
+
+
+
+<!-- footer section -->
+<footer>
+    <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+  </footer> <!--end of footer section -->
 </body>
 </html>
