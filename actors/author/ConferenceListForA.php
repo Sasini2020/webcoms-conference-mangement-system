@@ -8,7 +8,7 @@
 <html>
 <head>
 
-	<title>Conference List</title>
+	<title>Conferences List</title>
 
 
  <link rel="stylesheet" href="../../css/style.css">
@@ -60,7 +60,7 @@ a:hover {
 
   <br><br>
 
-  <h2 align="center">Conference List</h2>
+  <h2 align="center">Conferences List</h2>
 
 	<table id="papersDownloads">
 	<tr>
@@ -103,7 +103,7 @@ a:hover {
 		while ($row = $result-> fetch_assoc()){
 			echo "<tr><td>". $row["id"] ."</td><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"] ."</td><td>" . $row["sponsor_details"] ."</td><td>";
 			echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />upload</a>";
-			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />upload</a></td>";
+			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit camera-ready paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />upload</a></td>";
 
        
         }
@@ -125,10 +125,7 @@ a:hover {
 <!-- </section> -->
 
 
+<?php include "../../footer.html" ?></body>
 
-<!-- footer section -->
-<footer>
-    <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
-  </footer> <!--end of footer section -->
 </body>
 </html>
