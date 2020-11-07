@@ -37,15 +37,34 @@
 }
 
 </style>
-<h1>Auto-genarate procceding</h1>
+<link rel="stylesheet" href="../../css/main_style.css">
 <link rel="stylesheet" href="../../css/sty.css">
 </head>
 
+<nav>
+    <ul>
+      <li><a href="publicationchairhomepage.php">Back</a></li>
+      
+    </ul>
+  </nav>
+
+  <br><br>
+
+
+<center>
+  <h1>Auto-genarate procceding</h1>
+
+</center>
+
+<br><br>
+
 <body>
     <div id="main-wrapper">
-    <a href="generate.php"><button class="button gen"> Generate<buttton></a>
-    
-    <a href="download.php"><button class="button down">Download<buttton></a>
+    <center>
+       <a href="generate.php"><button class="button gen"> Generate<buttton></a>
+      
+       <a href="download.php"><button class="button down">Download<buttton></a>
+    </center>
     </div> 
     
  </body>
