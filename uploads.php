@@ -15,7 +15,7 @@ if (isset($_POST['submit']))
         {
             // get last record id
             $sql = 'select max(id) as id from tbl_files';
-            $result = mysqli_query($con, $sql);
+            $result =mysqli_query($con, $sql);
             if (count($result) > 0)
             {
                 $row = mysqli_fetch_array($result);
