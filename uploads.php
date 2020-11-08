@@ -15,7 +15,7 @@ if (isset($_POST['submit']))
         {
             // get last record id
             $sql = 'select max(id) as id from tbl_files';
-            $result =mysqli_query($con, $sql);
+            $result = mysqli_query($con, $sql);
             if (count($result) > 0)
             {
                 $row = mysqli_fetch_array($result);
@@ -31,7 +31,7 @@ if (isset($_POST['submit']))
             move_uploaded_file($_FILES['file1']['tmp_name'],($path . $filename));
             
             // insert file details into database
-            $sql = "INSERT INTO tbl_files(filename, created) VALUES('$filename', '$created')";
+            $sql ="INSERT INTO tbl_files(filename, created) VALUES('$filename', '$created')";
             mysqli_query($con, $sql);
             header("Location: index1.php?st=success");
         }
