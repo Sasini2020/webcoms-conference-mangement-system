@@ -31,7 +31,7 @@ if (isset($_POST['submit']))
             move_uploaded_file($_FILES['file1']['tmp_name'],($path . $filename));
             
             // insert file details into database
-            $sql ="INSERT INTO tbl_files(filename, created) VALUES('$filename', '$created')";
+            $sql = "INSERT INTO tbl_files(filename, created) VALUES('$filename', '$created')";
             mysqli_query($con, $sql);
             header("Location: index1.php?st=success");
         }
