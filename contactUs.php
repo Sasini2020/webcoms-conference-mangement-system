@@ -29,7 +29,7 @@
   </div>
   
   <!--
-  <h2 style=" text-align:center">Our Team</h2>
+  <h2 style="text-align:center">Our Team</h2>
   <div class="row">
 
     <div class="column">
