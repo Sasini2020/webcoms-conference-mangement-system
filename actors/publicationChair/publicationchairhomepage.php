@@ -19,9 +19,7 @@
       <li><a href="publishcameracopy.php">Publish Camera ready copy guidelines</a></li>
       <li><a href="uploadcoversub.php">Upload Cover Pages and sub pages</a></li>
       <li><a href="viewcameracopy.php">View Camera-ready copy</a></li>
-      <li><a href="autoproceeding.php">Auto-generate proceeding</a></li>
-      
-
+      <li><a href="autoproceeding.php">Auto generate proceeding</a></li>
     </ul>
   </nav>
 
@@ -32,9 +30,7 @@
 	<div id="main-wrapper">
 		<center>
 			<h2>Publication Chair Home Page</h2>
-			<h3>Welcome
-				
-			</h3>
+			<h3> Welcome </h3>
 			<img src="../../imgs/webc.png" class="avatar"/>
 		</center>
 	   
