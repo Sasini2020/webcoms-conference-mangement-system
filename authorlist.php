@@ -109,7 +109,7 @@ li a:hover:not(.active) {
 	
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
-			echo "<tr><td>". $row[" id"] ."</td><td>". $row["fullname"] ."</td><td>". $row["university"] ."</td><td>". $row["contactdetails"] ."</td><td>";
+			echo "<tr><td>". $row["id"] ."</td><td>". $row["fullname"] ."</td><td>". $row["university"] ."</td><td>". $row["contactdetails"] ."</td><td>";
          //   echo "<button>Submit</button>";
         echo "<a href='view_authors.php?id=". $row['id'] ."' title='Action' ><span ></span>+</a>";
        
