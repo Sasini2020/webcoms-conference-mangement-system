@@ -19,7 +19,6 @@
    <h1>Publish guidelines for Camera ready copy Submission</h1>  
 
   </center>
-
 <br><br>
 
 
