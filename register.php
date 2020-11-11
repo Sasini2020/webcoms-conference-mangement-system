@@ -247,7 +247,8 @@
 			}
 		?>
 	</div>
-	<?php include "footer.html" ?></body>
+	
+	<h5 style="color:white; padding:20px; margin:0; text-align:center; background-color:#063247">WebCOMS @2020</h5>	
 
 </body>
 </html>
