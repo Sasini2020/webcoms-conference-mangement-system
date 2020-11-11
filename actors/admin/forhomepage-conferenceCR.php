@@ -12,7 +12,7 @@
 
  
 
-    <link rel="stylesheet" href="../../css/main_style.css">
+    <link rel= "stylesheet" href="../../css/main_style.css">
 	<link rel="stylesheet" href="../../css/style_footer.css">
 	<link rel="stylesheet" href="../../css/reg_form_style.css">
 </head>
