@@ -58,7 +58,7 @@
 
 .content-table tbody tr.active-row {
   font-weight: bold;
-  color: #009879;
+  color: #0 09879;
 }
 
 
