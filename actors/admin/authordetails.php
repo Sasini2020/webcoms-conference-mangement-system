@@ -13,89 +13,113 @@
 	<link rel="stylesheet" href="../../css/main_style.css">
 	<link rel="stylesheet" href="../../css/sty.css">
 
-	<!--
-	<style type "text/css">
-		table {
-			border-collapse: collapse;
-			width: 100%;
-			color: #1e1919;
-			font-family: monospace;
-			font-size: 25px;
-			text-align: left;
-		}
-		
+	<style>
 
-		th {
-			background-color: #6495ED;
-			color: white;
-		}
-		
-		tr:nth-child(even) {background-color: #f2f2f2}
-		ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-		background-color: #333;
-		}
+* {
+  font-family: sans-serif; /* Change your font family */
+}
 
-		li {
-		float: left;
-		}
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
 
-		li a {
-		display: block;
-		color: white;
-		text-align: center;
-		padding: 14px 16px;
-		text-decoration: none;
-		}
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
 
-		li a:hover:not(.active) {
-		background-color: #111;
-		}
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
 
-		.active {
-		background-color: #6495ED;
-		}
-		.logout_btn{
-			margin-top:10px;
-			background-color:#DC143C;
-			padding:5px;
-			border-radius:28px;
-			color:white;
-			width:10%;
-			text-align:center;
-			font-size:18px;
-			font-weight:bold;
-			margin-bottom:20px;
-		}
-	</style>
-	<link rel="stylesheet" href="css/sty.css">-->
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+.p {
+	color:white;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("try.jpg");
+  height: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+</style>
 </head>
 <body>
+<div class="hero-image"> 
 	
 	
-	<nav>
+<nav>
 		<ul>
-			<li><a href="adminhomepage.php">Back to Home page</a></li>
-			<!--<li><a class="active" href="index.php">WebCOMS</a></li>
-			<li><a href="conferences_view.php">Conferences</a></li>
+			<!--<li><a class="active" href="index.php">WebCOMS</a></li>-->
+			<li><a href="adminhomepage.php">Home</a></li>
+			<li><a href="requested_conferences.php">Requested conferences</a></li>
+			<li><a href="conference_list.php">Conference List</a></li>
 			<li><a href="authordetails.php">Author details</a></li>
-                        <li><a href="reviewercheck.php">Reviewer Comment</a></li>
-			<li><a href="help.html">Help</a></li>
-			<li><a href="contactUs.html">Contact Us</a></li>-->	
-		</ul>
-		</br></br>
-	</nav>
+			<li><a href="conferenceChairRegistration.php">Conference Chair Registration</a></li>
+			<li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+			&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+			&ensp;&ensp;&ensp;&ensp;&ensp;</li>
+			<li><a href="../../index.php">Log Out</a></li>
+		
 
-	<table>
+	</nav>
+	<div class="hero-text">
+</br>
+    <h5 style="font-size:30px">Author Details</h5>
+</div>
+<br><br><br><br><br><br><br><br><br><br>
+<center>
+	<table class="content-table">
+	<thead>
 		<tr>
 		<th>Full name</th>
 		<th>Gender</th>
 		<th>Email</th>
+		<th></th>
 		</tr>
-	
+	</thead>	
+</center>	
 	<?php
 	
 	 if(isset($_POST['back']))
@@ -126,10 +150,9 @@
 	</table>
 
 	<br/>	
-	<form class="myform" action="authordetails.php" method="post">
-		<input name="back" type="submit" id="back_btn" value="Back"/><br>		
-	</form>
-	
-	
+
+	</div>
+	</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br><br><br><br><br><br><br><br><br><br><br>
+	<h5 style="color:white; padding:20px; margin:0; text-align:center; background-color:#063247">WebCOMS @2020</h5>
 </body>
 </html>
