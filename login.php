@@ -77,6 +77,8 @@
 			{
 				$email=$_POST['email'];
 				$password=$_POST['password'];
+				//$_SESSION['email'] = $email;
+				$_SESSION['email']=$email;
 				
 				$encrypted_password = md5($password);
 				
@@ -90,7 +92,9 @@
 				if(mysqli_num_rows($select_query)>0)
 				{
 					// valid
-					//$_SESSION['email']= $email;
+					$_SESSION['email']= $email;
+					
+					//$_SESSION['userid'] = $id
 
 					if($user_type=="Admin"){
 						$_SESSION['login_s'] = '1';
@@ -135,7 +139,9 @@
 		?>
 		
 	</div>
-	<?php include "footer.html" ?></body>
+	</br>
+	<h5 style="color:white; padding:20px; margin:0; text-align:center; background-color:#063247">WebCOMS @2020</h5>	
+	</body>
 
 </body>
 </html>
