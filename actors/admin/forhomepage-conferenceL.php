@@ -47,7 +47,7 @@
 }
 
 .content-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+  background-color: # f3f3f3;
 }
 
 .content-table tbody tr:last-of-type {
