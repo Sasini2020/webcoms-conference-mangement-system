@@ -23,10 +23,10 @@
   </nav>
   
   <div class="about-section">
-    <h1>Help Page</h1><br />
-    <h2>WebCOMS</h2>
-    <p>Some text about who we are and what we do.</p>
-    <p>Resize the browser window to see that this page is responsive by the way.</p>
+    <h1>Help </h1><br />
+    </br></br></br></br>
+<p>webcoms@gmail.com</p>
+  
   </div>
 
   <!--
@@ -71,6 +71,9 @@
       </div>
     </div>
   </div>-->
+
+  </br></br></br></br></br></br></br></br></br>
+	<h5 style="color:white; padding:20px; margin:0; text-align:center; background-color:#063247">WebCOMS @2020</h5>	
 
 </body>
 </html>
