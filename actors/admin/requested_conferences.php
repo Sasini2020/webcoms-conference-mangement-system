@@ -76,7 +76,7 @@ body, html {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("try.jpg");
   height: 30%;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no -repeat;
   background-size: cover;
   position: relative;
 }
