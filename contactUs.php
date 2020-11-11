@@ -23,9 +23,13 @@
   </nav>
 
   <div class="about-section">
-    <h1>Conatct Us Page</h1>
-    <p>Some text about who we are and what we do.</p>
-    <p>Resize the browser window to see that this page is responsive by the way.</p>
+    <h1>Conatct Us </h1>
+    </br></br></br></br>
+    <p>J.R.D.D.G.Dissanayake </br>
+B.G.S.S.Sandamali </br>
+B.N.N.Raviska </br>
+H.R.M.Weerasinghe </br></p>
+
   </div>
   
   <!--
@@ -84,6 +88,7 @@
       </div>
     </div>
   </div>-->
-
+  </br></br></br></br></br></br></br></br></br></br></br></br>
+	<h5 style="color:white; padding:20px; margin:0; text-align:center; background-color:#063247">WebCOMS @2020</h5>	
 </body>
 </html>
