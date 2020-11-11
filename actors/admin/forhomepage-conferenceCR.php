@@ -36,7 +36,7 @@
 			<label for="fname">Full Name:</label><br>
 			<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 			
-			<label>Gender: </label><br>
+			<label>Gender:</label><br>
 			<input id="Gmale" type="radio" name="gender" value="male" checked required> 
 			<label for="Gmale" class="light">Male</label><br>
 			<input id="GFemale" type="radio" name="gender" value="female" required>
