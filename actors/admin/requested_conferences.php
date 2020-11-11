@@ -13,7 +13,7 @@
 
   <title>Requested Conferences List</title>
 
-  <link rel=" stylesheet" href="../../css/table_style.css">
+  <link rel="stylesheet" href="../../css/table_style.css">
 	<link rel="stylesheet" href="../../css/main_style.css">
 
   <style>
