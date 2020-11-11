@@ -83,7 +83,7 @@
           <th>End date</th>
           <th>Deadline</th>
           <th>Sposer details</th>
-          <th> Conference Chair</th>
+          <th>Conference Chair</th>
       	</tr>
       </thead>
 
