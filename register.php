@@ -7,114 +7,36 @@
 	<head>
 		<title>Registration</title>
 
-		<link rel="stylesheet" href="css/main_style.css">
+		<link rel="stylesheet" href="css/nav_footer_styles.css">
 		<!-- <link rel="stylesheet" href="css/sty.css"> -->
-		<link rel="stylesheet" href="css/style_footer.css">
 		<link rel="stylesheet" href="css/reg_form_style.css">
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<!--<link rel="stylesheet" href="css/sty.css">
-		<link rel="stylesheet" href="css/styleNavbar.css">
-
-		<style>
-			body {
-			margin: 0;
-			}
-
-			ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			width: 25%;
-			background-color: #f1f1f1;
-			position: fixed;
-			height: 100%;
-			overflow: auto;
-			}
-
-			li a {
-			display: block;
-			color: #000;
-			padding: 8px 16px;
-			text-decoration: none;
-			}
-
-			li a.active {
-			background-color: #6495ED;
-			color: white;
-			}
-
-			li a:hover:not(.active) {
-			background-color: #555;
-			color: white;
-			}
-		</style>
-		-->
+		
 </head>
 
 <body>
 
 	<!--Navigation bar -->
 	<nav>
-		<ul>
-		<li><a class="active" href="index.php">WebCOMS</a></li>
-			<li><a href="login.php">Login</a></li>
-			<li><a href="register.php">Register</a></li>
-			<li><a href="help.php">Help</a></li>
-			<li><a href="contactUs.php">Contact Us</a></li>
-		</ul>
-		<br /><br />
-	</nav>
+    <div class="logo">Web-COMS</div>
+      <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
+      <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a class="active" href="register.php">Register</a></li>
+        <li><a href="help.php">Help</a></li>
+        <li><a href="About.php">About</a></li>
 
+      </ul>
+    </nav>
 	<!--Registration form-->
 	<div id="main-wrapper">
-		<!-- <center>
-			<h2>Registration Form</br><br><br></h2>	
-		</center>
-	
-		<form class="myform" action="register.php"method="post">
-			<label for="fname"><b>Full Name:</b></label><br>
-			<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
-			
-			<label><b>Gender:</b></label>
-			<input id="Gmale" type="radio" class="radiobtns" name="gender" value="male" checked required> 
-			<label for="Gmale">Male</label>
-			<input id="GFemale" type="radio" class="radiobtns" name="gender" value="female" required>
-			<label for="GFemale">Female</label><br>
-			
-			<label for="actor"><b>User Role: </b></label>
-				<select id="actor" class="" name="usertype">
-					<option value="Author">Author</option>
-					<option value="Reviewer">Reviewer</option>
-					<option value="TrackChair">Track Chair</option>
-					<option value="PublicationChair">Publication Chair</option>
-				</select><br>
-			
-			<label for="Email"><b>Email:</b></label><br>
-			<input id="Email" name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
-
-			<label for="University"><b>University:</b></label><br>
-			<input id="University" name="University" type="text" class="inputvalues" placeholder="Type your University" required/><br>
-
-			<label for="ContactDetails"><b>Contact Details:</b></label><br>
-			<input id="ContactDetails" name="ContactDetails" type="text" class="inputvalues" placeholder="Type your Contact Details" required/><br>
-
-			<label for="ContactLinks"><b>Contact Links:</b></label><br>
-			<input id="ContactLinks" name="ContactLinks" type="text" class="inputvalues" placeholder="Type your Contact Links" required/><br>
-			
-			<label for="passW"><b>Password:</b></label><br>
-			<input id="passW" name="password" type="password" class="inputvalues" placeholder="Your password" required/><br>
-			
-			<label for="CpassW"><b>Confirm Password:</b></label><br>
-			<input id="CpassW" name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>
-			
-			<input name="submit_btn" type="submit" id="signup_btn" value="Sign Up"/><br>
-			Here is a comment<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>-->
-		<!-- </form> --> 
 		
-		<!-- <center>
-			<h2>Registration Form</br><br><br></h2>	
-		</center>
-	 -->
 		<form action="register.php"method="post">
 
 			<br><h1>Register</h1>
@@ -158,7 +80,7 @@
 			<input id="CpassW" name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>
 		</fieldset>
 	
-			<button name="submit_btn" type="submit" id="signup_btn" value="Sign Up">Register</button<br>
+			<button name="submit_btn" type="submit" id="signup_btn" value="Sign Up">Register</button><br>
 			<!--<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>-->
 		</form>
 
@@ -247,8 +169,10 @@
 			}
 		?>
 	</div>
-	
-	<h5 style="color:white; padding:20px; margin:0; text-align:center; background-color:#063247">WebCOMS @2020</h5>	
-
+<!-- Footer section -->
+<div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+        </div>
 </body>
+
 </html>
