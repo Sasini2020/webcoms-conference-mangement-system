@@ -11,7 +11,7 @@
 		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 		<!-- <link rel="stylesheet" href="css/main_style.css"> -->
 		<link rel="stylesheet" href="css/nav_footer_styles.css">
-		<link rel="stylesheet" href="css/style_login_form.css">
+		<link rel="stylesheet" href="css/reg_form_style.css">
 
 	</head>
 
@@ -36,43 +36,19 @@
 
 	<!-- Login Form -->
 	<div id="main-wrapper">
-		<!-- <center>
-			<h2>Login Form</h2>
-			<img src="imgs/webc.png" class="avatar"/>
-		</center> -->
-	
-		<!-- <form class="register-form" action="login.php" method="post">
-			<label for="Uname"><b>Email:</b></label><br>
-			<input id="Uname" name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
-			
-			<label for="UpassW"><b>Password:</b></label><br>
-			<input id="UpassW" name="password" type="password" class="inputvalues" placeholder="Type your password" required/><br>
-			
-			<input name="login" type="submit" id="login_btn" value="Login"/><br>
-			<p class="message">Not registered? <a href="register.php">Create an account</a></p>
-		</form> -->
-	<div class="login-page">
-  		<div class="form">
+		
+		<form action="login.php" method="post" class="myform" >
+			<br><h1>Log In</h1>
+			<fieldset>
+				<input id="Uname" name="email" type="text" placeholder="E-mail"/><br>
+				<input id="UpassW" name="password" type="password" placeholder="Password"/>
 
-  <!-- For Registration FORM -->
-    <!-- <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-	</form> -->
 
-<!-- For Login FORM -->
-			<form class="login-form" action="login.php" method="post">
-			<input id="Uname" name="email" type="text" placeholder="E-mail"/><br>
-			<input id="UpassW" name="password" type="password" placeholder="Password"/>
 			<button name="login" type="submit" id="login_btn" value="Login">login</button>
-			<!-- <input name="login" type="submit" id="login_btn" value="Login"/><br>  -->
-			<p class="message">Not registered? <a href="register.php">Create an account</a></p>
-			</form>
+			<p style="text-align:center;" class="message">Not registered? <a style="text-decoration:none;color:dodgerblue" href="register.php">Create an account</a></p>
+			</fieldset>
+		</form>
   		</div>
-	</div>
 
 		<?php
 			if(isset($_POST['login']))
