@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <title>Help</title>
-    <link rel="stylesheet" href="css/about_home_styles.css">
+    <link rel="stylesheet" href="css/about_help_styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
