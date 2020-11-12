@@ -1,10 +1,103 @@
+<?php
+	session_start();
+    if($_SESSION['login_s'] != '6'){
+        header('location:../../login.php');
+    }
+    require '../../dbconfig/config.php';
+?>
+
+<?php
+    
+$error1 = array();
+$errors2=array();
+$errors3=array();
+
+if (isset($_POST['submit'])) {
+	// submitt button is clicked
+
+	
+  $file_name=$_FILES['template']['name'];
+  $file_type=$_FILES['template']['type'];
+	$file_size=$_FILES['template']['size'];
+  $temp_name=$_FILES['template']['tmp_name'];
+  $file_name_cover=$_FILES['coverpage']['name'];
+  $file_type_cover=$_FILES['coverpage']['type'];
+	$file_size_cover=$_FILES['coverpage']['size'];
+  $temp_name_cover=$_FILES['coverpage']['tmp_name'];
+  $file_name_sub=$_FILES['subpage']['name'];
+	$file_type_sub=$_FILES['subpage']['type'];
+	$file_size_sub=$_FILES['subpage']['size'];
+	$temp_name_sub=$_FILES['subpage']['tmp_name'];
+  
+  $p_Email=$_SESSION['p_email'];
+  
+
+
+	
+  $upload_to ='pubuploads/';
+  $upload_to ='pubuploads/';
+  $upload_to ='pubuploads/';
+  
+// checking file size
+if ($file_size > 500000) {
+  $errors1[] = 'File size should be less than 500kb.';
+}else if($file_size_cover > 500000){
+
+  $errors2[] = 'File size should be less than 500kb.';
+}else if($file_size_sub > 500000){
+
+  $errors3[] = 'File size should be less than 500kb.';
+
+}
+
+if (empty($errors1)) 
+ {
+  $file_uploaded = move_uploaded_file($temp_name, $upload_to . $file_name);
+ }else if(empty($errors2))
+   {
+     $file_uploaded = move_uploaded_file($temp_name_cover, $upload_to . $file_name_cover);
+      }else if(empty($errors3))
+       {
+         $file_uploaded = move_uploaded_file($temp_name_sub, $upload_to . $file_name_sub);
+       }
+	
+
+	
+  
+$sql = "INSERT INTO pages (template,coverpage,subpage,emailpubchair) VALUES ('$file_name','$file_name_cover','$file_name_sub','$p_Email')";
+       
+$query_run = mysqli_query($con,$sql);
+						
+				if($query_run)
+					{
+						echo '<script type="text/javascript"> alert("your pages save") </script>';
+					}
+          else
+					{
+						echo '<script type="text/javascript"> alert("'.mysqli_error($con).'") </script>';
+					}
+
+
+
+
+if (mysqli_query($con, $sql)) {
+    // echo "File uploaded successfully";
+    echo '<script type="text/javascript"> alert("Your paper was submitted successfully!!") </script>';
+
+}
+}
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="../../css/main_style.css">
 <link rel="stylesheet" href="../../css/sty.css">
 </head>
-
  
 <nav>
     <ul>
@@ -15,28 +108,75 @@
 
   <br><br>
 
+
  <center>
    <h1>Upload cover pages and Sub Pages </h1>  
 
   </center>
 <br><br>
-
+<style>
+    .errors1 { color: red; margin-bottom: 20px; }
+    .errors2 { color: red; margin-bottom: 20px; }
+    .errors3 { color: red; margin-bottom: 20px; }
+	</style>
 
 <body>
 
-   <div id="main-wrapper">
-       <h3> Select File </h3>
+    <div id="main-wrapper">
+       <h2> Select File </h3>
+        <br><br>
+       
+ <?php 
+		          	if (!empty($errors1)) {
+			            	echo '<div class="errors1">';
+				          echo '<b>template not uploaded. Check following errors:</b><br>';
+				          foreach ($errors1 as $error) {
+				            	echo '- ' . $error;
+			            	}
+				           echo '</div>';
+      }else if(!empty($errors2))
+      {
+        echo '<div class="errors2">';
+				          echo '<b>coverpage not uploaded. Check following errors:</b><br>';
+				          foreach ($errors2 as $error) {
+				            	echo '- ' . $error;
+			            	}
+				           echo '</div>';
 
-      <form action="uploadcoversub.php" name="file" enctype="multipart/form-data">
-          <input type="file" name="file" id="">
-          <button type="submit" name="submit">Upload</button>
+      }else if(!empty($errors3)){
+        echo '<div class="errors3">';
+        echo '<b>subpage not uploaded. Check following errors:</b><br>';
+        foreach ($errors3 as $error) {
+            echo '- ' . $error;
+          }
+         echo '</div>';
 
+      }
+
+
+ ?>
+
+
+
+		
+      <form action="uploadcoversub.php" method="post" enctype="multipart/form-data">
+          <h3>Upload template </h2>
+          <input type="file" name="template" id="" >
+          <h3>Upload coverpage </h2>
+          <input type="file" name="coverpage" id="">
+          <h3>Upload subpage </h2>
+          <input type="file" name="subpage" id="">
          
+          <br>
+          <button type="submit" name="submit">Upload</button>
+      </form>
+      <?php 
+			if (isset($file_uploaded)) {
+        echo '<h3>Uploaded File</h3>';
+			}
 
-
-
-
-
+		 ?>
+     
 
     </div>
         
