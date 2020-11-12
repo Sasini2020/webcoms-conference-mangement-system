@@ -95,8 +95,8 @@ if (mysqli_query($con, $sql)) {
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="../../css/style.css">
 <link rel="stylesheet" href="../../css/main_style.css">
-<link rel="stylesheet" href="../../css/sty.css">
 </head>
  
 <nav>
@@ -123,9 +123,8 @@ if (mysqli_query($con, $sql)) {
 <body>
 
     <div id="main-wrapper">
-       <h2> Select File </h3>
-        <br><br>
-       
+    <div class="row">
+    
  <?php 
 		          	if (!empty($errors1)) {
 			            	echo '<div class="errors1">';
@@ -160,6 +159,11 @@ if (mysqli_query($con, $sql)) {
 
 		
       <form action="uploadcoversub.php" method="post" enctype="multipart/form-data">
+      <center>
+      <h2 style="color:#41BBB0;">Select File</h2>
+       
+        <br><br>
+       </center>
           <h3>Upload template </h2>
           <input type="file" name="template" id="" >
           <h3>Upload coverpage </h2>
@@ -168,8 +172,10 @@ if (mysqli_query($con, $sql)) {
           <input type="file" name="subpage" id="">
          
           <br>
-          <button type="submit" name="submit">Upload</button>
+          <button type="submit" id="save_btn" name="submit">Upload</button>
+          <!--<button type="cancel" onclick="javascript:window.location='uploadcoversub.php';">Cancel</button>-->
       </form>
+
       <?php 
 			if (isset($file_uploaded)) {
         echo '<h3>Uploaded File</h3>';
@@ -179,6 +185,6 @@ if (mysqli_query($con, $sql)) {
      
 
     </div>
-        
+    </div>
  </body>
 </html>
