@@ -17,7 +17,7 @@
               <i class="fas fa-bars"></i>
             </label>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a class="active" href="About.php">About</a></li>
                 <li><a href="help.php">Help</a></li>
             </ul>
