@@ -8,13 +8,10 @@
 	<head>
 		<title>Login</title>
 
-		<!--<link rel="stylesheet" href="css/sty.css">
-		<link rel="stylesheet" href="css/mychanged.css">
-		<link rel="stylesheet" href="css/styleNavbar.css">-->
-
-		<link rel="stylesheet" href="css/main_style.css">
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<!-- <link rel="stylesheet" href="css/main_style.css"> -->
+		<link rel="stylesheet" href="css/nav_footer_styles.css">
 		<link rel="stylesheet" href="css/style_login_form.css">
-		<link rel="stylesheet" href="css/style_footer.css">
 
 	</head>
 
@@ -22,12 +19,17 @@
 	
 	<!--Navigation bar -->
 	<nav>
+	<div class="logo">Web-COMS</div>
+      <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
 		<ul>
-			<li><a class="active" href="index.php">WebCOMS</a></li>
-			<li><a href="login.php">Login</a></li>
+			<li><a href="index.php">Home</a></li>
+			<li><a class="active" href="login.php">Login</a></li>
 			<li><a href="register.php">Register</a></li>
 			<li><a href="help.php">Help</a></li>
-			<li><a href="contactUs.php">Contact Us</a></li>
+			<li><a href="About.php">About</a></li>
 		</ul>
 		<br /><br />
 	</nav>
@@ -63,7 +65,7 @@
 
 <!-- For Login FORM -->
 			<form class="login-form" action="login.php" method="post">
-			<input id="Uname" name="email" type="text" placeholder="E-mail"/>
+			<input id="Uname" name="email" type="text" placeholder="E-mail"/><br>
 			<input id="UpassW" name="password" type="password" placeholder="Password"/>
 			<button name="login" type="submit" id="login_btn" value="Login">login</button>
 			<!-- <input name="login" type="submit" id="login_btn" value="Login"/><br>  -->
@@ -77,8 +79,6 @@
 			{
 				$email=$_POST['email'];
 				$password=$_POST['password'];
-				//$_SESSION['email'] = $email;
-				$_SESSION['email']=$email;
 				
 				$encrypted_password = md5($password);
 				
@@ -92,9 +92,7 @@
 				if(mysqli_num_rows($select_query)>0)
 				{
 					// valid
-					$_SESSION['email']= $email;
-					
-					//$_SESSION['userid'] = $id
+					//$_SESSION['email']= $email;
 
 					if($user_type=="Admin"){
 						$_SESSION['login_s'] = '1';
@@ -139,9 +137,10 @@
 		?>
 		
 	</div>
-	</br>
-	<h5 style="color:white; padding:20px; margin:0; text-align:center; background-color:#063247">WebCOMS @2020</h5>	
-	</body>
-
+     
+    <!-- Footer section -->
+	<div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+        </div>
 </body>
 </html>
