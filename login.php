@@ -117,7 +117,7 @@
 					}
 					else if($user_type=="PublicationChair"){
 						$_SESSION['login_s'] = '6';
-						$_SESSION['c_email'] = $email;
+						$_SESSION['p_email'] = $email;
 						header('location:actors/publicationChair/publicationchairhomepage.php');
 					}
 					else{
