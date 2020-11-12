@@ -1,79 +1,91 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Help</title>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Help</title>
+    <link rel="stylesheet" href="css/about_home_styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
 
-  <link rel="stylesheet" href="css/H_and_C_style.css">
-  <link rel="stylesheet" href="css/main_style.css">
+    <nav>
+      <div class="logo">Web-COMS</div>
+      <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="About.php">About</a></li>
+                <li><a class="active" href="#">Help</a></li>
+            </ul>
+    </nav>
+    <!-- <br><br><br><br><br><br><br><br><br> -->
 
-</head>
+<!-- Start of the Top content -->
+    <section class="content">
+      <section>Web-COMS Conference Management System</section><br>
+      <p>Web-coms can cater to your multiple requirements proficiently.
+         Web-coms is a solution that aids in the organization of 
+         conferences. With this unique software, you can easily manage
+          members of a conference management system on one platform.
+        <br><br>"We are incredibly responsive to your requests and value your questions."</p>
+    </section>
+<!-- End of Top content -->
 
-<body>
+    <section class="middle">
+        <h1>Support</h1>
+        <p>Web-COMS provides free email based support Monday through Friday, 9am to 5pm Pacific Time.
+             Please contact <a href="#">support@web-coms.org</a> for support issues. Since Web-COMS is developed, operated
+              and managed by a small team, support is limited. However, we will do our best to respond 
+              to issues in a timely manner (usually within 24 hours). We prefer if you can arrange 
+              abstract submission, paper submission and reviewer submission deadlines to fall on Tuesday
+              , Wednesday or Thursday in order to ensure quick response from the Web-COMS team.</p>
+    </section>
 
-  <!--Navigation bar-->
-  <nav>
-    <ul>
-      <li><a class="active" href="index.php">WebCOMS</a></li>
-      <li><a href="login.php">Login</a></li>
-      <li><a href="register.php">Register</a></li>
-      <li><a href="help.php">Help</a></li>
-      <li><a href="contactUs.php">Contact Us</a></li>
-    </ul>
-    <br /><br />
-  </nav>
-  
-  <div class="about-section">
-    <h1>Help </h1><br />
-    </br></br></br></br>
-<p>webcoms@gmail.com</p>
-  
-  </div>
+<!-- Start of the bottom section -->
+    <section class="footer-clearfix">
+          <h1>Contact Us</h1>
 
-  <!--
-  <h2 style="text-align:center">Our Team</h2>
-  <div class="row">
-    <div class="column">
-      <div class="card">
-        <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
-        <div class="container">
-          <h2>Jane Doe</h2>
-          <p class="title">CEO & Founder</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>jane@example.com</p>
-          <p><button class="button">Contact</button></p>
+            <div class="footcol">
+                <p><br>Mr.J.R.D.D.G.Dissanayake
+                    <br>Phone : +94 -00- 0000000
+                    <br>E-mail: 2018cs@ucsc.cmb.ac.lk
+                    <br></p>
+            </div><!--footcol-->
+                
+            <div class="footcol">
+               <p><br>Ms. B.G.S.S.Sandamali
+                <br>Phone : +94 -11- 1111111
+                <br> E-mail: 2018cs@ucsc.cmb.ac.lk
+                <br><br></p>
+            </div><!--footcol-->
+
+            <div class="footcol">
+                <p><br>Mr. B.N.N.Raviska
+                    <br>Phone : +94 -22- 2222222
+                    <br>E-mail: 2018cs@ucsc.cmb.ac.lk
+                    <br></p>
+               
+            </div><!--footcol-->
+
+            <div class="footcol">
+             <p><br>Mr. H.R.M.Weerasinghe
+                <br>Phone : +94 -33- 3333333
+                <br>E-mail: 2018cs@ucsc.cmb.ac.lk
+                <br></p>
+            </div><!--footcol-->
+          
+        </section><!-- End of the bottom section -->
+
+    <br><br>
+        
+    <!-- Footer section -->
+        <div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
         </div>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
-        <div class="container">
-          <h2>Mike Ross</h2>
-          <p class="title">Art Director</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>mike@example.com</p>
-          <p><button class="button">Contact</button></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <img src="/w3images/team3.jpg" alt="John" style="width:100%">
-        <div class="container">
-          <h2>John Doe</h2>
-          <p class="title">Designer</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>john@example.com</p>
-          <p><button class="button">Contact</button></p>
-        </div>
-      </div>
-    </div>
-  </div>-->
-
-  </br></br></br></br></br></br></br></br></br>
-	<h5 style="color:white; padding:20px; margin:0; text-align:center; background-color:#063247">WebCOMS @2020</h5>	
 
 </body>
 </html>
