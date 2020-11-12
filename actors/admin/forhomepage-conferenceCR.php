@@ -47,7 +47,7 @@
 		<fieldset>
       	<legend><span class="number">2</span>Login Information</legend><br>
 			<label for="Email">Email:</label><br>
-			<input id="Email" name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
+			<input id="Email" name ="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
 			
 			<label for="passW">Password:</label><br>
 			<input id="passW" name="password" type="password" class="inputvalues" placeholder="Your password" required/><br>
