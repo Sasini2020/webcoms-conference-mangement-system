@@ -173,7 +173,7 @@ if (mysqli_query($con, $sql)) {
          
           <br>
           <button type="submit" id="save_btn" name="submit">Upload</button>
-          <!--<button type="cancel" onclick="javascript:window.location='uploadcoversub.php';">Cancel</button>-->
+          <button type="cancel" onclick="javascript:window.location='uploadcoversub.php';">Cancel</button>
       </form>
 
       <?php 
