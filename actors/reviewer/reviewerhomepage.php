@@ -16,6 +16,7 @@
     <ul>
       <li><a href="ConferenceListForR.php">Conference List</a></li>
       <li><a href="paperslist.php">View papers</a></li>
+      <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
     </ul>
   </nav>
@@ -23,19 +24,7 @@
   <br><br>
 
     <p> Welcome Reviewer </p><br><br>
-
-    <div>
-        <form action="reviewerhomepage.php" method="post">
-            <input type="submit" name="logout" value="Log out" />
-        </form>
-
-        <?php
-            if(isset($_POST['logout'])){
-                session_destroy();
-                header('location:../../index.php');
-            }
-        ?>
-    </div>  
+ 
 </body>
     
 </html>

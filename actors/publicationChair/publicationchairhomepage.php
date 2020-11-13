@@ -20,6 +20,7 @@
       <li><a href="uploadcoversub.php">Upload Cover Pages and sub page</a></li>
       <li><a href="viewcameracopies.php">View Camera-ready copy</a></li>
       <li><a href="autoproceeding.php">Auto generate proceeding</a></li>
+	  <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
     </ul>
   </nav>
 
@@ -34,18 +35,6 @@
 			<img src="../../imgs/webc.png" class="avatar"/>
 		</center>
 	   
-		<form class="myform" action="publicationchairhomepage.php" method="post">
-			<input name="logout" type="submit" id="logout_btn" value="Log Out"/><br>
-			
-		</form>
-		
-		<?php
-			if(isset($_POST['logout']))
-			{
-				session_destroy();
-				header('location:../../index.php');
-			}
-		?>
 	</div>
 			 
 </body>

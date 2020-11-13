@@ -58,10 +58,7 @@ body, html {
 			<li><a href="conference_list.php">Conference List</a></li>
 			<li><a href="authordetails.php">Author details</a></li>
 			<li><a href="conferenceChairRegistration.php">Conference Chair Registration</a></li>
-			<li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-			&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-			&ensp;&ensp;&ensp;&ensp;&ensp;</li>
-			<li><a href="../../index.php">Log Out</a></li>
+			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
 
 	</nav>

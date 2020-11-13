@@ -70,7 +70,7 @@ body, html {
 }
 
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("try.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../imgs/try.jpg");
   height: 30%;
   background-position: center;
   background-repeat: no-repeat;
@@ -100,10 +100,7 @@ body, html {
 			<li><a href="conference_list.php">Conference List</a></li>
 			<li><a href="authordetails.php">Author details</a></li>
 			<li><a href="conferenceChairRegistration.php">Conference Chair Registration</a></li>
-			<li>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-			&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-			&ensp;&ensp;&ensp;&ensp;&ensp;</li>
-			<li><a href="../../index.php">Log Out</a></li>
+			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
 
 	</nav>

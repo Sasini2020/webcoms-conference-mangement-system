@@ -60,6 +60,7 @@
       <li><a href="viewConferencesForCC.php">View Conferences</a></li>
       <li><a href="#conferences_view.php">Define notification templates</a></li>
       <li><a href="#authordetails.php">Bulk Upload User Details</a></li>
+      <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
       <!--<li><a href="#help.html">Send messages</a></li>
       <li><a href="#contactUs.html">Add Conference Guideline Details</a></li>
       <li><a href="index.php">Log Out</a></li>-->
@@ -68,19 +69,6 @@
 
   <br>
   <br>
-
-  <div>
-    <form action="conferencechairhomepage.php" method="post">
-      <input type="submit" name="logout" value="Log out" />
-    </form>
-
-    <?php
-      if(isset($_POST['logout'])){
-        session_destroy();
-        header('location:../../index.php');
-       }
-    ?>
-  </div>
 
   <br><br>
 

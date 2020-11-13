@@ -19,7 +19,7 @@
       <li><a href="firstround.php">First-round paper evaluation</a></li>
       <li><a href="paperaccept.php">Paper Acceptance</a></li>
       <li><a href="assignreviewrs.php">Assign Reviewers </a></li>
-      
+      <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
      
     </ul>
   </nav>
@@ -35,18 +35,6 @@
 			<img src="../../imgs/webc.png" class="avatar"/>
 		</center>
 		
-		<form class="myform" action="trackchairhomepage.php" method="post">
-			<input name="logout" type="submit" id="logout_btn" value="Log Out"/><br>
-			
-		</form>
-		
-		<?php
-			if(isset($_POST['logout']))
-			{
-				session_destroy();
-				header('location:../../index.php');
-			}
-		?>
 	</div>
 </body>
 </html>
