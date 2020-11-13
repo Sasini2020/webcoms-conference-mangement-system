@@ -12,49 +12,55 @@
 <head>
 
 	<title>Create a new conference</title>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-	<link rel="stylesheet" href="../../css/main_style.css">
-	<link rel="stylesheet" href="../../css/sty.css">
+	<link rel="stylesheet" href="../../css/reg_form_style.css">
+	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
 
 
 </head>
 <body>
 
 	<nav>
+	<div class="logo">Web-COMS</div>
+      <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
 		<ul>
+			<li><a class="active" href="create_conference.php">Create a Conference</a></li>
 			<li><a href="conferencechairhomepage.php">Back to Home</a></li>
 			
 		</ul>
 	</nav>
 
-	<br><br>
-	
+	<br><br><br>
 	<div id="main-wrapper">
-		<center>
-			<h2>Create a Conference</h2>
-			<img src="../../imgs/webc.png" class="avatar"/>
-		</center>
-	
-		<form class="myform" action="create_conference.php"method="post">
-			<label><b>Conference Name:</b></label><br>
+		
+		<form action="create_conference.php"method="post">
+			<br><h1>Create a Conference</h1>
+
+			<label>Conference Name:</b></label><br>
 			<input name="name" type="text" class="inputvalues" placeholder="Type your conference's title" required/><br>
 			
-			<label><b>Venue:</b></label><br>
+			<label>Venue:</b></label><br>
 			<input name="venue" type="text" class="inputvalues" placeholder="Venue" required/><br>
 			
-			<label ><b>Start date:</b></label><br>
-			<input name="start_date" required type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2020-10-15" required/><br>
+			<label >Start date:</b></label><br>
+			<input name="start_date" required type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2020-12-15" required/><br>
 			
-			<label><b>End date:</b></label><br>
+			<label>End date:</b></label><br>
 			<input name="end_date" type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2021-01-15" required/><br>
 			
-			<label><b>Dead line:</b></label><br>
+			<label>Dead line:</b></label><br>
 			<input name="deadline" type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2021-02-15" required/><br>
 			
-			<label><b>Sponsor/s details:</b></label><br>
+			<label>Sponsor/s details:</b></label><br>
 			<input name="sponsor_details" type="text" class="inputvalues" cols="30" placeholder="Sponsor's details" required/><br>
 
-			<input name="create_btn" type="submit" id="register_btn" value="CREATE"/><br>
+			<!-- <input name="create_btn" type="submit" id="register_btn" value="CREATE"/><br> -->
+			<button name="create_btn" type="submit" id="register_btn" value="CREATE">Create</button><br>
+
 			<!--<a href="conferencechairhomepage.php"><input type="button" id="back_btn" value="Back"/></a>-->
 		</form>
 		
@@ -77,7 +83,7 @@
 						
 				if($query_run)
 					{
-						echo '<script type="text/javascript"> alert("Your Conference Created..Admin will Inform you more details") </script>';
+						echo '<script type="text/javascript"> alert("Your conference was created..Admin will inform you more details") </script>';
 					}
 				else
 					{
@@ -86,5 +92,10 @@
 			}			
 		?>
 	</div>
+	<!-- Footer section -->
+	<div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+         </div>
 </body>
+
 </html>
