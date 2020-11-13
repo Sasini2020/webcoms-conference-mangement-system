@@ -10,14 +10,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+   
+    <title>Upload a reseach paper</title>
 
-  <!-- paste   here  ../../css/ -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="../../css/reg_form_style.css">
     <link rel="stylesheet" href="../../css/nav_footer_styles.css">
 
-    <title>Files Upload and Download</title>
-  </head>
-  <style>
+    <style>
     /* Styles for two buttons in the form*/
     .button {
   background-color: #5DADE2; /* Green */
@@ -33,24 +33,27 @@
 }
 
   </style>
+  </head>
+
   <body>
 
 <!-- navbar -->
   <nav>
-  <input type="checkbox" id="check">
-          <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-          </label>
-        <label class="logo">Web-COMS</label>
+  <div class="logo">Web-COMS</div>
+      <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
     <ul>
     <li><a href="ConferenceListForA.php">Back</a></li>
+    <li><a class="active" href="papersubmission.php">Submit Reseach Paper</a></li>
     <li><a href="../../About.php">About</a></li>
     <li><a href="../../help.php">Help</a></li>
 
     </ul>
     <br /><br />
   </nav>
-  <br>
+  <br><br>
   <h2 style="color:#111 ;text-align:center;">Upload a research paper for the first evaluation</h2>
 
 
@@ -77,15 +80,10 @@
           <button type="submit" class="button" id="save_btn" name="save">upload</button>
           <!-- <button type="submit" id="" name="">Cancel</button> -->
           <button type="cancel" class="button" onclick="javascript:window.location='papersubmission.php';">Cancel</button>
+ 
+         <!-- <button name="submit_btn" type="submit" id="signup_btn" value="Sign Up">Register</button><br> -->
 
         </form>
-
-
-   <!-- newely added -->
-
-  
-
-
 
       </div>
     </div>
