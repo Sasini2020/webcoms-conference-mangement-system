@@ -1,20 +1,22 @@
 <?php
 	session_start();
-    if($_SESSION['login_s'] != '5'){
+    if($_SESSION['login_s'] != '6'){
         header('location:../../login.php');
     }
 ?>
 <!-- Accessing the FilesLogic.php -->
-<?php include 'filesLogic.php';?>
+<?php include 'fileLogicCameraReady.php';?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
+
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/nav_footer_styles.css">
 
-  <title>Uploaded reseach papers</title>
+  <title>Uploaded camera ready copies</title>
 
 <!-- Added css to style tag to style table -->
   <style>
@@ -37,7 +39,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #5DADE2;
+  background-color: #6495ED;
   color: white;
 }
 </style>
@@ -45,14 +47,14 @@
 <body>
 <!-- navbar -->
 <nav>
-  <div class="logo">Web-COMS</div>
-        <input type="checkbox" id="click">
-              <label for="click" class="menu-btn">
-                <i class="fas fa-bars"></i>
-              </label>
+<div class="logo">Web-COMS</div>
+      <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
     <ul>
-    <li><a href="trackchairhomepage.php">Back</a></li>
-    <li><a class="active" href="firstround.php">First Round Paper Evaluation</a></li>
+    <li><a href="publicationchairhomepage.php">Back</a></li>
+    <li><a class="active" href="viewcamerareadycopies.php">View Camera-Ready Copies</a></li>
     <li><a href="../../About.php">About</a></li>
     <li><a href="../../help.php">Help</a></li>
 
@@ -60,26 +62,22 @@
     </ul>
     <br /><br />
   </nav>
-<body>
-  
 <h2></h2><br>
-<h2 style="color:#111 ;text-align:center;">Uploaded Research Papers</h2><br><br>
-<h3 style="color:#111 ;text-align:center;">As a track-chair you can download,reject and assign papers for reviewers</h3>
+<h2 style="color:#111 ;text-align:center;">Uploaded camera ready copies</h2><br>
+<h3 style="color:dodgerblue ;text-align:center;">As publication-chair you can download final camera-ready copies and generate proceeding preparation</h3>
 
 <table id="papersDownloads">
 <thead>
     <!-- file id -->
     <th>ID </th> 
-    <th>Author's name</th>
+    <!-- <th>Author's name</th> -->
     <th>File name</th>
     <th>Conference name</th>
     <th>University(Author)</th>
     <th>File size (in KB)</th>
-    <th>Contact details</th>
-    <th>Other links</th>
+    <!-- <th>Contact details</th>
+    <th>Other links</th> -->
     <th>Downloads</th>
-    <th>Action</th>
-    <th>Action</th>
     <th>Action</th>
 
 
@@ -87,25 +85,19 @@
 <tbody>
   <?php foreach ($files as $file): ?>
     <tr>
-      <td><?php echo $file['id']; ?></td>
-      <td><?php echo $file['full_name'];?></td>
+      <td><?php echo $file['crc_id']; ?></td>
       <td><?php echo $file['name']; ?></td>
   
   
       <!-- show conference name here in below php tag -->
       <td><?php ?></td>
+      <td><?php ?></td>
 
 
-      <td><?php echo $file['university'];?></td>
       <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
-      <td><?php echo $file['contact_details'];?></td>
-      <td><?php echo $file['other_links'];?></td>
       <td><?php echo $file['downloads']; ?></td>
-      <td><a href="firstround.php?file_id=<?php echo $file['id'] ?>"> Download </a></td>
+      <td><a style="text-decoration:none" href="viewcamerareadycopies.php?file_id=<?php echo $file['crc_id'] ?>"> Download </a></td>
       
-      <!-- delete is not working yet complete it -->
-      <td><a href="#"<?php echo $file['id']; ?> style="color:red;">Reject</a></td>
-      <td><a href="#"<?php echo $file['id']; ?>" style="color:green;">Assign</a></td>
 
     
     
@@ -114,10 +106,9 @@
 
 </tbody>
 </table>
-<!-- Footer section -->
-<div class="footer">
+ <!-- Footer section -->
+ <div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
          </div>
 </body>
-
 </html>
