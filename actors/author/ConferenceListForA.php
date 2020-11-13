@@ -10,10 +10,8 @@
 
 	<title>Conferences List</title>
 
-
- <link rel="stylesheet" href="../../css/style.css">
- <link rel="stylesheet" href="../../css/main_style.css">
- <link rel="stylesheet" href="../../css/style_footer.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ 	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
 
 <!-- Added css to style tag to style table -->
 <style>
@@ -53,9 +51,16 @@ a:hover {
 <body>
 
 <nav>
-    <ul>
+<div class="logo">Web-COMS</div>
+      <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
+	<ul>
       <li><a href="author_home.php">Back to Home</a></li>
-    </ul>
+	  <li><a class="active" href="ConferenceListForA.php">Conferences List</a></li>
+
+	</ul>
   </nav>
 
   <br><br>
@@ -125,7 +130,10 @@ a:hover {
 <!-- </section> -->
 
 
-<?php include "../../footer.html" ?></body>
 
+    <!-- Footer section -->
+	<div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+        </div>
 </body>
 </html>
