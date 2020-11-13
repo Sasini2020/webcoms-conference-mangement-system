@@ -6,13 +6,13 @@
 ?>
 <!-- Accessing the FilesLogic.php -->
 <?php include 'filesLogic.php';?>
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/main_style.css">
+  <link rel="stylesheet" href="../../css/nav_footer_styles.css">
 
   <title>Uploaded reseach papers</title>
 
@@ -37,7 +37,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #148F77;
+  background-color: #5DADE2;
   color: white;
 }
 </style>
@@ -45,18 +45,26 @@
 <body>
 <!-- navbar -->
 <nav>
+  <div class="logo">Web-COMS</div>
+        <input type="checkbox" id="click">
+              <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+              </label>
     <ul>
     <li><a href="trackchairhomepage.php">Back</a></li>
-    <li><a href="#">Contact Us</a></li>
-    <li><a href="#">Help</a></li>
+    <li><a class="active" href="firstround.php">First Round Paper Evaluation</a></li>
+    <li><a href="../../About.php">About</a></li>
+    <li><a href="../../help.php">Help</a></li>
 
 
     </ul>
     <br /><br />
   </nav>
+<body>
+  
 <h2></h2><br>
-<h2 style="color:#F1C40F ;text-align:center;">Uploaded Research Papers</h2><br><br>
-<h3 style="color:#2874A6 ;text-align:center;">As a track-chair you can download,reject and assign papers for reviewers</h3>
+<h2 style="color:#111 ;text-align:center;">Uploaded Research Papers</h2><br><br>
+<h3 style="color:#111 ;text-align:center;">As a track-chair you can download,reject and assign papers for reviewers</h3>
 
 <table id="papersDownloads">
 <thead>
@@ -106,6 +114,10 @@
 
 </tbody>
 </table>
-
+<!-- Footer section -->
+<div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+         </div>
 </body>
+
 </html>
