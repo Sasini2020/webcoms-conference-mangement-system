@@ -76,7 +76,7 @@
 					}
 					else if($user_type=="Reviewer"){
 						$_SESSION['login_s'] = '2';
-						header('location:actors/reviewer/reviewerhomepagenew.php');
+						header('location:actors/reviewer/reviewerhomepage.php');
 					}
 					else if($user_type=="Author"){
 						$_SESSION['login_s'] = '3';
