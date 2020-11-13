@@ -63,8 +63,8 @@
     <br /><br />
   </nav>
 <h2></h2><br>
-<h2 style="color:#F1C40F ;text-align:center;">Uploaded camera ready copies</h2><br>
-<h3 style="color:#2874A6 ;text-align:center;">As publication-chair you can download final camera-ready copies and generate proceeding preparation</h3>
+<h2 style="color:#111 ;text-align:center;">Uploaded camera ready copies</h2><br>
+<h3 style="color:dodgerblue ;text-align:center;">As publication-chair you can download final camera-ready copies and generate proceeding preparation</h3>
 
 <table id="papersDownloads">
 <thead>
@@ -96,7 +96,7 @@
 
       <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
       <td><?php echo $file['downloads']; ?></td>
-      <td><a href="viewcamerareadycopies.php?file_id=<?php echo $file['crc_id'] ?>"> Download </a></td>
+      <td><a style="text-decoration:none" href="viewcamerareadycopies.php?file_id=<?php echo $file['crc_id'] ?>"> Download </a></td>
       
 
     
