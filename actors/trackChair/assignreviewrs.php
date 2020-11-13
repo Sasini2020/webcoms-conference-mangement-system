@@ -1,3 +1,9 @@
+<?php
+	session_start();
+    if($_SESSION['login_s'] != '5'){
+        header('location:../../login.php');
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
