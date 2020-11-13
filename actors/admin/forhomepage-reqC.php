@@ -60,6 +60,14 @@
   font-weight: bold;
   color: #009879;
 }
+
+#mngBtn{
+  background-color:#00ffff; 
+  padding:6px; 
+  radius:20px;
+  border: 2px solid #009966;
+  border-radius: 20px;
+}
  
 </style>
 
@@ -134,12 +142,7 @@
               <td><?=$row['fullname']?></td>                                   
 
               <td style="padding-left: 20px;">
-                <form action="requested_conferences.php" method="post">
-									
-							    <input type="submit" name="action" value="Delete" />
-                  <input type="submit" name="action" Value="Accept" />
-                  <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
-                </form>
+                <a href="requested_conferences.php" id="mngBtn">Manage</a>
               </td>
             </tr>
       </tbody>
@@ -147,27 +150,6 @@
         $counter++;}
       ?>
 
-      
-   
-      <?php
-
-        //function del_d($id){
-        //  $qur = mysqli_query($con,"delete from conferences where id='$id'");
-        //  header('location:requested_conferences.php');
-        //}
-        if(isset($_POST['action']) && isset($_POST['id'])){
-          if($_POST['action'] == 'Delete'){
-            $r_id = $_POST['id'];
-            $qur = mysqli_query($con,"delete from conferences where id='$r_id'");
-            header('location:requested_conferences.php');
-          }
-          elseif($_POST['action'] == 'Accept'){
-            $r_id = $_POST['id'];
-            $qur = mysqli_query($con,"update conferences set Accepted = '1' where id='$r_id'");
-            header('location:requested_conferences.php');
-          }
-        }
-      ?>
 	
 	  </table>	
   </div>

@@ -41,6 +41,20 @@
   background-color: #5DADE2;
   color: white;
 }
+#acptBtn{
+  background-color:#4dff4d; 
+  padding:4px; 
+  radius:20px;
+  border: 2px solid #009966;
+  border-radius: 20px;
+}
+#dltBtn{
+  background-color:#ff0000; 
+  padding:5px; 
+  radius:20px;
+  border: 2px solid #009966;
+  border-radius: 20px;
+}
 </style>
 
 </head>
@@ -117,8 +131,8 @@
               <td style="padding-left: 20px;">
                 <form action="requested_conferences.php" method="post">
 									
-							    <input type="submit" name="action" value="Delete" />
-                  <input type="submit" name="action" Value="Accept" />
+							    <input type="submit" name="action" value="Delete" id="dltBtn" />
+                  <input type="submit" name="action" Value="Accept" id="acptBtn" />
                   <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                 </form>
               </td>
