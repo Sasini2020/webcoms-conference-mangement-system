@@ -11,8 +11,10 @@
 <html>
 <head>
   <meta charset="utf-8" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ 	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
   <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/main_style.css">
+  <!--<link rel="stylesheet" href="../../css/main_style.css">-->
 
   <title>Uploaded reseach papers</title>
 
@@ -46,7 +48,7 @@
 <!-- navbar -->
 <nav>
     <ul>
-    <li><a href="reviewerhomepagenew.php">Back</a></li>
+    <li><a href="reviewerhomepage.php">Back</a></li>
     <li><a href="#">Contact Us</a></li>
     <li><a href="#">Help</a></li>
 
@@ -99,6 +101,11 @@
 
 </tbody>
 </table>
+
+<!-- Footer section -->
+<div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+        </div>
 </body>
     
 </html>
