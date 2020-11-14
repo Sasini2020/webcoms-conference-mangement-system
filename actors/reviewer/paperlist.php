@@ -72,6 +72,7 @@
     <th>Other links</th>
     <th>Downloads</th>
     <th>Action</th>
+    <th>recommendation</th>
 
 </thead>
 <tbody>
@@ -92,6 +93,7 @@
       <td><?php echo $file['other_links'];?></td>
       <td><?php echo $file['downloads']; ?></td>
       <td><a href="paperslist.php?file_id=<?php echo $file['id'] ?>"> Download </a></td>
+      <td><a href="reviewform.php"> review </a></td>
       
 
     
