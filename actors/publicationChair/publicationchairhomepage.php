@@ -8,7 +8,9 @@
 <html>
 <head>
 <title>Home Page</title>
-<link rel="stylesheet" href="../../css/main_style.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ <link rel="stylesheet" href="../../css/nav_footer_styles.css">
+<!--<link rel="stylesheet" href="../../css/main_style.css">-->
 </head>
 
 	
