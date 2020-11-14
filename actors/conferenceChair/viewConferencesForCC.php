@@ -13,7 +13,20 @@
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
  <!-- <link rel="stylesheet" href="../../css/main_style.css">-->
   <link rel="stylesheet" href="../../css/table_style.css">
-  
+  <style>
+    #CTadd{
+      padding:1px 8px;
+      background-color:#ff66ff;
+      border:2px solid #7a7a52;
+      border-radius:10px;
+    }
+    #CTview{
+      padding:1px 4px;
+      background-color:#00ffff;
+      border:2px solid #7a7a52;
+      border-radius:10px;
+    }
+  </style>
 </head>
 <body>
 
@@ -64,8 +77,8 @@
             <td><?=$row['sponsor_details']?></td>
             <td style="padding-left: 20px;">
                 <form action="viewConferencesForCC.php" method="post">		                                   
-                    <input type="submit" name="mTrack" Value="Add"/>
-                    <input type="submit" name="mTrack" Value="View" />
+                    <input type="submit" name="mTrack" Value="Add" id="CTadd"/>
+                    <input type="submit" name="mTrack" Value="View" id="CTview" />
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                 </form>
             </td>
