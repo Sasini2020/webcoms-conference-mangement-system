@@ -75,9 +75,9 @@
 <body>
     <div id="container">
     <center>
-       <a href="generate.php"><button class="button gen"  > Generate<buttton></a>
+       <a href="generate.php"><button class="button gen"  onclick="alert('Auto-genarate procceding Successfully')" > Generate<buttton></a>
       
-       <a href="download.php"><button class="button gen">Download<buttton></a>
+       <a href="download.php"><button class="button gen" onclick="alert('Download Successfully')">Download<buttton></a>
     </center>
     </div> 
   
