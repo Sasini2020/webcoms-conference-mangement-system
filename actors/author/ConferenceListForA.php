@@ -74,7 +74,7 @@ a:hover {
 	   <th>Venue</th>
 	   <th>Start date</th>
 	   <th>End date</th>
-	   <th>Deadline</th>
+	   <th>Paper submission due date</th>
 	   <th>Sponser details</th>
 	   <th>Submit a Paper</th>
 	   <th>Submit camera ready copy</th>
