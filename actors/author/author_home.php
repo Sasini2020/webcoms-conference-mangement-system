@@ -17,7 +17,7 @@
 <nav>
     <ul>
       <li><a href="ConferenceListForA.php">Conference List</a></li>
-      <li ><a style="float:right; margin-right:40px" href="../logout.php">Log Out</a></li>
+      <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
     </ul>
   </nav>
 
