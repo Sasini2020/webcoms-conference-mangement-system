@@ -45,36 +45,35 @@
               <i class="fas fa-bars"></i>
             </label>
     <ul>
-    <li><a href="ConferenceListForA.php">Back</a></li>
     <li><a class="active" href="papersubmission.php">Submit Reseach Paper</a></li>
     <li><a href="../../About.php">About</a></li>
     <li><a href="../../help.php">Help</a></li>
+    <li><a href="ConferenceListForA.php">Back</a></li>
 
     </ul>
-    <br /><br />
   </nav>
-  <br><br>
-  <h2 style="color:#111 ;text-align:center;">Upload a research paper for the first evaluation</h2>
+  <br>
+  <h2 style="margin-left:25px;color:#283747;">Create New Submission</h2><br>
+	
 
-
-
-    <div class="container">
+  <div class="container">
       <div class="row">
+
         <form action="papersubmission.php" method="post" enctype="multipart/form-data" >
-          <h2 style="color:#6495ED;">Submit a Paper</h2><br><br>
+          <!-- <h2 style="color:#6495ED;">Submit a Paper</h2><br><br> -->
 
 
 <!-- newely added -->
-          <label><b>Full Name:</b></label><br>
+          <label><b>Full Name *</b></label><br>
 		  	  <input name="full_name" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 			
-          <label><b>University:</b></label><br>
+          <label><b>University *</b></label><br>
           <input name="university" type="text" class="inputvalues" placeholder="Type your university" required/><br>
-          <label><b>Contact 	Details:</b></label><br>
+          <label><b>Contact	Details *</b></label><br>
           <input name="contact_details" type="text" class="inputvalues" placeholder="Your Contact Details" required/><br>
           <label><b>Other links:</b></label><br>
           <input name="other_links" type="text" class="inputvalues" placeholder="Other links"><br>
-          <label><b>Choose File:</b></label><br>
+          <label><b>Select Paper *</b></label><br>
           <input type="file" name="myfile" > <br>
           <br>
           <button type="submit" class="button" id="save_btn" name="save">upload</button>
