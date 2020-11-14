@@ -55,23 +55,19 @@
     <li><a class="active" href="firstround.php">First Round Paper Evaluation</a></li>
     <li><a href="../../About.php">About</a></li>
     <li><a href="../../help.php">Help</a></li>
-
-
     </ul>
-    <br /><br />
   </nav>
 <body>
   
-<h2></h2><br>
-<h2 style="color:#111 ;text-align:center;">Uploaded Research Papers</h2><br><br>
-<h3 style="color:#111 ;text-align:center;">As a track-chair you can download,reject and assign papers for reviewers</h3>
+<br>
+<h1 style="color:#111 ;margin-left:20px;">Uploaded Research Papers</h1>
 
 <table id="papersDownloads">
 <thead>
     <!-- file id -->
     <th>ID </th> 
     <th>Author's name</th>
-    <th>File name</th>
+    <th>Research paper</th>
     <th>Conference name</th>
     <th>University(Author)</th>
     <th>File size (in KB)</th>
@@ -101,11 +97,11 @@
       <td><?php echo $file['contact_details'];?></td>
       <td><?php echo $file['other_links'];?></td>
       <td><?php echo $file['downloads']; ?></td>
-      <td><a href="firstround.php?file_id=<?php echo $file['id'] ?>"> Download </a></td>
+      <td><a style="color:dodgerblue;text-decoration:none;" href="firstround.php?file_id=<?php echo $file['id'] ?>"> Download </a></td>
       
       <!-- delete is not working yet complete it -->
-      <td><a href="#"<?php echo $file['id']; ?> style="color:red;">Reject</a></td>
-      <td><a href="#"<?php echo $file['id']; ?>" style="color:green;">Assign</a></td>
+      <td><a href="#"<?php echo $file['id']; ?> style="color:red;text-decoration:none;">Reject</a></td>
+      <td><a href="#"<?php echo $file['id']; ?> style="color:green;text-decoration:none;">Assign</a></td>
 
     
     
@@ -115,7 +111,7 @@
 </tbody>
 </table>
 <!-- Footer section -->
-<div class="footer">
+         <div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
          </div>
 </body>
