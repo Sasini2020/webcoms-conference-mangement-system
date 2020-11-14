@@ -7,8 +7,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../../css/main_style.css">
-<link rel="stylesheet" href="../../css/sty.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" href="../../css/nav_footer_styles.css">
+<link rel="stylesheet" href="../../css/reg_form_style.css">
+
+<!--<link rel="stylesheet" href="../../css/main_style.css">
+<link rel="stylesheet" href="../../css/sty.css">-->
+
 </head>
 
  
@@ -30,15 +35,20 @@
 
 <body>
 
-   <div id="main-wrapper">
+   <div id="container">
        <form action="" method ="POST">
        <center>
-            <textarea rows="4" cols="50" name="comment"> Add guideline here </textarea><br><br>
+            <textarea rows="4" cols="50" name="comment"> Add guideline here </textarea>
             
-             <input type ="submit" value="Publish"><br><br>
+             
+             <button type="submit" class="button "id="save_btn" name="submit">Publish</button>
+  
        </center> 
         </form>
     </div>
-        
+        <!-- Footer section -->
+ <div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+        </div>
  </body>
 </html>
