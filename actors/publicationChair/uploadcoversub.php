@@ -211,7 +211,11 @@ if (mysqli_query($con, $sql)) {
 
     </div>
     </div>
-     
+      <!-- Footer section -->
+ <div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+        </div>
+
 
  </body>
 </html>
