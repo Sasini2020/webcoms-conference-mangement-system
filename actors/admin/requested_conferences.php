@@ -94,7 +94,7 @@
           <th>Venue</th>
           <th>Start date</th>
           <th>End date</th>
-          <th>Deadline</th>
+          <th>Paper submission due date</th>
           <th>Sposer details</th>
           <th>Conference Chair</th>
           <th>Manage</th>
