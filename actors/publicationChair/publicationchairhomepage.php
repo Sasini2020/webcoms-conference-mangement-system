@@ -9,7 +9,7 @@
 <head>
 <title>Home Page</title>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
- <link rel="stylesheet" href="../../css/nav_footer_styles.css">
+ 	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
 <!--<link rel="stylesheet" href="../../css/main_style.css">-->
 </head>
 
@@ -38,6 +38,10 @@
 		</center>
 	   
 	</div>
+  <!-- Footer section -->
+	<div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+        </div>
 			 
 </body>
 </html>
