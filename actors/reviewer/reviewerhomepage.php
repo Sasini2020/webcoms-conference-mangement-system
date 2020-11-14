@@ -18,7 +18,7 @@
 <nav>
     <ul>
       <li><a href="ConferenceListForR.php">Conference List</a></li>
-      <li><a href="paperslist.php">View papers</a></li>
+      <li><a href="paperlist.php">View papers</a></li>
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
     </ul>
