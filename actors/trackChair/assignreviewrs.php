@@ -7,8 +7,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../../css/main_style.css">
-<link rel="stylesheet" href="../../css/sty.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" href="../../css/nav_footer_styles.css">
+<link rel="stylesheet" href="../../css/reg_form_style.css">
+<!--<link rel="stylesheet" href="../../css/main_style.css">
+<link rel="stylesheet" href="../../css/sty.css">-->
 </head>
   
 <style>
@@ -40,7 +43,7 @@
 </style>
 
 
-<body style="background-color:#bdc3c7">
+<body >
 
 <nav>
     <ul>
@@ -55,26 +58,35 @@
 
 <br><br>
 
-<div id="main-wrapper">
+<div id="container">
 
   <form action="assignreviewrs.php">
      <label for="no">select paper</label>
   
        <select name="papers" id="cars">
-         <option value="paper1">paper1</option>
+         <option value="paper1">select paper</option>
        </select>  
        <br><br>
 
      <label for="no">select reviewrs</label>
        <select name="reviewrs" id="reviewrs">
-         <option value="rev1">reviewrs1</option>
+         <option value="rev1">select reviewrs</option>
        </select>  
        <br><br>
 
-     <input type="submit" value="Save">
-     <input type="submit" value="cancel"><br><br>
+      <button type="submit" class="button "id="save_btn" name="submit">Save</button><br><br>
+      <button type="cancel" class="button" onclick="javascript:window.location='uploadcoversub.php';">Cancel</button>
+
+     <!--<input type="submit" value="Save">
+     <input type="submit" value="cancel"><br><br>-->
+
   </form>
  </div>
+  <!-- Footer section -->
+  <div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+        </div>
+
  </body>
 
 </html>
