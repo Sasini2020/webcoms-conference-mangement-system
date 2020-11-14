@@ -13,7 +13,7 @@
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
  <link rel="stylesheet" href="../../css/mychanged.css">
- <link rel="stylesheet" href="../../css/main_style.css">
+ <!--<link rel="stylesheet" href="../../css/main_style.css">-->
 
 
 <style>
