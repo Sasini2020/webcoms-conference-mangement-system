@@ -10,18 +10,21 @@
   </head>
   <body>
 
-    <nav>
-      <div class="logo">Web-COMS</div>
+<nav>
+	<div class="logo">Web-COMS</div>
       <input type="checkbox" id="click">
             <label for="click" class="menu-btn">
               <i class="fas fa-bars"></i>
             </label>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="About.php">About</a></li>
-                <li><a class="active" href="#">Help</a></li>
-            </ul>
-    </nav>
+		<ul>
+			<li><a href="index.php">Home</a></li>
+			<li><a href="login.php">Login</a></li>
+			<li><a href="register.php">Register</a></li>
+			<li><a class="active"  href="help.php">Help</a></li>
+			<li><a href="About.php">About</a></li>
+		</ul>
+		<br /><br />
+	</nav>
     <br><br><br><br><br><br><br><br><br> 
 
 <!-- Start of the Top content -->
