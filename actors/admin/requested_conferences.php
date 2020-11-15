@@ -123,13 +123,13 @@
 			<li><a href="authordetails.php">Author details</a></li>
 			<li><a href="conferenceChairRegistration.php">Conf Chair Registration</a></li>
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
-		
+		</ul>
 
 	</nav>
 
   <br><br>
 
-  <h2 style="text-align: center;"> Requested Conferences</h2>
+  <h2 style="margin-left:20px;"> Requested Conferences</h2>
 
   <br><br>
 
@@ -180,10 +180,14 @@
 
               <td style="padding-left: 20px;">
                 <form action="requested_conferences.php" method="post">
-									
-							    <input type="submit" name="action" value="Delete" />
-                  <input type="submit" name="action" Value="Accept" />
-                  <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+					
+			
+<!-- 		  <input type="submit" name="action" value="Delete" />
+                  <input type="submit" name="action" Value="Accept" /> -->
+			
+		<input style="background-color:#196F3D;border: none;border-radius:10px;color: white;padding: 9px 20px;text-decoration: none;margin: 4px 2px;cursor: pointer;" type="submit" name="action" Value="Accept" />
+		<input style="background-color:#E74C3C;border: none;border-radius:10px;color: white;padding: 9px 20px;text-decoration: none;margin: 4px 2px;cursor: pointer;" type="submit" name="action" value="Reject" />
+                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                 </form>
               </td>
             </tr>
@@ -201,7 +205,7 @@
         //  header('location:requested_conferences.php');
         //}
         if(isset($_POST['action']) && isset($_POST['id'])){
-          if($_POST['action'] == 'Delete'){
+          if($_POST['action'] == 'Reject'){
             $r_id = $_POST['id'];
             $qur = mysqli_query($con,"delete from conferences where id='$r_id'");
             header('location:requested_conferences.php');
