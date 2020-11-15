@@ -17,16 +17,23 @@
 </head>
 <body>
   
-  <nav>
-  <div class="logo">Web-COMS</div>
+<nav>
+<div class="logo">Web-COMS</div>
       <input type="checkbox" id="click">
             <label for="click" class="menu-btn">
               <i class="fas fa-bars"></i>
             </label>
-    <ul>
-      <li><a href="adminhomepage.php">Back to Home</a></li>
-    </ul>    
-  </nav>
+		<ul>
+			<!--<li><a class="active" href="index.php">WebCOMS</a></li>-->
+			<li><a href="adminhomepage.php">Home</a></li>
+			<li><a href="requested_conferences.php">Requested conferences</a></li>
+			<li><a href="conference_list.php">Conference List</a></li>
+			<li><a href="authordetails.php">Author details</a></li>
+			<li><a class="active" href="conferenceChairRegistration.php">Conf Chair Registration</a></li>
+			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+		
+
+	</nav>
   <br><br>
 
 	<!--Conference Chair Registration form-->
