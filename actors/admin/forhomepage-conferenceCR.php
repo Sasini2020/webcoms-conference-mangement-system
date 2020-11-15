@@ -10,11 +10,9 @@
 <html>
 <head>
 
- 
-
-    <link rel="stylesheet" href="../../css/main_style.css">
-	<link rel="stylesheet" href="../../css/style_footer.css">
-	<link rel="stylesheet" href="../../css/reg_form_style.css">
+  <link rel="stylesheet" href="../../css/table_style.css">
+	<link rel="stylesheet" href="../../css/about_help_styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
   
