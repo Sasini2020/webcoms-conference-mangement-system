@@ -66,9 +66,10 @@
 <table id="papersDownloads">
 <thead>
     <!-- file id -->
-    <th>ID </th> 
+    <th>ID </th>
+    <th>Paper Title</th> 
     <th>Author's name</th>
-    <th>File name</th>
+    <th>File</th>
     <th>Conference name</th>
     <th>University(Author)</th>
     <th>File size (in KB)</th>
@@ -76,13 +77,13 @@
     <th>Other links</th>
     <th>Downloads</th>
     <th>Action</th>
-    <th>Recommendation</th>
 
 </thead>
 <tbody>
   <?php foreach ($files as $file): ?>
     <tr>
       <td><?php echo $file['id']; ?></td>
+      <td><?php echo $file['title']; ?></td>
       <td><?php echo $file['full_name'];?></td>
       <td><?php echo $file['name']; ?></td>
   
@@ -97,8 +98,7 @@
       <td><?php echo $file['other_links'];?></td>
       <td><?php echo $file['downloads']; ?></td>
       <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperslist.php?file_id=<?php echo $file['id'] ?>"> Download </a></td>
-      <td><a style="text-decoration:none;color:dodgerblue;" href="reviewform.php"> Review </a></td>
-
+      
 
     
     
