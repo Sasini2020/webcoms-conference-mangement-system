@@ -39,10 +39,10 @@
 }
 a {
   color: #5DADE2;
+  text-decoration:none;
 }
-/* mouse over link */
 a:hover {
-  color: blue;
+  color: #1A5276;
 }
 </style>
 
@@ -63,9 +63,9 @@ a:hover {
 	</ul>
   </nav>
 
-  <br><br>
+  <br>
 
-  <h2 align="center">Conferences List</h2>
+  <h2 style="margin-left:20px;">Conferences List</h2>
 
 	<table id="papersDownloads">
 	<tr>
@@ -107,8 +107,8 @@ a:hover {
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
 			echo "<tr><td>". $row["id"] ."</td><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"] ."</td><td>" . $row["sponsor_details"] ."</td><td>";
-			echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />upload</a>";
-			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit camera-ready paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />upload</a></td>";
+			echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a>";
+			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit camera-ready paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a></td>";
 
        
         }
