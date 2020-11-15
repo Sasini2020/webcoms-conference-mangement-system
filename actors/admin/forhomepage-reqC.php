@@ -12,9 +12,9 @@
 <head>
 
   <title>Requested Conferences List</title>
-
   <link rel="stylesheet" href="../../css/table_style.css">
-	<link rel="stylesheet" href="../../css/main_style.css">
+	<link rel="stylesheet" href="../../css/about_help_styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
   <style>
 
