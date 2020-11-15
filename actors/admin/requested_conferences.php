@@ -17,8 +17,10 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
  
-<!-- Added css to style tag to style table -->
 <style>
+
+/* Added css to style tag to style table*/
+
 #papersDownloads {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -40,20 +42,6 @@
   text-align: left;
   background-color: #5DADE2;
   color: white;
-}
-#acptBtn{
-  background-color:#4dff4d; 
-  padding:4px; 
-  radius:20px;
-  border: 2px solid #009966;
-  border-radius: 20px;
-}
-#dltBtn{
-  background-color:#ff0000; 
-  padding:5px; 
-  radius:20px;
-  border: 2px solid #009966;
-  border-radius: 20px;
 }
 </style>
 
@@ -77,9 +65,9 @@
 
     </ul>    
   </nav>
-  <br><br>
+  <br>
 
-  <h2 style="text-align: center;"> Requested Conferences</h2>
+  <h2 style="margin-left:20px;"> Requested Conferences</h2>
 
   <br><br>
 
@@ -131,8 +119,8 @@
               <td style="padding-left: 20px;">
                 <form action="requested_conferences.php" method="post">
 									
-							    <input type="submit" name="action" value="Delete" id="dltBtn" />
-                  <input type="submit" name="action" Value="Accept" id="acptBtn" />
+                  <input style="background-color:#196F3D;border: none;border-radius:10px;color: white;padding: 9px 20px;text-decoration: none;margin: 4px 2px;cursor: pointer;" type="submit" name="action" Value="Accept" />
+							    <input style="background-color:#E74C3C;border: none;border-radius:10px;color: white;padding: 9px 20px;text-decoration: none;margin: 4px 2px;cursor: pointer;" type="submit" name="action" value="Reject" />
                   <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                 </form>
               </td>
@@ -151,7 +139,7 @@
         //  header('location:requested_conferences.php');
         //}
         if(isset($_POST['action']) && isset($_POST['id'])){
-          if($_POST['action'] == 'Delete'){
+          if($_POST['action'] == 'Reject'){
             $r_id = $_POST['id'];
             $qur = mysqli_query($con,"delete from conferences where id='$r_id'");
             header('location:requested_conferences.php');
