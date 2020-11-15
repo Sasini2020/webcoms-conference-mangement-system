@@ -1,105 +1,90 @@
 <?php
-	session_start();
-    if($_SESSION['login_s'] != '3'){
-        header('location:../../login.php');
+// connect to the database
+$conn = mysqli_connect('localhost', 'root', '', 'webcomsdb');
+
+// $sql = "SELECT name,size,downloads,full_name,university,contact_details,other_links FROM fileuploadtable";
+$sql = "SELECT * FROM files";
+
+$result = mysqli_query($conn, $sql);
+
+$files = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// Uploads files
+if (isset($_POST['save'])) { // if save button on the form is clicked
+    // name of the uploaded file
+    $filename = $_FILES['myfile']['name'];
+
+    // destination of the file on the server
+    $destination = '../../uploads/' . $filename;
+
+    // get the file extension
+    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+
+    // the physical file on a temporary uploads directory on the server
+    $file = $_FILES['myfile']['tmp_name'];
+    $size = $_FILES['myfile']['size'];
+
+//Added others
+    // $full_name =$_POST['full_name'];
+    // $university = $_POST['university'];
+    // $contact_details = $_POST['contact_details'];
+    // $other_links = $_POST['other_links'];	
+
+
+
+    if (!in_array($extension, ['pdf'])) {
+        echo '<script type="text/javascript"> alert("You file extension must be .pdf") </script>';
+    } elseif ($_FILES['myfile']['size'] > 1000000) { // file shouldn't be larger than 1MB
+        // echo "File is large than 1MB !";
+        echo '<script type="text/javascript"> alert("file size larger than 1 MB.. Try another file") </script>';
+
+    } else {
+        // move the uploaded (temporary) file to the specified destination
+        if(move_uploaded_file($file, $destination)) {
+
+            //I inserted values in a different special way
+            $sql = "INSERT INTO files(name, size, downloads,full_name,university,contact_details,other_links,title,abstract) VALUES ('$filename', $size, 0,'$_POST[full_name]','$_POST[university]','$_POST[contact_details]','$_POST[other_links]','$_POST[title]','$_POST[abstract]')";
+           
+            if (mysqli_query($conn, $sql)) {
+                // echo "File uploaded successfully";
+                echo '<script type="text/javascript"> alert("Your paper was submitted successfully!!") </script>';
+
+            }
+        }
+         else {
+            echo '<script type="text/javascript"> alert("Failed to submit your file !!") </script>';
+        }
     }
-	require '../../dbconfig/config.php';
-?>
-
-<?php include 'filesLogic.php';?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-   
-    <title>Upload a reseach paper</title>
-
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="../../css/reg_form_style.css">
-    <link rel="stylesheet" href="../../css/nav_footer_styles.css">
-
-    <style>
-    /* Styles for two buttons in the form*/
-    .button {
-  background-color: #5DADE2; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
 }
+// Downloads files
+if (isset($_GET['file_id'])) {
+    $id = $_GET['file_id'];
 
-  </style>
-  </head>
+    // fetch file to download from database
+    $sql = "SELECT * FROM files WHERE id=$id";
+    $result = mysqli_query($conn, $sql);
 
-  <body>
+    $file = mysqli_fetch_assoc($result);
+    $filepath = '../../uploads/' . $file['name'];
 
-<!-- navbar -->
-  <nav>
-  <div class="logo">Web-COMS</div>
-      <input type="checkbox" id="click">
-            <label for="click" class="menu-btn">
-              <i class="fas fa-bars"></i>
-            </label>
-    <ul>
-    <li><a class="active" href="papersubmission.php">Submit Reseach Paper</a></li>
-    <li><a href="../../About.php">About</a></li>
-    <li><a href="../../help.php">Help</a></li>
-    <li><a href="ConferenceListForA.php">Back</a></li>
+    if (file_exists($filepath)) {
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename=' . basename($filepath));
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize('../../uploads/' . $file['name']));
+        readfile('../../uploads/' . $file['name']);
 
-    </ul>
-  </nav>
-  <br>
-  <h2 style="margin-left:25px;color:#283747;">Create New Submission</h2><br>
-	
+        // Now update downloads count
+        $newCount = $file['downloads'] + 1;
+        $updateQuery = "UPDATE files SET downloads=$newCount WHERE id=$id";
+        mysqli_query($conn, $updateQuery);
+        exit;
+    }
 
-  <div class="container">
-      <div class="row">
-
-        <form action="papersubmission.php" method="post" enctype="multipart/form-data" >
-          <!-- <h2 style="color:#6495ED;">Submit a Paper</h2><br><br> -->
+}
+// sql to delete a record
 
 
-<!-- newely added -->
-          <label><b>Full Name *</b></label><br>
-		  	  <input name="full_name" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
-			
-          <label><b>University *</b></label><br>
-          <input name="university" type="text" class="inputvalues" placeholder="Type your university" required/><br>
-          <label><b>Contact	Details *</b></label><br>
-          <input name="contact_details" type="text" class="inputvalues" placeholder="Your Contact Details" required/><br>
-          <label><b>Other links:</b></label><br>
-          <input name="other_links" type="text" class="inputvalues" placeholder="Other links"><br>
-          
-          <label><b>Paper Title*</b></label><br>
-          <input name="title" type="text" class="inputvalues" placeholder="Title" required/><br>
 
-          <!-- Text-area -->
-          <label><b>Abstract*</b></label><br>
-
-          <!-- <textarea name="abstract" rows="10" cols="40"><?php //echo $comment;?></textarea> -->
-          <textarea name="abstract" rows="10" cols="40"></textarea>
-          
-          <label><b>Select Paper *</b></label><br>
-          <input type="file" name="myfile" > <br>
-          <br>
-          <button type="submit" class="button" id="save_btn" name="save">Upload</button>
-          <!-- <button type="submit" id="" name="">Cancel</button> -->
-          <button type="cancel" class="button" onclick="javascript:window.location='papersubmission.php';">Cancel</button>
- 
-         <!-- <button name="submit_btn" type="submit" id="signup_btn" value="Sign Up">Register</button><br> -->
-
-        </form>
-
-      </div>
-    </div>
-    
-    <!-- Footer section -->
-	<div class="footer">
-            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
-        </div>
-  </body>
-</html>
