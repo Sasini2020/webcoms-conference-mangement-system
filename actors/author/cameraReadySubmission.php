@@ -51,10 +51,9 @@
     <li><a href="../../About.php">About</a></li>
 
     </ul>
-    <br />
   </nav>
-<br><br>
-  <h1 style="text-align:center;">Upload camera ready copy </h2>
+<br>
+  <h2 style="margin-left:20px;">Upload camera ready copy </h2>
 
     <div class="container">
       <div class="row">
