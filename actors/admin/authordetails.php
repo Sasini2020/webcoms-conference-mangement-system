@@ -8,10 +8,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Author details</title>
 	<link rel="stylesheet" href="../../css/table_style.css">
-	<link rel="stylesheet" href="../../css/main_style.css">
-	<link rel="stylesheet" href="../../css/sty.css">
+	<link rel="stylesheet" href="../../css/about_help_styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 	<style>
 
@@ -57,54 +58,29 @@
   font-weight: bold;
   color: #009879;
 }
-.p {
-	color:white;
-}
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  
-}
 
-.hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../imgs/try.jpg");
-  height: 30%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
 </style>
 </head>
-<body>
-<div class="hero-image"> 
-	
+<body>	
 	
 <nav>
+<div class="logo">Web-COMS</div>
+      <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
 		<ul>
 			<!--<li><a class="active" href="index.php">WebCOMS</a></li>-->
 			<li><a href="adminhomepage.php">Home</a></li>
 			<li><a href="requested_conferences.php">Requested conferences</a></li>
 			<li><a href="conference_list.php">Conference List</a></li>
-			<li><a href="authordetails.php">Author details</a></li>
+			<li><a class="active" href="authordetails.php">Author details</a></li>
 			<li><a href="conferenceChairRegistration.php">Conference Chair Registration</a></li>
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
 
 	</nav>
-	<div class="hero-text">
-</br>
-    <h5 style="font-size:30px">Author Details</h5>
-</div>
+
 <br><br><br><br><br><br><br><br><br><br>
 <center>
 	<table class="content-table">
@@ -149,7 +125,8 @@ body, html {
 	<br/>	
 
 	</div>
-	</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br><br><br><br><br><br><br><br><br><br><br>
-	<h5 style="color:white; padding:20px; margin:0; text-align:center; background-color:#063247">WebCOMS @2020</h5>
+     <div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+        </div>
 </body>
 </html>
