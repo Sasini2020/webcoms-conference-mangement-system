@@ -84,6 +84,7 @@ if (isset($_GET['file_id'])) {
     }
 
 }
+// sql to delete a record
 
 
 
