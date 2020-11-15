@@ -2,7 +2,9 @@
 // connect to the database
 $conn = mysqli_connect('localhost', 'root', '', 'webcomsdb');
 
+// $sql = "SELECT name,size,downloads,full_name,university,contact_details,other_links FROM fileuploadtable";
 $sql = "SELECT * FROM files";
+
 $result = mysqli_query($conn, $sql);
 
 $files = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -28,8 +30,9 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     // $other_links = $_POST['other_links'];	
 
 
+
     if (!in_array($extension, ['pdf'])) {
-        echo "You file extension must be .pdf ";
+        echo '<script type="text/javascript"> alert("You file extension must be .pdf") </script>';
     } elseif ($_FILES['myfile']['size'] > 1000000) { // file shouldn't be larger than 1MB
         // echo "File is large than 1MB !";
         echo '<script type="text/javascript"> alert("file size larger than 1 MB.. Try another file") </script>';
@@ -39,7 +42,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
         if(move_uploaded_file($file, $destination)) {
 
             //I inserted values in a different special way
-            $sql = "INSERT INTO files (name, size, downloads,full_name,university,contact_details,other_links) VALUES ('$filename', $size, 0,'$_POST[full_name]','$_POST[university]','$_POST[contact_details]','$_POST[other_links]')";
+            $sql = "INSERT INTO files(name, size, downloads,full_name,university,contact_details,other_links,title,abstract) VALUES ('$filename', $size, 0,'$_POST[full_name]','$_POST[university]','$_POST[contact_details]','$_POST[other_links]','$_POST[title]','$_POST[abstract]')";
            
             if (mysqli_query($conn, $sql)) {
                 // echo "File uploaded successfully";
@@ -53,7 +56,6 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     }
 }
 // Downloads files
-
 if (isset($_GET['file_id'])) {
     $id = $_GET['file_id'];
 
