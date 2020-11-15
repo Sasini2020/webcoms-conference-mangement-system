@@ -65,7 +65,8 @@
 <table id="papersDownloads">
 <thead>
     <!-- file id -->
-    <th>ID </th> 
+    <th>ID </th>
+    <th>Paper Title</th> 
     <th>Author's name</th>
     <th>Research paper</th>
     <th>Conference name</th>
@@ -84,6 +85,7 @@
   <?php foreach ($files as $file): ?>
     <tr>
       <td><?php echo $file['id']; ?></td>
+      <td><?php echo $file['title']; ?></td>
       <td><?php echo $file['full_name'];?></td>
       <td><?php echo $file['name']; ?></td>
   
