@@ -12,111 +12,59 @@
 
     <title>Conference List</title>
 
-    <link rel="stylesheet" href="../../css/table_style.css">
-    <link rel="stylesheet" href="../../css/main_style.css">
+   
+  <link rel="stylesheet" href="../../css/about_help_styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    <style>
-
-* {
-  font-family: sans-serif; /* Change your font family */
-}
-
-.content-table {
+<!-- Added css to style tag to style table -->
+<style>
+#papersDownloads {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
 }
 
-.content-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
+#papersDownloads td, #papersDownloads th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#papersDownloads tr:nth-child(even){background-color: #f2f2f2;}
+
+#papersDownloads tr:hover {background-color: #ddd;}
+
+#papersDownloads th {
+  padding-top: 12px;
+  padding-bottom: 12px;
   text-align: left;
-  font-weight: bold;
-}
-
-.content-table th,
-.content-table td {
-  padding: 12px 15px;
-}
-
-.content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.content-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
-
-.content-table tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
-}
-.p {
-	color:white;
-}
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  
-}
-
-.hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../imgs/try.jpg");
-  height: 30%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-color: #5DADE2;
   color: white;
 }
 </style>
 
+
 </head>
 <body>
-<div class="hero-image"> 
   
-	
-<nav>
-		<ul>
-      <!--<li><a class="active" href="index.php">WebCOMS</a></li>-->
-      <li><a href="adminhomepage.php">Home</a></li>
-			<li><a href="requested_conferences.php">Requested conferences</a></li>
-			<li><a href="conference_list.php">Conference List</a></li>
-			<li><a href="authordetails.php">Author details</a></li>
-			<li><a href="conferenceChairRegistration.php">Conference Chair Registration</a></li>
-			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
-		
+  <nav>
+  <div class="logo">Web-COMS</div>
+      <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
+    <ul>
+      <li><a class="active" href="conference_list.php">Accepted Conferences</a></li>
+      <li><a href="adminhomepage.php">Back to Home</a></li>
+    </ul>    
+  </nav>
+  <br>
 
-	</nav>
+  <h2 style="margin-left:20px;">Accepted Conferences List</h2>
   <br><br>
-  <div class="hero-text">
-</br>
-    <h5 style="font-size:30px">Conferences List</h5>
-</div>
-
-
-
-  <br><br><br><br><br><br><br><br>
 
   <div>
-  <center>
-    <table class="content-table">
+   
+    <table id="papersDownloads">
       <thead>
 	      <tr>
           <th>ID</th>
@@ -129,8 +77,7 @@ body, html {
           <th>Conference Chair</th>
       	</tr>
       </thead>
-</center>
-	    
+
       <tbody>                                     
         <?php
           $sql = mysqli_query($con, "select conferences.id,
@@ -164,8 +111,11 @@ body, html {
       ?>
 
 	  </table>	
-  </div></div>
-          </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-<h5 style="color:white; padding:20px; margin:0; text-align:center; background-color:#063247">WebCOMS @2020</h5>
+  </div>
+
+  <!-- Footer section -->
+  <div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+        </div>
 </body>
 </html>
