@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Create a new conference</title>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
@@ -34,18 +34,21 @@
 <body>
 
 	<nav>
-	<div class="logo">Web-COMS</div>
+  <div class="logo">Web-COMS</div>
       <input type="checkbox" id="click">
             <label for="click" class="menu-btn">
               <i class="fas fa-bars"></i>
             </label>
-		<ul>
-			<li><a class="active" href="create_conference.php">Request a Conference</a></li>
-			<li><a href="conferencechairhomepage.php">Back to Home</a></li>
-			<li><a href="../../help.php">Help</a></li>
-			<li><a href="../../About.php">About</a></li>
-		</ul>
-	</nav>
+    <ul>
+	  <li><a href="conferencechairhomepage.php">Home</a></li>
+      <li><a class="active" href="create_conference.php">Create a Conf</a></li>
+      <li><a href="viewConferencesForCC.php">View Conf</a></li>
+      <li><a href="addnotemplates.php">Add notification templates</a></li>
+      <li><a href="upudetauls.php">Upload User Details</a></li>
+      <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+
+    </ul>
+  </nav>
 
 	<br>
 	<div id="main-wrapper">
