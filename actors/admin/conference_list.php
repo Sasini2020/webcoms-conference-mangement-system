@@ -9,38 +9,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Conference List</title>
 
-   
   <link rel="stylesheet" href="../../css/table_style.css">
 	<link rel="stylesheet" href="../../css/about_help_styles.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-<!-- Added css to style tag to style table -->
-<style>
-#papersDownloads {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+    <style>
 
-#papersDownloads td, #papersDownloads th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#papersDownloads tr:nth-child(even){background-color: #f2f2f2;}
-
-#papersDownloads tr:hover {background-color: #ddd;}
-
-#papersDownloads th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #5DADE2;
-  color: white;
-}
 * {
   font-family: sans-serif; /* Change your font family */
 }
@@ -82,13 +61,15 @@
 .content-table tbody tr.active-row {
   font-weight: bold;
   color: #009879;
-}	
-</style>
+}
 
+</style>
 
 </head>
 <body>
+
   
+	
 <nav>
 <div class="logo">Web-COMS</div>
       <input type="checkbox" id="click">
@@ -106,13 +87,11 @@
 		
 
 	</nav>
-  <br>
 
-  <h2 style="margin-left:20px;">Accepted Conferences List</h2>
-  <br><br>
+  
 
-  <div>
-  <center> 
+
+  <center>
     <table class="content-table">
       <thead>
 	      <tr>
@@ -126,8 +105,8 @@
           <th>Conference Chair</th>
       	</tr>
       </thead>
-</center>	    
-
+</center>
+	    
       <tbody>                                     
         <?php
           $sql = mysqli_query($con, "select conferences.id,
@@ -161,10 +140,9 @@
       ?>
 
 	  </table>	
-  </div>
+ 
 
-  <!-- Footer section -->
-  <div class="footer">
+    <div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
         </div>
 </body>
