@@ -9,11 +9,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Conference List</title>
 
    
-  <link rel="stylesheet" href="../../css/about_help_styles.css">
+  <link rel="stylesheet" href="../../css/table_style.css">
+	<link rel="stylesheet" href="../../css/about_help_styles.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <!-- Added css to style tag to style table -->
@@ -40,31 +41,79 @@
   background-color: #5DADE2;
   color: white;
 }
+* {
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}	
 </style>
 
 
 </head>
 <body>
   
-  <nav>
-  <div class="logo">Web-COMS</div>
+<nav>
+<div class="logo">Web-COMS</div>
       <input type="checkbox" id="click">
             <label for="click" class="menu-btn">
               <i class="fas fa-bars"></i>
             </label>
-    <ul>
-      <li><a class="active" href="conference_list.php">Accepted Conferences</a></li>
-      <li><a href="adminhomepage.php">Back to Home</a></li>
-    </ul>    
-  </nav>
+		<ul>
+			<!--<li><a class="active" href="index.php">WebCOMS</a></li>-->
+			<li><a href="adminhomepage.php">Home</a></li>
+			<li><a href="requested_conferences.php">Requested conferences</a></li>
+			<li><a class="active" href="conference_list.php">Conference List</a></li>
+			<li><a href="authordetails.php">Author details</a></li>
+			<li><a href="conferenceChairRegistration.php">Conf Chair Registration</a></li>
+			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+		
+
+	</nav>
   <br>
 
   <h2 style="margin-left:20px;">Accepted Conferences List</h2>
   <br><br>
 
   <div>
-   
-    <table id="papersDownloads">
+  <center> 
+    <table class="content-table">
       <thead>
 	      <tr>
           <th>ID</th>
@@ -77,6 +126,7 @@
           <th>Conference Chair</th>
       	</tr>
       </thead>
+</center>	    
 
       <tbody>                                     
         <?php
