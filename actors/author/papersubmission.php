@@ -73,10 +73,20 @@
           <input name="contact_details" type="text" class="inputvalues" placeholder="Your Contact Details" required/><br>
           <label><b>Other links:</b></label><br>
           <input name="other_links" type="text" class="inputvalues" placeholder="Other links"><br>
+          
+          <label><b>Paper Title*</b></label><br>
+          <input name="title" type="text" class="inputvalues" placeholder="Title" required/><br>
+
+          <!-- Text-area -->
+          <label><b>Abstract*</b></label><br>
+
+          <!-- <textarea name="abstract" rows="10" cols="40"><?php //echo $comment;?></textarea> -->
+          <textarea name="abstract" rows="10" cols="40"></textarea>
+          
           <label><b>Select Paper *</b></label><br>
           <input type="file" name="myfile" > <br>
           <br>
-          <button type="submit" class="button" id="save_btn" name="save">upload</button>
+          <button type="submit" class="button" id="save_btn" name="save">Upload</button>
           <!-- <button type="submit" id="" name="">Cancel</button> -->
           <button type="cancel" class="button" onclick="javascript:window.location='papersubmission.php';">Cancel</button>
  
