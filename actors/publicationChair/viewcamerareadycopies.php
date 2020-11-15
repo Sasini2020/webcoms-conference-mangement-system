@@ -107,6 +107,8 @@
     <th>Other links</th> -->
     <th>Downloads</th>
     <th>Action</th>
+    <th>Action</th>
+    <th>Action</th>
 
 
 </thead>
@@ -126,7 +128,8 @@
       <td><?php echo $file['downloads']; ?></td>
       
       <td><i class="fas fa-download" style="color:dodgerblue;" ></i><a style="text-decoration:none;color:dodgerblue;" href="viewcamerareadycopies.php?file_id=<?php echo $file['crc_id'] ?>"> Download </a></td>
-
+      <td><i style="color:red" class="fas fa-trash-alt"></i><a href="#"style="color:red;text-decoration:none;">Low-quality</a></td>
+      <td><i style="color:#2ECC71 " class="fas fa-share-square"></i><a href="#" style="color:green;text-decoration:none;">Accept</a></td>
     </tr>
   <?php endforeach;?>
 
