@@ -69,7 +69,8 @@
     <!-- file id -->
     <th>ID </th> 
     <!-- <th>Author's name</th> -->
-    <th>Research paper</th>
+    <th>Paper Title</th>
+    <th>File</th>
     <th>Conference name</th>
     <th>University(Author)</th>
     <th>File size (in KB)</th>
@@ -84,6 +85,7 @@
   <?php foreach ($files as $file): ?>
     <tr>
       <td><?php echo $file['crc_id']; ?></td>
+      <td><?php echo $file['title']; ?></td>
       <td><?php echo $file['name']; ?></td>
   
   
@@ -91,11 +93,10 @@
       <td><?php ?></td>
       <td><?php ?></td>
 
-
       <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
       <td><?php echo $file['downloads']; ?></td>
       
-      <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="viewcamerareadycopies.php?file_id=<?php echo $file['crc_id'] ?>"> Download </a></td>
+      <td><i class="fas fa-download" style="color:dodgerblue;" ></i><a style="text-decoration:none;color:dodgerblue;" href="viewcamerareadycopies.php?file_id=<?php echo $file['crc_id'] ?>"> Download </a></td>
 
     </tr>
   <?php endforeach;?>
