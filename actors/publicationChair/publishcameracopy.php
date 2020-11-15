@@ -11,32 +11,66 @@
 <link rel="stylesheet" href="../../css/nav_footer_styles.css">
 <link rel="stylesheet" href="../../css/reg_form_style.css">
 
+
+
+<!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ 	  <link rel="stylesheet" href="../../css/nav_footer_styles.css">
+    <link rel="stylesheet" href="../../css/reg_form_style.css">-->
+
 <!--<link rel="stylesheet" href="../../css/main_style.css">
 <link rel="stylesheet" href="../../css/sty.css">-->
 
 </head>
+<style>
+  * {
+  font-family: sans-serif; /* Change your font family */
+}
 
+</style>
  
-<nav>
+<!--<nav>
     <ul>
       <li><a href="publicationchairhomepage.php">Back</a></li>
       
     </ul>
   </nav>
 
-  <br><br>
+  <br><br>--->
 
- <center>
-   <h1>Publish guidelines for Camera ready copy Submission</h1>  
+  <!-- navbar -->
+<nav>
+  <div class="logo">Web-COMS</div>
+        <input type="checkbox" id="click">
+              <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+              </label>
+    <ul>
+    <li><a href="publicationchairhomepage.php">Back</a></li>
+    <li><a class="active" href="publishcameracopy.php">Publish guidelines</a></li>
+    <li><a href="../../About.php">About</a></li>
+    <li><a href="../../help.php">Help</a></li>
 
-  </center>
+    </ul>
+  </nav>
+<h2></h2><br>
+
+ 
 <br><br>
-
+        <center>
+            <h2>Publish guidelines for Camera ready copy Submission</h2>
+        </center>
+        <br><br>
 
 <body>
 
    <div id="container">
-       <form action="" method ="POST">
+   
+       <form action="publishcameracopy.php" method ="POST">
+       
+        <!--<center>
+            <h2 style="color:#5DADE2;">Publish guidelines for Camera ready copy Submission</h2>
+        </center>-->
+      <br><br>
        <center>
             <textarea rows="4" cols="50" name="comment"> Add guideline here </textarea>
             
