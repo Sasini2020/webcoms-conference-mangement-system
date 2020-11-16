@@ -69,7 +69,7 @@
     <th>Paper Title</th> 
     <th>Author's name</th>
     <th>Research paper</th>
-    <th>Conference name</th>
+    <!--<th>Conference name</th>-->
     <th>University(Author)</th>
     <th>File size (in KB)</th>
     <th>Contact details</th>
@@ -90,8 +90,8 @@
       <td><?php echo $file['name']; ?></td>
   
   
-      <!-- show conference name here in below php tag -->
-      <td><?php ?></td>
+      <!-- show conference name here in below php tag 
+      <td><?php ?></td>-->
 
 
       <td><?php echo $file['university'];?></td>
@@ -103,7 +103,7 @@
       
       <!-- delete is not working yet complete it -->
       <td><i style="color:red" class="fas fa-trash-alt"></i><a href="#"<?php echo $file['id']; ?> style="color:red;text-decoration:none;">Reject</a></td>
-      <td><i style="color:#2ECC71 " class="fas fa-share-square"></i><a href="#"<?php echo $file['id']; ?> style="color:green;text-decoration:none;">Assign</a></td>
+      <td><i style="color:#2ECC71 " class="fas fa-share-square"></i><a href="firstround.php?p_id=<?php echo $file['id'];?>" style="color:green;text-decoration:none;">Assign</a></td>
 
     
     

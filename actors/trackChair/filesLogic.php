@@ -84,5 +84,11 @@ if (isset($_GET['file_id'])) {
 }
 // sql to delete a record
 
+// reviewer assign
+if(isset($_GET['p_id'])){
+    $_SESSION['paper_id']=$_GET['p_id'];
+    header('location:addReviewerTopaperinForm.php');
+}
+
 
 
