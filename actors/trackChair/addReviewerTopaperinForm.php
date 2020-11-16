@@ -13,6 +13,15 @@
     <title>Assign reviewers</title>
     <link rel="stylesheet" href="../../css/nav_footer_styles.css">
     <link rel="stylesheet" href="../../css/table_style.css">
+    <style>
+        #slctBtn{
+            background-color:#4dff4d; 
+            padding:4px; 
+            radius:20px;
+            border: 2px solid #009966;
+            border-radius: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -77,7 +86,7 @@
             <td><?=$row['emailreviewer']?></td>
             <td>
                 <form action="addReviewerTopaperinForm.php" method="post">		                                   
-                    <input type="submit" name="assign" Value="Assign" id="CTadd"/>
+                    <input type="submit" name="assign" Value="Assign" id="slctBtn"/>
                     <input type="hidden" name="remail" value="<?php echo $row['emailreviewer']; ?>" />
                 </form>
             </td>

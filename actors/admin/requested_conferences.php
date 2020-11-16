@@ -208,12 +208,13 @@
           if($_POST['action'] == 'Reject'){
             $r_id = $_POST['id'];
             $qur = mysqli_query($con,"delete from conferences where id='$r_id'");
-            header('location:requested_conferences.php');
+            //header('location:requested_conferences.php');
           }
           elseif($_POST['action'] == 'Accept'){
             $r_id = $_POST['id'];
             $qur = mysqli_query($con,"update conferences set Accepted = '1' where id='$r_id'");
-            header('location:requested_conferences.php');
+            //header('location:requested_conferences.php');
+            //header('Location: '.$_SERVER['PHP_SELF']);
           }
         }
       ?>
