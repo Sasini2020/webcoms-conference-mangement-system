@@ -140,9 +140,9 @@
          <!-- <button type="submit" class="button "id="save_btn" name="submit">Upload</button><br><br>
           <button type="cancel" class="button" onclick="javascript:window.location='uploadcoversub.php';">Cancel</button>-->
 
-          <a href="generate.php"><button type="submit" class="button"  id="save_btn" name="generate" onclick="alert('Auto-genarate procceding Successfully')" > Generate<buttton></a>
+          <a href="#"><button type="submit" class="button"  id="save_btn" name="generate" onclick="alert('Auto-genarate procceding Successfully')" > Generate<buttton></a>
       
-       <a href="download.php"><button  type="submit" class="button" onclick="alert('Download Successfully')">Download<buttton></a>
+       <a href="#"><button  type="submit" class="button" onclick="alert('Download Successfully')">Download<buttton></a>
       </form>
       </center>
     <!-- Footer section -->
