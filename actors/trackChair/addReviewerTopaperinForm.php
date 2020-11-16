@@ -67,18 +67,18 @@
     <tbody>
         <?php
             $sql = mysqli_query($con, "select *
-            from trackchair") or die(mysqli_error($con));
+            from reviewer") or die(mysqli_error($con));
             $counter = 1;
             while ($row = mysqli_fetch_assoc($sql)) {
        ?>                                            
            <tr>
 
             <td><?=$row['fullname']?></td>
-            <td><?=$row['emailtrackchair']?></td>
+            <td><?=$row['emailreviewer']?></td>
             <td>
                 <form action="addReviewerTopaperinForm.php" method="post">		                                   
                     <input type="submit" name="assign" Value="Assign" id="CTadd"/>
-                    <input type="hidden" name="remail" value="<?php echo $row['emailtrackchair']; ?>" />
+                    <input type="hidden" name="remail" value="<?php echo $row['emailreviewer']; ?>" />
                 </form>
             </td>
            </tr>
