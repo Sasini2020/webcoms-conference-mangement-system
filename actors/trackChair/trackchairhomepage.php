@@ -19,7 +19,7 @@
 <nav>
     <ul>
       <li><a href="firstround.php">First-round paper evaluation</a></li>
-      <li><a href="paperaccept.php">Paper Acceptance</a></li>
+      <!--<li><a href="paperaccept.php">Paper Acceptance</a></li>-->
       <li><a href="assignreviewrs.php">Assign Reviewers </a></li>
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
      
