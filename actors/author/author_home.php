@@ -11,30 +11,154 @@
     <title>Author Home</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
+   <link rel="stylesheet" href="../../css/reg_form_style.css">
+
+   <link rel="stylesheet" href="../../css/table_style.css">
   <!--<link rel="stylesheet" href="../../css/main_style.css">-->
+
+
+  <style>
+
+* {
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+ 
+</style>
 </head>
 <body>
-<nav>
-    <ul>
-      <li><a href="ConferenceListForA.php">Conference List</a></li>
-      <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
-    </ul>
+
+
+
+  <nav>
+<div class="logo">Web-COMS</div>
+      <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
+	<ul>
+    
+	  <li><a class="active" href="author_home.php">home</a></li>
+    <li><a href="ConferenceListForA.php">Conferences List</a></li>
+
+    <li><a href="../../About.php">About</a></li>
+        <li><a href="../../help.php">Help</a></li>
+    <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+	</ul>
   </nav>
 
-  <br><br>
+  <br>
 
-    <div id="main-wrapper">
-		<center>
-			<h2>Author Home Page</h2>
-			<h3> Welcome </h3>
-			<img src="../../imgs/webc.png" class="avatar"/>
-		</center>
+  <center>
+  <!--<h2 style="margin-left:20px;">Conferences List</h2>-->
+
+	<table class="content-table">
+	<tr>
+        <th>ID</th>
+	   <th>Conference</th>
+	   <th>Venue</th>
+	   <th>Start date</th>
+	   <th>End date</th>
+	   <th>Paper submission due date</th>
+	   <th>Sponser details</th>
 	   
-	</div>
+
+
+	</tr>
+	<br>
+	
+	
+	<?php
+	
+	 if(isset($_POST['back']))
+			{
+				header('location:.php');
+	}
+
+
+	
+	$conn = mysqli_connect("localhost","root","","webcomsdb");
+	if ($conn-> connect_error) {
+		die("Connection failed:". $conn-> connect_error);
+	}
+	
+	$sql = "SELECT * from conferences ";
+	$result = $conn-> query($sql);
+
+
+	
+	if ($result-> num_rows> 0){
+		while ($row = $result-> fetch_assoc()){
+			echo "<tr><td>". $row["id"] ."</td><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"] ."</td><td>" . $row["sponsor_details"] ;
+		
+       
+        }
+		echo "</table>";
+	}
+	else {
+		echo "0 result";
+	}
+	$conn-> close();
+	?>
+
+
+	
+	</table>
+</center>
+</div>
+
+
+
+
+
+
+  
+
+    
+	   
+	
   <!-- Footer section -->
 	<div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
-        </div>
+        
 
 </body>
 </html>
