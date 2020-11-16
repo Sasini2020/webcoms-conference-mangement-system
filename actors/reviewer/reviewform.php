@@ -16,20 +16,43 @@ session_start();
 </head>
 <body>
 
-<nav>
+<!--<nav>
 		<ul>
 			<li><a href="paperlist.php">Back</a></li>
 			
 		</ul>
 	</nav>
 
-	<br><br>
+	<br><br>-->
+
+
+<!-- navbar -->
+<nav>
+<div class="logo">Web-COMS</div>
+        <input type="checkbox" id="click">
+              <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+              </label>
+      <ul>
+        <li><a class="active" href="reviewform.php">Paper review comment</a></li>
+        <li><a href="../../About.php">About</a></li>
+        <li><a href="../../help.php">Help</a></li>
+        <li><a href="reviewerhomepage.php">Back</a></li>
+
+      </ul>
+</nav>
+<br>
+<center>
+<h2 style="color:#283747 ;margin-left:20px;">Paper review comment</h2>
+
+</center>
+<br><br>
+
+
+
 	
 	<div id="main-wrapper">
-		<center>
-			<h2>Paper review comment</h2>
-		</center>
-	
+		
 		<form class="myform" action="reviewform.php"method="post">
 		  
 		<!--<label><b>reviewer email</b></label><br>
@@ -54,7 +77,7 @@ session_start();
      </div>
     </div>
     <!--<input name="submit" type="submit" id="submit_btn" value="submit"/><br>-->
-	<button type="submit" class="button "id="submit_btn"  value="submit" name="submit">Upload</button><br><br>
+	<button type="submit" class="button "id="submit_btn"  value="submit" name="submit">Submit</button><br><br>
 		</form>
 		
     <?php
