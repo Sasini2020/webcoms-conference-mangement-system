@@ -108,10 +108,11 @@
               </label>
       <ul>
       <!--<li><a href="reviewform.php">Submit paper review comment</a></li>-->
+      <li><a href="reviewerhomepage.php">Back</a></li>
         <li><a class="active" href="paperlist.php">Uploaded Papers</a></li>
         <li><a href="../../About.php">About</a></li>
         <li><a href="../../help.php">Help</a></li>
-        <li><a href="reviewerhomepagenew.php">Back</a></li>
+        <!--<li><a href="reviewerhomepagenew.php">Back</a></li>-->
 
       </ul>
 </nav>
