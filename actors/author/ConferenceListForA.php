@@ -13,8 +13,14 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
 
+	 <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ 	<link rel="stylesheet" href="../../css/nav_footer_styles.css">-->
+   <link rel="stylesheet" href="../../css/reg_form_style.css">
+
+   <link rel="stylesheet" href="../../css/table_style.css">
+
 <!-- Added css to style tag to style table -->
-<style>
+<!--<style>
 #papersDownloads {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -44,6 +50,52 @@ a {
 a:hover {
   color: #1A5276;
 }
+</style>-->
+<style>
+
+* {
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+ 
 </style>
 
 
@@ -57,17 +109,20 @@ a:hover {
               <i class="fas fa-bars"></i>
             </label>
 	<ul>
-      <li><a href="author_home.php">Back to Home</a></li>
+    
 	  <li><a class="active" href="ConferenceListForA.php">Conferences List</a></li>
+	  <li><a href="../../About.php">About</a></li>
+        <li><a href="../../help.php">Help</a></li>
+    <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
 	</ul>
   </nav>
 
   <br>
-
+<center>
   <h2 style="margin-left:20px;">Conferences List</h2>
 
-	<table id="papersDownloads">
+	<table class="content-table">
 	<tr>
         <th>ID</th>
 	   <th>Conference</th>
@@ -123,6 +178,7 @@ a:hover {
 
 	
 	</table>
+</center>
 </div>
 <!-- </td> -->
 	
