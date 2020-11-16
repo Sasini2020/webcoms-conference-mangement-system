@@ -11,38 +11,66 @@
 <head>
   <meta charset="utf-8" />
 
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
   <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/nav_footer_styles.css">
+  <link rel="stylesheet" href="../../css/nav_footer_styles.css">-->
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ 	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
+   <link rel="stylesheet" href="../../css/reg_form_style.css">
+
+   <link rel="stylesheet" href="../../css/table_style.css">
 
   <title>Uploaded camera ready copies</title>
 
-<!-- Added css to style tag to style table -->
   <style>
-#papersDownloads {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+* {
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
   border-collapse: collapse;
-  width: 100%;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-#papersDownloads td, #papersDownloads th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#papersDownloads tr:nth-child(even){background-color: #f2f2f2;}
-
-#papersDownloads tr:hover {background-color: #ddd;}
-
-#papersDownloads th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
   text-align: left;
-  background-color: dodgerblue;
-  color: white;
+  font-weight: bold;
 }
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+ 
 </style>
+
 </head>
 <body>
 <!-- navbar -->
@@ -61,10 +89,11 @@
     </ul>
   </nav>
 <h2></h2><br>
+<center>
 <h2 style="color:#283747 ;margin-left:20px;">Uploaded camera ready copies</h2><br>
 <!-- <p style="color:#283747 ;margin-left:20px;">As publownload final camera-ready copies and generate proceeding preparation</p> -->
 
-<table id="papersDownloads">
+<table class="content-table">
 <thead>
     <!-- file id -->
     <th>ID </th> 
@@ -77,6 +106,8 @@
     <!-- <th>Contact details</th>
     <th>Other links</th> -->
     <th>Downloads</th>
+    <th>Action</th>
+    <th>Action</th>
     <th>Action</th>
 
 
@@ -97,12 +128,14 @@
       <td><?php echo $file['downloads']; ?></td>
       
       <td><i class="fas fa-download" style="color:dodgerblue;" ></i><a style="text-decoration:none;color:dodgerblue;" href="viewcamerareadycopies.php?file_id=<?php echo $file['crc_id'] ?>"> Download </a></td>
-
+      <td><i style="color:red" class="fas fa-trash-alt"></i><a href="#"style="color:red;text-decoration:none;">Low-quality</a></td>
+      <td><i style="color:#2ECC71 " class="fas fa-share-square"></i><a href="#" style="color:green;text-decoration:none;">Accept</a></td>
     </tr>
   <?php endforeach;?>
 
 </tbody>
 </table>
+</center>
  <!-- Footer section -->
  <div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>

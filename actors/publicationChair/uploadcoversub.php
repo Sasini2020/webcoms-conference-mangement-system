@@ -108,6 +108,12 @@ if (mysqli_query($con, $sql)) {
 
 </head>
 <style>
+  * {
+  font-family: sans-serif; /* Change your font family */
+}
+
+</style>
+<style>
     /* Styles for two buttons in the form*/
     .button {
   background-color: #5DADE2; /* Green */
@@ -124,18 +130,35 @@ if (mysqli_query($con, $sql)) {
 
   </style>
  
-<nav>
+<!--<nav>
     <ul>
       <li><a href="publicationchairhomepage.php">Back</a></li>
       
     </ul>
   </nav>
 
-  <br><br>
+  <br><br>-->
+<!-- navbar -->
+<nav>
+  <div class="logo">Web-COMS</div>
+        <input type="checkbox" id="click">
+              <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+              </label>
+    <ul>
+    <li><a href="publicationchairhomepage.php">Back</a></li>
+    <li><a class="active" href="uploadcoversub.php">Upload Pages</a></li>
+    <li><a href="../../About.php">About</a></li>
+    <li><a href="../../help.php">Help</a></li>
+
+    </ul>
+  </nav>
+<h2></h2><br>
+
 
 
  <center>
-   <h1 style="text-align:center;">Upload cover pages and Sub Pages </h1>  
+   <h2>Upload cover pages and Sub Pages </h2>  
 
   </center>
 <br><br>
@@ -180,27 +203,29 @@ if (mysqli_query($con, $sql)) {
 
  ?>
 
-
+  
 
 		
       <form action="uploadcoversub.php" method="post" enctype="multipart/form-data">
       <center>
-      <h2 style="color:#5DADE2;">Select File</h2>
+      <h2 style="color:#5DADE2;">Select Files</h2>
+
+
        
         <br><br>
        </center>
-          <h3>Upload template </h2>
+          <h3>Upload template </h2><br>
           <input type="file" name="template" id="" ><br><br>
-          <h3>Upload coverpage </h2>
+          <h3>Upload coverpage </h2><br>
           <input type="file" name="coverpage" id=""><br><br>
-          <h3>Upload subpage </h2>
+          <h3>Upload subpage </h2><br>
           <input type="file" name="subpage" id=""><br><br>
          
           <br>
           <button type="submit" class="button "id="save_btn" name="submit">Upload</button><br><br>
           <button type="cancel" class="button" onclick="javascript:window.location='uploadcoversub.php';">Cancel</button>
       </form>
-
+  
       <?php 
 			if (isset($file_uploaded)) {
         echo '<h3>Uploaded File</h3>';
