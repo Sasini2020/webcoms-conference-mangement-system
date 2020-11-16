@@ -107,7 +107,7 @@
                 <i class="fas fa-bars"></i>
               </label>
       <ul>
-      <li><a href="reviewform.php">Submit paper review comment</a></li>
+      <!--<li><a href="reviewform.php">Submit paper review comment</a></li>-->
         <li><a class="active" href="paperlist.php">Uploaded Papers</a></li>
         <li><a href="../../About.php">About</a></li>
         <li><a href="../../help.php">Help</a></li>
@@ -133,7 +133,7 @@
     <th>Other links</th>
     <th>Downloads</th>
     <th>Action</th>
-    <!--<th>recommendation</th>-->
+    <th>recommendation</th>
     
     
     
@@ -160,7 +160,7 @@
       <td><?php echo $file['other_links'];?></td>
       <td><?php echo $file['downloads']; ?></td>
       <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperslist.php?file_id=<?php echo $file['id'] ?>"> Download </a></td>
-      <!--<td><i style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="reviewform.php"> Review </a></td>-->
+      <td><i style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="reviewform.php"> Review </a></td>
       
       
       

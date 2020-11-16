@@ -225,14 +225,16 @@ if (mysqli_query($con, $sql)) {
           <button type="submit" class="button "id="save_btn" name="submit">Upload</button><br><br>
           <button type="cancel" class="button" onclick="javascript:window.location='uploadcoversub.php';">Cancel</button>
       </form>
-  
+  <center>
       <?php 
+      
 			if (isset($file_uploaded)) {
-        echo '<h3>Uploaded File</h3>';
+        
+        echo '<h3 style="color:#FC0932 ;">Files Uploaded Successfully</h3>';
 			}
-
-		 ?>
      
+		 ?>
+     </center>
 
     </div>
     </div>

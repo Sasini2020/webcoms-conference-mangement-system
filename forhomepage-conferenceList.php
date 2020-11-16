@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="../../css/main_style.css">
 <style>
 
-* {
-  font-family: sans-serif; /* Change your font family */
-}
 
 .content-table {
   border-collapse: collapse;
@@ -40,7 +37,7 @@
 }
 
 .content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid dodgerblue;
 }
 
 .content-table tbody tr:nth-of-type(even) {
@@ -48,7 +45,7 @@
 }
 
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid dodgerblue;
 }
 
 .content-table tbody tr.active-row {
@@ -60,11 +57,9 @@
 </head>
 <body>
 
-  <br><br><br><br><br><br><br><br><br><br>
+  <br><br>
 
-  <center>
-    <p><h3>Conference List</h3></p>
-  </center>
+  <h1 style="margin-left:20px;color:#1C2833   ;font-size:35px;">Recent Conferences</h1>
 
   
 

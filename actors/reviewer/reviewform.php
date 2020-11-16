@@ -58,8 +58,8 @@ session_start();
 		<!--<label><b>reviewer email</b></label><br>
 			<input id=emailreviewer name="emailreviewer" type="text" class="inputvalues" placeholder="reviewer email ..." required/><br>-->
 			
-			<label><b>Author Email</b></label><br>
-			<input id=emailauthor name="emailauthor" type="text" class="inputvalues" placeholder="author email" required/><br>
+			<!--<label><b>Author Email</b></label><br>
+			<input id=emailauthor name="emailauthor" type="text" class="inputvalues" placeholder="author email" required/><br>-->
 			
 
 			<label><b>recommendation</b></label><br>
@@ -83,14 +83,14 @@ session_start();
     <?php
 			if(isset($_POST['submit']))
 			{   
-				$emailreviewer=$_POST['emailreviewer'];	
+			
 				$emailauthor=$_POST['emailauthor'];
 				$recommendation =$_POST['recommendation'];
 				$comments = $_POST['comments'];
 				$r_Email=$_SESSION['r_email'];
 				
         	
-				$query= "INSERT into reviewerform (comments,recommendation,emailreviewer,emailauthor)values('$comments','$recommendation','$r_Email','$emailauthor')";
+				$query= "INSERT into reviewerform (comments,recommendation,emailreviewer)values('$comments','$recommendation','$r_Email')";
 				$query_run = mysqli_query($con,$query);
 						
 				if($query_run)
