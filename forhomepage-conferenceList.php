@@ -74,7 +74,7 @@
           <th>Start date</th>
           <th>End date</th>
           <th>Deadline</th>
-          <th>Sposer details</th>
+          <th>Sponser details</th>
           <th>Conference Chair</th>
       	</tr>
       </thead>

@@ -68,8 +68,8 @@
 	<thead>
 		<tr>
 		<th>Full name</th>
-		<th>Gender</th>
 		<th>Email</th>
+		<th>Gender</th>		
 		<th></th>
 		</tr>
 	</thead>	

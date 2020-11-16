@@ -1,10 +1,4 @@
-<?php
-  session_start();
-  require '../../dbconfig/config.php';
-  if($_SESSION['login_s'] != '4'){
-    header('location:../../login.php');
-  }
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,25 +86,9 @@
 </head>
 <body>
 
-	<nav>
-  <div class="logo">Web-COMS</div>
-      <input type="checkbox" id="click">
-            <label for="click" class="menu-btn">
-              <i class="fas fa-bars"></i>
-            </label>
-    <ul>
-	  <li><a href="conferencechairhomepage.php">Home</a></li>
-      <li><a href="create_conference.php">Request a Conf</a></li>
-      <li><a class="active" href="viewConferencesForCC.php">View Conf</a></li>
-      <li><a href="addnotemplates.php">Add notification templates</a></li>
-      <li><a href="upudetauls.php">Upload User Details</a></li>
-      <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
-    </ul>
-  </nav>
-
-<br><br>
-		<center><h2 style="margin-left:25px;color:dodgerblue;">Conference List</h2></center>
+<br><br><br><br>
+		<h2 style="margin-left:100px;color:#000000;">Conference List</h2>
 
 
 <div>
@@ -165,7 +143,8 @@
                 
      </table>	
  </div>
- 
+
+  
   <!-- Footer section -->
 	<div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>

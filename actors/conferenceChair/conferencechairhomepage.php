@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require '../../dbconfig/config.php';
   if($_SESSION['login_s'] != '4'){
     header('location:../../login.php');
   }
@@ -78,7 +79,7 @@
     <ul>
 	  <li><a class="active" href="conferencechairhomepage.php">Home</a></li>
       <li><a href="create_conference.php">Request a Conf</a></li>
-      <li><a href="viewConferencesForCC.php">View Conf</a></li>
+      <!--<li><a href="viewConferencesForCC.php">View Conf</a></li>-->
       <li><a href="addnotemplates.php">Add notification templates</a></li>
       <li><a href="upudetauls.php">Upload User Details</a></li>
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
@@ -99,6 +100,11 @@
 		</center>
 	   
 	</div>
+
+  <?php
+        include "viewConferencesForCC.php";
+	?>
+
   <!-- Footer section -->
 	<div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
