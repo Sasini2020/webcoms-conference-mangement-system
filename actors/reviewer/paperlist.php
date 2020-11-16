@@ -10,15 +10,22 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="../../css/reg_form_style.css">
 
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/nav_footer_styles.css">
+  <link rel="stylesheet" href="../../css/table_style.css">-->
 
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ 	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
+   <link rel="stylesheet" href="../../css/reg_form_style.css">
+
+   <link rel="stylesheet" href="../../css/table_style.css">
   <title>Uploaded reseach papers</title>
 
 <!-- Added css to style tag to style table -->
-  <style>
+  <!--<style>
 #papersDownloads {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -41,7 +48,55 @@
   background-color: dodgerblue;
   color: white;
 }
+</style>-->
+<!-- Added css to style tag to style table -->
+<style>
+
+* {
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align:left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 15px 11px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+ 
 </style>
+
 </head>
 <body>
 <!-- navbar -->
@@ -52,6 +107,7 @@
                 <i class="fas fa-bars"></i>
               </label>
       <ul>
+      <li><a href="reviewform.php">Submit paper review comment</a></li>
         <li><a class="active" href="paperlist.php">Uploaded Papers</a></li>
         <li><a href="../../About.php">About</a></li>
         <li><a href="../../help.php">Help</a></li>
@@ -63,7 +119,7 @@
 <h1 style="color:#283747 ;margin-left:20px;">Uploaded All Research Papers</h1>
 
 
-<table id="papersDownloads">
+<table class="content-table">
 <thead>
     <!-- file id -->
     <th>ID </th>
@@ -77,6 +133,12 @@
     <th>Other links</th>
     <th>Downloads</th>
     <th>Action</th>
+    <!--<th>recommendation</th>-->
+    
+    
+    
+    
+
 
 </thead>
 <tbody>
@@ -98,7 +160,11 @@
       <td><?php echo $file['other_links'];?></td>
       <td><?php echo $file['downloads']; ?></td>
       <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperslist.php?file_id=<?php echo $file['id'] ?>"> Download </a></td>
+      <!--<td><i style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="reviewform.php"> Review </a></td>-->
       
+      
+      
+
 
     
     
