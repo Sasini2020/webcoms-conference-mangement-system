@@ -48,22 +48,28 @@
 			<fieldset>
       		<legend><span class="number">1</span>Personal Information</legend><br>
 		
-			<label for="fname">Full Name:</label><br>
+			  <label for="fname">Full Name:</label><br>
 			<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 			
 			<label>Gender:</label><br>
-			<input id="Gmale" type="radio" name="gender" value="male" checked required> 
-			<label for="Gmale" class="light">Male</label><br>
-			<input id="GFemale" type="radio" name="gender" value="female" required>
-			<label for="GFemale" class="light">Female</label><br>
+			<input id="Gmale" type="radio" name="gender" value="male" checked required><label for="Gmale" class="light">Male</label><br><br>
+			<input id="GFemale" type="radio"  name="gender" value="female" required><label for="GFemale" class="light">Female</label><br><br>
+			
+			<label for="University">University:</label><br>
+			<input id="University" name="University" type="text" class="inputvalues" placeholder="Type your University" required/><br>
 
-            <input type="hidden" name="usertype" value="Conference_chair">
-			</fieldset>
+			<label for="ContactDetails">Contact Details:</label><br>
+			<input id="ContactDetails" name="ContactDetails" type="text" class="inputvalues" placeholder="Type your Contact Details" required/><br>
+
+			<label for="ContactLinks">Contact Links:</label><br>
+			<input id="ContactLinks" name="ContactLinks" type="text" class="inputvalues" placeholder="Type your Contact Links" required/><br>
+		   
+		</fieldset>
 		<fieldset>
       	<legend><span class="number">2</span>Login Information</legend><br>
 			<label for="Email">Email:</label><br>
 			<input id="Email" name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
-			
+
 			<label for="passW">Password:</label><br>
 			<input id="passW" name="password" type="password" class="inputvalues" placeholder="Your password" required/><br>
 			
@@ -71,7 +77,12 @@
 			<input id="CpassW" name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>
 		</fieldset>
 	
-			<button name="submit_btn" type="submit" id="signup_btn" value="Sign Up">Register</button<br>
+			<button name="submit_btn" type="submit" id="signup_btn" value="Sign Up">Register</button><br>
+			<!--<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>-->
+		</form>
+
+
+
 			<!--<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>-->
 		</form>
 		
@@ -85,7 +96,10 @@
 				$password = $_POST['password'];
 				$cpassword = $_POST['cpassword'];
 				$gender = $_POST['gender'];
-				$usertype = $_POST['usertype'];
+				$usertype = "Conference_chair";
+				$University = $_POST['University'];
+				$ContactDetails = $_POST['ContactDetails'];
+				$ContactLinks = $_POST['ContactLinks'];
 
 				//echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
 				//echo '<script type="text/javascript"> alert("'.$fullname.' ---'.$username.' --- '.$password.' --- '.$gender.' --- '.$qualification.'"  ) </script>';
@@ -104,8 +118,8 @@
 					}
 					else
 					{
-						$query= "insert into userinfotable (email, full_name, gender, user_type, password) 
-						values('$email','$fullname','$gender','$usertype','$encrypted_pass')";
+						$query= "insert into userinfotable ( full_name, university, contactdetails, contactlinks, gender, user_type, password, email ) 
+						values('$fullname','$University','$ContactDetails','$ContactLinks','$gender','$usertype','$encrypted_pass','$email')";
 						$query_run = mysqli_query($con,$query);
 
 						$query2= "insert into conferencechair 

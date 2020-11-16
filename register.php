@@ -123,8 +123,33 @@
 						values('$fullname','$University','$ContactDetails','$ContactLinks','$gender','$usertype','$encrypted_pass','$email')";
 						$query_run = mysqli_query($con,$query);
 
+						switch($usertype){
+							case "Author":
+								$query2= "insert into author 
+									values('$email','$fullname','$University','$ContactDetails','$ContactLinks','$gender','$encrypted_pass','$email')";
+								$query_run2 = mysqli_query($con,$query2);
+								break;
+							case "Reviewer":
+								$query2= "insert into reviewer 
+									values('$email','$fullname','$gender','$encrypted_pass','$email')";
+								$query_run2 = mysqli_query($con,$query2);
+								break;
+							case "TrackChair":
+								$query2= "insert into trackchair 
+									values('$email','$fullname','$gender','$encrypted_pass','$email')";
+								$query_run2 = mysqli_query($con,$query2);
+								break;
+							case "PublicationChair":
+								$query2= "insert into publicationchair 
+									values('$email','$fullname','$encrypted_pass','$gender','$email')";
+								$query_run2 = mysqli_query($con,$query2);
+								break;
+							default:
+								$query_run2 = false;
+						}
+
 						
-						if($query_run)
+						if($query_run and $query_run2)
 						{
 							echo '<script type="text/javascript"> alert("User Registered.. Go to login page to login") </script>';
 						}
