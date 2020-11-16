@@ -10,13 +10,18 @@
 
 	<title>Conference List</title>
 
-	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
- <link rel="stylesheet" href="../../css/mychanged.css">
+ <link rel="stylesheet" href="../../css/mychanged.css">-->
+ <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+ 	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
+   <link rel="stylesheet" href="../../css/reg_form_style.css">
+
+   <link rel="stylesheet" href="../../css/table_style.css">
  <!--<link rel="stylesheet" href="../../css/main_style.css">-->
 
 
-<style>
+<!--<style>
 	
 body {
   margin: 0;
@@ -31,22 +36,95 @@ body {
     font-size: 17px;
   }
    
+</style>-->
+
+
+<style>
+
+* {
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+ 
 </style>
+
+
 
 </head>
 <body>
 
-<nav>
+
+
+
+  <nav>
+  <div class="logo">Web-COMS</div>
+  <input type="checkbox" id="click">
+  <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
     <ul>
-      <li><a href="reviewerhomepage.php">Back to Home</a></li>
+      
+
+	     <li><a href="reviewerhomepage.php">Back</a></li>
+			<li><a class="active" href="ConferenceListForR.php">Conference List</a></li>
+      
+			
+			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+		
+
+
     </ul>
   </nav>
 
   <br><br>
 
-  <h2 align="center">Conferences List</h2>
 
-	<table>
+
+
+
+
+<br>
+  <h2 align="center">Conferences List</h2>
+<center>
+	<table class="content-table">
 	<tr>
        <th>ID</th>
 	   <th>Conference</th>
@@ -97,6 +175,7 @@ body {
 
 	
 	</table>
+	</center>
 </div>
 <!-- </td> -->
 	
