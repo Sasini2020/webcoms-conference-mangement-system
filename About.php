@@ -23,7 +23,7 @@
 			<li><a href="help.php">Help</a></li>
 			<li><a class="active"  href="About.php">About</a></li>
 		</ul>
-		<br /><br />
+		
 	</nav>
 	<br><br><br><br><br><br><br><br><br><br><br>
 
