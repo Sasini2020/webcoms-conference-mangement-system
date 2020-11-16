@@ -100,7 +100,7 @@
             </label>
     <ul>
 	  <li><a href="conferencechairhomepage.php">Home</a></li>
-      <li><a href="create_conference.php">Create a Conf</a></li>
+      <li><a href="create_conference.php">Request a Conf</a></li>
       <li><a class="active" href="viewConferencesForCC.php">View Conf</a></li>
       <li><a href="addnotemplates.php">Add notification templates</a></li>
       <li><a href="upudetauls.php">Upload User Details</a></li>

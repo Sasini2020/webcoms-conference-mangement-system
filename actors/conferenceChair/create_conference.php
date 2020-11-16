@@ -11,7 +11,7 @@
 <html>
 <head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Create a new conference</title>
+	<title>Request a new conference</title>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 	<link rel="stylesheet" href="../../css/reg_form_style.css">
@@ -41,7 +41,7 @@
             </label>
     <ul>
 	  <li><a href="conferencechairhomepage.php">Home</a></li>
-      <li><a class="active" href="create_conference.php">Create a Conf</a></li>
+      <li><a class="active" href="create_conference.php">Request a Conf</a></li>
       <li><a href="viewConferencesForCC.php">View Conf</a></li>
       <li><a href="addnotemplates.php">Add notification templates</a></li>
       <li><a href="upudetauls.php">Upload User Details</a></li>
