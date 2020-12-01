@@ -137,6 +137,7 @@
     <th>Action</th>
     <th>Action</th>
     <th>Action</th>
+    <th>Action</th>
 
 
 </thead>
@@ -159,7 +160,8 @@
       <td><?php echo $file['other_links'];?></td>
       <td><?php echo $file['downloads']; ?></td>
       <td><i style="color:dodgerblue" class="fas fa-download"></i><a style="color:dodgerblue;text-decoration:none;" href="firstround.php?file_id=<?php echo $file['id'] ?>"> Download </a></td>
-      
+      <td><i style="color:#1A5276" class="fas fa-eye"></i><a style="color:#1A5276 ;text-decoration:none;" href="../../uploads/<?php echo $file['name']; ?>" target="_blank">View</a></td>
+
       <!-- delete is not working yet complete it -->
       <td><i style="color:red" class="fas fa-trash-alt"></i><a href="#"<?php echo $file['id']; ?> style="color:red;text-decoration:none;">Reject</a></td>
       <td><i style="color:#2ECC71 " class="fas fa-share-square"></i><a href="firstround.php?p_id=<?php echo $file['id'];?>" style="color:green;text-decoration:none;">Assign</a></td>
