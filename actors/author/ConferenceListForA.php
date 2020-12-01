@@ -52,10 +52,10 @@ a:hover {
 }
 </style>-->
 <style>
-
+/* 
 * {
-  font-family: sans-serif; /* Change your font family */
-}
+  font-family: sans-serif; Change your font family 
+} */
 
 .content-table {
   border-collapse: collapse;
@@ -111,26 +111,27 @@ a:hover {
 	<ul>
     
 	  <li><a class="active" href="ConferenceListForA.php">Conferences List</a></li>
-	  <li><a href="../../About.php">About</a></li>
-        <li><a href="../../help.php">Help</a></li>
+    <li><a href="submission_guidlines.php">Submission Guidlines</a></li>
+
+    <li><a href="../../About.php">About</a></li>
+    <li><a href="../../help.php">Help</a></li>
     <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
 	</ul>
   </nav>
 
   <br>
-<center>
-  <h2 style="margin-left:20px;">Conferences List</h2>
+  <h2 style="margin-left:20px;">All Conferences </h2>
 
 	<table class="content-table">
 	<tr>
-        <th>ID</th>
+     <!-- <th>ID</th> -->
 	   <th>Conference</th>
-	   <th>Venue</th>
+	   <th>Location</th>
 	   <th>Start date</th>
-	   <th>End date</th>
-	   <th>Paper submission due date</th>
-	   <th>Sponser details</th>
+	   <!-- <th>End date</th>
+	   <th>Paper submission due date</th> -->
+	   <!-- <th>Sponser details</th> -->
 	   <th>Submit a Paper</th>
 	   <th>Submit camera ready copy</th>
 
@@ -154,14 +155,14 @@ a:hover {
 		die("Connection failed:". $conn-> connect_error);
 	}
 	
-	$sql = "SELECT * from conferences ";
+	$sql = "SELECT id,name,venue,start_date from conferences ";
 	$result = $conn-> query($sql);
 
 
 	
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
-			echo "<tr><td>". $row["id"] ."</td><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"] ."</td><td>" . $row["sponsor_details"] ."</td><td>";
+			echo "</tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>";
 			echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a>";
 			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit camera-ready paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a></td>";
 
@@ -178,7 +179,6 @@ a:hover {
 
 	
 	</table>
-</center>
 </div>
 <!-- </td> -->
 	
