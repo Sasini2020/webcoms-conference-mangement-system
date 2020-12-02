@@ -95,6 +95,18 @@ a:hover {
   font-weight: bold;
   color: #009879;
 }
+
+.isDisable{
+  color:currentColor;
+  cursor:not-allowed;
+  opacity:0.5;
+  text-decoration:none;
+}
+
+.linkDec, .link:visited{
+  text-decoration:none;
+  color:currentColor;
+}
  
 </style>
 
@@ -163,8 +175,8 @@ a:hover {
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
 			echo "</tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>";
-			echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a>";
-			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit camera-ready paper' ><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a></td>";
+			echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' class='linkDec'><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a>";
+			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit camera-ready paper' class='isDisable'><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a></td>";
 
        
         }
