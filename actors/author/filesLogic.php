@@ -41,14 +41,21 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
         // move the uploaded (temporary) file to the specified destination
         if(move_uploaded_file($file, $destination)) {
 
+            
+
             //I inserted values in a different special way
-            $sql = "INSERT INTO files(name, size, downloads,full_name,university,contact_details,other_links,title,abstract) VALUES ('$filename', $size, 0,'$_POST[full_name]','$_POST[university]','$_POST[contact_details]','$_POST[other_links]','$_POST[title]','$_POST[abstract]')";
+            $sql = "INSERT INTO files(name, size, downloads,full_name,university,contact_details,other_links,title,abstract,idrp) VALUES ('$filename', $size, 0,'$_POST[full_name]','$_POST[university]','$_POST[contact_details]','$_POST[other_links]','$_POST[title]','$_POST[abstract]',5)";
            
+            
+
             if (mysqli_query($conn, $sql)) {
                 // echo "File uploaded successfully";
                 echo '<script type="text/javascript"> alert("Your paper was submitted successfully!!") </script>';
 
             }
+            echo "<script>console.log('Before Error check');</script>";
+            echo "<script>alert('".mysqli_error($conn)."');</script>";
+            echo "<script>console.log('after Error check');</script>";
         }
          else {
             echo '<script type="text/javascript"> alert("Failed to submit your file !!") </script>';
