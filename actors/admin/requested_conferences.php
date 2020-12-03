@@ -179,7 +179,7 @@
               <td><?=$row['fullname']?></td>                                   
 
               <td style="padding-left: 20px;">
-                <form action="requested_conferences.php" method="post">
+                <form action="route.php" method="post">
 					
 			
 <!-- 		  <input type="submit" name="action" value="Delete" />
@@ -198,26 +198,7 @@
 
       
 
-      <?php
-
-        //function del_d($id){
-        //  $qur = mysqli_query($con,"delete from conferences where id='$id'");
-        //  header('location:requested_conferences.php');
-        //}
-        if(isset($_POST['action']) && isset($_POST['id'])){
-          if($_POST['action'] == 'Reject'){
-            $r_id = $_POST['id'];
-            $qur = mysqli_query($con,"delete from conferences where id='$r_id'");
-            //header('location:requested_conferences.php');
-          }
-          elseif($_POST['action'] == 'Accept'){
-            $r_id = $_POST['id'];
-            $qur = mysqli_query($con,"update conferences set Accepted = '1' where id='$r_id'");
-            //header('location:requested_conferences.php');
-            //header('Location: '.$_SERVER['PHP_SELF']);
-          }
-        }
-      ?>
+      
 	
 	  </table>	
   </div>
