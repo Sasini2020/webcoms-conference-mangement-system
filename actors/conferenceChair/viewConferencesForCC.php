@@ -127,7 +127,7 @@
             <td><?=$row['deadline_date']?></td>
             <td><?=$row['sponsor_details']?></td>
             <td style="padding-left: 20px;">
-                <form action="viewConferencesForCC.php" method="post">		                                   
+                <form action="route.php" method="post">		                                   
                     <input type="submit" name="mTrack" Value="Add" id="CTadd"/>
                     <input type="submit" name="mTrack" Value="View" id="CTview" />
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
@@ -139,7 +139,7 @@
             $counter++;}
         ?>
 
-
+    
                 
      </table>	
  </div>
