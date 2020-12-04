@@ -10,12 +10,6 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <link rel="stylesheet" href="../../css/reg_form_style.css">
-
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/nav_footer_styles.css">
-  <link rel="stylesheet" href="../../css/table_style.css">-->
 
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
@@ -51,9 +45,8 @@
 </style>-->
 <!-- Added css to style tag to style table -->
 <style>
-
-* {
-  font-family: sans-serif; /* Change your font family */
+*{
+color:#283747;
 }
 
 .content-table {
@@ -108,33 +101,29 @@
               </label>
       <ul>
       <!--<li><a href="reviewform.php">Submit paper review comment</a></li>-->
-      <li><a href="reviewerhomepage.php">Back</a></li>
+      <!-- <li><a href="reviewerhomepage.php">Back</a></li> -->
         <li><a class="active" href="paperlist.php">Uploaded Papers</a></li>
         <li><a href="../../About.php">About</a></li>
         <li><a href="../../help.php">Help</a></li>
+        <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+
         <!--<li><a href="reviewerhomepagenew.php">Back</a></li>-->
 
       </ul>
 </nav>
 <br>
-<h1 style="color:#283747 ;margin-left:20px;">Uploaded All Research Papers</h1>
+<h2 style="color:#283747 ;margin-left:20px;">Uploaded Research Papers</h2>
 
-
+<center>
 <table class="content-table">
 <thead>
     <!-- file id -->
-    <th>ID </th>
+    <th>Paper ID</th>
     <th>Paper Title</th> 
-    <th>Author's name</th>
-    <th>File</th>
-    <th>Conference name</th>
-    <th>University(Author)</th>
-    <th>File size (in KB)</th>
-    <th>Contact details</th>
-    <th>Other links</th>
-    <th>Downloads</th>
+    <th>Conference Name</th>
     <th>Action</th>
-    <th>recommendation</th>
+    <th>Review & Discussion</th>
+
     
     
     
@@ -147,21 +136,21 @@
     <tr>
       <td><?php echo $file['id']; ?></td>
       <td><?php echo $file['title']; ?></td>
-      <td><?php echo $file['full_name'];?></td>
-      <td><?php echo $file['name']; ?></td>
-  
-  
       <!-- show conference name here in below php tag -->
       <td><?php ?></td>
+      <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperslist.php?file_id=<?php echo $file['id'] ?>"> Download </a>
+      <br><br>
+      <!-- <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" href="../../uploads/<?php echo $file['name']; ?>"> View abstract</a> -->
+      <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" href="#"> View abstract</a>
+
+      <br><?php echo $file['abstract']; ?>
+      </td>
 
 
-      <td><?php echo $file['university'];?></td>
-      <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
-      <td><?php echo $file['contact_details'];?></td>
-      <td><?php echo $file['other_links'];?></td>
-      <td><?php echo $file['downloads']; ?></td>
-      <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperslist.php?file_id=<?php echo $file['id'] ?>"> Download </a></td>
-      <td><i style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="reviewform.php"> Review </a></td>
+      <td><i class="fas fa-pen-square" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="addreview.php"> Add Review </a>
+      <br><br><i class="fas fa-edit" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="editreview.php"> Edit Review </a>
+      <br><br><i class="far fa-eye"style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="viewreview.php"> View Review </a></td>
+
       
       
       
@@ -174,8 +163,9 @@
 
 </tbody>
 </table>
+</center>
 <!-- Footer section -->
-<div class="footer">
+        <div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
          </div>
 </body>
