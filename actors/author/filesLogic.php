@@ -61,9 +61,9 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
                 echo '<script type="text/javascript"> alert("Your paper was submitted successfully!!") </script>';
 
             }
-            echo "<script>console.log('Before Error check');</script>";
+            //echo "<script>console.log('Before Error check');</script>";
             echo "<script>alert('".mysqli_error($conn)."');</script>";
-            echo "<script>console.log('after Error check');</script>";
+            //echo "<script>console.log('after Error check');</script>";
         }
          else {
             echo '<script type="text/javascript"> alert("Failed to submit your file !!") </script>';

@@ -78,7 +78,8 @@
           <select name="Ptrack" id="trackp" class="inputvalues">
             <option value="">-- Select --</option>
             <?php 
-              $t_list = mysqli_query($con,"select ID,Name from conferencetrack");
+              $c_id = $_GET['c_id'];
+              $t_list = mysqli_query($con,"select ID,Name from conferencetrack where conferenceID=$c_id");
               while($row = mysqli_fetch_assoc($t_list)){
             ?>
             <option value="<?php echo $row['ID']; ?>"><?php echo $row['Name']; ?></option>
