@@ -128,12 +128,53 @@
       <td><?php echo $file['downloads']; ?></td>
       
       <td><i class="fas fa-download" style="color:dodgerblue;" ></i><a style="text-decoration:none;color:dodgerblue;" href="viewcamerareadycopies.php?file_id=<?php echo $file['crc_id'] ?>"> Download </a></td>
-      <td><i style="color:red" class="fas fa-trash-alt"></i><a href="#"style="color:red;text-decoration:none;">Low-quality</a></td>
-      <td><i style="color:#2ECC71 " class="fas fa-share-square"></i><a href="#" style="color:green;text-decoration:none;">Accept</a></td>
+      
+      <form action="viewcamerareadycopies.php" method="post">
+
+       <td><i style="color:red" class="fas fa-trash-alt"></i><input style="color:red;text-decoration:none;" name="action" type="submit" value="Reject"/></td>
+       <td><i style="color:#2ECC71" class="fas fa-share-square"></i><input style="color:green;text-decoration:none;" name="action" type="submit" value="Accept" /></td>
+           <input type="hidden" name="crc_id" value="<?php echo $file['crc_id']; ?>"  />
+           <input type="hidden" name="button" value="<?php echo $file['button'];?>" />
+      </form>
+      <!--<td><i style="color:red" class="fas fa-trash-alt"></i><a href="#"style="color:red;text-decoration:none;">Reject</a></td>
+      <td><i style="color:#2ECC71 " class="fas fa-share-square"></i><a href="#" style="color:green;text-decoration:none;">Accept</a></td>-->
     </tr>
-  <?php endforeach;?>
+ 
 
 </tbody>
+<?php endforeach;?>
+
+<?php
+   if(isset($_POST['action'])&& isset($_POST['crc_id'])){
+
+      if($_POST['action']=='Reject'){
+        $p_id=$_POST['crc_id'];
+              if($_POST['button']=='1'){
+                  echo '<script type="text/javascript">alert("Already  Rejected")</script>';
+
+              }else{
+                   $qr=mysqli_query($conn,"update camerareadycopypaper set button='1' where crc_id='$p_id'");
+                   echo '<script type="text/javascript">alert("Rejected low quality camera ready copies ")</script>';
+
+              }
+      }
+      elseif($_POST['action']=='Accept'){
+        $p_id=$_POST['crc_id'];
+             if($_POST['button']=='2'){
+
+                 echo '<script type="text/javascript">alert("Already  Rejected")</script>';
+             }else{
+                 $qr=mysqli_query($conn,"update camerareadycopypaper set button='2' where crc_id='$p_id'");
+                 echo '<script type="text/javascript">alert("Accepted")</script>';
+
+             }
+
+      }
+
+   }
+
+
+?>
 </table>
 </center>
  <!-- Footer section -->

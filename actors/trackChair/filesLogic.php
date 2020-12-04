@@ -40,7 +40,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
         if(move_uploaded_file($file, $destination)) {
 
             //I inserted values in a different special way
-            $sql = "INSERT INTO files (name, size, downloads,full_name,university,contact_details,other_links) VALUES ('$filename', $size, 0,'$_POST[full_name]','$_POST[university]','$_POST[contact_details]','$_POST[other_links]')";
+            $sql = "INSERT INTO files (name, size, downloads,full_name,university,contact_details,other_links,accept) VALUES ('$filename', $size, 0,'$_POST[full_name]','$_POST[university]','$_POST[contact_details]','$_POST[other_links]',0)";
            
             if (mysqli_query($conn, $sql)) {
                 // echo "File uploaded successfully";

@@ -142,6 +142,10 @@
 
 </thead>
 <tbody>
+
+
+
+
   <?php foreach ($files as $file): ?>
     <tr>
       <td><?php echo $file['id']; ?></td>
@@ -162,16 +166,42 @@
       <td><i style="color:dodgerblue" class="fas fa-download"></i><a style="color:dodgerblue;text-decoration:none;" href="firstround.php?file_id=<?php echo $file['id'] ?>"> Download </a></td>
       <td><i style="color:#1A5276" class="fas fa-eye"></i><a style="color:#1A5276 ;text-decoration:none;" href="../../uploads/<?php echo $file['name']; ?>" target="_blank">View</a></td>
 
-      <!-- delete is not working yet complete it -->
-      <td><i style="color:red" class="fas fa-trash-alt"></i><a href="#"<?php echo $file['id']; ?> style="color:red;text-decoration:none;">Reject</a></td>
+      <!--<td><i style="color:red" class="fas fa-trash-alt"></i> style="color:red;text-decoration:none;" type="submit" name="action" Value="Reject">Reject</a></td>-->
+      <form action="firstround.php" method="post">
+          <td><i style="color:red" class="fas fa-trash-alt"></i><input style="color:red;text-decoration:none;" type="submit" name="action" Value="Reject" /></td>
+          <input type="hidden" name="id" value="<?php echo $file['id']; ?>" />
+          <input type="hidden" name="accept" value="<?php echo $file['accept'];?>"/>
+      </form>
       <td><i style="color:#2ECC71 " class="fas fa-share-square"></i><a href="firstround.php?p_id=<?php echo $file['id'];?>" style="color:green;text-decoration:none;">Assign</a></td>
 
     
     
     </tr>
-  <?php endforeach;?>
+ 
 
+  
 </tbody>
+<?php endforeach;?>
+   <?php
+        if(isset($_POST['action']) && isset($_POST['id'])){
+           if($_POST['action']=='Reject'){
+             $t_id=$_POST['id'];
+             if($_POST['accept']=='1'){
+              echo '<script type="text/javascript">alert("Already  Rejected this paper")</script>';
+  
+             }else{
+             $qr=mysqli_query($conn,"update files set accept='1' where id='$t_id'");
+             echo '<script type="text/javascript">alert("Rejected Successfully")</script>';
+             }
+           }
+          
+
+
+        }
+
+
+   ?>
+
 </table>
 </center>
 <!-- Footer section -->

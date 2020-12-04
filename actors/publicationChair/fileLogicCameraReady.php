@@ -42,7 +42,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
         if(move_uploaded_file($file, $destination)) {
 
             //I inserted values in a different special way
-            $sql = "INSERT INTO camerareadycopypaper(name, size, downloads,title,abstract) VALUES ('$filename', $size, 0,'$_POST[title]','$_POST[abstract]')";
+            $sql = "INSERT INTO camerareadycopypaper(name, size, downloads,title,abstract,button) VALUES ('$filename', $size, 0,'$_POST[title]','$_POST[abstract]',0)";
            
             if (mysqli_query($conn, $sql)) {
                 // echo "File uploaded successfully";
