@@ -62,7 +62,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
 
             }
             //echo "<script>console.log('Before Error check');</script>";
-            echo "<script>alert('".mysqli_error($conn)."');</script>";
+            //echo "<script>alert('".mysqli_error($conn)."');</script>";
             //echo "<script>console.log('after Error check');</script>";
         }
          else {
