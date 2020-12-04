@@ -101,25 +101,26 @@
      <thead>
          <tr>
          <th>Number</th>
-         <th>ID</th>
-         <th>Name</th>
+         <th>Track Name</th>
+         <th>Track Chair Name</th>
          </tr>
      </thead>
 
      <tbody>                                     
        <?php
             $c_id = $_SESSION['c_id'];
-            $sql = mysqli_query($con, "select *
-            from conferencetrack
-            where 	conferenceID='$c_id';") or die(mysqli_error($con));
+            $sql = mysqli_query($con, "select conferencetrack.ID ,conferencetrack.Name, trackchair.fullname
+            from conferencetrack, trackchair
+            where conferencetrack.trackChair = trackchair.emailtrackchair and
+            conferencetrack.conferenceID='$c_id';") or die(mysqli_error($con));
             $counter = 1;
             while ($row = mysqli_fetch_assoc($sql)) {
        ?>                                            
            <tr id="row<?php echo $row['ID'];?>">
 
             <td><?=$counter?></td>
-            <td><?=$row['ID']?></td>
             <td><?=$row['Name']?></td>
+            <td><?=$row['fullname']?></td>
            </tr>
      </tbody>
         <?php
