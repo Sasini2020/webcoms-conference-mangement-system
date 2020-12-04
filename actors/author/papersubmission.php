@@ -64,7 +64,7 @@
 
 
 <!-- newely added -->
-          <label><b>Full Name *</b></label><br>
+          <!--<label><b>Full Name *</b></label><br>
 		  	  <input name="full_name" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 			
           <label><b>University *</b></label><br>
@@ -72,7 +72,18 @@
           <label><b>Contact	Details *</b></label><br>
           <input name="contact_details" type="text" class="inputvalues" placeholder="Your Contact Details" required/><br>
           <label><b>Other links:</b></label><br>
-          <input name="other_links" type="text" class="inputvalues" placeholder="Other links"><br>
+          <input name="other_links" type="text" class="inputvalues" placeholder="Other links"><br>-->
+          <label for="trackp"><b>Select Track*</b></label><br>
+      
+          <select name="Ptrack" id="trackp" class="inputvalues">
+            <option value="">-- Select --</option>
+            <?php 
+              $t_list = mysqli_query($con,"select ID,Name from conferencetrack");
+              while($row = mysqli_fetch_assoc($t_list)){
+            ?>
+            <option value="<?php echo $row['ID']; ?>"><?php echo $row['Name']; ?></option>
+            <?php $counter++;} ?>
+          </select>
           
           <label><b>Paper Title*</b></label><br>
           <input name="title" type="text" class="inputvalues" placeholder="Title" required/><br>
@@ -81,7 +92,10 @@
           <label><b>Abstract*</b></label><br>
 
           <!-- <textarea name="abstract" rows="10" cols="40"><?php //echo $comment;?></textarea> -->
-          <textarea name="abstract" rows="10" cols="40"></textarea>
+          <textarea name="abstract" rows="10" cols="40"></textarea><br>
+
+          <label><b>Other Authors Email*</b></label><br>
+          <input name="OtherAutherE" type="text" class="inputvalues" placeholder="Enter Emails" required/><br>
           
           <label><b>Select Paper *</b></label><br>
           <input type="file" name="myfile" > <br>

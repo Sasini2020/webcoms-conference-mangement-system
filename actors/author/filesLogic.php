@@ -1,6 +1,6 @@
 <?php
 // connect to the database
-$conn = mysqli_connect('localhost', 'root', '', 'webcomsdb');
+$conn = $con;
 
 // $sql = "SELECT name,size,downloads,full_name,university,contact_details,other_links FROM fileuploadtable";
 $sql = "SELECT * FROM files";
@@ -41,10 +41,18 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
         // move the uploaded (temporary) file to the specified destination
         if(move_uploaded_file($file, $destination)) {
 
-            
+            $title = $_POST['title'];
+            $abstract = $_POST['abstract'];
+            $trackId = $_POST['Ptrack'];
+            $OtherAuthorE = $_POST['OtherAutherE'];
+                $trackChairEmailresult = mysqli_query($conn, "select trackChair from conferencetrack where ID=$trackId");
+                $rowE = mysqli_fetch_assoc($trackChairEmailresult);
+            $trackChairEmail = $rowE['trackChair'];
+            $authorEmail = $_SESSION['au_email'];
 
             //I inserted values in a different special way
-            $sql = "INSERT INTO files(name, size, downloads,full_name,university,contact_details,other_links,title,abstract,idrp) VALUES ('$filename', $size, 0,'$_POST[full_name]','$_POST[university]','$_POST[contact_details]','$_POST[other_links]','$_POST[title]','$_POST[abstract]',5)";
+            $sql = "INSERT INTO researchpaper(title,abstract,NameOfFile,size,Downloads,acceptancy,trackID,corautherdetails,emailtrackchair,emailauthor) VALUES 
+            ('$title','$abstract','$filename',$size,0,0,$trackId,'$OtherAuthorE','$trackChairEmail','$authorEmail')";
            
             
 

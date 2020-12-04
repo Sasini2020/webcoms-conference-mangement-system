@@ -80,6 +80,7 @@
 					}
 					else if($user_type=="Author"){
 						$_SESSION['login_s'] = '3';
+						$_SESSION['au_email'] = $email;
 						header('location:actors/author/Author_home.php');
 					}
 					else if($user_type=="Conference_chair"){
