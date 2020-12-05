@@ -25,48 +25,39 @@
   <title>Submission Guidelines</title>
 
   <style>
+.ABC {
+      background-color: #E5E7E9 ;
+      height: 70%;
+      /* position: relative; */
+      top: 100px;
+      left: 0;
+      width: 100%;
+    }
 
-
-
-.content-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  .button {
+  background-color: #7D3C98  ;
+  /* box-shadow: 0 5px 0 darkred; */
+  margin-top:140px;
+  /* margin-left:500px; */
+  color: white;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius:5px;
 }
 
-.content-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
-  font-weight: bold;
+.button:hover {
+  background-color: #884EA0;
+  cursor: pointer;
 }
 
-.content-table th,
-.content-table td {
-  padding: 12px 15px;
+.button:active {
+  box-shadow: none;
+  top: 5px;
 }
 
-.content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
 
-.content-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
-
-.content-table tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
-}
- 
 </style>
 
 </head>
@@ -85,42 +76,32 @@
 
     <li><a href="../../About.php">About</a></li>
     <li><a href="../../help.php">Help</a></li>
-    <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+    <li ><a style="float:right; margin-right:40px;"><a href="../logout.php">Log Out</a></li>
 
     </ul>
   </nav>
 <h2></h2><br>
-<center>
-<h2 style="color:#283747 ;margin-left:20px;">Submission Guidelines</h2><br>
+
 <!-- <p style="color:#283747 ;margin-left:20px;">As publownload final camera-ready copies and generate proceeding preparation</p> -->
+<br><br><br>
+<section id="ABC" class="ABC">
+  <br>
+<p style="text-align:center;color:#5F6A6A ;margin-left:20px;margin-top:50px;font-size:35px;font-weight:600;">Submission Guidelines</p><br>
 
-<table class="content-table">
-<thead>
-    <!-- file id -->
- 
-    <!-- <th>Author's name</th> -->
-    
+<p style="text-align:center;color:#1F618D ;margin-left:20px;margin-top:40px;font-size:30px;font-weight:500;">If your paper is accepted and you have paid the registration fee for this International Conference you are encouraged to submit your camera ready copy paper.</p>
+<br><br>
+<?php foreach ($files as $file): ?>
+<center>
 
-
-</thead>
-<tbody>
-  <?php foreach ($files as $file): ?>
-    <tr>
-   
-      
-      <!-- <td><i style="color:#1A5276" clas="fas fa-eye"></i><a style="color:#1A5276 ;text-decoration:none;" href="../../media/
-      <?php //echo $file['name']; ?>
-      " target="_blank">View</a></td>
-      <iframe src="../../media/PAPER SUBMISSION-Guid.pdf#toolbar=0" width="100%" height="500px">
-    </iframe> -->
-    <iframe src="../../media/<?php echo $file['name']; ?>#toolbar=0"width="100%" height="500px" >View</iframe><br><br>
-      <!-- <iframe src="../../media/PAPER SUBMISSION-Guid.pdf#toolbar=0" width="100%" height="500px"></iframe> -->
-    </tr>
-  <?php endforeach;?>
-
-</tbody>
-</table>
+<a id="button" class="button" href="../../media/<?php echo $file['name']; ?>" target="_blank"><i class="fas fa-link"></i>  View Submission Guidelines</a>
 </center>
+
+<?php endforeach;?>
+
+<br><br><br><br><br>
+</section>
+
+
  <!-- Footer section -->
          <div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
