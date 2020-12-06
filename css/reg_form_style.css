@@ -2,6 +2,7 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    
   }
   
   body {
@@ -44,7 +45,7 @@
     padding: 15px;
     width: 100%;
     background-color: #e8eeef;
-    color: #8a97a0;
+    color: #0d131e;
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     margin-bottom: 30px;
   }
