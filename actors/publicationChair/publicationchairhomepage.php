@@ -23,9 +23,7 @@
 <!-- Added css to style tag to style table -->
 <style>
 
-* {
-  font-family: sans-serif; /* Change your font family */
-}
+
 
 .content-table {
   border-collapse: collapse;
@@ -91,7 +89,7 @@
 
 
 			<li><a class="active" href="adminhomepage.php">Home</a></li>
-			<li><a href="publishcameracopy.php">Publish Guideline</a></li>
+			<li><a href="publishSubmissionGuidelines.php">Upload Guidelines For Paper Submission</a></li>
 			<li><a href="uploadcoversub.php">Upload Pages</a></li>
 			<li><a href="viewcamerareadycopies.php">View Camera-ready copy</a></li>
 			<li><a href="autoproceeding.php">Auto generate proceeding</a></li>
