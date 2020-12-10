@@ -87,17 +87,17 @@
 			<label>Venue*</b></label><br>
 			<input name="venue" type="text" class="inputvalues" placeholder="Venue" required/><br>
 			
-			<label >Start Date*</b></label><br>
+			<label >Conference Start Date*</b></label><br>
 			<input name="start_date" required type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2020-12-15" required/><br>
 			
-			<label>End Date*</b></label><br>
+			<label>Conference End Date*</b></label><br>
 			<input name="end_date" type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2021-01-15" required/><br>
 			
 			<label>Paper Submission Due Date*</b></label><br>
 			<input name="deadline" type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2021-02-15" required/><br>
 			
 			<label>Sponsor/s details*</b></label><br>
-			<input name="sponsor_details" type="text" class="inputvalues" cols="30" placeholder="Sponsor's details" required/><br>
+			<input name="sponsor_details" type="text" class="inputvalues" cols="30" placeholder="Sponsor's details"/><br>
 
 			<!-- <input name="create_btn" type="submit" id="register_btn" value="CREATE"/><br> -->
 			<button name="create_btn" type="submit" id="register_btn" value="CREATE">Submit</button>
