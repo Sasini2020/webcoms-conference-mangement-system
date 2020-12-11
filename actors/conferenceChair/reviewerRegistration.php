@@ -6,4 +6,6 @@
   }
 ?>
 
-
+<!DOCTYPE html>
+<html>
+<head>
