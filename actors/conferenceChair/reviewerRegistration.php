@@ -38,9 +38,7 @@
 
 	<!--Conference Chair Registration form-->
 	<div id="main-wrapper">
-		<!-- <center>
-			<h2>Conference Chair Registration Form</br><br><br></h2>	
-		</center> -->
+		
 	
 		<form action="reviewerRegistration.php" method="post">
 		<br><br>
