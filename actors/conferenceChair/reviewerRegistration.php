@@ -38,7 +38,9 @@
 
 	<!--Conference Chair Registration form-->
 	<div id="main-wrapper">
-		
+		<!-- <center>
+			<h2>Conference Chair Registration Form</br><br><br></h2>	
+		</center> -->
 	
 		<form action="reviewerRegistration.php" method="post">
 		<br><br>
@@ -52,9 +54,7 @@
 			<label>Gender:</label><br>
 			<input id="Gmale" type="radio" name="gender" value="male" checked required><label for="Gmale" class="light">Male</label><br><br>
 			<input id="GFemale" type="radio"  name="gender" value="female" required><label for="GFemale" class="light">Female</label><br><br>
-			<label for="University">University:</label><br>
-			<input id="University" name="University" type="text" class="inputvalues" placeholder="Type your University" required/><br>
-
+			
 			<label for="actor">Track:</label><br>
 				<select id="track" class="" name="track">
 					<option value="Machine Learning">Machine Learning</option>
@@ -63,7 +63,9 @@
 					<option value="Physics">Physics</option>
 				</select><br>
 			
-			
+			<label for="University">University:</label><br>
+			<input id="University" name="University" type="text" class="inputvalues" placeholder="Type your University" required/><br>
+
 			<label for="ContactDetails">Contact Details:</label><br>
 			<input id="ContactDetails" name="ContactDetails" type="text" class="inputvalues" placeholder="Type your Contact Details" required/><br>
 
@@ -93,9 +95,20 @@
 		</form>
 		
 		<?php
-	
-			<label for="ContactLinks">Contact Links:</label><br>
-			<input id="ContactLinks" name="ContactLinks" type="text" class="inputvalues" placeholder="Type your Contact Links" required/><br>
+			if(isset($_POST['submit_btn']))
+			{
+				//echo '<script type="text/javascript"> alert("Sign Up button clicked") </script>';
+
+				$fullname =$_POST['fullname'];
+				$email = $_POST['email'];
+				$password = $_POST['password'];
+				$cpassword = $_POST['cpassword'];
+				$gender = $_POST['gender'];
+				$track = $_POST['track'];
+				$usertype = "Reviewer";
+				$University = $_POST['University'];
+				$ContactDetails = $_POST['ContactDetails'];
+				$ContactLinks = $_POST['ContactLinks'];
 
 				//echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
 				//echo '<script type="text/javascript"> alert("'.$fullname.' ---'.$username.' --- '.$password.' --- '.$gender.' --- '.$qualification.'"  ) </script>';
@@ -134,7 +147,9 @@
 					
 					
 				}
-							
+				else{
+				echo '<script type="text/javascript"> alert("Password and confirm password does not match!") </script>';	
+				}				
 			}
 		?>
 	</div>
