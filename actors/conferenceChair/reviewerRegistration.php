@@ -69,6 +69,8 @@
 			<label for="ContactDetails">Contact Details:</label><br>
 			<input id="ContactDetails" name="ContactDetails" type="text" class="inputvalues" placeholder="Type your Contact Details" required/><br>
 
+			<label for="ContactLinks">Contact Links:</label><br>
+			<input id="ContactLinks" name="ContactLinks" type="text" class="inputvalues" placeholder="Type your Contact Links" required/><br>
 		   
 		</fieldset>
 		<fieldset>
