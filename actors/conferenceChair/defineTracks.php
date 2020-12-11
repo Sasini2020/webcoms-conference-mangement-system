@@ -58,17 +58,18 @@
 
       <label for="name"><b>Track Name:</b></label><br>
 			<input id="name" name="Tname" type="text" class="inputvalues" placeholder="Type Track Name" required/>
-      <label for="trackc"><b>Select Track Chair:</b></label><br>
+      
+      <!--<label for="trackc"><b>Select Track Chair:</b></label><br>
       
       <select name="trackCE" id="trackc" class="inputvalues">
         <option value="">-- Select --</option>
         <?php 
-          $t_list = mysqli_query($con,"select emailtrackchair,fullname from trackchair");
-          while($row = mysqli_fetch_assoc($t_list)){
+          //$t_list = mysqli_query($con,"select emailtrackchair,fullname from trackchair");
+          //while($row = mysqli_fetch_assoc($t_list)){
         ?>
-        <option value="<?php echo $row['emailtrackchair']; ?>"><?php echo $row['fullname']; ?></option>
-        <?php $counter++;} ?>
-      </select>
+        <option value="<?php //echo $row['emailtrackchair']; ?>"><?php //echo $row['fullname']; ?></option>
+        <?php //$counter++;} ?>
+      </select>-->
 
       <input name="submit_btn" type="submit" id="login_btn" value="Submit"/>
     </form>
@@ -79,7 +80,8 @@
 
 				$Tname =$_POST['Tname'];
         $c_id = $_SESSION['c_id'];
-        $Temail =$_POST['trackCE'];
+
+        //$Temail =$_POST['trackCE'];
 				//$c_email = $_SESSION['c_email'];
 
 					$query= "select * from conferencetrack WHERE (Name='$Tname')and(conferenceID=$c_id)";
@@ -93,7 +95,7 @@
 					else
 					{
 						$query= "insert into conferencetrack
-						values(NULL,'$Tname',$c_id,'$Temail')";
+						values(NULL,'$Tname',$c_id)";
 						$query_run = mysqli_query($con,$query);
 						
 						if($query_run)
