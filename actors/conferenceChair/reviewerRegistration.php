@@ -55,7 +55,13 @@
 			<input id="Gmale" type="radio" name="gender" value="male" checked required><label for="Gmale" class="light">Male</label><br><br>
 			<input id="GFemale" type="radio"  name="gender" value="female" required><label for="GFemale" class="light">Female</label><br><br>
 			
-			
+			<label for="actor">Track:</label><br>
+				<select id="track" class="" name="track">
+					<option value="Machine Learning">Machine Learning</option>
+					<option value="Data Science">Data Science</option>
+					<option value="Chemistry">Chemistry</option>
+					<option value="Physics">Physics</option>
+				</select><br>
 			
 			<label for="University">University:</label><br>
 			<input id="University" name="University" type="text" class="inputvalues" placeholder="Type your University" required/><br>
