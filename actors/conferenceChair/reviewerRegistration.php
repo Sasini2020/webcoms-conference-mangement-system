@@ -109,11 +109,7 @@
 					$query= "select * from userinfotable WHERE email='$email'";
 					$query_run = mysqli_query($con,$query);
 					
-					if(mysqli_num_rows($query_run)>0)
-					{
-						// there is already a user with the same email
-						echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
-					}
+					
 					else
 					{
 						$query= "insert into userinfotable ( full_name, university, contactdetails, contactlinks, gender, user_type, password, email ) 
