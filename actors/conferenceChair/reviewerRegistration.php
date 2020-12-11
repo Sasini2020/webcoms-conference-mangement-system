@@ -134,9 +134,7 @@
 					
 					
 				}
-				else{
-				echo '<script type="text/javascript"> alert("Password and confirm password does not match!") </script>';	
-				}				
+							
 			}
 		?>
 	</div>
