@@ -95,20 +95,6 @@
 		</form>
 		
 		<?php
-			if(isset($_POST['submit_btn']))
-			{
-				//echo '<script type="text/javascript"> alert("Sign Up button clicked") </script>';
-
-				$fullname =$_POST['fullname'];
-				$email = $_POST['email'];
-				$password = $_POST['password'];
-				$cpassword = $_POST['cpassword'];
-				$gender = $_POST['gender'];
-				$track = $_POST['track'];
-				$usertype = "Reviewer";
-				$University = $_POST['University'];
-				$ContactDetails = $_POST['ContactDetails'];
-				$ContactLinks = $_POST['ContactLinks'];
 
 				//echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
 				//echo '<script type="text/javascript"> alert("'.$fullname.' ---'.$username.' --- '.$password.' --- '.$gender.' --- '.$qualification.'"  ) </script>';
