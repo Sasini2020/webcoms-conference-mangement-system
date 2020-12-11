@@ -63,8 +63,7 @@
 					<option value="Physics">Physics</option>
 				</select><br>
 			
-			<label for="University">University:</label><br>
-			<input id="University" name="University" type="text" class="inputvalues" placeholder="Type your University" required/><br>
+			
 
 			<label for="ContactDetails">Contact Details:</label><br>
 			<input id="ContactDetails" name="ContactDetails" type="text" class="inputvalues" placeholder="Type your Contact Details" required/><br>
