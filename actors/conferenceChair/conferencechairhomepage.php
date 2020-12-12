@@ -78,7 +78,7 @@
             </label>
     <ul>
 	  <li><a class="active" href="conferencechairhomepage.php">Home</a></li>
-      <li><a href="create_conference.php">Request a Conf</a></li>
+      <li><a href="create_conference.php">Request a Conference</a></li>
       <!--<li><a href="viewConferencesForCC.php">View Conf</a></li>-->
       <li><a href="addnotemplates.php">Add notification templates</a></li>
       <li><a href="upudetauls.php">Upload User Details</a></li>
@@ -88,18 +88,11 @@
     </ul>
   </nav>
 
-  <br>
-  <br>
 
-  <br><br>
 
   <div id="main-wrapper">
-		<center>
-		<center><h2 style="margin-left:25px;color:dodgerblue;">Conference Chair Home Page</h2></center>
-		<center><h3 style="margin-left:25px;color:dodgerblue;">welcome</h3></center>
 		
-		</center>
-	   
+		   
 	</div>
 
   <?php
