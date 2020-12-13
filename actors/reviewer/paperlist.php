@@ -1,9 +1,4 @@
-<?php
-    session_start();
-    if($_SESSION['login_s'] != '2'){
-        header('location:../../login.php');
-    }
-?>
+
 <!-- Accessing the FilesLogic.php -->
 <?php include 'filesLogic.php';?>
 <!DOCTYPE html>
@@ -45,9 +40,7 @@
 </style>-->
 <!-- Added css to style tag to style table -->
 <style>
-*{
-color:#283747;
-}
+
 
 .content-table {
   border-collapse: collapse;
@@ -93,26 +86,7 @@ color:#283747;
 </head>
 <body>
 <!-- navbar -->
-<nav>
-<div class="logo">Web-COMS</div>
-        <input type="checkbox" id="click">
-              <label for="click" class="menu-btn">
-                <i class="fas fa-bars"></i>
-              </label>
-      <ul>
-      <!--<li><a href="reviewform.php">Submit paper review comment</a></li>-->
-      <!-- <li><a href="reviewerhomepage.php">Back</a></li> -->
-        <li><a class="active" href="paperlist.php">Uploaded Papers</a></li>
-        <li><a href="../../About.php">About</a></li>
-        <li><a href="../../help.php">Help</a></li>
-        <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
-        <!--<li><a href="reviewerhomepagenew.php">Back</a></li>-->
-
-      </ul>
-</nav>
-<br>
-<h2 style="color:#283747 ;margin-left:20px;">Uploaded Research Papers</h2>
 
 <center>
 <table class="content-table">

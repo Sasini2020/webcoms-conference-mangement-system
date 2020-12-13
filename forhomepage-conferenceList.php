@@ -31,9 +31,12 @@
   font-weight: bold;
 }
 
-.content-table th,
+.content-table th{
+  padding: 12px 15px;
+}
 .content-table td {
   padding: 12px 15px;
+  color:#1C2833
 }
 
 .content-table tbody tr {
@@ -71,10 +74,10 @@
           <th>ID</th>
           <th>Conference</th>
           <th>Venue</th>
-          <th>Start date</th>
-          <th>End date</th>
-          <th>Deadline</th>
-          <th>Sponser details</th>
+          <th>Conference Start date</th>
+          <th>Conference End date</th>
+          <th>Paper Submission Due Date</th>
+          <!-- <th>Sponser details</th> -->
           <th>Conference Chair</th>
       	</tr>
       </thead>
@@ -104,7 +107,7 @@
               <td><?=$row['start_date']?></td>
 							<td><?=$row['end_date']?></td>
 							<td><?=$row['deadline_date']?></td>
-              <td><?=$row['sponsor_details']?></td>
+
               <td><?=$row['fullname']?></td>
             </tr>
       </tbody>
