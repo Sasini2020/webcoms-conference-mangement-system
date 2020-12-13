@@ -88,10 +88,20 @@
 			<fieldset>
       		<legend><span class="number">1</span>Your Basic Information</legend><br>
 			
-			<label for="fname">Full Name:</label><br>
+      <label for="aTitle">Title:</label><br>
+      <select name="acTitle" id="aTitle">
+        <option value="Mr">Mr.</option>
+        <option value="Ms">Ms.</option>
+        <option value="Mrs">Mrs.</option>
+        <option value="Miss">Miss.</option>
+        <option value="Prof">Prof.</option>
+        <option value="Dr">Dr.</option>
+      </select>
+      
+      <label for="fname">Full Name:</label><br>
 			<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 			
-			<label>Gender:</label><br>
+			<!--<label>Gender:</label><br>
 			<input id="Gmale" type="radio" name="gender" value="male" checked required><label for="Gmale" class="light">Male</label><br><br>
 			<input id="GFemale" type="radio"  name="gender" value="female" required><label for="GFemale" class="light">Female</label>
 			<br><br>
@@ -101,11 +111,12 @@
 					<option value="Reviewer">Reviewer</option>
 					<option value="TrackChair">Track Chair</option>
 					<option value="PublicationChair">Publication Chair</option>
-				</select><br>
+				</select><br>-->
 
 			<label for="country">Country:</label><br>
 				<select id="country" class="" name="country">
-				<option value="Afghanistan">Afghanistan</option>
+                <option value="">Select Your Country</option>
+				        <option value="Afghanistan">Afghanistan</option>
                 <option value="Aland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
                 <option value="Algeria">Algeria</option>
@@ -351,16 +362,17 @@
                 <option value="Zimbabwe">Zimbabwe</option>
 				</select><br>
 			
-			<label for="University">University:</label><br>
-			<input id="University" name="University" type="text" class="inputvalues" placeholder="Type your University" /><br>
+			<label for="aOrganization">Organization:</label><br>
+			<input id="aOrganization" name="Organization" type="text" class="inputvalues" placeholder="Type your Organization" /><br>
 			
 			<!-- Used input type as tel -->
 			<label for="ContactDetails">Contact No:</label><br>
 			<input id="ContactDetails"  name="ContactDetails" type="tel" class="inputvalues" pattern="[0-9]{1}[0-9]{9}" placeholder="Type your Contact Number" title="Phone number with 0-9 and remaing 9 digit with 0-9"required/>
       
-      <br><br>
+      <!--<br><br>
 			<label for="ContactLinks">Contact Links:</label><br>
-			<input id="ContactLinks" name="ContactLinks" type="url" pattern="https://.*" size="50"class="inputvalues" placeholder="Enter an https:// URL" title="Enter an https:// URL" required/><br>
+			<input id="ContactLinks" name="ContactLinks" type="url" pattern="https://.*" size="50"class="inputvalues" placeholder="Enter an https:// URL" title="Enter an https:// URL" required/>-->
+      <br>
 		</fieldset>
 		<fieldset>
       	<legend><span class="number">2</span>Your Login Information</legend><br>
@@ -393,15 +405,17 @@
 			{
 				//echo '<script type="text/javascript"> alert("Sign Up button clicked") </script>';
 
-				$fullname =$_POST['fullname'];
+        $aTitle = $_POST['acTitle'];
+        $fullname =$_POST['fullname'];
+        $aCountry = $_POST['country'];
 				$email = $_POST['email'];
 				$password = $_POST['password'];
 				$cpassword = $_POST['cpassword'];
-				$gender = $_POST['gender'];
-				$usertype = $_POST['usertype'];
-				$University = $_POST['University'];
+				//$gender = $_POST['gender'];
+				$usertype = "Author";
+				$Organization = $_POST['Organization'];
 				$ContactDetails = $_POST['ContactDetails'];
-				$ContactLinks = $_POST['ContactLinks'];
+				//$ContactLinks = $_POST['ContactLinks'];
 
 				//echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
 				//echo '<script type="text/javascript"> alert("'.$fullname.' ---'.$username.' --- '.$password.' --- '.$gender.' --- '.$qualification.'"  ) </script>';
@@ -420,17 +434,17 @@
 					}
 					else
 					{
-						$query= "insert into userinfotable ( full_name, university, contactdetails, contactlinks, gender, user_type, password, email ) 
-						values('$fullname','$University','$ContactDetails','$ContactLinks','$gender','$usertype','$encrypted_pass','$email')";
+						$query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
+						values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
 						$query_run = mysqli_query($con,$query);
 
 						switch($usertype){
 							case "Author":
 								$query2= "insert into author 
-									values('$email','$fullname','$University','$ContactDetails','$ContactLinks','$gender','$encrypted_pass','$email')";
+									values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
 								$query_run2 = mysqli_query($con,$query2);
 								break;
-							case "Reviewer":
+							/*case "Reviewer":
 								$query2= "insert into reviewer 
 									values('$email','$fullname','$gender','$encrypted_pass','$email')";
 								$query_run2 = mysqli_query($con,$query2);
@@ -444,7 +458,7 @@
 								$query2= "insert into publicationchair 
 									values('$email','$fullname','$encrypted_pass','$gender','$email')";
 								$query_run2 = mysqli_query($con,$query2);
-								break;
+								break;*/
 							default:
 								$query_run2 = false;
 						}
