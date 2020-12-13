@@ -219,18 +219,28 @@ select{
     <br>
     <li>
     <label>2) Have you seen this submission online (e.g.arXiv, personal website, social media ) ?<span class="required">*</span><span style="color:dodgerblue;">(visible to other reviewer)</span></label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
+			<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
     </li>       
     <br>
-    <label>3) Have you previously reviewed or area chaired ( a version of ) this work for another archival venue ?</label><br>
-			<input id="yess" type="radio" name="rads" value="yess"  required><label for="yes" >Yes</label><br>
-			<input id="noo" type="radio"  name="rads" value="noo" required><label for="no" >No</label>
-    
-    </li> 
-    <br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br><br>
 
+    <label>3) Have you previously reviewed or area chaired ( a version of ) this work for another archival venue ?</label><br>
+    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
      <li>
         <label>4) Reviewer's level of confidence (alignment with your domain of expertise) : </label>
         <select name="field4" class="field-select">
@@ -242,132 +252,230 @@ select{
     </li>
     <br>
     <label>5) Relevance : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
+    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
     </li>       
-    <br>
-    <label>6) Novelty or Originality - The paper presents new, innovative or insightful information : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>7) Novelty or Originality - The paper reflects current information on this topic : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>8) The title is clear and informative : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>9) The title reflects the content and purpose of the paper : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>10) Abstract : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>11) Keywords : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>12) Content - Introduction : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>13) Content - Background / Literature Study - The most current references on this topic have been included : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>14) Content - Background / Literature Study - The most relevant references on this topic have been included : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>15) Content - Methodology : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>29) Clarity - There are no any contradictions or inconsistencies: </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>30) Clarity - The paper stays focused : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>32) Organization - Ideas are developed and related in a logic sequence : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>33) Organization - Transitions between discussion are smooth and easy to follow : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>35) Accuracy - The supporting evidence ( literature referenced ) is appopriately cited : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>36) Accuracy - Tables and figures are of clear and satisfactory quality : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>37) Accuracy - There are no math or text errors in tables or figures : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>38) Accuracy - Legends and titles of tables and figures are clearly given : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
-    <label>39) Accuracy - The paper is free from grammatical or spelling errors : </label><br>
-			<input id="yes" type="radio" name="rad" value="yes"  required><label for="yes" >Yes</label><br>
-			<input id="no" type="radio"  name="rad" value="no" required><label for="no" >No</label>
-    
-    </li>       
-    <br>
+    <br><br>
     <li>
-        <label>40) Accuracy - (If 'no', Please give reasons) : </label>
+        <label>(If 'no', Please give reasons) : </label>
         <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
+    <label>6) Novelty or Originality - The paper reflects current information on this topic : </label><br>
+		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
     <li>
-        <label>41) Quality of the paper : </label>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+    <label>7) The title is clear and informative : </label><br>
+		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+    <label>8) The title reflects the content and purpose of the paper : </label><br>
+		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+    <label>9) Abstract : </label><br>
+    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>10) Keywords : </label><br>
+    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>11) Content - Introduction : </label><br>
+	<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>12) Content - Background / Literature Study - The most current references on this topic have been included : </label><br>
+		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>13) Content - Background / Literature Study - The most relevant references on this topic have been included : </label><br>
+    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>14) Content - Methodology : </label><br>
+   <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>15) Clarity - There are no any contradictions or inconsistencies: </label><br>
+    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+    <label>16) Clarity - The paper stays focused : </label><br>
+		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>17) Organization - Ideas are developed and related in a logic sequence : </label><br>
+		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>18) Organization - Transitions between discussion are smooth and easy to follow : </label><br>
+		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>19) Accuracy - The supporting evidence ( literature referenced ) is appopriately cited : </label><br>
+		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>20) Accuracy - Tables and figures are of clear and satisfactory quality : </label><br>
+		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>21) Accuracy - There are no math or text errors in tables or figures : </label><br>
+		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>22) Accuracy - Legends and titles of tables and figures are clearly given : </label><br>
+		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    <br>
+
+    <label>23) Accuracy - The paper is free from grammatical or spelling errors : </label><br>
+	<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+      <br><br>
+			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+    </li>       
+    <br><br>
+    <li>
+        <label>(If 'no', Please give reasons) : </label>
+        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+    </li>
+    
+    <br>
+    <li>
+        <label>24) Quality of the paper : </label>
         <select name="field4" class="field-select">
         <option value="Advertise"></option>
         <option value="Advertise">Excellent</option>
@@ -380,7 +488,7 @@ select{
     </li>
     <br>
     <li>
-        <label>42) Recommendation : </label>
+        <label>25) Recommendation : </label>
         <select name="field4" class="field-select">
         <option value="Advertise"> </option>
         <option value="Advertise">Yes - no changes </option>
@@ -392,20 +500,27 @@ select{
     </li>
     <br>
     <li>
-        <label>43) Overall Recommendation :</label>
+        <label>26) Overall Recommendation :</label>
         <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
     <li>
-        <label>44) Comments to author :</label>
+        <label>27) Comments to author :</label>
         <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
+    <br><br>
+    <li>
+        <input type="submit" value=" + Add a new question"/>
+    </li>
     <br><br><br>
+    <center>
     <li>
         <input type="submit" value="Submit" />
         <input type="submit" style="margin-left:60px;background-color:grey;"value="Cancel">
     </li>
+    </center>
+    
 </ul>
 </form>
 
