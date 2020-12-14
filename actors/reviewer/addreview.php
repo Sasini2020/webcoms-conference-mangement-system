@@ -4,8 +4,6 @@
         header('location:../../login.php');
     }
 ?>
-<!-- Accessing the FilesLogic.php -->
-<?php include 'filesLogic.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -199,10 +197,21 @@ select{
 <br>
 <h2 style="color:#2E4053 ;margin-left:20px;">Add Review</h2>
 <br><br>
-<h4 style="color:#2E4053 ;margin-left:20px;">Paper ID<span style=margin-left:79px;>:</span></h4>
-<h4 style="color:#2E4053 ;margin-left:20px;">Paper Title<span style=margin-left:60px;>:</span></h4>
-<h4 style="color:#2E4053 ;margin-left:20px;">Track Name<span style=margin-left:48px;>:</span></h4>
+<h4 style="color:#2874A6 ;margin-left:20px;">Paper ID<span style=margin-left:79px;>:</span ><span style=margin-left:65px;> </span>
+<?php 
+      $f_id = $_GET['f_id'];
+      echo "$f_id";
+?></h4>
+<h4 style="color:#2874A6 ;margin-left:20px;">Paper Title<span style=margin-left:60px;>:</span><span style=margin-left:65px;> </span>
+<?php 
+      $f_title = $_GET['f_title'];
+      echo "$f_title";
+?></h4>
+<h4 style="color:#2874A6 ;margin-left:20px;">Track Name<span style=margin-left:48px;>:</span><span style=margin-left:65px;> </span>
+
+</h4>
 <br><br><br>
+
 <form>
 <ul class="form-style-1">
     
@@ -223,11 +232,7 @@ select{
       <br><br>
 			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
     </li>       
-    <br>
-    <li>
-        <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
-    </li>
+    
     <br><br>
 
     <label>3) Have you previously reviewed or area chaired ( a version of ) this work for another archival venue ?</label><br>
@@ -236,11 +241,7 @@ select{
 			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
-    <li>
-        <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
-    </li>
-    <br>
+    
      <li>
         <label>4) Reviewer's level of confidence (alignment with your domain of expertise) : </label>
         <select name="field4" class="field-select">
