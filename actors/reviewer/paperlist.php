@@ -13,32 +13,6 @@
    <link rel="stylesheet" href="../../css/table_style.css">
   <title>Uploaded reseach papers</title>
 
-<!-- Added css to style tag to style table -->
-  <!--<style>
-#papersDownloads {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#papersDownloads td, #papersDownloads th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#papersDownloads tr:nth-child(even){background-color: #f2f2f2;}
-
-#papersDownloads tr:hover {background-color: #ddd;}
-
-#papersDownloads th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: dodgerblue;
-  color: white;
-}
-</style>-->
-<!-- Added css to style tag to style table -->
 <style>
 
 
@@ -94,16 +68,12 @@
     <!-- file id -->
     <th>Paper ID</th>
     <th>Paper Title</th> 
+    <th>Track Name</th>
     <th>Conference Name</th>
     <th>Action</th>
     <th>Review & Discussion</th>
 
-    
-    
-    
-    
-
-
+   
 </thead>
 <tbody>
   <?php foreach ($files as $file): ?>
@@ -112,7 +82,11 @@
       <td><?php echo $file['title']; ?></td>
       <!-- show conference name here in below php tag -->
       <td><?php ?></td>
-      <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperslist.php?file_id=<?php echo $file['id'] ?>"> Download </a>
+      <td><?php ?></td>
+
+      <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperslist.php?file_id=<?php echo $file['id'] ?>"> Download paper</a>
+      <br><br>
+      <i style="color:#1A5276" class="fas fa-eye"></i><a style="color:dodgerblue ;text-decoration:none;" href="../../uploads/<?php echo $file['name']; ?>" target="_blank">View paper</a>
       <br><br>
       <!-- <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" href="../../uploads/<?php echo $file['name']; ?>"> View abstract</a> -->
       <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" href="#"> View abstract</a>
@@ -120,20 +94,22 @@
       <br><?php echo $file['abstract']; ?>
       </td>
 
+			<!-- echo "<a href='papersubmission.php?c_id=". $row['id'] ."' title='submit paper' class='linkDec'><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a>"; -->
+      <td>
+      <?php
 
-      <td><i class="fas fa-pen-square" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="addreview.php"> Add Review </a>
-      <br><br><i class="fas fa-edit" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="editreview.php"> Edit Review </a>
-      <br><br><i class="far fa-eye"style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="viewreview.php"> View Review </a></td>
+      echo "<i class='far fa-plus-square' style='color:#1A5276'></i><a href='addreview.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Add Review        </a> ";
+      echo "<br><br>";
+      echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='editreview.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Edit Review </a> ";
+      echo "<br><br>";
+      echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='viewreview.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> View Review </a> ";
 
-      
-      
-      
-
-
-    
+      ?>
+    </td>
     
     </tr>
   <?php endforeach;?>
+
 
 </tbody>
 </table>
