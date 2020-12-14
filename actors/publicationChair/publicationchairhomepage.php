@@ -88,7 +88,7 @@
 	  <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>-->
 
 
-			<li><a class="active" href="adminhomepage.php">Home</a></li>
+			<li><a class="active" href="publicationchairhomepage.php">Home</a></li>
 			<li><a href="publishSubmissionGuidelines.php">Upload Guidelines For Paper Submission</a></li>
 			<li><a href="uploadcoversub.php">Upload Pages</a></li>
 			<li><a href="viewcamerareadycopies.php">View Camera-ready copy</a></li>
@@ -120,7 +120,7 @@
     <th>Paper Title</th>
     <th>File</th>
     <th>Conference name</th>
-    <th>University(Author)</th>
+    <th>Oraganization(Author)</th>
     <!--<th>File size (in KB)</th>-->
     <!-- <th>Contact details</th>
     <th>Other links</th> -->

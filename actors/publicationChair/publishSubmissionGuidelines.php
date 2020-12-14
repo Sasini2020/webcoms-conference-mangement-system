@@ -85,7 +85,7 @@
               <i class="fas fa-bars"></i>
             </label>
     <ul>
-      <li><a href="adminhomepage.php">Home</a></li>
+      <li><a href="publicationchairhomepage.php">Home</a></li>
 			<li><a class="active" href="publishSubmissionGuidelines.php">Upload Guidelines For Paper Submission</a></li>
 			<li><a href="uploadcoversub.php">Upload Pages</a></li>
 			<li><a href="viewcamerareadycopies.php">View Camera-ready copy</a></li>
