@@ -3,7 +3,7 @@
     if($_SESSION['login_s'] != '3'){
         header('location:../../login.php');
     }
-	require '../../dbconfig/config.php';
+  require '../../dbconfig/config.php';
 ?>
 
 <?php include 'filesLogic.php';?>

@@ -68,8 +68,7 @@
 	<thead>
 		<tr>
 		<th>Full name</th>
-		<th>Email</th>
-		<th>Gender</th>		
+		<th>Email</th>	
 		<th></th>
 		</tr>
 	</thead>	
@@ -86,12 +85,12 @@
 		die("Connection failed:". $conn-> connect_error);
 	}
 	
-	$sql = "SELECT full_name, email, gender from userinfotable where user_type='Author'";
+	$sql = "SELECT full_name, email from userinfotable where user_type='Author'";
 	$result = $conn-> query($sql);
 	
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
-			echo "<tr><td>". $row["full_name"] ."</td><td>". $row["email"] ."</td><td>". $row["gender"] ."</td><td>";
+			echo "<tr><td>". $row["full_name"] ."</td><td>". $row["email"] ."</td></tr>";
 		}
 		echo "</table>";
 	}
