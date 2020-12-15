@@ -121,7 +121,7 @@ a:hover {
               <i class="fas fa-bars"></i>
             </label>
 	<ul>
-    
+  <li><a  href="author_home.php">home</a></li>
 	  <li><a class="active" href="ConferenceListForA.php">Conferences List</a></li>
     <li><a href="submission_guidlines.php">Submission Guidlines</a></li>
 
