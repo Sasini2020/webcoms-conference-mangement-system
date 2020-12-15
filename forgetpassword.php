@@ -27,7 +27,7 @@
           </ul>  
 
   </nav>
-  <h1>Forget Your Password  </h1>
+  <h1>Forgot Your Password  </h1>
   <br><br>
  <div id="main-wrapper"> 
     <form action="reset_request_password.php" method="post" class="myform">
