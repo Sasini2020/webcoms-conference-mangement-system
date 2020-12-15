@@ -44,7 +44,10 @@
 
 
 			<button name="login" type="submit" id="login_btn" value="Login">login</button>
-			<p style="text-align:center;" class="message">Not registered? <a style="text-decoration:none;color:dodgerblue" href="register.php">Create an account</a></p>
+			<!--<p style="text-align:center;" class="message">Not registered? <a style="text-decoration:none;color:dodgerblue" href="register.php">Create an account</a></p>-->
+
+			<p style="text-align:center;" class="message"> <a style="text-decoration:none;color:dodgerblue" href="forgetpassword.php">Forgot your password? </a> &nbsp;|&nbsp; New to Web-Coms? <a style="text-decoration:none;color:dodgerblue" href="register.php">Register</a></p>
+			
 			</fieldset>
 		</form>
   		</div>
