@@ -102,7 +102,7 @@
          <th>Start date</th>
          <th>End date</th>
          <th>Deadline</th>
-         <th>Sposer details</th>
+         <th>Sponsor details</th>
          <th>Modify Tracks</th>
          </tr>
      </thead>
