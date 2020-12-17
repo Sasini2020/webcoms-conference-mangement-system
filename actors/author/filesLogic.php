@@ -45,14 +45,11 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             $abstract = $_POST['abstract'];
             $trackId = $_POST['Ptrack'];
             $OtherAuthorE = $_POST['OtherAutherE'];
-                $trackChairEmailresult = mysqli_query($conn, "select trackChair from conferencetrack where ID=$trackId");
-                $rowE = mysqli_fetch_assoc($trackChairEmailresult);
-            $trackChairEmail = $rowE['trackChair'];
             $authorEmail = $_SESSION['au_email'];
 
             //I inserted values in a different special way
-            $sql = "INSERT INTO researchpaper(title,abstract,NameOfFile,size,Downloads,acceptancy,trackID,corautherdetails,emailtrackchair,emailauthor) VALUES 
-            ('$title','$abstract','$filename',$size,0,0,$trackId,'$OtherAuthorE','$trackChairEmail','$authorEmail')";
+            $sql = "INSERT INTO researchpaper(title,abstract,NameOfFile,size,Downloads,acceptancy,trackID,corautherdetails,emailauthor) VALUES 
+            ('$title','$abstract','$filename',$size,0,0,$trackId,'$OtherAuthorE','$authorEmail')";
            
             
 

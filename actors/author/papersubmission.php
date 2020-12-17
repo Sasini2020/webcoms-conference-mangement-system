@@ -99,7 +99,7 @@
           <textarea name="abstract" rows="10" cols="40"></textarea><br>
 
           <label><b>Other Authors Email*</b></label><br>
-          <input name="OtherAutherE" type="text" class="inputvalues" placeholder="Enter Emails" required/><br>
+          <input name="OtherAutherE" type="text" class="inputvalues" placeholder="Enter Emails"/><br>
           
           <label><b>Select Paper *</b></label><br>
           <input type="file" name="myfile" > <br>
