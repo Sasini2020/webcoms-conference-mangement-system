@@ -69,12 +69,6 @@
    
     ?>
 
-    
-
-    
-
-
-
  </div>
   <div class="footer">
 
