@@ -13,6 +13,11 @@
         elseif($_POST['mTrack'] == 'View'){
           $_SESSION['c_id'] = $_POST['id'];
           header('location:viewTracksForCC.php');
+          
+        }else if($_POST['assignT']=='assign'){
+                    header('Location:assignTrackchair.php');
+
+
         }
       }
     ?>
