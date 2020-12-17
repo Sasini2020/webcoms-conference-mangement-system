@@ -123,7 +123,8 @@
             $c_email = $_SESSION['c_email'];
             $sql = mysqli_query($con, "select *
             from conferences
-            where (Accepted='1')and(emailconfchair='$c_email');") or die(mysqli_error($con));
+            where (Accepted='1')and(emailconfchair='$c_email')
+            group by conferences.id DESC;") or die(mysqli_error($con));
             $counter = 1;
             while ($row = mysqli_fetch_assoc($sql)) {
        ?>                                            

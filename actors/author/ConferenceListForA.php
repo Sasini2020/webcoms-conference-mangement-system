@@ -3,6 +3,7 @@
     if($_SESSION['login_s'] != '3'){
         header('location:../../login.php');
     }
+    require '../../dbconfig/config.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -140,7 +141,7 @@ a:hover {
      <!-- <th>ID</th> -->
 	   <th>Conference</th>
 	   <th>Location</th>
-	   <th>Start date</th>
+	   <th>Conference Start Date</th>
 	   <!-- <th>End date</th>
 	   <th>Paper submission due date</th> -->
 	   <!-- <th>Sponser details</th> -->
@@ -162,12 +163,10 @@ a:hover {
 
 
 	
-	$conn = mysqli_connect("localhost","root","","webcomsdb");
-	if ($conn-> connect_error) {
-		die("Connection failed:". $conn-> connect_error);
-	}
+	$conn = $con;
 	
-	$sql = "SELECT id,name,venue,start_date from conferences ";
+  $sql = "SELECT id,name,venue,start_date from conferences 
+          group by conferences.id DESC";
 	$result = $conn-> query($sql);
 
 
@@ -185,7 +184,6 @@ a:hover {
 	else {
 		echo "0 result";
 	}
-	$conn-> close();
 	?>
 
 

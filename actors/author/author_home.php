@@ -3,6 +3,7 @@
     if($_SESSION['login_s'] != '3'){
         header('location:../../login.php');
     }
+    require '../../dbconfig/config.php';
 ?>
 
 <!DOCTYPE html>
@@ -108,9 +109,7 @@ $(document).ready(function(){
     <!-- <th>ID</th> -->
 	   <th>Conference</th>
 	   <th>Venue</th>
-	   <th>Start date</th>
-     <th>External URL</th>
-     <th>Contact</th>
+	   <th>Conference Start date</th>
 
 
 	   <!-- <th>End date</th> -->
@@ -133,19 +132,17 @@ $(document).ready(function(){
 
 
 	
-	$conn = mysqli_connect("localhost","root","","webcomsdb");
-	if ($conn-> connect_error) {
-		die("Connection failed:". $conn-> connect_error);
-	}
+	$conn = $con;
 	
-	$sql = "SELECT * from conferences ";
+  $sql = "SELECT * from conferences 
+          group by conferences.id DESC";
 	$result = $conn-> query($sql);
 
 
 	
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
-			echo "<tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>" ;
+			echo "<tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><tr>" ;
 		
        
         }
@@ -154,7 +151,7 @@ $(document).ready(function(){
 	else {
 		echo "0 result";
 	}
-	$conn-> close();
+	
 	?>
 
 

@@ -95,7 +95,8 @@
           conferencechair.fullname
           from conferences
           inner join conferencechair on conferences.emailconfchair = conferencechair.emailconfchair
-          where conferences.Accepted='1';") or die(mysqli_error($con));
+          where conferences.Accepted='1'
+          group by conferences.id DESC;") or die(mysqli_error($con));
           $counter = 1;
           while ($row = mysqli_fetch_assoc($sql)) {
         ?>                                            
