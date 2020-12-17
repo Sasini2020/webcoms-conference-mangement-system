@@ -44,10 +44,23 @@
 
 
 <body >
-
+  
 <nav>
+<div class="logo">Web-Coms</div>
+<input type="checkbox" id="click">
+<label for="click" class="menu-btn">
+       <i class="fas fa-bars"></i>
+</label>     
     <ul>
-      <li><a href="trackchairhomepage.php">Back</a></li>
+     <!-- <li><a href="trackchairhomepage.php">Back</a></li>-->
+     <li><a href="trackchairhomepage.php">Home</a></li>
+    <li><a href="firstround.php">First Round Paper Evaluation</a></li>
+    <li><a class="active"  href="assignreviewrs.php">Assign Reviewers </a></li>
+    <li><a href="../../About.php">About</a></li>
+    <li><a href="../../help.php">Help</a></li>
+    <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+		
+
     </ul>
   </nav>
 

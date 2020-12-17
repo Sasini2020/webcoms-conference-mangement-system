@@ -24,6 +24,15 @@
       border:2px solid #7a7a52;
       border-radius:10px;
     }
+    #assignT{
+        padding:1px 8px;
+        background-color:#36F30B;
+        border:2px solid #7a7a52;
+        border-radius:10px;
+
+
+
+    }
 
 
 * {
@@ -102,8 +111,9 @@
          <th>Start date</th>
          <th>End date</th>
          <th>Deadline</th>
-         <th>Sposer details</th>
+         <th>Sponsor details</th>
          <th>Modify Tracks</th>
+         <th>Assign Trackchair</th>
          </tr>
      </thead>
 	 </center>
@@ -132,6 +142,11 @@
                     <input type="submit" name="mTrack" Value="View" id="CTview" />
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                 </form>
+            </td>
+            <td style="padding-left: 20px;">
+               <form action="route.php"  method="post">
+                 <input type="submit" name="assignT" value="assign" id="assignT"/>
+               </form>
             </td>
            </tr>
      </tbody>

@@ -71,6 +71,7 @@
               </label>
     <ul>
    
+    <li><a href="author_home.php">home</a></li>
     <li><a href="ConferenceListForA.php">Conferences List</a></li>
     <li><a class="active" href="submission_guidlines.php">Submission Guidelines</a></li>
 
