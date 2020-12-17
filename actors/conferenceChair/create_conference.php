@@ -344,6 +344,9 @@
 			
 			<label>Paper Submission Due Date <span style="color:red;">*</span></b></label><br>
 			<input name="deadline" type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2021-02-15" required/><br>
+
+      <label>Sponsers Details <span style="color:red;">*</span></b></label><br>
+			<input name="sponserD" type="text" class="inputvalues" placeholder="Type Sponsers Details"/><br>
 		
 
 			<!-- <input name="create_btn" type="submit" id="register_btn" value="CREATE"/><br> -->
@@ -360,13 +363,14 @@
 				$country = $_POST['country'];
 				$start_date = $_POST['start_date'];
 				$end_date = $_POST['end_date'];
-				$deadline = $_POST['deadline'];
+        $deadline = $_POST['deadline'];
+        $sponserD = $_POST['sponserD'];
 				$c_Email = $_SESSION['c_email'];			
 		
 				//$query= "select * from conferences '";
 				//$query_run = mysqli_query($con,$query);					
 					
-				$query= "insert into conferences values(NULL,'$name','$venue','$country','$start_date','$end_date','$deadline','0','$c_Email')";
+				$query= "insert into conferences values(NULL,'$name','$venue','$country','$start_date','$end_date','$deadline','$sponserD','0','$c_Email')";
 				$query_run = mysqli_query($con,$query);
 						
 				if($query_run)
