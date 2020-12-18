@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -146,7 +147,9 @@
             </td>
             <td style="padding-left: 20px;">
                <form action="route.php"  method="post">
-                 <input type="submit" name="assignT" value="assign" id="assignT"/>
+                 <input type="submit" name="mTrack" value="assign" id="assignT"/>
+                 <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
+                 <input type="hidden" name="Cname" value="<?php echo $row['name'];?>">
                </form>
             </td>
            </tr>
