@@ -113,6 +113,9 @@
 					<option value="PublicationChair">Publication Chair</option>
 				</select><br>-->
 
+      <label for="aOrganization">Organization:</label><br>
+			<input id="aOrganization" name="Organization" type="text" class="inputvalues" placeholder="Type your Organization" /><br>
+
 			<label for="country">Country:</label><br>
 				<select id="country" class="" name="country">
                 <option value="">Select Your Country</option>
@@ -361,9 +364,6 @@
                 <option value="Zambia">Zambia</option>
                 <option value="Zimbabwe">Zimbabwe</option>
 				</select><br>
-			
-			<label for="aOrganization">Organization:</label><br>
-			<input id="aOrganization" name="Organization" type="text" class="inputvalues" placeholder="Type your Organization" /><br>
 			
 			<!-- Used input type as tel -->
 			<label for="ContactDetails">Contact No:</label><br>
