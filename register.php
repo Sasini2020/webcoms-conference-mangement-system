@@ -430,7 +430,47 @@
 					if(mysqli_num_rows($query_run)>0)
 					{
 						// there is already a user with the same email
-						echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
+						$checkDublicate = 0;
+            //avoid same password duplication in same user
+            while($row = mysqli_fetch_assoc($query_run)){
+              if($encrypted_pass==$row['password']){
+                $checkDublicate = 1;
+              }
+            }
+            if($checkDublicate == 1){
+              echo '<script type="text/javascript"> 
+									alert("You entered password is can not use with this user email. please use another password"); 
+								</script>';
+            }
+						else{
+							$query= "select * from author WHERE emailauthor='$email'";
+							$query_run = mysqli_query($con,$query);
+							if(mysqli_num_rows($query_run)>0){
+								echo '<script type="text/javascript"> 
+									alert("This Email is allready registered as Author."); 
+								</script>';
+							}
+							else{
+								$query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
+						    values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
+                $query_run = mysqli_query($con,$query);
+                
+                $query2= "insert into author 
+                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+                $query_run2 = mysqli_query($con,$query2);
+
+                if($query_run and $query_run2)
+                {
+                  echo '<script type="text/javascript"> 
+                     alert("Registration Successfully.");
+                  </script>';
+                }
+                else
+                {
+                  echo  '<script type="text/javascript">alert("'.mysqli_error($con).'")</script>';
+                }
+							}
+            } 
 					}
 					else
 					{
@@ -438,30 +478,11 @@
 						values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
 						$query_run = mysqli_query($con,$query);
 
-						switch($usertype){
-							case "Author":
-								$query2= "insert into author 
-									values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
-								$query_run2 = mysqli_query($con,$query2);
-								break;
-							/*case "Reviewer":
-								$query2= "insert into reviewer 
-									values('$email','$fullname','$gender','$encrypted_pass','$email')";
-								$query_run2 = mysqli_query($con,$query2);
-								break;
-							case "TrackChair":
-								$query2= "insert into trackchair 
-									values('$email','$fullname','$gender','$encrypted_pass','$email')";
-								$query_run2 = mysqli_query($con,$query2);
-								break;
-							case "PublicationChair":
-								$query2= "insert into publicationchair 
-									values('$email','$fullname','$encrypted_pass','$gender','$email')";
-								$query_run2 = mysqli_query($con,$query2);
-								break;*/
-							default:
-								$query_run2 = false;
-						}
+						
+						$query2= "insert into author 
+							values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+						$query_run2 = mysqli_query($con,$query2);
+								
 
 						
 						if($query_run and $query_run2)

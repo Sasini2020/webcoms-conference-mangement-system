@@ -442,7 +442,7 @@
             }
             if($checkDublicate == 1){
               echo '<script type="text/javascript"> 
-									alert("You entered password is can not use this user email. please use another password"); 
+									alert("You entered password is can not use with this user email. please use another password"); 
 								</script>';
             }
 						elseif($usertype=="Reviewer"){
