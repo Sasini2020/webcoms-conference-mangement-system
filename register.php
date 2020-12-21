@@ -466,7 +466,12 @@
 						
 						if($query_run and $query_run2)
 						{
-							echo '<script type="text/javascript"> alert("User Registered.. Go to login page to login") </script>';
+              echo '<script type="text/javascript"> 
+                if (window.confirm("Registration Successfully")) 
+                {
+                window.location.href="login.php";
+                };
+              </script>';
 						}
 						else
 						{
