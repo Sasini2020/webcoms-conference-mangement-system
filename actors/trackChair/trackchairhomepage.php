@@ -4,7 +4,7 @@
         header('location:../../login.php');
     }
 ?>
-<?php include 'filesLogic.php';?>
+<?php //include 'filesLogic.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -101,7 +101,6 @@
 <table class="content-table">
 <thead>
     <!-- file id -->
-    <th>ID </th>
     <th>Paper Title</th> 
     <th>Author's name</th>
     <th>Research paper</th>
@@ -118,23 +117,22 @@
 
 </thead>
 <tbody>
-  <?php foreach ($files as $file): ?>
+  <?php //foreach ($files as $file): ?>
     <tr>
-      <td><?php echo $file['id']; ?></td>
-      <td><?php echo $file['title']; ?></td>
-      <td><?php echo $file['full_name'];?></td>
-      <td><?php echo $file['name']; ?></td>
+      <td><?php //echo $file['title']; ?></td>
+      <td><?php //echo $file['full_name'];?></td>
+      <td><?php //echo $file['name']; ?></td>
   
   
       <!-- show conference name here in below php tag 
       <td><?php ?></td>-->
 
 
-      <td><?php echo $file['university'];?></td>
+      <td><?php //echo $file['university'];?></td>
       
     
     </tr>
-  <?php endforeach;?>
+  <?php //endforeach;?>
 
 </tbody>
 </table>
