@@ -89,7 +89,8 @@
 			<li><a class="active" href="publishSubmissionGuidelines.php">Upload Guidelines For Paper Submission</a></li>
 			<li><a href="uploadcoversub.php">Upload Pages</a></li>
 			<li><a href="viewcamerareadycopies.php">View Camera-ready copy</a></li>
-      <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+			<li><a href="autoproceeding.php">Auto generate proceeding</a></li>
+			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
 
     </ul>

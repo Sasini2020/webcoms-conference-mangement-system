@@ -29,8 +29,6 @@
 		 <li><a class="active" href="reviewerhomepage.php">Home</a></li>
       <!-- <li><a href="ConferenceListForR.php">Conference List</a></li> -->
 			<!-- <li><a href="paperlist.php">View papers</a></li> -->
-      <li><a href="../../About.php">About</a></li>
-        <li><a href="../../help.php">Help</a></li>
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
     </ul>

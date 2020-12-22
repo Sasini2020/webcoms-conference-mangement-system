@@ -125,9 +125,6 @@ a:hover {
   <li><a  href="author_home.php">home</a></li>
 	  <li><a class="active" href="ConferenceListForA.php">Conferences List</a></li>
     <li><a href="submission_guidlines.php">Submission Guidlines</a></li>
-
-    <li><a href="../../About.php">About</a></li>
-    <li><a href="../../help.php">Help</a></li>
     <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
 	</ul>

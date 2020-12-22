@@ -89,9 +89,6 @@ $(document).ready(function(){
 
     <li><a href="ConferenceListForA.php">Conferences List</a></li>
     <li><a href="submission_guidlines.php">Submission Guidelines</a></li>
-
-    <li><a href="../../About.php">About</a></li>
-    <li><a href="../../help.php">Help</a></li>
     <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 	</ul>
   </nav>

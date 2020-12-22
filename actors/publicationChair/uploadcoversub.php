@@ -146,10 +146,12 @@ if (mysqli_query($con, $sql)) {
                 <i class="fas fa-bars"></i>
               </label>
     <ul>
-    <li><a href="publicationchairhomepage.php">Back</a></li>
-    <li><a class="active" href="uploadcoversub.php">Upload Pages</a></li>
-    <li><a href="../../About.php">About</a></li>
-    <li><a href="../../help.php">Help</a></li>
+      <li><a href="publicationchairhomepage.php">Home</a></li>
+			<li><a href="publishSubmissionGuidelines.php">Upload Guidelines For Paper Submission</a></li>
+			<li><a class="active" href="uploadcoversub.php">Upload Pages</a></li>
+			<li><a href="viewcamerareadycopies.php">View Camera-ready copy</a></li>
+			<li><a href="autoproceeding.php">Auto generate proceeding</a></li>
+			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
     </ul>
   </nav>

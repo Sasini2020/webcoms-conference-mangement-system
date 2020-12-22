@@ -45,6 +45,7 @@
       <!--<li><a href="viewConferencesForCC.php">View Conf</a></li>-->
       <li><a class="active" href="addnotemplates.php">Add notification templates</a></li>
       <li><a href="upudetauls.php">Upload User Details</a></li>
+	  <li><a href="registerUsers.php">Register Users</a></li>
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
     </ul>
