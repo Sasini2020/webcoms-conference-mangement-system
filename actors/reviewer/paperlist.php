@@ -98,11 +98,11 @@
       <td>
       <?php
 
-      echo "<i class='far fa-plus-square' style='color:#1A5276'></i><a href='addreview.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Add Review        </a> ";
+      echo "<i class='far fa-plus-square' style='color:#1A5276'></i><a href='route.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Add Review        </a> ";
       echo "<br><br>";
-      echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='editreview.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Edit Review </a> ";
+      echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Edit Review </a> ";
       echo "<br><br>";
-      echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='viewreview.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> View Review </a> ";
+      echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='#.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> View Review </a> ";
 
       ?>
     </td>
