@@ -1,5 +1,8 @@
 <?php
     session_start();
+
+    require '../../dbconfig/config.php';
+
     if($_SESSION['login_s'] != '2'){
         header('location:../../login.php');
     }
@@ -199,12 +202,12 @@ select{
 <br><br>
 <h4 style="color:#2874A6 ;margin-left:20px;">Paper ID<span style=margin-left:79px;>:</span ><span style=margin-left:65px;> </span>
 <?php 
-      $f_id = $_GET['f_id'];
+      $f_id = $_SESSION['f_id'];
       echo "$f_id";
 ?></h4>
 <h4 style="color:#2874A6 ;margin-left:20px;">Paper Title<span style=margin-left:60px;>:</span><span style=margin-left:65px;> </span>
 <?php 
-      $f_title = $_GET['f_title'];
+      $f_title = $_SESSION['f_title'];
       echo "$f_title";
 ?></h4>
 <h4 style="color:#2874A6 ;margin-left:20px;">Track Name<span style=margin-left:48px;>:</span><span style=margin-left:65px;> </span>
@@ -221,30 +224,30 @@ select{
         
         <br>
         <label class="container" style="margin-left:30px;">
-            <input type="checkbox" checked="checked" style="margin-left:35px;">
+            <input name="question1" value="agree" type="checkbox" checked="checked" style="margin-left:35px;">
             <span class="checkmark"></span><span style="margin-left:40px;" >I agree</span>
         </label>
     </li>
     <br>
     <li>
-    <label>2) Have you seen this submission online (e.g.arXiv, personal website, social media ) ?<span class="required">*</span><span style="color:dodgerblue;">(visible to other reviewer)</span></label><br>
-			<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+    <label>2) Have you seen this submission online (e.g.arXiv, personal website, social media ) ?<span class="required">*</span><span style="c olor:dodgerblue;">(visible to other reviewer)</span></label><br>
+			<input id="yes" type="radio" name="question2" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question2" value="no" style="margin-left:20px;"required> No
     </li>       
     
     <br><br>
 
     <label>3) Have you previously reviewed or area chaired ( a version of ) this work for another archival venue ?</label><br>
-    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+    <input id="yes" type="radio" name="question3" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question3" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     
      <li>
         <label>4) Reviewer's level of confidence (alignment with your domain of expertise) : </label>
-        <select name="field4" class="field-select">
+        <select name="question4" class="field-select">
         <option value="Advertise"></option>
         <option value="Advertise">High</option>
         <option value="Partnership">Medium</option>
@@ -253,231 +256,231 @@ select{
     </li>
     <br>
     <label>5) Relevance : </label><br>
-    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+    <input id="yes" type="radio" name="question5" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question5" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question5_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
     <label>6) Novelty or Originality - The paper reflects current information on this topic : </label><br>
-		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+		<input id="yes" type="radio" name="question6" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question6" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question6_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
     <label>7) The title is clear and informative : </label><br>
-		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+		<input id="yes" type="radio" name="question7" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question7" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question7_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
     <label>8) The title reflects the content and purpose of the paper : </label><br>
-		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+		<input id="yes" type="radio" name="question8" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question8" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question8_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
     <label>9) Abstract : </label><br>
-    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+    <input id="yes" type="radio" name="question9" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question9" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question9_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>10) Keywords : </label><br>
-    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+    <input id="yes" type="radio" name="question10" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question10" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question10_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>11) Content - Introduction : </label><br>
-	<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+	<input id="yes" type="radio" name="question11" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question11" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question11_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>12) Content - Background / Literature Study - The most current references on this topic have been included : </label><br>
-		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+		<input id="yes" type="radio" name="question12" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question12" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question12_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>13) Content - Background / Literature Study - The most relevant references on this topic have been included : </label><br>
-    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+    <input id="yes" type="radio" name="question13" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question13" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question12_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>14) Content - Methodology : </label><br>
-   <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+   <input id="yes" type="radio" name="question14" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question14" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question14_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>15) Clarity - There are no any contradictions or inconsistencies: </label><br>
-    <input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+    <input id="yes" type="radio" name="question15" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question15" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question15_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
     <label>16) Clarity - The paper stays focused : </label><br>
-		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+		<input id="yes" type="radio" name="question16" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question16" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question16_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>17) Organization - Ideas are developed and related in a logic sequence : </label><br>
-		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+		<input id="yes" type="radio" name="question17" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question17" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question17_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>18) Organization - Transitions between discussion are smooth and easy to follow : </label><br>
-		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+		<input id="yes" type="radio" name="question18" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question18" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question18_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>19) Accuracy - The supporting evidence ( literature referenced ) is appopriately cited : </label><br>
-		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+		<input id="yes" type="radio" name="question19" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question19" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question19_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>20) Accuracy - Tables and figures are of clear and satisfactory quality : </label><br>
-		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+		<input id="yes" type="radio" name="question20" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question20" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question20_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>21) Accuracy - There are no math or text errors in tables or figures : </label><br>
-		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+		<input id="yes" type="radio" name="question21" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question21" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question21_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>22) Accuracy - Legends and titles of tables and figures are clearly given : </label><br>
-		<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+		<input id="yes" type="radio" name="question22" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question22" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question22_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
 
     <label>23) Accuracy - The paper is free from grammatical or spelling errors : </label><br>
-	<input id="yes" type="radio" name="rad" value="yes" style="margin-left:20px;" required> Yes
+	<input id="yes" type="radio" name="question23" value="yes" style="margin-left:20px;" required> Yes
       <br><br>
-			<input id="no" type="radio"  name="rad" value="no" style="margin-left:20px;"required> No
+			<input id="no" type="radio"  name="question23" value="no" style="margin-left:20px;"required> No
     </li>       
     <br><br>
     <li>
         <label>(If 'no', Please give reasons) : </label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question23_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     
     <br>
     <li>
         <label>24) Quality of the paper : </label>
-        <select name="field4" class="field-select">
+        <select name="question24" class="field-select">
         <option value="Advertise"></option>
         <option value="Advertise">Excellent</option>
         <option value="Partnership">Good</option>
@@ -490,7 +493,7 @@ select{
     <br>
     <li>
         <label>25) Recommendation : </label>
-        <select name="field4" class="field-select">
+        <select name="question25" class="field-select">
         <option value="Advertise"> </option>
         <option value="Advertise">Yes - no changes </option>
         <option value="Partnership">Yes - with minor revisions</option>
@@ -502,29 +505,109 @@ select{
     <br>
     <li>
         <label>26) Overall Recommendation :</label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question26" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
     <li>
         <label>27) Comments to author :</label>
-        <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
+        <textarea name="question27" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
     <br><br>
-    <li>
-        <input type="submit" value=" + Add a new question"/>
-    </li>
+   
     <br><br><br>
     <center>
     <li>
-        <input type="submit" value="Submit" />
+        <input name="submit_btn" type="submit" value="Submit" />
         <input type="submit" style="margin-left:60px;background-color:grey;"value="Cancel">
+        <!-- <button type="cancel" class="button" onclick="javascript:window.location='addreview.php'">Cancel</button> -->
+
     </li>
     </center>
     
 </ul>
 </form>
 
+<?php
+			if(isset($_POST['submit_btn']))
+			{				
+				// $name =$_POST['name'];
+				// $venue = $_POST['venue'];
+				// $country = $_POST['country'];
+				// $start_date = $_POST['start_date'];
+				// $end_date = $_POST['end_date'];
+        // $deadline = $_POST['deadline'];
+        // $sponserD = $_POST['sponserD'];
+				// $c_Email = $_SESSION['c_email'];			
+		
+        $idform=$_POST['idform'];
+        // $emailauthor	=$_POST['emailauthor'];
+        // $emailreviewer=$_POST['emailreviewer'];
+        $question1	=$_POST['question1'];
+        $question2	=$_POST['question2'];
+        $question3	=$_POST['question3'];
+        $question4	=$_POST['question4'];
+        $question5	=$_POST['question5'];
+        $question6	=$_POST['question6'];
+        $question6_no	=$_POST['question6_no'];
+        $question7_no	=$_POST['question7_no'];
+        $question8	=$_POST['question8'];
+        $question8_no	=$_POST['question8_no'];
+        $question9	=$_POST['question9'];
+        $question10	=$_POST['question10'];
+        $question10_no	=$_POST['question10_no'];
+        $question11	=$_POST['question11'];
+        $question11_no	=$_POST['question11_no'];
+        $question12	=$_POST['question12'];
+        $question12_no=$_POST['question12_no'];	
+        $question13_no	=$_POST['question13_no'];
+        $question14	=$_POST['question14'];
+        $question15	=$_POST['question15'];
+        $question15_no	=$_POST['question15_no'];
+        $question16	=$_POST['question16'];
+        $question16_no	=$_POST['question16_no'];
+        $question17	=$_POST['question17'];
+        $question17_no	=$_POST['question17_no'];
+        $question18	=$_POST['question18'];
+        $question18_no	=$_POST['question18_no'];
+        $question19	=$_POST['question19'];
+        $question19_no	=$_POST['question19_no'];
+        $question20	=$_POST['question20'];
+        $question20_no	=$_POST['question20_no'];
+        $question21	=$_POST['question21'];
+        $question21_no	=$_POST['question21_no'];
+        $question22	=$_POST['question22'];
+        $question23	=$_POST['question23'];
+        $question23_no	=$_POST['question23_no'];
+        $question24	=$_POST['question24'];
+        $question25	=$_POST['question25'];
+        $question26	=$_POST['question26'];
+        $question27	=$_POST['question27'];
+					
+				// $query= "insert into reviewerform values(NULL,NULL,NULL,'$name','$venue','$country','$start_date','$end_date','$deadline','$sponserD','0','$c_Email')";
+        $query="insert into reviewform values(NULL,'$question1','$question2',	'$question3',
+          '$question4',	'$question5','$question5_no',	'$question6','$question6_no','$question7',
+          '$question7_no','$question8','$question8_no','$question9','$question9_no',
+          '$question10','$question10_no','$question11','$question11_no'	,'$question12','$question12_no',
+          '$question13','$question13_no',
+          '$question14','$question14_no','$question15',
+          '$question15_no','$question16','$question16_no','$question17','$question17_no',
+          '$question18','$question18_no','$question19',
+          '$question19_no','$question20'	,'$question20_no','$question21','$question21_no','$question22',
+          '$question22_no','$question23','$question23_no',
+          '$question24','$question25','$question26','$question27')";
+        $query_run = mysqli_query($con,$query);
+						
+				if($query_run)
+					{
+						echo '<script type="text/javascript"> alert("Your review was submitted.") </script>';
+					}
+				else
+					{
+						echo '<script type="text/javascript"> alert("'.mysqli_error($con).'") </script>';
+					}
+			}			
+		?>
 <!-- Footer section -->
         <div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
