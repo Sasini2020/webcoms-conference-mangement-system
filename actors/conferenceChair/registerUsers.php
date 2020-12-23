@@ -55,6 +55,14 @@
 		left: -35px;
 		content: "✖";
 		}
+
+    .hideContent{
+      display:none;
+    }
+
+    .showContent{
+      display:block;
+    }
 		</style>
 </head>
 <body>
@@ -111,11 +119,10 @@
       <label for="fname">Full Name:</label><br>
 			<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 			
-			<!--<label>Gender:</label><br>
-			<input id="Gmale" type="radio" name="gender" value="male" checked required><label for="Gmale" class="light">Male</label><br><br>
-			<input id="GFemale" type="radio"  name="gender" value="female" required><label for="GFemale" class="light">Female</label>
-			<br><br>
-			-->
+			<div id="rInterestTrack" class="hideContent">
+        <label for="itrackn">Interested Tracks Name:</label><br>
+        <input id="itrackn" name="iTrackN" type="text" class="inputvalues" placeholder="Type your Interested Tracks in comma seperatedly"/><br>
+      </div>
 
       <label for="aOrganization">Organization:</label><br>
 			<input id="aOrganization" name="Organization" type="text" class="inputvalues" placeholder="Type your Organization" /><br>
@@ -371,7 +378,7 @@
 			
 			<!-- Used input type as tel -->
 			<label for="ContactDetails">Contact No:</label><br>
-			<input id="ContactDetails"  name="ContactDetails" type="tel" class="inputvalues" pattern="[0-9]{1}[0-9]{9}" placeholder="Type your Contact Number" title="Phone number with 0-9 and remaing 9 digit with 0-9"required/>
+			<input id="ContactDetails"  name="ContactDetails" type="tel" class="inputvalues" pattern="[0-9]{1}[0-9]{9}" placeholder="Type your Contact Number" title="Phone number with 0-9 and remaing 9 digit with 0-9"/>
       
       <!--<br><br>
 			<label for="ContactLinks">Contact Links:</label><br>
@@ -410,7 +417,9 @@
 				//echo '<script type="text/javascript"> alert("Sign Up button clicked") </script>';
 				$usertype = $_POST['usertype'];;
 				$aTitle = $_POST['acTitle'];
-				$fullname =$_POST['fullname'];
+        $fullname =$_POST['fullname'];
+        $intTrackN = "";
+        $intTrackN = $_POST['iTrackN'];
 				$aCountry = $_POST['country'];
 				$email = $_POST['email'];
 				$password = $_POST['password'];
@@ -450,7 +459,7 @@
 							$query_run = mysqli_query($con,$query);
 							if(mysqli_num_rows($query_run)>0){
 								echo '<script type="text/javascript"> 
-									alert("This user allready registred as Reviewer in the system therefor you can add this user to conference."); 
+									alert("This user allready registred as Reviewer in the system."); 
 								</script>';
 							}
 							else{
@@ -459,7 +468,7 @@
                 $query_run = mysqli_query($con,$query);
                 
                 $query2= "insert into reviewer 
-                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$intTrackN', '$ContactDetails', '$encrypted_pass', '$email')";
                 $query_run2 = mysqli_query($con,$query2);
 
                 if($query_run and $query_run2)
@@ -542,7 +551,7 @@
 						switch($usertype){
 							case "Reviewer":
 								$query2= "insert into reviewer 
-									values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+									values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$intTrackN', '$ContactDetails', '$encrypted_pass', '$email')";
 								$query_run2 = mysqli_query($con,$query2);
 								break;
 							case "TrackChair":
@@ -645,6 +654,23 @@ myInput.onkeyup = function() {
     length.classList.add("invalid");
   }
 }
+
+// Show and hide reviewer interest track field
+document
+  .getElementById('actor')
+  .addEventListener('change',function(){
+    console.log("change");
+    var target = document.getElementById("actor").value;
+    if(target == "Reviewer"){
+      console.log("Reviewer");
+      rInterestTrack.className = 'showContent';
+    }
+    else{
+      console.log("Other actor");
+      console.log(target);
+      rInterestTrack.className = 'hideContent';
+    }
+  });
 </script>
 
 
