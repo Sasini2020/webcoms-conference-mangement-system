@@ -5,7 +5,7 @@
       header('location:../../login.php');
     }
 
-      if(isset($_POST['mTrack']) && isset($_POST['id'])&&isset($_POST['Cname'])){
+      if(isset($_POST['mTrack']) && isset($_POST['id'])||isset($_POST['Cname'])){
         if($_POST['mTrack'] == 'Add'){
           $_SESSION['c_id'] = $_POST['id'];
           header('location:defineTracks.php');
