@@ -74,6 +74,7 @@
 
 					if($user_type=="Admin"){
 						$_SESSION['login_s'] = '1';
+						$_SESSION['ad_email'] = $email;
 						header('location:actors/admin/adminhomepage.php');
 					}
 					else if($user_type=="Reviewer"){
