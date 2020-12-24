@@ -84,9 +84,9 @@
               <i class="fas fa-bars"></i>
             </label>
 	<ul>
-  <li><a  href="author_home.php">home</a></li>
+  <li><a href="author_home.php">home</a></li>
 	  <li><a class="active" href="ConferenceListForA.php">Conferences List</a></li>
-    <li><a href="submission_guidlines.php">Submission Guidlines</a></li>
+    <!-- <li><a href="submission_guidlines.php">Submission Guidlines</a></li> -->
     <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
 	</ul>
@@ -101,10 +101,10 @@
 	   <th>Conference</th>
 	   <th>Location</th>
 	   <th>Conference Start Date</th>
-	   <th>Paper submission due date</th>
-	   <!-- <th>Sponser details</th> -->
-	   <th>Submit a Paper</th>
-	   <th>Submit camera ready copy</th>
+	   <th>Paper Submission Due Date</th>
+	   <th>Submission Guidelines</th>
+	   <th>Submit Research Paper</th>
+	   <th>Submit Camera Ready Copy</th>
 
 
 
@@ -131,7 +131,7 @@
 	
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
-			echo "</tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>";
+			echo "</tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>"."</td><td>";;
 			echo "<a href='papersubmission.php?c_id=". $row['id'] ."' title='submit paper' class='linkDec'><span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a>";
 			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit camera-ready paper' class='isDisable'><span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a></td>";
 
