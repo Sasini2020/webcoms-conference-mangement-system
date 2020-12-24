@@ -2,8 +2,7 @@
 // connect to the database
 $conn = $con;
 
-// $sql = "SELECT name,size,downloads,full_name,university,contact_details,other_links FROM fileuploadtable";
-$sql = "SELECT * FROM files";
+$sql = "SELECT * FROM researchpaper";
 
 $result = mysqli_query($conn, $sql);
 
@@ -72,7 +71,7 @@ if (isset($_GET['file_id'])) {
     $id = $_GET['file_id'];
 
     // fetch file to download from database
-    $sql = "SELECT * FROM files WHERE id=$id";
+    $sql = "SELECT * FROM researchpaper WHERE id=$id";
     $result = mysqli_query($conn, $sql);
 
     $file = mysqli_fetch_assoc($result);
@@ -89,9 +88,9 @@ if (isset($_GET['file_id'])) {
         readfile('../../uploads/' . $file['name']);
 
         // Now update downloads count
-        $newCount = $file['downloads'] + 1;
-        $updateQuery = "UPDATE files SET downloads=$newCount WHERE id=$id";
-        mysqli_query($conn, $updateQuery);
+        // $newCount = $file['downloads'] + 1;
+        // $updateQuery = "UPDATE files SET downloads=$newCount WHERE id=$id";
+        // mysqli_query($conn, $updateQuery);
         exit;
     }
 
