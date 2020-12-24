@@ -120,8 +120,11 @@
 			<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 			
 			<div id="rInterestTrack" class="hideContent">
-        <label for="itrackn">Interested Tracks Name:</label><br>
-        <input id="itrackn" name="iTrackN" type="text" class="inputvalues" placeholder="Type your Interested Tracks in comma seperatedly"/><br>
+        <label for="itrackn">Choose Reviewer Interested Tracks<br>(Hold Ctrl to select multiple tracks):</label><br>
+        <select name="iTrackN[]" id="itrackn" class="inputvalues" multiple="multiple">
+          
+        </select>
+        <br>
       </div>
 
       <label for="aOrganization">Organization:</label><br>
