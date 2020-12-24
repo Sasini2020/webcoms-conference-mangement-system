@@ -11,52 +11,14 @@
 
 	<title>Conferences List</title>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
+  <link rel="stylesheet" href="../../css/reg_form_style.css">
+  <link rel="stylesheet" href="../../css/table_style.css">
 
-	 <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>
- 	<link rel="stylesheet" href="../../css/nav_footer_styles.css">-->
-   <link rel="stylesheet" href="../../css/reg_form_style.css">
 
-   <link rel="stylesheet" href="../../css/table_style.css">
-
-<!-- Added css to style tag to style table -->
-<!--<style>
-#papersDownloads {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#papersDownloads td, #papersDownloads th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#papersDownloads tr:nth-child(even){background-color: #f2f2f2;}
-
-#papersDownloads tr:hover {background-color: #ddd;}
-
-#papersDownloads th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #5DADE2;
-  color: white;
-}
-a {
-  color: #5DADE2;
-  text-decoration:none;
-}
-a:hover {
-  color: #1A5276;
-}
-</style>-->
 <style>
-/* 
-* {
-  font-family: sans-serif; Change your font family 
-} */
+
 
 .content-table {
   border-collapse: collapse;
@@ -139,8 +101,7 @@ a:hover {
 	   <th>Conference</th>
 	   <th>Location</th>
 	   <th>Conference Start Date</th>
-	   <!-- <th>End date</th>
-	   <th>Paper submission due date</th> -->
+	   <th>Paper submission due date</th>
 	   <!-- <th>Sponser details</th> -->
 	   <th>Submit a Paper</th>
 	   <th>Submit camera ready copy</th>
@@ -162,7 +123,7 @@ a:hover {
 	
 	$conn = $con;
 	
-  $sql = "SELECT id,name,venue,start_date from conferences 
+  $sql = "SELECT id,name,venue,start_date,end_date from conferences 
           group by conferences.id DESC";
 	$result = $conn-> query($sql);
 
@@ -170,9 +131,9 @@ a:hover {
 	
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
-			echo "</tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>";
-			echo "<a href='papersubmission.php?c_id=". $row['id'] ."' title='submit paper' class='linkDec'><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a>";
-			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit camera-ready paper' class='isDisable'><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a></td>";
+			echo "</tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>";
+			echo "<a href='papersubmission.php?c_id=". $row['id'] ."' title='submit paper' class='linkDec'><span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a>";
+			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit camera-ready paper' class='isDisable'><span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a></td>";
 
        
         }
