@@ -2,8 +2,7 @@
 // connect to the database
 $conn = $con;
 
-// $sql = "SELECT name,size,downloads,full_name,university,contact_details,other_links FROM fileuploadtable";
-$sql = "SELECT * FROM files";
+$sql = "SELECT * FROM researchpaper";
 
 $result = mysqli_query($conn, $sql);
 
