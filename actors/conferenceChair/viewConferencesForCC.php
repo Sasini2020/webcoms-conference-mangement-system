@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,31 +11,28 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   
   <style>
-    #CTadd{
-      padding:1px 8px;
-      background-color:#ff66ff;
-      border:2px solid #7a7a52;
-      border-radius:10px;
-    }
-    #CTview{
-      padding:1px 4px;
-      background-color:#00ffff;
-      border:2px solid #7a7a52;
-      border-radius:10px;
-    }
-    #assignT{
-        padding:1px 8px;
-        background-color:#36F30B;
-        border:2px solid #7a7a52;
-        border-radius:10px;
-
-
-
-    }
-
 
 * {
   font-family: sans-serif; /* Change your font family */
+}
+.conListLink{
+  color:white;
+  text-shadow: 1px 1px 0 #444;
+}
+
+.conListLink:link,
+.conListLink:link:visited{
+  background-color: #00ccff;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}  
+
+.conListLink:hover, 
+.conListLink:active {
+  background-color: #00b8e6;
 }
 
 .content-table {
@@ -114,7 +109,7 @@
          <th>Deadline</th>
          <th>Sponsor details</th>
          <th>Modify Tracks</th>
-         <th>Assign Trackchair</th>
+         <th>Assign Publication Chair</th>
          </tr>
      </thead>
 	 </center>
@@ -138,19 +133,16 @@
             <td><?=$row['end_date']?></td>
             <td><?=$row['deadline_date']?></td>
             <td><?=$row['sponsor_details']?></td>
-            <td style="padding-left: 20px;">
-                <form action="route.php" method="post">		                                   
-                    <input type="submit" name="mTrack" Value="Add" id="CTadd"/>
-                    <input type="submit" name="mTrack" Value="View" id="CTview" />
-                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
-                </form>
+            <td>
+                <a href="route.php?modifyTrackCId=<?= $row['id'] ?>" class="conListLink">Modify Tracks</a>
             </td>
             <td style="padding-left: 20px;">
-               <form action="route.php"  method="post">
+               <!--<form action="route.php"  method="post">
                  <input type="submit" name="mTrack" value="assign" id="assignT"/>
-                 <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
-                 <input type="hidden" name="Cname" value="<?php echo $row['name'];?>">
-               </form>
+                 <input type="hidden" name="id" value="<?php //echo $row['id'];?>"/>
+                 <input type="hidden" name="Cname" value="<?php //echo $row['name'];?>">
+               </form>-->
+
             </td>
            </tr>
      </tbody>
