@@ -4,7 +4,9 @@
         header('location:../../login.php');
     }
 ?>
-<?php include 'filesLogic.php';?>
+<?php 
+//include 'filesLogic.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,8 +29,8 @@
     <ul>
       
 		 <li><a class="active" href="reviewerhomepage.php">Home</a></li>
-      <!-- <li><a href="ConferenceListForR.php">Conference List</a></li> -->
-			<!-- <li><a href="paperlist.php">View papers</a></li> -->
+      <li><a href="ConferenceListForR.php">Conference List</a></li>
+			<li><a href="paperlist.php">Review papers</a></li>
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
     </ul>
@@ -37,9 +39,8 @@
   <br>
 	<div id="main-wrapper">
 
-      <h2 style="color:#283747 ;margin-left:20px;">Assigned Research Papers</h2>
+      <!-- <h2 style="color:#283747 ;margin-left:20px;">Assigned Research Papers</h2> -->
 
-      <?php include "paperlist.php";?>
 	   
 	</div>
    <!-- Footer section -->

@@ -8,42 +8,18 @@
 <html>
 <head>
 
-	<title>Conference List</title>
+	<title>Conferences List</title>
 
-	<!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>
- 	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
- <link rel="stylesheet" href="../../css/mychanged.css">-->
+	
  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
-   <link rel="stylesheet" href="../../css/reg_form_style.css">
-
    <link rel="stylesheet" href="../../css/table_style.css">
- <!--<link rel="stylesheet" href="../../css/main_style.css">-->
-
-
-<!--<style>
-	
-body {
-  margin: 0;
-}
-.topnav input[type=text] {
-    float: right;
-    padding: 6px;
-    bord: none;
-    border-radius: 15px;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-  }
-   
-</style>-->
+ 
 
 
 <style>
 
-* {
-  font-family: sans-serif; /* Change your font family */
-}
+
 
 .content-table {
   border-collapse: collapse;
@@ -103,10 +79,9 @@ body {
     <ul>
       
 
-	     <li><a href="reviewerhomepage.php">Back</a></li>
+	     <li><a href="reviewerhomepage.php">Home</a></li>
 			<li><a class="active" href="ConferenceListForR.php">Conference List</a></li>
-      
-			
+      <li><a href="paperlist.php">Review papers</a></li>	
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
 
@@ -122,17 +97,17 @@ body {
 
 
 <br>
-  <h2 align="center">Conferences List</h2>
+  <h2 style="margin-left:20px;">Conferences List</h2>
 <center>
 	<table class="content-table">
 	<tr>
        <th>ID</th>
 	   <th>Conference</th>
 	   <th>Venue</th>
-	   <th>Start date</th>
-	   <th>End date</th>
-	   <th>Deadline</th>
-	   <th>Sponser details</th>
+	   <th>Conference Start date</th>
+     <th>Conference End Date</th>
+	   <th>Paper Submission Due Date</th>
+	   <!-- <th>Sponser details</th> -->
 
 
 	</tr>
@@ -160,7 +135,7 @@ body {
 	
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
-			echo "<tr><td>". $row["id"] ."</td><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"] ."</td><td>" . $row["sponsor_details"] ;
+			echo "<tr><td>". $row["id"] ."</td><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"]  ;
 			//echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/submit icon.PNG' height='25' width='25' /></a>";
        
         }
