@@ -119,10 +119,18 @@
       <label for="fname">Full Name:</label><br>
 			<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 			
+      <!-- Reviewer interest track feild -->
 			<div id="rInterestTrack" class="hideContent">
-        <label for="itrackn">Choose Reviewer Interested Tracks<br>(Hold Ctrl to select multiple tracks):</label><br>
-        <select name="iTrackN[]" id="itrackn" class="inputvalues" multiple="multiple">
-          
+        <label for="itrackn">Choose Reviewer Interested Tracks:<br>(Hold Ctrl to select multiple tracks)</label><br>
+        <select name="iTrackN[]" id="itrackn" multiple="multiple" style="height: 100px;">
+          <?php
+            $query_result = mysqli_query($con,"select * from system_conference_track;");
+            while($row = mysqli_fetch_assoc($query_result)){
+          ?>
+          <option value="<?= $row['trackId'] ?>"><?= $row['trackName'] ?></option>
+          <?php 
+            }
+          ?>
         </select>
         <br>
       </div>
@@ -471,8 +479,12 @@
                 $query_run = mysqli_query($con,$query);
                 
                 $query2= "insert into reviewer 
-                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$intTrackN', '$ContactDetails', '$encrypted_pass', '$email')";
+                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
                 $query_run2 = mysqli_query($con,$query2);
+
+                foreach($intTrackN as $interestTrack){
+                  $query_run3 = mysqli_query($con,"insert into reviewer_interest_track values(NULL,$interestTrack,'$email')");
+                }
 
                 if($query_run and $query_run2)
                 {
@@ -554,8 +566,12 @@
 						switch($usertype){
 							case "Reviewer":
 								$query2= "insert into reviewer 
-									values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$intTrackN', '$ContactDetails', '$encrypted_pass', '$email')";
-								$query_run2 = mysqli_query($con,$query2);
+									values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+                $query_run2 = mysqli_query($con,$query2);
+
+                foreach($intTrackN as $interestTrack){
+                  $query_run3 = mysqli_query($con,"insert into reviewer_interest_track values(NULL,$interestTrack,'$email')");
+                }
 								break;
 							case "TrackChair":
 								$query2= "insert into trackchair 
@@ -662,15 +678,15 @@ myInput.onkeyup = function() {
 document
   .getElementById('actor')
   .addEventListener('change',function(){
-    console.log("change");
+    //console.log("change");
     var target = document.getElementById("actor").value;
     if(target == "Reviewer"){
-      console.log("Reviewer");
+      //console.log("Reviewer");
       rInterestTrack.className = 'showContent';
     }
     else{
-      console.log("Other actor");
-      console.log(target);
+      //console.log("Other actor");
+      //console.log(target);
       rInterestTrack.className = 'hideContent';
     }
   });
