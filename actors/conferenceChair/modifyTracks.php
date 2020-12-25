@@ -20,6 +20,26 @@
   font-family: sans-serif; /* Change your font family */
 }
 
+.conListLink{
+  color:white;
+  text-shadow: 1px 1px 0 #444;
+}
+
+.conListLink:link,
+.conListLink:link:visited{
+  background-color: #00ccff;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}  
+
+.conListLink:hover, 
+.conListLink:active {
+  background-color: #00b8e6;
+}
+
 .content-table {
   border-collapse: collapse;
   margin: 25px 0;
@@ -160,7 +180,7 @@
           <tr>
             <td><?= $count ?></td>
             <td><?= $row['TrackName'] ?></td>
-            <td><a href="route.php?cTrackId=<?= $row['TrackID'] ?>">Assign</a></td>
+            <td><a href="route.php?cTrackId=<?= $row['TrackID'] ?>" class="conListLink">Assign</a></td>
           </tr>
           <?php
             $count++;}
