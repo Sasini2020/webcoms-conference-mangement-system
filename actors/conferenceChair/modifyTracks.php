@@ -83,8 +83,9 @@
 
     <div id="main-wrapper" style="margin:20px auto;height:360px">
         <center>
-			<h2>Add New Track to Conference</br><br>
+			<h2>Add New Track to Conference</h2>
 		</center>
+    <br>
         <form action="modifyTracks.php" class="myform" method="post" style="height:280px;">
             <fieldset>
                 <label for="selectT"><b>Choose Conference Tracks:</b><br>(Hold Ctrl to select multiple tracks)</label><br>
@@ -98,7 +99,7 @@
                         }
                     ?>
                 </select>
-            <button name="addTrack_btn" id='btnValidate' value="addT" >Add Tracks</button><br>
+            <button name="addTrack_btn" id='login_btn' value="addT" >Add Tracks</button><br>
             </fieldset>
             <br>
         </form>
@@ -134,5 +135,42 @@
             }
         ?>
     </div>
+    <hr>
+
+    <div style="margin:20px 40px;">
+      <h2>Conerence Track List</h2>
+
+      <table class="content-table" style="">
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Track Name</th>
+            <th>Assign Track Chairs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            $c_id = $_SESSION['c_id'];
+            $count = 1;
+            $query_result = mysqli_query($con,"select st.trackName as TrackName, ct.ID as TrackID from system_conference_track as st, conferencetrack as ct 
+            where (st.trackId = 	ct.systemTrackId) and (ct.conferenceID = $c_id)  order by ct.ID DESC")
+            or die(mysqli_error($con));
+            while($row = mysqli_fetch_assoc($query_result)){
+          ?>
+          <tr>
+            <td><?= $count ?></td>
+            <td><?= $row['TrackName'] ?></td>
+            <td><a href="route.php?cTrackId=<?= $row['TrackID'] ?>">Assign</a></td>
+          </tr>
+          <?php
+            $count++;}
+          ?>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+     </div>
 </body>
 </html>
