@@ -81,8 +81,8 @@
 
                 $encryptedpass = md5($password);
 
-                $query="SELECT * from userinfotable WHERE email=?;";
-              
+                $query="SELECT * from userinfotable WHERE email=? And user_type=?;";
+                $user_type='Conference_chair';
 
                 $stmt=mysqli_stmt_init($con);
                 if(!mysqli_stmt_prepare($stmt,$query)){
@@ -90,7 +90,7 @@
                   echo "There was an error2";
                   exit();
                 }else{
-                  mysqli_stmt_bind_param($stmt,"s",$c_email);
+                  mysqli_stmt_bind_param($stmt,"ss",$c_email,$user_type);
                   mysqli_stmt_execute($stmt);
                   $result=mysqli_stmt_get_result($stmt);
 
