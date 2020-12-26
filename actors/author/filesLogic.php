@@ -45,10 +45,11 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             $trackId = $_POST['Ptrack'];
             $OtherAuthorE = $_POST['OtherAutherE'];
             $authorEmail = $_SESSION['au_email'];
+            $c_id = $_SESSION['con_id'];
 
             //I inserted values in a different special way
-            $sql = "INSERT INTO researchpaper(title,abstract,NameOfFile,size,Downloads,acceptancy,trackID,corautherdetails,emailauthor) VALUES 
-            ('$title','$abstract','$filename',$size,0,0,$trackId,'$OtherAuthorE','$authorEmail')";
+            $sql = "INSERT INTO researchpaper(title,abstract,NameOfFile,size,Downloads,acceptancy,trackID,conferenceId,corautherdetails,emailauthor) VALUES 
+            ('$title','$abstract','$filename',$size,0,0,$trackId,$c_id,'$OtherAuthorE','$authorEmail')";
            
             
 

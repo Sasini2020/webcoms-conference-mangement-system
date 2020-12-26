@@ -47,10 +47,6 @@
     <ul>
     <li><a href="ConferenceListForA.php">Back</a></li>
     <li><a class="active" href="papersubmission.php">Submit Reseach Paper</a></li>
-    <li><a href="../../About.php">About</a></li>
-    <li><a href="../../help.php">Help</a></li>
-    <!--<li><a href="ConferenceListForA.php">Back</a></li>-->
-    <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
 
     </ul>
@@ -63,29 +59,19 @@
       <div class="row">
 
         <form action="papersubmission.php" method="post" enctype="multipart/form-data" >
-          <!-- <h2 style="color:#6495ED;">Submit a Paper</h2><br><br> -->
-
-
-<!-- newely added -->
-          <!--<label><b>Full Name *</b></label><br>
-		  	  <input name="full_name" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
-			
-          <label><b>University *</b></label><br>
-          <input name="university" type="text" class="inputvalues" placeholder="Type your university" required/><br>
-          <label><b>Contact	Details *</b></label><br>
-          <input name="contact_details" type="text" class="inputvalues" placeholder="Your Contact Details" required/><br>
-          <label><b>Other links:</b></label><br>
-          <input name="other_links" type="text" class="inputvalues" placeholder="Other links"><br>-->
+          
           <label for="trackp"><b>Select Track*</b></label><br>
       
           <select name="Ptrack" id="trackp" class="inputvalues">
             <option value="">-- Select --</option>
             <?php 
               $c_id = $_GET['c_id'];
-              $t_list = mysqli_query($con,"select ID,Name from conferencetrack where conferenceID=$c_id");
+              $_SESSION['con_id'] = $c_id;
+              $t_list = mysqli_query($con,"select ct.ID as id, sct.trackName as Name from conferencetrack as ct, system_conference_track as sct
+              where (ct.systemTrackId = sct.trackId) and (ct.	conferenceID=$c_id)");
               while($row = mysqli_fetch_assoc($t_list)){
             ?>
-            <option value="<?php echo $row['ID']; ?>"><?php echo $row['Name']; ?></option>
+            <option value="<?php echo $row['id']; ?>"><?php echo $row['Name']; ?></option>
             <?php $counter++;} ?>
           </select>
           
