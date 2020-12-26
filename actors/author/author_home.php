@@ -11,10 +11,9 @@
 <head>
     <title>Author Home</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
- 	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
-   <link rel="stylesheet" href="../../css/reg_form_style.css">
-
-   <link rel="stylesheet" href="../../css/table_style.css">
+    <link rel="stylesheet" href="../../css/nav_footer_styles.css">
+    <link rel="stylesheet" href="../../css/reg_form_style.css">
+    <link rel="stylesheet" href="../../css/table_style.css">
 
 
 <!-- Here added jquery to add a filter-search bar -->
@@ -71,6 +70,17 @@ $(document).ready(function(){
   color: #111;
 }
  
+.isDisable{
+  color:currentColor;
+  cursor:not-allowed;
+  opacity:0.5;
+  text-decoration:none;
+}
+
+.linkDec, .link:visited{
+  text-decoration:none;
+  color:currentColor;
+}
 </style>
 </head>
 <body>
@@ -86,11 +96,8 @@ $(document).ready(function(){
 	<ul>
     
 	  <li><a class="active" href="author_home.php">home</a></li>
-
-    <li><a href="ConferenceListForA.php">Conferences List</a></li>
-    <li><a href="submission_guidlines.php">Submission Guidelines</a></li>
-   <!-- <li><a href="author_change_password.php">Change Password</a></li>-->
-    <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+    <!-- <li><a href="author_change_password.php">Change Password</a></li>-->
+         <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 	</ul>
   </nav>
 
@@ -101,18 +108,17 @@ $(document).ready(function(){
 <br>
   <center>
 
-	<table class="content-table" >
+
+<table class="content-table" >
   <thead>
   <tr>
-    <!-- <th>ID</th> -->
-	   <th>Conference</th>
-	   <th>Venue</th>
-	   <th>Conference Start date</th>
-
-
-	   <!-- <th>End date</th> -->
-	   <!-- <th>Paper submission due date</th> -->
-	   <!-- <th>Sponser details</th> -->
+  <th>Conference</th>
+	   <th>Location</th>
+	   <th>Conference Start Date</th>
+	   <th>Paper Submission Due Date</th>
+	   <th>Submission Guidelines</th>
+	   <th>Submit Research Paper</th>
+	   <th>Submit Camera Ready Copy</th>
 
 	 </tr>
    </thead>
@@ -158,21 +164,11 @@ $(document).ready(function(){
 	</table>
 </center>
 </div>
-
-
-
-
-
-
-  
-
-    
-	   
-	
+	   	
   <!-- Footer section -->
 	<div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
-        
+	</div>
 
 </body>
 </html>
