@@ -87,6 +87,51 @@
     </div>
     <hr>
 
+    <div style="margin:20px 40px;">
+      <h2>Assigned Track Chairs Details</h2>
+
+      <table class="content-table" style="">
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Track Chair Email</th>
+            <th>Title</th>
+            <th>Full Name</th>
+            <th>Organaization</th>
+            <th>Country</th>
+            <th>Contact Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            $conTrackId = $_SESSION['TrackId_id'];
+            $count = 1;
+            $query_result = mysqli_query($con,"select tc.emailtrackchair as tcEmail, tc.title as title
+            ,tc.fullname as fullName
+            ,tc.organization as  organization
+            ,tc.country as country
+            ,tc.contactdetails as coNum
+            from conferencetrack_and_trackchair as cttc, trackchair as tc 
+            where (cttc.trackChairEmail = 	tc.emailtrackchair) and (cttc.conferenceTrackId = $conTrackId)  order by cttc.ID DESC")
+            or die(mysqli_error($con));
+            while($row = mysqli_fetch_assoc($query_result)){
+          ?>
+          <tr>
+            <td><?= $count ?></td>
+            <td><?= $row['tcEmail'] ?></td>
+            <td><?= $row['title'] ?></td>
+            <td><?= $row['fullName'] ?></td>
+            <td><?= $row['organization'] ?></td>
+            <td><?= $row['country'] ?></td>
+            <td><?= $row['coNum'] ?></td>
+          </tr>
+          <?php
+            $count++;}
+          ?>
+        </tbody>
+      </table>
+    </div>
+
     <div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
     </div>
