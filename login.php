@@ -94,6 +94,7 @@
 					}
 					else if($user_type=="TrackChair"){
 						$_SESSION['login_s'] = '5';
+						$_SESSION['t_email']=$email;
 						header('location:actors/trackChair/trackchairhomepage.php');
 					}
 					else if($user_type=="PublicationChair"){
