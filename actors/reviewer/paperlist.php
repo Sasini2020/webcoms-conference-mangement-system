@@ -5,13 +5,13 @@
 <html>
 <head>
   <meta charset="utf-8" />
+ 
 
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
-   <link rel="stylesheet" href="../../css/reg_form_style.css">
-
+   <!-- <link rel="stylesheet" href="../../css/reg_form_style.css"> -->
    <link rel="stylesheet" href="../../css/table_style.css">
-  <title>Uploaded reseach papers</title>
+  <!-- <title>Uploaded reseach papers</title> -->
 
 <style>
 
@@ -61,6 +61,24 @@
 <body>
 <!-- navbar -->
 
+<nav>
+  <div class="logo">Web-COMS</div>
+  <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+              <i class="fas fa-bars"></i>
+            </label>
+    
+    <ul>
+      
+		 <li><a href="reviewerhomepage.php">Home</a></li>
+      <li><a href="ConferenceListForR.php">Conference List</a></li>
+			<li><a class="active" href="paperlist.php">Review papers</a></li>
+			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+		
+    </ul>
+  </nav>
+
+  <br>
 
 <center>
 <table class="content-table">
@@ -78,17 +96,17 @@
 <tbody>
   <?php foreach ($files as $file): ?>
     <tr>
-      <td><?php echo $file['id']; ?></td>
+      <td><?php echo $file['idrp']; ?></td>
       <td><?php echo $file['title']; ?></td>
       <!-- show conference name here in below php tag -->
       <td><?php ?></td>
       <td><?php ?></td>
 
-      <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperslist.php?file_id=<?php echo $file['id'] ?>"> Download paper</a>
+      <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperslist.php?file_id=<?php echo $file['idrp'] ?>"> Download paper</a>
       <br><br>
-      <i style="color:#1A5276" class="fas fa-eye"></i><a style="color:dodgerblue ;text-decoration:none;" href="../../uploads/<?php echo $file['name']; ?>" target="_blank">View paper</a>
+      <i style="color:#1A5276" class="fas fa-eye"></i><a style="color:dodgerblue ;text-decoration:none;" href="../../uploads/<?php echo $file['NameOfFile']; ?>" target="_blank">View paper</a>
       <br><br>
-      <!-- <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" href="../../uploads/<?php echo $file['name']; ?>"> View abstract</a> -->
+      <!-- <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" href="../../uploads/<?php echo $file['NameOfFile']; ?>"> View abstract</a> -->
       <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" href="#"> View abstract</a>
 
       <br><?php echo $file['abstract']; ?>
@@ -98,11 +116,11 @@
       <td>
       <?php
 
-      echo "<i class='far fa-plus-square' style='color:#1A5276'></i><a href='route.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Add Review        </a> ";
+      echo "<i class='far fa-plus-square' style='color:#1A5276'></i><a href='route.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Add Review        </a> ";
       echo "<br><br>";
-      echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Edit Review </a> ";
+      echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Edit Review </a> ";
       echo "<br><br>";
-      echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='#.php?f_id=".$file['id']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> View Review </a> ";
+      echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='#.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> View Review </a> ";
 
       ?>
     </td>
@@ -114,9 +132,12 @@
 </tbody>
 </table>
 </center>
+
+
+
 <!-- Footer section -->
-        <div class="footer">
-            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
-         </div>
+<div class="footer">
+    <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+</div>
 </body>
 </html>

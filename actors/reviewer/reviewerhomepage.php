@@ -31,6 +31,7 @@
 		 <li><a class="active" href="reviewerhomepage.php">Home</a></li>
       <li><a href="ConferenceListForR.php">Conference List</a></li>
 			<li><a href="paperlist.php">Review papers</a></li>
+      <!--<li><a href="rev_change_password.php">Change Password</a></li>-->
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
     </ul>
