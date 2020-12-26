@@ -97,7 +97,7 @@
                   }else{
                   
 
-                      $sql="UPDATE userinfotable SET password=? WHERE email=?";
+                      $sql="UPDATE userinfotable SET password=? WHERE email=? AND user_type=?";
 
                       $stmt=mysqli_stmt_init($con);
                       if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -107,7 +107,7 @@
                       }else{
                             
                             $encryptedpass = md5($password);
-                             mysqli_stmt_bind_param($stmt,"ss", $encryptedpass,$a_email);
+                             mysqli_stmt_bind_param($stmt,"sss", $encryptedpass,$a_email,$user_type);
                              mysqli_stmt_execute($stmt);          
                             echo '<script type="text/javascript">alert("Password change succesfully!!")</script>';
 
