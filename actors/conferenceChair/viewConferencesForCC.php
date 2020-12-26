@@ -25,6 +25,7 @@
   background-color: #00ccff;
   color: white;
   padding: 10px 20px;
+  width:130px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -136,13 +137,8 @@
             <td>
                 <a href="route.php?modifyTrackCId=<?= $row['id'] ?>" class="conListLink">Modify Tracks</a>
             </td>
-            <td style="padding-left: 20px;">
-               <!--<form action="route.php"  method="post">
-                 <input type="submit" name="mTrack" value="assign" id="assignT"/>
-                 <input type="hidden" name="id" value="<?php //echo $row['id'];?>"/>
-                 <input type="hidden" name="Cname" value="<?php //echo $row['name'];?>">
-               </form>-->
-
+            <td>
+                <a href="route.php?assignPubC_CId=<?= $row['id'] ?>" class="conListLink">Assign</a>
             </td>
            </tr>
      </tbody>

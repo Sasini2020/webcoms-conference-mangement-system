@@ -14,4 +14,9 @@
       $_SESSION['TrackId_id'] = $_GET['cTrackId'];
       header('location:assignTrackchair.php');
     }
+
+    if(isset($_GET['assignPubC_CId'])){
+      $_SESSION['c_id'] = $_GET['assignPubC_CId'];
+      header('location:assignPublicationChairToConference.php');
+    }
 ?>
