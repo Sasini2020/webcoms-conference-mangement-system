@@ -14,72 +14,7 @@
 	<link rel="stylesheet" href="../../css/reg_form_style.css">
 	<link rel="stylesheet" href="../../css/sty.css">
 	<link rel="stylesheet" href="../../css/table_style.css">
-	<style>
-
-* {
-  font-family: sans-serif; /* Change your font family */
-}
-
-.conListLink{
-  color:white;
-  text-shadow: 1px 1px 0 #444;
-}
-
-.conListLink:link,
-.conListLink:link:visited{
-  background-color: #00ccff;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}  
-
-.conListLink:hover, 
-.conListLink:active {
-  background-color: #00b8e6;
-}
-
-.content-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.content-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
-  font-weight: bold;
-}
-
-.content-table th,
-.content-table td {
-  padding: 12px 15px;
-}
-
-.content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.content-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
-
-.content-table tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
-}
-
-</style>
+  <link rel="stylesheet" href="../../css/new_table_and_button.css">
 </head>
 	
 

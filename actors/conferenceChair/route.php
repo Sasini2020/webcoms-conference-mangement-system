@@ -9,4 +9,9 @@
       $_SESSION['c_id'] = $_GET['modifyTrackCId'];
       header('location:modifyTracks.php');
     }
+
+    if(isset($_GET['cTrackId'])){
+      $_SESSION['TrackId_id'] = $_GET['cTrackId'];
+      header('location:assignTrackchair.php');
+    }
 ?>
