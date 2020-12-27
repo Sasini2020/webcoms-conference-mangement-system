@@ -34,15 +34,15 @@
       <!--<h2> Enter your Email</h2><br>-->
        <fieldset>
           <label for="actor">Select User Type:</label><br>
-          <select id="actor" class="" name="usertype">
+          <select id="actor" class="" name="user_type">
               <option value="">--Select User Type--</option>
               <option value="Conference_chair">Conference Chair</option>
+              <option value="author">Author</option>
               <option value="TrackChair">Track Chair</option>
               <option value="Reviewer">Reviewer</option>
               <option value="PublicationChair">Publication Chair</option>
           
-          
-          
+        
           </select><br>
 
 

@@ -71,9 +71,10 @@
                            }else if($tokenCheck==true){
 
                                $tokenEmail=$row['resetEmail'];
+                               $usertype=$row['user_type'];
 
 
-                               $sql="SELECT * FROM userinfotable WHERE email=?;";
+                               $sql="SELECT * FROM userinfotable WHERE email=? AND user_type=?;";
 
                                $stmt=mysqli_stmt_init($con);
                                if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -82,7 +83,7 @@
                                      exit();
                                }else{
 
-                                      mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
+                                      mysqli_stmt_bind_param($stmt,"ss",$tokenEmail,$usertype);
                                       mysqli_stmt_execute($stmt);
                                       $result=mysqli_stmt_get_result($stmt);
 
@@ -93,7 +94,7 @@
                                       }else{
                                       
 
-                                          $sql="UPDATE userinfotable SET password=? WHERE email=?";
+                                          $sql="UPDATE userinfotable SET password=? WHERE email=? AND user_type=?;";
 
                                           $stmt=mysqli_stmt_init($con);
                                           if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -103,11 +104,11 @@
                                           }else{
                                                 
                                                 $encryptedpass = md5($password);
-                                                 mysqli_stmt_bind_param($stmt,"ss", $encryptedpass,$tokenEmail);
+                                                 mysqli_stmt_bind_param($stmt,"sss", $encryptedpass,$tokenEmail,$usertype);
                                                  mysqli_stmt_execute($stmt);
 
 
-                                               $sql="DELETE FROM pwdreset WHERE resetEmail=?";
+                                               $sql="DELETE FROM pwdreset WHERE resetEmail=? AND user_type=?;";
                                                $stmt=mysqli_stmt_init($con);
                                                if(!mysqli_stmt_prepare($stmt,$sql)){
 
@@ -116,10 +117,12 @@
 
                                                }else{
 
-                                                               mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
+                                                               mysqli_stmt_bind_param($stmt,"ss",$tokenEmail,$usertype);
                                                                mysqli_stmt_execute($stmt);
                                                               
-                                                            
+                                                              
+
+
                                                                header("Location:index.php?newpwd=passwordupdated");
 
                                                }

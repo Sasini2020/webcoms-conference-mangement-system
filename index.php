@@ -62,7 +62,7 @@
             if(isset($_GET["newpwd"])){
                  if($_GET["newpwd"]=="passwordupdated"){
 
-                   echo '<script type="text/javascript">alert("Password Reset  Successfully!!")</script>';
+                   echo '<script type="text/javascript">alert("Password Reset Successfully!!")</script>';
 
 
                  }
