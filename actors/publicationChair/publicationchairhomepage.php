@@ -3,6 +3,7 @@
     if($_SESSION['login_s'] != '6'){
         header('location:../../login.php');
     }
+    require '../../dbconfig/config.php';
 ?>
 <!-- Accessing the FilesLogic.php -->
 <?php include 'fileLogicCameraReady.php';?>
@@ -21,7 +22,7 @@
 
 <!--<link rel="stylesheet" href="../../css/main_style.css">-->
 <!-- Added css to style tag to style table -->
-<style>
+<!--<style>
 
 
 
@@ -64,7 +65,86 @@
   color: #009879;
 }
  
-</style>
+</style>-->
+
+<style>
+
+
+.conListLink{
+  color:white;
+  text-shadow: 1px 1px 0 #444;
+}
+
+.conListLink:link,
+.conListLink:link:visited{
+  background-color: #00ccff;
+  color: white;
+  padding: 10px 20px;
+  width:130px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}  
+
+.conListLink:hover, 
+.conListLink:active {
+  background-color: #00b8e6;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  width: 1300px;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #86B0DD;
+  border-radius: 50%;
+  margin-bottom:2px;
+  margin-left:28px;
+  margin-right:5px;
+  display: inline-block;
+}
+
+
+  </style>
 
 
 
@@ -106,48 +186,64 @@
 
 
 	
-	<div id="main-wrapper">
+	<div>
 		<center>
-    <h2>Uploaded camera ready copies</h2><br><br>
-
-			<!--<h2>Publication Chair Home Page</h2>
-			<h3> Welcome </h3>-->
-			<!--<img src="../../imgs/webc.png" class="avatar"/>-->
-		
+    
     <table class="content-table">
 <thead>
-    <!-- file id -->
-    <th>ID </th> 
-    <!-- <th>Author's name</th> -->
-    <th>Paper Title</th>
-    <th>File</th>
-    <th>Conference name</th>
-    <th>Oraganization(Author)</th>
-    <!--<th>File size (in KB)</th>-->
-    <!-- <th>Contact details</th>
-    <th>Other links</th> -->
-    <!--<th>Downloads</th>
-    <th>Action</th>-->
-
-
-</thead>
-<tbody>
-  <?php foreach ($files as $file): ?>
+  <thead>
     <tr>
-      <td><?php echo $file['crc_id']; ?></td>
-      <td><?php echo $file['title']; ?></td>
-      <td><?php echo $file['name']; ?></td>
-  
-  
-      <!-- show conference name here in below php tag -->
-      <td><?php ?></td>
-      <td><?php ?></td>
+    <th>Number</th> 
+    <th>Conference</th>
+    <th>Venue</th>
+    <th>Country</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Select</th>
     </tr>
-  <?php endforeach;?>
+</thead>
+
+</center>
+<tbody>
+
+   <?php
+   
+   $p_email=$_SESSION['p_email'];
+   
+   $sql=mysqli_query($con,"SELECT conferences.name,conferences.venue,conferences.country,conferences.start_date,conferences.end_date,conference_and_publicationchair.conferenceId,conference_and_publicationchair.publicationChairEmail,conferences.id
+   from conferences LEFT JOIN  conference_and_publicationchair ON conferences.id=conference_and_publicationchair.conferenceId
+   WHERE conference_and_publicationchair.publicationChairEmail='$p_email';") or die(mysqli_error($con));
+   $counter=1;
+
+   while($row=mysqli_fetch_assoc($sql)){
+
+
+   ?>
+  <tr id="row<?php echo $row['id']?>">
+
+      <td><?=$counter?></td>
+      <td><?=$row['name']?></td>
+      <td><?=$row['venue']?></td>
+      <td><?=$row['country']?></td>
+      <td><?=$row['start_date']?></td>
+      <td><?=$row['end_date']?></td>
+      <td>
+                <a href="#" class="conListLink">Select</a>
+      </td>
+      
+
+      
+    </tr>
+  
 
 </tbody>
+<?php
+
+ $counter++;}
+
+?>
 </table>
-	   </center>
+	   
 	</div>
   <!-- Footer section -->
 	<div class="footer">
