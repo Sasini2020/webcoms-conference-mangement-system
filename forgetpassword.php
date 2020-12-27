@@ -31,9 +31,24 @@
   <br><br>
  <div id="main-wrapper"> 
     <form action="reset_request_password.php" method="post" class="myform">
-      <h2> Enter your Email</h2><br>
+      <!--<h2> Enter your Email</h2><br>-->
        <fieldset>
+          <label for="actor">Select User Type:</label><br>
+          <select id="actor" class="" name="usertype">
+              <option value="">--Select User Type--</option>
+              <option value="Conference_chair">Conference Chair</option>
+              <option value="TrackChair">Track Chair</option>
+              <option value="Reviewer">Reviewer</option>
+              <option value="PublicationChair">Publication Chair</option>
+          
+          
+          
+          </select><br>
+
+
+          <label >Enter your Email</label><br>
          <input id="uname" name="email" type="text" placeholder="E-mail"/><br>
+
          <button name="reset_btn" type="submit" id="submit_btn" value="Submit">Submit</button>
        </fieldset>
     </form>
