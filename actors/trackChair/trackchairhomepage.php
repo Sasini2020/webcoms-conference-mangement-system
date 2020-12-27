@@ -3,6 +3,7 @@
     if($_SESSION['login_s'] != '5'){
         header('location:../../login.php');
     }
+    require '../../dbconfig/config.php';
 ?>
 <?php //include 'filesLogic.php';?>
 <!DOCTYPE html>
@@ -80,9 +81,9 @@
 
 
 			<li><a class="active" href="trackchairhomepage.php">Home</a></li>
-			<li><a href="firstround.php">First-round paper evaluation</a></li>
+			<!--<li><a href="firstround.php">First-round paper evaluation</a></li>
       <li><a href="assignreviewrs.php">Assign Reviewers </a></li>
-      <!--<li><a href="trackchair_change_password.php">Change Password</a></li>-->
+      <li><a href="trackchair_change_password.php">Change Password</a></li>-->
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
 
@@ -94,48 +95,46 @@
 
 	<div id="main-wrapper">
 		<center>
-			<!--<img src="../../imgs/webc.png" class="avatar"/>-->
-		
 
-    <h2 style="color:#111 ;margin-left:20px;">Uploaded Research Papers</h2>
+    <h2 style="color:#111 ;margin-left:20px;">You Assign Conference List</h2>
 
 <table class="content-table">
-<thead>
-    <!-- file id -->
-    <th>Paper Title</th> 
-    <th>Author's name</th>
-    <th>Research paper</th>
-    <!--<th>Conference name</th>-->
-    <th>University(Author)</th>
-    <!--<th>File size (in KB)</th>
-    <th>Contact details</th>
-    <th>Other links</th>
-    <th>Downloads</th>
-    <th>Action</th>
-    <th>Action</th>
-    <th>Action</th>-->
-
-
-</thead>
-<tbody>
-  <?php //foreach ($files as $file): ?>
-    <tr>
-      <td><?php //echo $file['title']; ?></td>
-      <td><?php //echo $file['full_name'];?></td>
-      <td><?php //echo $file['name']; ?></td>
-  
-  
-      <!-- show conference name here in below php tag 
-      <td><?php ?></td>-->
-
-
-      <td><?php //echo $file['university'];?></td>
-      
-    
-    </tr>
-  <?php //endforeach;?>
-
-</tbody>
+    <thead>
+      <tr>
+         <th>Number</th>
+         <th>Conference</th>
+         <th>Venue</th>
+         <th>Country</th>
+         <th>Start date</th>
+         <th>End date</th>
+         <th>Deadline</th>
+         <th>Select</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+        $tEmail = $_SESSION['t_email'];
+        $query_result = mysqli_query($con,"select distinct c.id, c.name as Name, c.venue as Venue, c.country as Country,
+        c.start_date as st_d, c.end_date as end_d, c.deadline_date as de_d  
+        from conferences as c, conferencetrack as ct, conferencetrack_and_trackchair as ctt
+        where (ctt.trackChairEmail = '$tEmail') and (ctt.conferenceTrackId = ct.ID) and (ct.conferenceID = c.id)");
+        $count = 1;
+        while($row = mysqli_fetch_assoc($query_result)){
+      ?>
+        <tr>
+          <td><?= $count ?></td>
+          <td><?= $row['Name'] ?></td>
+          <td><?= $row['Venue'] ?></td>
+          <td><?= $row['Country'] ?></td>
+          <td><?= $row['st_d'] ?></td>
+          <td><?= $row['end_d'] ?></td>
+          <td><?= $row['de_d'] ?></td>
+          <td></td>
+        </tr>
+        <?php
+          $count++;}
+        ?>
+    </tbody>
 </table>
 </center>
 	</div>

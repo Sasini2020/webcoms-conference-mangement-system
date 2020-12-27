@@ -39,6 +39,7 @@
 .content-table {
   border-collapse: collapse;
   margin: 25px 0;
+  width: 1300px;
   font-size: 0.9em;
   min-width: 400px;
   border-radius: 5px 5px 0 0;
@@ -102,9 +103,10 @@
    <table class="content-table">
      <thead>
          <tr>
-         <th>ID</th>
+         <th>Number</th>
          <th>Conference</th>
          <th>Venue</th>
+         <th>Country</th>
          <th>Start date</th>
          <th>End date</th>
          <th>Deadline</th>
@@ -130,6 +132,7 @@
             <td><?=$counter?></td>
             <td><?=$row['name']?></td>
             <td><?=$row['venue']?></td>
+            <td><?=$row['country']?></td>
             <td><?=$row['start_date']?></td>
             <td><?=$row['end_date']?></td>
             <td><?=$row['deadline_date']?></td>
