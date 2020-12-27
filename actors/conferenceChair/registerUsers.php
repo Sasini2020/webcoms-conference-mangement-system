@@ -79,7 +79,7 @@
       <!--<li><a href="viewConferencesForCC.php">View Conf</a></li>-->
       <li><a href="addnotemplates.php">Add notifi templates</a></li>
       <li><a href="upudetauls.php">Upload User Details</a></li>
-	  <li><a class="active" href="registerUsers.php">Register Users</a></li>
+	  <li><a class="active" href="registerUsers.php">User Registration</a></li>
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
     </ul>
@@ -398,10 +398,11 @@
 		</fieldset>
 		<fieldset>
       	<legend><span class="number">2</span>Your Login Information</legend><br>
-			<label for="Email">Email:</label><br>
+        <label for="Email">Email:</label><br>
 			<!-- Validate uni emails as well -->
-			<input id='email' name="email" type="text" class="inputvalues" placeholder="Type your email"   required/><br>
-
+			<input onkeyup="check()" id='email' name="email" type="text" class="inputvalues" placeholder="Type your email" autocomplete="off" pattern="^[^ ]+@[^ ]+\.[a-z]{2,3}$" required/><br>
+			<div class="error-text" style="color:red;margin-top:-15px;margin-left:10px;font-weight:600;"> Please Enter Valid Email Address</div>
+                        <br>
 			<label for="passW">Password:</label><br>
 			<input id="passW" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"class="inputvalues" placeholder="Your password" required/><br>
               <!-- Validations passwod -->
@@ -612,7 +613,41 @@
 			}
 		?>
 	</div>
-
+  	
+<!-- for email validation -->
+	<script>
+      const email = document.querySelector("#email");
+      // const icon1 = document.querySelector(".icon1");
+      // const icon2 = document.querySelector(".icon2");
+      const error = document.querySelector(".error-text");
+      // const btn = document.querySelector("button");
+      let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      function check(){
+        if(email.value.match(regExp)){
+          email.style.borderColor = "#27ae60";
+          email.style.background = "#eafaf1";
+          // icon1.style.display = "none";
+          // icon2.style.display = "block";
+          error.style.display = "none";
+          // btn.style.display = "block";
+        }else{
+          email.style.borderColor = "#e74c3c";
+          email.style.background = "#fceae9";
+          icon1.style.display = "block";
+          // icon2.style.display = "none";
+          // error.style.display = "block";
+          // btn.style.display = "none";
+        }
+        if(email.value == ""){
+          email.style.borderColor = "lightgrey";
+          email.style.background = "#fff";
+          // icon1.style.display = "none";
+          // icon2.style.display = "none";
+          error.style.display = "none";
+          // btn.style.display = "none";
+        }
+      }
+    </script>
 	
 				
 <script>
