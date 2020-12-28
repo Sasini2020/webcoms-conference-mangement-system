@@ -79,7 +79,12 @@
   </nav>
 
   <br>
-
+  <h2 style="color:#34495E;margin-left:20px;">
+  <?php 
+      // $track_Id = $_SESSION['trackId'];
+      //echo $_GET['trackId'];  
+      echo "Track Name :"." ". $_GET['trackName'];
+?></h2>
 <center>
 <table class="content-table">
 <thead>
@@ -116,7 +121,7 @@
       <td>
       <?php
 
-      echo "<i class='far fa-plus-square' style='color:#1A5276'></i><a href='route.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Add Review        </a> ";
+      echo "<i class='far fa-plus-square' style='color:#1A5276'></i><a href='route.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Add Review</a> ";
       echo "<br><br>";
       echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Edit Review </a> ";
       echo "<br><br>";
