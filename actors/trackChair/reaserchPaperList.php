@@ -157,7 +157,7 @@
           <td><?= $row['coAuthors'] ?></td>
           <td><?= $row['aOrganization'] ?></td>
           <td><?= $row['aConNum'] ?></td>
-          <td></td>
+          <td><a href="route.php?downPId=<?= $row['p_id'] ?>">Downlode</a></td>
           <td></td>
           <td></td>
           <td>
