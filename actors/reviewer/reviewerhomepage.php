@@ -103,8 +103,8 @@
       </thead>
 </center>
       <tbody>                                     
-          <?php
-          $sql = "SELECT reviewer_interest_track.RIT_ID,
+           <?php
+          $sql = "SELECT
           system_conference_track.trackName 
           FROM reviewer_interest_track inner join system_conference_track 
           on reviewer_interest_track.systemTrackID = system_conference_track.trackId where reviewer_interest_track.reviewerEmail='{$_SESSION['r_email']}' ";
@@ -113,8 +113,7 @@
           if ($result->num_rows > 0) {
               // output data of each row
               while($row = $result->fetch_assoc()) {
-                  echo "<tr><td>" . $row["RIT_ID"]. "</td><td>" . $row["trackName"]."</td><td>"."<a href='paperlist.php?trackId=". $row['RIT_ID'] 
-                  ."  & trackName=".$row['trackName']."' title='Assigned papers' style='color:#34495E;text-decoration:none'><span style='margin-right:5px;'>
+                  echo "<tr><td>" . $row["trackName"]."</td><td>"."<a href='paperlist.php?trackName=".$row['trackName']."' title='Assigned papers' style='color:#34495E;text-decoration:none'><span style='margin-right:5px;'>
                   <i class='fas fa-file'></i></span>View Assigned papers</a>". "</td></tr>";
 
                 }
