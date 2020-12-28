@@ -37,7 +37,7 @@
 .content-table {
   border-collapse: collapse;
   margin: 25px 0;
-  width: 1300px;
+  width: 1400px;
   font-size: 0.9em;
   min-width: 400px;
   border-radius: 5px 5px 0 0;
@@ -136,7 +136,7 @@
             <td><?=$row['deadline_date']?></td>
             <td><?=$row['sponsor_details']?></td>
             <td>
-                <a href="route.php?modifyTrackCId=<?= $row['id'] ?>" class="conListLink">Modify Tracks</a>
+                <a href="route.php?modifyTrackCId=<?= $row['id'] ?>" class="conListLink">Modify</a>
             </td>
             <td>
                 <a href="route.php?assignPubC_CId=<?= $row['id'] ?>" class="conListLink">Assign</a>
