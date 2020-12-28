@@ -47,9 +47,9 @@
     <li><a href="ConferenceListForA.php">Back</a></li>
     <li><a class="active" href="cameraReadySubmission.php">Camera-ready Submission</a></li>
 
-    <li><a href="../../help.php">Help</a></li>
-    <li><a href="../../About.php">About</a></li>
-
+<!--     <li><a href="../../help.php">Help</a></li> -->
+<!--     <li><a href="../../About.php">About</a></li>
+ -->
     </ul>
   </nav>
 <br>
