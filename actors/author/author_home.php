@@ -29,7 +29,26 @@ $(document).ready(function(){
 });
 </script>
   <style>
+.conListLink{
+  color:white;
+  text-shadow: 1px 1px 0 #444;
+}
 
+.conListLink:link,
+.conListLink:link:visited{
+  background-color: #00ccff;
+  color: white;
+  padding: 10px 20px;
+  width:130px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}  
+
+.conListLink:hover, 
+.conListLink:active {
+  background-color: #00b8e6;
+}
 
 .content-table {
   border-collapse: collapse;
@@ -121,7 +140,7 @@ $(document).ready(function(){
 	   <th>Paper Submission Due Date</th>
 	   <th>Submission Guidelines</th>
 	   <th>Submit Research Paper</th>
-	   <th>Submit Camera Ready Copy</th>
+	   <th>Submitted Research Papers</th>
 
 	 </tr>
    </thead>
@@ -149,9 +168,9 @@ $(document).ready(function(){
 	
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
-	                echo "</tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>"."</td><td>";;
+	    echo "</tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>"."</td><td>";;
 			echo "<a href='papersubmission.php?c_id=". $row['id'] ."' title='submit paper' class='linkDec'><span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a>";
-			echo "<td><a href='cameraReadySubmission.php?id=". $row['id'] ."' title='submit camera-ready paper' class='isDisable'><span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a></td>";
+			echo "<td><a href='route.php?viewRPaper_cid=". $row['id'] ."' class='conListLink'>View</a></td>";
 		
        
         }
