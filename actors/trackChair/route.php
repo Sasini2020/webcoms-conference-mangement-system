@@ -38,8 +38,13 @@
           // Now update downloads count
           exit;
       }
-      
+
       header('location:reaserchPaperList.php');
       
+    }
+
+    if(isset($_GET['assignRPId'])){
+      $_SESSION['rPaper_id'] = $_GET['assignRPId'];
+      header('location:assignReviewersToRPaper.php');
     }
 ?>
