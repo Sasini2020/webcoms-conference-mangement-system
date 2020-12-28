@@ -92,7 +92,50 @@
     </div>
     <hr>
 
+    <div style="margin:20px 40px;">
+      <h2>Assigned Reviewers Details</h2>
 
+      <table class="content-table" style="">
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Reviewer Email</th>
+            <th>Title</th>
+            <th>Full Name</th>
+            <th>Organaization</th>
+            <th>Country</th>
+            <th>Contact Number</th>
+            <th>View Review</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            $rPaperId = $_SESSION['rPaper_id'];
+            $count = 1;
+            $query_result = mysqli_query($con,"select r.emailreviewer as rEmail, r.title as title, r.fullname as fullName,
+            r.organization as organization, r.country as country, r.contactdetails as coNum
+            from reviewerandpaper as rp, reviewer as r
+            where (rp.paperId = $rPaperId) and (rp.reviewerEmail = r.emailreviewer)
+            order by rp.ID DESC")
+            or die(mysqli_error($con));
+            while($row = mysqli_fetch_assoc($query_result)){
+          ?>
+          <tr>
+            <td><?= $count ?></td>
+            <td><?= $row['rEmail'] ?></td>
+            <td><?= $row['title'] ?></td>
+            <td><?= $row['fullName'] ?></td>
+            <td><?= $row['organization'] ?></td>
+            <td><?= $row['country'] ?></td>
+            <td><?= $row['coNum'] ?></td>
+            <td></td>
+          </tr>
+          <?php
+            $count++;}
+          ?>
+        </tbody>
+      </table>
+    </div>
  
 <div class="footer">
     <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
