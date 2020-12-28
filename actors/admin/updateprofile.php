@@ -61,23 +61,28 @@
 
 <body>
 
-<nav>
+	<nav>
+	
+	  <div class="logo">Web-COMS</div>
       <input type="checkbox" id="click">
             <label for="click" class="menu-btn">
               <i class="fas fa-bars"></i>
             </label>
-    <ul>
-	  <li><a href="conferencechairhomepage.php">Home</a></li>
-      <li><a href="create_conference.php">Request a Conference</a></li>
+	
+		<ul>
+			<!--<li><a class="active" href="index.php">WebCOMS</a></li>-->
+			<li><a class="active" href="adminhomepage.php">Home</a></li>
+			<li><a href="requested_conferences.php">Requested conferences</a></li>
+			<li><a href="conference_list.php">Conference List</a></li>
+			<li><a href="authordetails.php">Author details</a></li>
+			<li><a href="conferenceChairRegistration.php">Conference Chair Registration</a></li>
+			<li><a href="conferenceTrackDefine.php">Conference Track Defination</a></li>
+		        <li><a href="updateprofile.php">Update Profie</a></li>
+			<!--<li><a href="admin_change_password.php">Change Password</a></li>-->
+			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+		</ul>
 
-      <li><a href="addnotemplates.php">Add notification templates</a></li>
-      <li><a href="upudetauls.php">Upload User Details</a></li>
-	  <li><a href="registerUsers.php">Register Users</a></li>
-	  <li><a class="active" href="updateprofile.php">Update Profie</a></li>
-      <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
-
-    </ul>
-  </nav>
+	</nav>
 	<br><br><br><br>
 
 	<div id="main-wrapper">

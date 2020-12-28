@@ -62,19 +62,29 @@
 <body>
 
 <nav>
-      <input type="checkbox" id="click">
-            <label for="click" class="menu-btn">
+  <div class="logo">Web-COMS</div>
+  <input type="checkbox" id="click">
+  <label for="click" class="menu-btn">
               <i class="fas fa-bars"></i>
             </label>
     <ul>
-	  <li><a href="conferencechairhomepage.php">Home</a></li>
-      <li><a href="create_conference.php">Request a Conference</a></li>
+      <!--<li><a href="publishcameracopy.php">Publish Camera ready copy guideline</a></li>
+      <li><a href="uploadcoversub.php">Upload Cover Pages and sub page</a></li>
+      <li><a href="viewcamerareadycopies.php">View Camera-ready copy</a></li>
+      <li><a href="autoproceeding.php">Auto generate proceeding</a></li>
+	  <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>-->
 
-      <li><a href="addnotemplates.php">Add notification templates</a></li>
-      <li><a href="upudetauls.php">Upload User Details</a></li>
-	  <li><a href="registerUsers.php">Register Users</a></li>
-	  <li><a class="active" href="updateprofile.php">Update Profie</a></li>
-      <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+
+			<li><a class="active" href="publicationchairhomepage.php">Home</a></li>
+			<li><a href="publishSubmissionGuidelines.php">Upload Guidelines For Paper Submission</a></li>
+			<li><a href="uploadcoversub.php">Upload Pages</a></li>
+			<li><a href="viewcamerareadycopies.php">View Camera-ready copy</a></li>
+			<li><a href="autoproceeding.php">Auto generate proceeding</a></li>
+	    	        <li><a href="updateprofile.php">Update Profie</a></li>
+      <!--<li><a href="pub_change_password.php">Change Password</a></li>-->
+			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+		
+
 
     </ul>
   </nav>

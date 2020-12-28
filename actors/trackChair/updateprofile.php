@@ -62,19 +62,23 @@
 <body>
 
 <nav>
-      <input type="checkbox" id="click">
-            <label for="click" class="menu-btn">
+  <div class="logo">Web-COMS</div>
+  <input type="checkbox" id="click">
+  <label for="click" class="menu-btn">
               <i class="fas fa-bars"></i>
             </label>
     <ul>
-	  <li><a href="conferencechairhomepage.php">Home</a></li>
-      <li><a href="create_conference.php">Request a Conference</a></li>
+     
 
-      <li><a href="addnotemplates.php">Add notification templates</a></li>
-      <li><a href="upudetauls.php">Upload User Details</a></li>
-	  <li><a href="registerUsers.php">Register Users</a></li>
-	  <li><a class="active" href="updateprofile.php">Update Profie</a></li>
-      <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+
+			<li><a class="active" href="trackchairhomepage.php">Home</a></li>
+			<!--<li><a href="firstround.php">First-round paper evaluation</a></li>
+      <li><a href="assignreviewrs.php">Assign Reviewers </a></li>
+      <li><a href="trackchair_change_password.php">Change Password</a></li>-->
+	    	  <li><a href="updateprofile.php">Update Profie</a></li>
+			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+		
+
 
     </ul>
   </nav>
