@@ -55,7 +55,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
 
             if (mysqli_query($conn, $sql)) {
                 // echo "File uploaded successfully";
-                echo '<script type="text/javascript"> alert("Your paper was submitted successfully!!") </script>';
+                echo '<script type="text/javascript"> alert("Your  paper was submitted successfully!!") </script>';
 
             }
             //echo "<script>console.log('Before Error check');</script>";
