@@ -96,8 +96,8 @@ $(document).ready(function(){
 	<ul>
     
 	  <li><a class="active" href="author_home.php">home</a></li>
-          <li><a href="../../About.php">About</a></li>
-          <li><a href="../../help.php">Help</a></li>
+<!--           <li><a href="../../About.php">About</a></li> -->
+<!--           <li><a href="../../help.php">Help</a></li> -->
     <!-- <li><a href="author_change_password.php">Change Password</a></li>-->
 	 <li><a href="updateprofile.php">Update Profie</a></li>
          <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
