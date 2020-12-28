@@ -1,8 +1,9 @@
 <?php
-	session_start();
+	  session_start();
     if($_SESSION['login_s'] != '5'){
         header('location:../../login.php');
     }
+    require '../../dbconfig/config.php';
 ?>
 <!-- Accessing the FilesLogic.php -->
 <?php //include 'filesLogic.php';?>
@@ -59,7 +60,7 @@
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 400px;
+  min-width: 1400px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -75,6 +76,7 @@
 .content-table th,
 .content-table td {
   padding: 12px 15px;
+  margin:10px auto;
 }
 
 .content-table tbody tr {
@@ -110,99 +112,75 @@
               </label>
     <ul>
       <!--<li><a href="trackchairhomepage.php">Back</a></li>-->
-      <li><a href="trackchairhomepage.php">Back</a></li>
+      <li><a href="selectConferenceTrack.php">Back</a></li>
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
     </ul>
   </nav>
 <body>
   
 <br>
-<center>
-<h1 style="color:#111 ;margin-left:20px;">Research Papers</h1>
+<div>
+    <center>
+    <h1 style="color:#111 ;margin-left:20px;">Research Papers</h1>
 
-<table class="content-table">
-<thead>
-    <!-- file id -->
-    <th>ID </th>
-    <th>Paper Title</th> 
-    <th>Author's name</th>
-    <th>Research paper</th>
-    <!--<th>Conference name</th>-->
-    <th>University(Author)</th>
-    <th>File size (in KB)</th>
-    <th>Contact details</th>
-    <th>Other links</th>
-    <th>Downloads</th>
-    <th>Action</th>
-    <th>Action</th>
-    <th>Action</th>
-    <th>Action</th>
+    <table class="content-table">
+    <thead>
+        <!-- file id -->
+        <th>Number</th>
+        <th>Paper Title</th> 
+        <th>Abstrackt</th>
+        <th>Author name</th>
+        <th>Co Authors</th>   
+        <th>Organization(Author)</th>
+        <th>Contact Number(Author)</th>
+        <th>Download</th>
+        <th>Assign Reviewers</th>
+        <th>Accept/Reject</th>
+        <th>Acceptancy</th>
+    </thead>
+    <tbody>
+      <?php
+        $conTrackId = $_SESSION['conTrack_id'];
+        $queryResult = mysqli_query($con,"select rp.idrp as p_id, rp.title as Title, rp.abstract as Abstract, a.fullname as aName,
+        rp.corautherdetails as coAuthors, a.organization as aOrganization, a.contactdetails as aConNum, rp.acceptancy as p_acceptancy
+        from researchpaper as rp, author as a 
+        where (rp.trackID = $conTrackId) and (rp.emailauthor = a.emailauthor)");
+        
+        $count = 1;
+        while($row = mysqli_fetch_assoc($queryResult)){
+      ?>
+      <tr>
+          <td><?= $count ?></td>
+          <td><?= $row['Title'] ?></td>
+          <td><?= $row['Abstract'] ?></td>
+          <td><?= $row['aName'] ?></td>
+          <td><?= $row['coAuthors'] ?></td>
+          <td><?= $row['aOrganization'] ?></td>
+          <td><?= $row['aConNum'] ?></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <?php
+              /* show paper acceptancy or rejection flag
+               0 = ---
+               1 = Accept
+               2 = Reject */
+              if($row['p_acceptancy'] == 0){
+                echo '---';
+              }
+            ?>
+          </td>
+      </tr>
 
-
-</thead>
-<tbody>
-
-
-
-
-  <?php foreach ($files as $file): ?>
-    <tr>
-      <td><?php echo $file['id']; ?></td>
-      <td><?php echo $file['title']; ?></td>
-      <td><?php echo $file['full_name'];?></td>
-      <td><?php echo $file['name']; ?></td>
-  
-  
-      <!-- show conference name here in below php tag 
-      <td><?php ?></td>-->
-
-
-      <td><?php echo $file['university'];?></td>
-      <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
-      <td><?php echo $file['contact_details'];?></td>
-      <td><?php echo $file['other_links'];?></td>
-      <td><?php echo $file['downloads']; ?></td>
-      <td><i style="color:dodgerblue" class="fas fa-download"></i><a style="color:dodgerblue;text-decoration:none;" href="firstround.php?file_id=<?php echo $file['id'] ?>"> Download </a></td>
-      <td><i style="color:#1A5276" class="fas fa-eye"></i><a style="color:#1A5276 ;text-decoration:none;" href="../../uploads/<?php echo $file['name']; ?>" target="_blank">View</a></td>
-
-      <!--<td><i style="color:red" class="fas fa-trash-alt"></i> style="color:red;text-decoration:none;" type="submit" name="action" Value="Reject">Reject</a></td>-->
-      <form action="firstround.php" method="post">
-          <td><i style="color:red" class="fas fa-trash-alt"></i><input style="color:red;text-decoration:none;" type="submit" name="action" Value="Reject" /></td>
-          <input type="hidden" name="id" value="<?php echo $file['id']; ?>" />
-          <input type="hidden" name="accept" value="<?php echo $file['accept'];?>"/>
-      </form>
-      <td><i style="color:#2ECC71 " class="fas fa-share-square"></i><a href="firstround.php?p_id=<?php echo $file['id'];?>" style="color:green;text-decoration:none;">Assign</a></td>
-
-    
-    
-    </tr>
- 
-
-  
-</tbody>
-<?php endforeach;?>
-   <?php
-        if(isset($_POST['action']) && isset($_POST['id'])){
-           if($_POST['action']=='Reject'){
-             $t_id=$_POST['id'];
-             if($_POST['accept']=='1'){
-              echo '<script type="text/javascript">alert("Already  Rejected this paper")</script>';
-  
-             }else{
-             $qr=mysqli_query($conn,"update files set accept='1' where id='$t_id'");
-             echo '<script type="text/javascript">alert("Rejected Successfully")</script>';
-             }
-           }
-          
-
-
-        }
-
-
-   ?>
-
-</table>
-</center>
+      <?php 
+          $count++; 
+        } 
+      ?>
+    </tbody>
+    </table>
+    </center>
+  </div>
 <!-- Footer section -->
          <div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>

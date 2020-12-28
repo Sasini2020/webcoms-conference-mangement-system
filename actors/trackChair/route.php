@@ -7,4 +7,9 @@
         $_SESSION['c_id'] = $_GET['c_selected'];
         header('location:selectConferenceTrack.php');
     }
+
+    if(isset($_GET['cTrack_selected'])){
+      $_SESSION['conTrack_id'] = $_GET['cTrack_selected'];
+      header('location:reaserchPaperList.php');
+  }
 ?>
