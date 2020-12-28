@@ -60,7 +60,6 @@
 </head>
 <body>
 
-  <br><br>
 
   <h1 style="margin-left:20px;color:#1C2833   ;font-size:35px;">Recent Conferences</h1>
 
