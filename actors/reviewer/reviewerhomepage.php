@@ -73,11 +73,11 @@
     <ul>
       
 		 <li><a class="active" href="reviewerhomepage.php">Home</a></li>
-      <li><a href="ConferenceListForR.php">Conference List</a></li>
-			<li><a href="paperlist.php">Review papers</a></li>
+                 <li><a href="ConferenceListForR.php">Conference List</a></li>
+<!-- 		<li><a href="paperlist.php">Review papers</a></li> -->
       <!--<li><a href="rev_change_password.php">Change Password</a></li>-->
-	    	  <li><a href="updateprofile.php">Update Profie</a></li>
-			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+	    	 <li><a href="updateprofile.php">Update Profie</a></li>
+	         <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
     </ul>
   </nav>
@@ -85,65 +85,60 @@
   <br>
 	
 
-<br>
-  <h2 style="margin-left:20px;">My Conferences </h2>
+  <h2 style="margin-left:20px;color:#34495E;"> My Tracks And Assigned Papers</h2>
+
+  <br><br>
+
+  <div>
+    
 <center>
-	<table class="content-table">
-	<tr>
-       <th>ID</th>
-	   <th>Conference</th>
-	   <th>Venue</th>
-	   <th>Conference Start date</th>
-     <th>Conference End Date</th>
-	   <th>Paper Submission Due Date</th>
+    <table class="content-table"  >
+      <thead>
+	      <tr>
+          <th>Track Id</th>
+          <!-- <th>System Track Id</th> -->
+          <th>Track name</th>
+          <th>Action</th>          
+      	</tr>
+      </thead>
+</center>
+      <tbody>                                     
+          <?php
+          $sql = "SELECT reviewer_interest_track.RIT_ID,
+          system_conference_track.trackName 
+          FROM reviewer_interest_track inner join system_conference_track 
+          on reviewer_interest_track.systemTrackID = system_conference_track.trackId where reviewer_interest_track.reviewerEmail='{$_SESSION['r_email']}' ";
+          $result = $con->query($sql);
+          
+          if ($result->num_rows > 0) {
+              // output data of each row
+              while($row = $result->fetch_assoc()) {
+                  echo "<tr><td>" . $row["RIT_ID"]. "</td><td>" . $row["trackName"]."</td><td>"."<a href='paperlist.php?trackId=". $row['RIT_ID'] 
+                  ."  & trackName=".$row['trackName']."' title='Assigned papers' style='color:#34495E;text-decoration:none'><span style='margin-right:5px;'>
+                  <i class='fas fa-file'></i></span>View Assigned papers</a>". "</td></tr>";
 
-	</tr>
-	<br>
-	
-<!-- 	
-	<?php
-	
-	 if(isset($_POST['back']))
-			{
-				header('location:.php');
-	}
-
-
-	
-	$conn = mysqli_connect("localhost","root","","webcomsdb");
-	if ($conn-> connect_error) {
-		die("Connection failed:". $conn-> connect_error);
-	}
-	
-	$sql = "SELECT * from conferences ";
-	$result = $conn-> query($sql);
-
-
-	
-	if ($result-> num_rows> 0){
-		while ($row = $result-> fetch_assoc()){
-			echo "<tr><td>". $row["id"] ."</td><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"] ."</td><td>" . $row["deadline_date"]  ;
-			//echo "<a href='papersubmission.php?id=". $row['id'] ."' title='submit paper' ><span ></span><img src='../../imgs/submit icon.PNG' height='25' width='25' /></a>";
-       
-        }
-		echo "</table>";
-	}
-	else {
-		echo "No conferences";
-	}
-	$conn-> close();
-	?> -->
+                }
+              echo "</table>";
+          } else {
+              echo "0 results";
+          }
+          
+          $con->close();
+          ?>
+      
+	  </table>	
+  </div>
 
 
-	
-	</table>
-	</center>
-</div>
-<!-- </td> -->
-   <!-- Footer section -->
-	 <div class="footer">
-      <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
-   </div>
- 
-</body>   
+     <?php 
+     //By following echo we can print the logged reviewer email
+    // echo "{$_SESSION['r_email']}";
+     ?>
+    <!-- Footer section -->
+
+
+    <div class="footer">
+            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+        </div>
+</body>
 </html>
