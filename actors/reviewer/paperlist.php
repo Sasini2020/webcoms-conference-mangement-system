@@ -107,7 +107,7 @@
       <td><?php ?></td>
       <td><?php ?></td>
 
-      <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperslist.php?file_id=<?php echo $file['idrp'] ?>"> Download paper</a>
+      <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperlist.php?file_id=<?php echo $file['idrp'] ?>"> Download paper</a>
       <br><br>
       <i style="color:#1A5276" class="fas fa-eye"></i><a style="color:dodgerblue ;text-decoration:none;" href="../../uploads/<?php echo $file['NameOfFile']; ?>" target="_blank">View paper</a>
       <br><br>
