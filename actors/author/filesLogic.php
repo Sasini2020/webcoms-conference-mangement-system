@@ -56,7 +56,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             if (mysqli_query($conn, $sql)) {
                 // echo "File uploaded successfully";
                 echo '<script type="text/javascript"> 
-                    if (window.confirm("Registration Successfully")) 
+                    if (window.confirm("Research Paper Uploaded Successfully")) 
                     {
                     window.location.href="author_home.php";
                     };
@@ -68,7 +68,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             //echo "<script>console.log('after Error check');</script>";
         }
          else {
-            echo '<script type="text/javascript"> alert("Failed to submit your file !!") </script>';
+            echo '<script type="text/javascript"> alert("Failed to submit your paper !!") </script>';
         }
     }
 }
