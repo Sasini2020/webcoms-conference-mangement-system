@@ -17,43 +17,7 @@
 	<link rel="stylesheet" href="../../css/about_help_styles.css">
 	    <link rel="stylesheet" href="../../css/nav_footer_styles.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <!--<link rel="stylesheet" href="../../css/main_style.css">
-  <link rel="stylesheet" href="css/sty.css">
-
-  <style>
-  body {
-    margin: 0;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-  }
-
-  li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-  }
-
-  li a.active {
-    background-color: #6495ED;
-    color: white;
-  }
-
-  li a:hover:not(.active) {
-    background-color: #555;
-    color: white;
-  }
-  </style>-->
-
+  
  <style>
 .dot {
   height: 8px;
