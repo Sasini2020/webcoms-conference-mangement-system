@@ -78,7 +78,7 @@
                 }
                 else{
                     foreach($reviewerEmail as $rEmail){
-                        $query1 = mysqli_query($con,"insert into reviewerandpaper values(NULL,'$rEmail',$rPaperId)");
+                        $query1 = mysqli_query($con,"insert into reviewerandpaper values(NULL,'$rEmail',$rPaperId,0)");
                     }
                     if($query1){
                         echo '<script type="text/javascript"> alert("Reviewer Adding process is successfully..!") </script>';

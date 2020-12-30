@@ -70,15 +70,13 @@
               <i class="fas fa-bars"></i>
             </label>
     
-    <ul>
-      
-		 <li><a class="active" href="reviewerhomepage.php">Home</a></li>
-                 <li><a href="ConferenceListForR.php">Conference List</a></li>
-<!-- 		<li><a href="paperlist.php">Review papers</a></li> -->
+    <ul>      
+		  <li><a class="active" href="reviewerhomepage.php">Home</a></li>
+      <!--<li><a href="ConferenceListForR.php">Conference List</a></li>
+ 		  <li><a href="paperlist.php">Review papers</a></li> -->
       <!--<li><a href="rev_change_password.php">Change Password</a></li>-->
-	    	 <li><a href="updateprofile.php">Update Profie</a></li>
-	         <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
-		
+	    <li><a href="updateprofile.php">Update Profie</a></li>
+	    <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>		
     </ul>
   </nav>
 
@@ -95,7 +93,7 @@
     <table class="content-table"  >
       <thead>
 	      <tr>
-          <th>Track Id</th>
+          <th>Number</th>
           <!-- <th>System Track Id</th> -->
           <th>Track name</th>
           <th>Action</th>          
@@ -105,18 +103,23 @@
       <tbody>                                     
            <?php
           $sql = "SELECT
-          system_conference_track.trackName 
+          system_conference_track.trackName as trackName, system_conference_track.trackId as sTId
           FROM reviewer_interest_track inner join system_conference_track 
-          on reviewer_interest_track.systemTrackID = system_conference_track.trackId where reviewer_interest_track.reviewerEmail='{$_SESSION['r_email']}' ";
+          on reviewer_interest_track.systemTrackID = system_conference_track.trackId 
+          where reviewer_interest_track.reviewerEmail='{$_SESSION['r_email']}' ";
           $result = $con->query($sql);
           
           if ($result->num_rows > 0) {
               // output data of each row
+              $count = 1;
               while($row = $result->fetch_assoc()) {
-                  echo "<tr><td>" . $row["trackName"]."</td><td>"."<a href='paperlist.php?trackName=".$row['trackName']."' title='Assigned papers' style='color:#34495E;text-decoration:none'><span style='margin-right:5px;'>
+                  echo "<tr><td>$count</td><td>" . $row["trackName"]."</td><td>"."<a href='route.php?SytemTId=".$row['sTId']."&trackName=".$row["trackName"]."' 
+                  title='Assigned papers' style='color:#34495E;text-decoration:none'>
+                  <span style='margin-right:5px;'>
                   <i class='fas fa-file'></i></span>View Assigned papers</a>". "</td></tr>";
 
-                }
+                  $count++;
+              }
               echo "</table>";
           } else {
               echo "0 results";

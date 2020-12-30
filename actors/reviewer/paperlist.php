@@ -1,6 +1,11 @@
-
-<!-- Accessing the FilesLogic.php -->
-<?php include 'filesLogic.php';?>
+<?php 
+  session_start();
+  if($_SESSION['login_s'] != '2'){
+      header('location:../../login.php');
+  }
+  require '../../dbconfig/config.php';
+  include 'filesLogic.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +25,7 @@
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 400px;
+  min-width: 1300px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -36,6 +41,7 @@
 .content-table th,
 .content-table td {
   padding: 15px 11px;
+  min-width: 200px;
 }
 
 .content-table tbody tr {
@@ -70,9 +76,7 @@
     
     <ul>
       
-		 <li><a href="reviewerhomepage.php">Home</a></li>
-      <li><a href="ConferenceListForR.php">Conference List</a></li>
-			<li><a class="active" href="paperlist.php">Review papers</a></li>
+		 <li><a href="reviewerhomepage.php">Back to Home</a></li>
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
     </ul>
@@ -83,50 +87,92 @@
   <?php 
       // $track_Id = $_SESSION['trackId'];
       //echo $_GET['trackId'];  
-      echo "Track Name :"." ". $_GET['trackName'];
+      echo "Track Name :"." ". $_SESSION['sysTrackName'];
 ?></h2>
 <center>
 <table class="content-table">
 <thead>
     <!-- file id -->
-    <th>Paper ID</th>
+    <th>Number</th>
     <th>Paper Title</th> 
-    <th>Track Name</th>
+    <th>Abstract</th>
     <th>Conference Name</th>
     <th>Action</th>
+    <th>Is Reviewed</th>
     <th>Review & Discussion</th>
 
    
 </thead>
 <tbody>
-  <?php foreach ($files as $file): ?>
+  <?php
+
+    $rEmail = $_SESSION['r_email'];
+    $sysTrackId = $_SESSION['sysTrackId'];
+
+    // paperlist query
+    $query = "SELECT rp.idrp as idrp, rp.NameOfFile as NameOfFile, rp.title as title, rp.abstract as abstract,
+    c.name as cName, rap.isReviewed as isRved
+    FROM researchpaper as rp, reviewerandpaper as rap, conferencetrack as ct, conferences as c
+    where (rap.reviewerEmail = '$rEmail') and (rap.paperId = rp.idrp) and (rp.trackID = ct.ID) and (ct.systemTrackId = $sysTrackId)
+     and (rp.conferenceId = c.id)
+     order by rap.ID";
+
+    $result = mysqli_query($conn, $query);
+
+    $files = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    $count = 1; 
+    foreach ($files as $file): ?>
     <tr>
-      <td><?php echo $file['idrp']; ?></td>
+      <td><?php echo $count ?></td>
       <td><?php echo $file['title']; ?></td>
       <!-- show conference name here in below php tag -->
-      <td><?php ?></td>
-      <td><?php ?></td>
+      <td><?php echo $file['abstract']; ?></td>
+      <td><?php echo $file['cName']; ?></td>
 
-      <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" href="paperlist.php?file_id=<?php echo $file['idrp'] ?>"> Download paper</a>
+      <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" 
+      href="paperlist.php?dFile_id=<?php echo $file['idrp'] ?>"> Download paper</a>
       <br><br>
-      <i style="color:#1A5276" class="fas fa-eye"></i><a style="color:dodgerblue ;text-decoration:none;" href="../../uploads/<?php echo $file['NameOfFile']; ?>" target="_blank">View paper</a>
+      <i style="color:#1A5276" class="fas fa-eye"></i><a style="color:dodgerblue ;text-decoration:none;" 
+      href="../../uploads/<?php echo $file['NameOfFile']; ?>" target="_blank">View paper</a>
       <br><br>
-      <!-- <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" href="../../uploads/<?php echo $file['NameOfFile']; ?>"> View abstract</a> -->
-      <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" href="#"> View abstract</a>
+      <!-- <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" 
+      href="../../uploads/<?php //echo $file['NameOfFile']; ?>"> View abstract</a>
+      <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" href="#"> 
+      View abstract</a>
 
-      <br><?php echo $file['abstract']; ?>
+      <br><?php //echo $file['abstract']; ?> -->
+      </td>
+      
+      <td>
+        <?php
+          if($file['isRved'] == 0){
+            echo "Not Review";
+          }
+          else{
+            echo "Reviewed";
+          }
+        ?>
       </td>
 
-			<!-- echo "<a href='papersubmission.php?c_id=". $row['id'] ."' title='submit paper' class='linkDec'><span ></span><img src='../../imgs/sub.png' height='25' width='25' />Submit</a>"; -->
       <td>
       <?php
 
-      echo "<i class='far fa-plus-square' style='color:#1A5276'></i><a href='route.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Add Review</a> ";
+      echo "<i class='far fa-plus-square' style='color:#1A5276'></i>
+      <a href='route.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> 
+      Add Review</a> ";
+      
       echo "<br><br>";
-      echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Edit Review </a> ";
+      
+      echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' 
+      style='color:#1A5276; text-decoration:none;'> Edit Review </a> ";
+      
       echo "<br><br>";
-      echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='#.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> View Review </a> ";
+      
+      echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='#.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' 
+      style='color:#1A5276; text-decoration:none;'> View Review </a> ";
 
+      $count++;
       ?>
     </td>
     
