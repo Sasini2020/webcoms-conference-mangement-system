@@ -16,9 +16,6 @@
 
 	<style>
 
-* {
-  font-family: sans-serif; /* Change your font family */
-}
 
 .content-table {
   border-collapse: collapse;
