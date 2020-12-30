@@ -22,16 +22,9 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     $file = $_FILES['myfile']['tmp_name'];
     $size = $_FILES['myfile']['size'];
 
-//Added others
-    // $full_name =$_POST['full_name'];
-    // $university = $_POST['university'];
-    // $contact_details = $_POST['contact_details'];
-    // $other_links = $_POST['other_links'];	
-
-
 
     if (!in_array($extension, ['pdf'])) {
-        echo '<script type="text/javascript"> alert("You file extension must be .pdf") </script>';
+        echo '<script type="text/javascript"> alert("Your file extension must be .pdf") </script>';
     } elseif ($_FILES['myfile']['size'] > 1000000) { // file shouldn't be larger than 1MB
         // echo "File is large than 1MB !";
         echo '<script type="text/javascript"> alert("file size larger than 1 MB.. Try another file") </script>';
