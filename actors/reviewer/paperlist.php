@@ -60,6 +60,12 @@
   font-weight: bold;
   color: #009879;
 }
+
+.disable{
+  pointer-events:none;
+  cursor:default;
+  opacity:0.6;
+}
  
 </style>
 
@@ -157,19 +163,27 @@
 
       <td>
       <?php
-
-      echo "<i class='far fa-plus-square' style='color:#1A5276'></i>
-      <a href='route.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> 
-      Add Review</a> ";
+      
+      if($file['isRved'] == 0){
+        echo "<i class='far fa-plus-square' style='color:#1A5276'></i>
+         <a href='route.php?addReviewRP_Id=".$file['idrp']."&RP_title=".$file['title']."' style='color:#1A5276; text-decoration:none;'> 
+         Add Review</a>";
+      }
+      else{
+        echo "<span class='disable'><i class='far fa-plus-square' style='color:#1A5276'></i>
+         <a href='route.php?addReviewRP_Id=".$file['idrp']."&RP_title=".$file['title']."' style='color:#1A5276; text-decoration:none;'> 
+         Add Review</a></span> ";
+      }
+      
       
       echo "<br><br>";
       
-      echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' 
+      echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?editReviewRP_id=".$file['idrp']."&RP_title=".$file['title']."' 
       style='color:#1A5276; text-decoration:none;'> Edit Review </a> ";
       
       echo "<br><br>";
       
-      echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='#.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' 
+      echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='#.php?viewReviewRP_id=".$file['idrp']."&RP_title=".$file['title']."' 
       style='color:#1A5276; text-decoration:none;'> View Review </a> ";
 
       $count++;

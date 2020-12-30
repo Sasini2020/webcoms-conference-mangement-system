@@ -82,7 +82,7 @@
 	<!--Registration form-->
 	<div id="main-wrapper">
 		
-		<form  action="register.php"method="post">
+		<form  action="register.php" method="post">
 
 			<br><h1>Register</h1>
 			<fieldset>

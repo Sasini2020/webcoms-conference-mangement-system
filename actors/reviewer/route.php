@@ -18,4 +18,9 @@
       header('location:paperlist.php');
     }
 
+    if(isset($_GET['addReviewRP_Id'])){
+      $_SESSION['RPaperId'] = $_GET['addReviewRP_Id'];
+      $_SESSION['RPaperTitle'] = $_GET['RP_title'];
+      header('location:addreview.php');
+    }
 ?>
