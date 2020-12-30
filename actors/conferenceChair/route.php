@@ -19,4 +19,9 @@
       $_SESSION['c_id'] = $_GET['assignPubC_CId'];
       header('location:assignPublicationChairToConference.php');
     }
+    if(isset($_GET['Conf_Id'])){
+      $_SESSION['c_id'] = $_GET['Conf_Id'];
+      $_SESSION['c_name']= $_GET['Conf_Name'];;
+      header('location:publish_conf_guidelines.php');
+    }
 ?>
