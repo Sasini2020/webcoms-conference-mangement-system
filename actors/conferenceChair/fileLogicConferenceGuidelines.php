@@ -43,8 +43,8 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             }
             else{
 
-                $sql = "INSERT INTO conferenceguidelinedetails(name,size,Downloads,conf_id) VALUES 
-                ('$filename',$size,0,$c_id)";
+                $sql = "INSERT INTO conferenceguidelinedetails(name,size,conf_id) VALUES 
+                ('$filename',$size,$c_id)";
                
                 if (mysqli_query($conn, $sql)) {
                     // echo "File uploaded successfully";
@@ -65,7 +65,7 @@ if (isset($_GET['file_id'])) {
     $id = $_GET['file_id'];
 
     // fetch file to download from database
-    $sql = "SELECT id,name,size,downloads FROM conferenceguidelinedetails WHERE id=$id";
+    $sql = "SELECT id,name,size FROM conferenceguidelinedetails WHERE id=$id";
     $result = mysqli_query($conn, $sql);
 
     $file = mysqli_fetch_assoc($result);
