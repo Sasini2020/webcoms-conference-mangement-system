@@ -15,9 +15,6 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <style>
 
-* {
-  font-family: sans-serif; /* Change your font family */
-}
 
 .content-table {
   border-collapse: collapse;

@@ -18,13 +18,10 @@
    <link rel="stylesheet" href="../../css/table_style.css">
 
 
-  <title>You Submitted Reaserch Paper List</title>
+  <title>My Submitted Reaserch Paper List</title>
 
 <style>
 
-* {
-  font-family: sans-serif; /* Change your font family */
-}
 
 .conListLink{
   color:white;
@@ -78,7 +75,7 @@
 }
 
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid dodgerblue;
 }
 
 .content-table tbody tr.active-row {
@@ -110,16 +107,16 @@
   
 <br>
 <div>
+    
+    <h2 style="color:#34495E ;margin-left:20px;">My Submissions </h2>
     <center>
-    <h1 style="color:#111 ;margin-left:20px;">You Submitted Research Papers List</h1>
-
     <table class="content-table">
     <thead>
         <!-- file id -->
         <th>Number</th>
         <th>Paper Title</th> 
-        <th>Abstrackt</th>
-        <th>Co Authors</th>
+        <th>Abstract</th>
+        <th>Other Authors</th>
         <th>Download</th>
         <th>Acceptancy</th>
         <th>Submit Camera Ready</th>
@@ -140,7 +137,7 @@
           <td><?= $row['title'] ?></td>
           <td><?= $row['abstract'] ?></td>
           <td><?= $row['corautherdetails'] ?></td>
-          <td><a href="route.php?downPId=<?= $row['idrp'] ?>">Downlode</a></td>
+          <td><i class="fas fa-file-download" style="color:#1F618D;"></i><b> </b><a style="text-decoration:none;color:#1F618D" href="route.php?downPId=<?= $row['idrp']  ?> ">Download</a></td>
           <td>
             <?php
               /* show paper acceptancy or rejection flag

@@ -2,6 +2,7 @@
 // connect to the database
 $conn = mysqli_connect('localhost', 'root', '', 'webcomsdb');
 
+
 $sql = "SELECT * FROM researchpaper";
 
 $result = mysqli_query($conn, $sql);

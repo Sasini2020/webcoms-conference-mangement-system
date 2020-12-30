@@ -15,18 +15,19 @@
 
 .conListLink{
   color:white;
-  text-shadow: 1px 1px 0 #444;
+  /* text-shadow: 1px 1px 0 #444; */
 }
 
 .conListLink:link,
 .conListLink:link:visited{
-  background-color: #00ccff;
+  background-color: dodgerblue;
   color: white;
   padding: 10px 20px;
-  width:130px;
+  width:110px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border-radius:6px;
 }  
 
 .conListLink:hover, 
@@ -36,6 +37,7 @@
 
 .content-table {
   border-collapse: collapse;
+  color:#2E4053;
   margin: 25px 0;
   font-size: 0.9em;
   min-width: 1400px;
@@ -65,7 +67,7 @@
 }
 
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid dodgerblue;
 }
 
 .content-table tbody tr.active-row {
@@ -91,8 +93,8 @@
 <body>
 
 
-<br><br><br><br>
-		<h2 style="margin-left:100px;color:#000000;">Conference List</h2>
+<br>
+		<h2 style="margin-left:20px;color:#2E4053;">Conferences List</h2>
 
 
 <div>
@@ -110,6 +112,8 @@
          <th>Sponsor details</th>
          <th>Modify Tracks</th>
          <th>Assign Publication Chair</th>
+         <th>Upload Conference Guidelines</th>
+
          </tr>
      </thead>
 	 </center>
@@ -139,6 +143,9 @@
             </td>
             <td>
                 <a href="route.php?assignPubC_CId=<?= $row['id'] ?>" class="conListLink">Assign</a>
+            </td>
+            <td>
+                <a href="route.php?uploadConfGuidelines_CId=<?= $row['id'] ?>" class="conListLink">Upload</a>
             </td>
            </tr>
      </tbody>
