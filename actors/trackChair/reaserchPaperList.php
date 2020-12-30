@@ -52,10 +52,6 @@
 </style>-->
 <style>
 
-* {
-  font-family: sans-serif; /* Change your font family */
-}
-
 .conListLink{
   color:white;
   text-shadow: 1px 1px 0 #444;
@@ -177,7 +173,7 @@
           <td><?= $row['coAuthors'] ?></td>
           <td><?= $row['aOrganization'] ?></td>
           <td><?= $row['aConNum'] ?></td>
-          <td><a href="route.php?downPId=<?= $row['p_id'] ?>">Downlode</a></td>
+          <td><i class="fas fa-file-download" style="color:#1F618D;"></i><b> </b><a style="text-decoration:none;color:#1F618D" href="route.php?downPId=<?= $row['p_id'] ?>">Download</a></td>
           <td><a href="route.php?assignRPId=<?= $row['p_id'] ?>" class="conListLink">Assign</a></td>
           <td></td>
           <td>

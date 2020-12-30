@@ -120,7 +120,16 @@
 
      <tbody>                                     
        <?php
+
+
+if(isset($_POST['back']))
+{
+  header('location:.php');
+}
+$conn = $con;
             $c_email = $_SESSION['c_email'];
+            // $c_id = $_SESSION['c_id'];
+
             $sql = mysqli_query($con, "select *
             from conferences
             where (Accepted='1')and(emailconfchair='$c_email')
@@ -145,7 +154,11 @@
                 <a href="route.php?assignPubC_CId=<?= $row['id'] ?>" class="conListLink">Assign</a>
             </td>
             <td>
-                <a href="route.php?uploadConfGuidelines_CId=<?= $row['id'] ?>" class="conListLink">Upload</a>
+            <a href="route.php?Conf_Id=<?= $row['id'] ."& Conf_Name=".$row['name'] ?>" class="conListLink">Upload</a>
+
+            <?php 
+            //echo "<a href='publish_conf_guidelines.php?c_id=". $row['id'] ."& c_name=".$row['name']."'  class='conListLink'>Upload</a>";
+            ?>
             </td>
            </tr>
      </tbody>
@@ -153,7 +166,8 @@
             $counter++;}
         ?>
 
-    
+<!-- echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?f_id=".$file['idrp']." & f_title=".$file['title']." ' style='color:#1A5276; text-decoration:none;'> Edit Review </a> "; -->
+
                 
      </table>	
  </div>

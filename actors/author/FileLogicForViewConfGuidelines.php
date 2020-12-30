@@ -2,7 +2,7 @@
 // connect to the database
 $conn = $con;
 
-$sql = "SELECT * FROM researchpaper";
+$sql = "SELECT * FROM conferenceguidelinedetails";
 
 $result = mysqli_query($conn, $sql);
 
@@ -13,7 +13,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     $filename = $_FILES['myfile']['name'];
 
     // destination of the file on the server
-    $destination = '../../uploads/' . $filename;
+    $destination = '../../uploads/conferenceGuidelines/' . $filename;
 
     // get the file extension
     $extension = pathinfo($filename, PATHINFO_EXTENSION);
@@ -33,35 +33,30 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
         // move the uploaded (temporary) file to the specified destination
         if(move_uploaded_file($file, $destination)) {
 
-            $title = $_POST['title'];
-            $abstract = $_POST['abstract'];
-            $trackId = $_POST['Ptrack'];
-            $OtherAuthorE = $_POST['OtherAutherE'];
-            $authorEmail = $_SESSION['au_email'];
-            $c_id = $_SESSION['con_id'];
+        
+            $c_id = $_SESSION['c_id'];
 
-            //I inserted values in a different special way
-            $sql = "INSERT INTO researchpaper(title,abstract,NameOfFile,size,Downloads,acceptancy,trackID,conferenceId,corautherdetails,emailauthor) VALUES 
-            ('$title','$abstract','$filename',$size,0,0,$trackId,$c_id,'$OtherAuthorE','$authorEmail')";
-           
-            
-
-            if (mysqli_query($conn, $sql)) {
-                // echo "File uploaded successfully";
-                echo '<script type="text/javascript"> 
-                    if (window.confirm("Research Paper Uploaded Successfully")) 
-                    {
-                    window.location.href="author_home.php";
-                    };
-                </script>';
-
+            $query1="select * from conferenceguidelinedetails where conf_id='$c_id' ";
+            $query1_run=mysqli_query($con,$query1);
+            if(mysqli_num_rows($query1_run)>0){
+                echo '<script type="text/javascript">alert("This conference has been already uploaded conference guidelines..!!")</script>';
             }
-            //echo "<script>console.log('Before Error check');</script>";
-            //echo "<script>alert('".mysqli_error($conn)."');</script>";
-            //echo "<script>console.log('after Error check');</script>";
+            else{
+
+                $sql = "INSERT INTO conferenceguidelinedetails(name,size,Downloads,conf_id) VALUES 
+                ('$filename',$size,0,$c_id)";
+               
+                if (mysqli_query($conn, $sql)) {
+                    // echo "File uploaded successfully";
+                    echo '<script type="text/javascript"> alert("Conference Guidelines was uploaded successfully!!") </script>';
+    
+                }
+            }
+
+
         }
          else {
-            echo '<script type="text/javascript"> alert("Failed to submit your paper !!") </script>';
+            echo '<script type="text/javascript"> alert("Failed to submit your file !!") </script>';
         }
     }
 }
@@ -70,11 +65,11 @@ if (isset($_GET['file_id'])) {
     $id = $_GET['file_id'];
 
     // fetch file to download from database
-    $sql = "SELECT * FROM researchpaper WHERE id=$id";
+    $sql = "SELECT id,name,size,downloads FROM conferenceguidelinedetails WHERE id=$id";
     $result = mysqli_query($conn, $sql);
 
     $file = mysqli_fetch_assoc($result);
-    $filepath = '../../uploads/' . $file['name'];
+    $filepath = '../../uploads/conferenceGuidelines/' . $file['name'];
 
     if (file_exists($filepath)) {
         header('Content-Description: File Transfer');
@@ -83,17 +78,18 @@ if (isset($_GET['file_id'])) {
         header('Expires: 0');
         header('Cache-Control: must-revalidate');
         header('Pragma: public');
-        header('Content-Length: ' . filesize('../../uploads/' . $file['name']));
-        readfile('../../uploads/' . $file['name']);
+        header('Content-Length: ' . filesize('../../uploads/conferenceGuidelines/' . $file['name']));
+        readfile('../../uploads/conferenceGuidelines/' . $file['name']);
 
         // Now update downloads count
         // $newCount = $file['downloads'] + 1;
-        // $updateQuery = "UPDATE files SET downloads=$newCount WHERE id=$id";
+        // $updateQuery = "UPDATE conferenceguidelinedetails SET downloads=$newCount WHERE id=$id";
         // mysqli_query($conn, $updateQuery);
         exit;
     }
 
 }
 // sql to delete a record
+
 
 
