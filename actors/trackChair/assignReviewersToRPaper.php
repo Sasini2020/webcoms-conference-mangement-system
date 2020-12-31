@@ -33,6 +33,15 @@
     </ul>
 </nav>
 
+<br>
+<h4 style="color:#2E4053 ;margin-left:20px;">Paper Title<span style=margin-left:40px;>: &nbsp;&nbsp;
+  <?php 
+        $f_title = $_SESSION['rPaperTitle'];
+        echo "$f_title";
+  ?>
+</span></h4>
+<br>
+
 <div id="main-wrapper" style="margin:20px auto;height:360px">
         <center>
 			<h2>Assign Reviewers to Reaserch Paper</h2>
@@ -93,7 +102,7 @@
     <hr>
 
     <div style="margin:20px 40px;">
-      <h2>Assigned Reviewers Details</h2>
+      <h2>Assigned Reviewers Details and Their Reviews</h2>
 
       <table class="content-table" style="">
         <thead>
@@ -113,7 +122,7 @@
             $rPaperId = $_SESSION['rPaper_id'];
             $count = 1;
             $query_result = mysqli_query($con,"select r.emailreviewer as rEmail, r.title as title, r.fullname as fullName,
-            r.organization as organization, r.country as country, r.contactdetails as coNum
+            r.organization as organization, r.country as country, r.contactdetails as coNum, rp.isReviewed as isReview
             from reviewerandpaper as rp, reviewer as r
             where (rp.paperId = $rPaperId) and (rp.reviewerEmail = r.emailreviewer)
             order by rp.ID DESC")
@@ -128,7 +137,17 @@
             <td><?= $row['organization'] ?></td>
             <td><?= $row['country'] ?></td>
             <td><?= $row['coNum'] ?></td>
-            <td></td>
+            <td>
+              <?php
+                if($row['isReview'] == 0){
+                  echo "Not yet Review";
+                }
+                elseif($row['isReview'] == 1){
+                  echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='route.php?showReviewREmail=".$row['rEmail']."' 
+                  style='color:#1A5276; text-decoration:none;'> View Review </a>";
+                }
+              ?>
+            </td>
           </tr>
           <?php
             $count++;}

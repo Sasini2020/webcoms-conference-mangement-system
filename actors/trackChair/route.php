@@ -43,8 +43,14 @@
       
     }
 
-    if(isset($_GET['assignRPId'])){
+    if(isset($_GET['assignRPId']) and isset($_GET['rPtitle'])){
       $_SESSION['rPaper_id'] = $_GET['assignRPId'];
+      $_SESSION['rPaperTitle'] = $_GET['rPtitle'];
       header('location:assignReviewersToRPaper.php');
+    }
+
+    if(isset($_GET['showReviewREmail'])){
+      $_SESSION['showReviewREmail'] = $_GET['showReviewREmail'];
+      header('location:showReviewerReview.php');
     }
 ?>

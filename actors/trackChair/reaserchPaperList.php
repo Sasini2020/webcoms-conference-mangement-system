@@ -93,6 +93,7 @@
 .content-table th,
 .content-table td {
   padding: 12px 15px;
+  min-width: 120px;
 }
 
 .content-table tbody tr {
@@ -150,7 +151,7 @@
         <th>Organization(Author)</th>
         <th>Contact Number(Author)</th>
         <th>Download</th>
-        <th>Assign Reviewers</th>
+        <th>Assign Reviewers<br>/ View Review</th>
         <th>Accept/Reject</th>
         <th>Acceptancy</th>
     </thead>
@@ -174,7 +175,7 @@
           <td><?= $row['aOrganization'] ?></td>
           <td><?= $row['aConNum'] ?></td>
           <td><i class="fas fa-file-download" style="color:#1F618D;"></i><b> </b><a style="text-decoration:none;color:#1F618D" href="route.php?downPId=<?= $row['p_id'] ?>">Download</a></td>
-          <td><a href="route.php?assignRPId=<?= $row['p_id'] ?>" class="conListLink">Assign</a></td>
+          <td><a href="route.php?assignRPId=<?= $row['p_id'] ?>&rPtitle=<?= $row['Title'] ?>" class="conListLink">Select</a></td>
           <td></td>
           <td>
             <?php
