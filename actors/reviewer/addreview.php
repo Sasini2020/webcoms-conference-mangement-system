@@ -185,7 +185,7 @@ select{
                 <i class="fas fa-bars"></i>
               </label>
       <ul>
-        <li><a class="active" href="paperlist.php">Back to Paper List</a></li>
+        <li><a href="paperlist.php">Back to Paper List</a></li>
         <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
       </ul>

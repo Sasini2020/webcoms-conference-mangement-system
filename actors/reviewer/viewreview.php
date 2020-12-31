@@ -3,9 +3,8 @@
     if($_SESSION['login_s'] != '2'){
         header('location:../../login.php');
     }
+    require '../../dbconfig/config.php';
 ?>
-<!-- Accessing the FilesLogic.php -->
-<?php include 'filesLogic.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,166 +14,23 @@
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
   <title>View review</title>
 
-  <style type="text/css">
-.form-style-1 {
-	margin:10px auto;
-	max-width: 1600px;
-	padding: 20px 12px 10px 20px;
-	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
-.form-style-1 li {
-	padding: 0;
-	display: block;
-	list-style: none;
-	margin: 10px 0 0 0;
-}
-.form-style-1 label{
-	margin:0 0 3px 0;
-	padding:0px;
-    display:block;
-    color:#2E4053;
-    font-size:15px;
-	font-weight: bold;
-}
-.form-style-1 input[type=text], 
-.form-style-1 input[type=date],
-.form-style-1 input[type=datetime],
-.form-style-1 input[type=number],
-.form-style-1 input[type=search],
-.form-style-1 input[type=time],
-.form-style-1 input[type=url],
-.form-style-1 input[type=email],
-textarea, 
-select{
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	border:1px solid #BEBEBE;
-	padding: 7px;
-	margin:0px;
-	-webkit-transition: all 0.30s ease-in-out;
-	-moz-transition: all 0.30s ease-in-out;
-	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;
-	outline: none;	
-}
-.form-style-1 input[type=text]:focus, 
-.form-style-1 input[type=date]:focus,
-.form-style-1 input[type=datetime]:focus,
-.form-style-1 input[type=number]:focus,
-.form-style-1 input[type=search]:focus,
-.form-style-1 input[type=time]:focus,
-.form-style-1 input[type=url]:focus,
-.form-style-1 input[type=email]:focus,
-.form-style-1 textarea:focus, 
-.form-style-1 select:focus{
-	-moz-box-shadow: 0 0 8px #88D5E9;
-	-webkit-box-shadow: 0 0 8px #88D5E9;
-	box-shadow: 0 0 8px #88D5E9;
-	border: 1px solid #88D5E9;
-}
-.form-style-1 .field-divided{
-	width: 49%;
-}
+  <style>
+    .dlStyle{
+      margin:10px auto;
+	    max-width: 1600px;
+	    padding: 20px 12px 10px 20px;
+	    font: 15px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
+    .dlStyle dd{
+      margin-left:40px;
+      margin-top:20px;
+      margin-bottom: 20px;
+    }
 
-.form-style-1 .field-long{
-	width: 100%;
-}
-.form-style-1 .field-select{
-	width: 100%;
-}
-.form-style-1 .field-textarea{
-	height: 100px;
-}
-.form-style-1 input[type=submit], .form-style-1 input[type=button]{
-	background: dodgerblue;
-	padding: 8px 15px 8px 15px;
-    border: none;
-    border-radius:5px;
-    color: #fff;
-    cursor:pointer;
-    margin-left:70px;
-}
-.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
-	background: #4691A4;
-	box-shadow:none;
-	-moz-box-shadow:none;
-	-webkit-box-shadow:none;
-}
-.form-style-1 .required{
-	color:red;
-}
-
-
-
-/* The container -check boxes,radio buttons*/
-.container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Hide the browser's default checkbox */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 7px;
-  top: 4px;
-  width: 4px;
-  height: 9px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-</style>
+    .dlStyle .required{
+	    color:red;
+    }
+  </style>
 
 </head>
 <body>
@@ -186,23 +42,356 @@ select{
                 <i class="fas fa-bars"></i>
               </label>
       <ul>
-      <!--<li><a href="reviewform.php">Submit paper review comment</a></li>-->
-        <li><a class="active" href="viewreview.php">View Review</a></li>
-        <li><a href="../../About.php">About</a></li>
-        <li><a href="../../help.php">Help</a></li>
+        <li><a href="paperlist.php">Back to Paper List</a></li>
         <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
-
-        <!--<li><a href="reviewerhomepagenew.php">Back</a></li>-->
-
       </ul>
 </nav>
 <br>
 <h2 style="color:#2E4053 ;margin-left:20px;">View Review</h2>
-<br><br>
-<h4 style="color:#2E4053 ;margin-left:20px;">Paper ID<span style=margin-left:79px;>:</span></h4>
-<h4 style="color:#2E4053 ;margin-left:20px;">Paper Title<span style=margin-left:60px;>:</span></h4>
-<h4 style="color:#2E4053 ;margin-left:20px;">Track Name<span style=margin-left:48px;>:</span></h4>
-<br><br><br>
+<br>
+<h4 style="color:#2E4053 ;margin-left:20px;">Paper Title<span style=margin-left:40px;>: &nbsp;&nbsp;
+  <?php 
+        $f_title = $_SESSION['RPaperTitle'];
+        echo "$f_title";
+  ?>
+</span></h4>
+<br>
+
+<?php
+  $rEmail = $_SESSION['r_email'];
+  $RPaperId = $_SESSION['RPaperId'];
+
+  $queryResult = mysqli_query($con,"select * from review_form where (emailreviewer = '$rEmail') and (rPaperId = $RPaperId);");
+
+  $row = mysqli_fetch_assoc($queryResult)
+?>
+
+<dl class="dlStyle">
+  <dt>
+    1) While performing my duties as a reviewer(including writing reviewes and partcipating in discussion), I have
+    and will continue to abide by the xxxx code of conduct <span class="required">*</span ><span style="color:dodgerblue;">
+    (visible to other reviewer)</span>
+  </dt>
+  <dd>
+    <?= $row['question1'] ?>
+  </dd>
+
+  <dt>
+    2) Have you seen this submission online (e.g.arXiv, personal website, social media ) ?
+    <span class="required">*</span><span style="color:dodgerblue;">(visible to other reviewer)</span>
+  </dt>
+  <dd>
+    <?= $row['question2'] ?>
+  </dd>
+
+  <dt>
+    3) Have you previously reviewed or area chaired ( a version of ) this work for another archival venue ?
+  </dt> 
+  <dd>
+    <?= $row['question3'] ?>
+  </dd>
+
+  <dt>
+    4) Reviewer's level of confidence (alignment with your domain of expertise) :
+  </dt> 
+  <dd>
+    <?= $row['question4'] ?>
+  </dd>
+
+  <dt>
+    5) Relevance :
+  </dt>
+  <dd>
+    <?= $row['question5'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question5_no'] ?>
+  </dd>
+
+  <dt>
+    6) Novelty or Originality - The paper reflects current information on this topic :
+  </dt>
+  <dd>
+    <?= $row['question6'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question6_no'] ?>
+  </dd>
+
+  <dt>
+    7) The title is clear and informative :
+  </dt>
+  <dd>
+    <?= $row['question7'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question7_no'] ?>
+  </dd>
+
+  <dt>
+    8) The title reflects the content and purpose of the paper :
+  </dt>
+  <dd>
+    <?= $row['question8'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question8_no'] ?>
+  </dd>
+
+  <dt>
+    9) Abstract :      
+  </dt>
+  <dd>
+    <?= $row['question9'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question9_no'] ?>
+  </dd>
+
+  <dt>
+    10) Keywords :
+  </dt>
+  <dd>
+    <?= $row['question10'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question10_no'] ?>
+  </dd>
+
+  <dt>
+    11) Content - Introduction :
+  </dt>
+  <dd>
+    <?= $row['question11'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question11_no'] ?>
+  </dd>
+
+  <dt>
+    12) Content - Background / Literature Study - The most current references on this topic have been included :
+  </dt>
+  <dd>
+    <?= $row['question12'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question12_no'] ?>
+  </dd>
+
+  <dt>
+    13) Content - Background / Literature Study - The most relevant references on this topic have been included :
+  </dt>
+  <dd>
+    <?= $row['question13'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question13_no'] ?>
+  </dd>
+
+  <dt>
+    14) Content - Methodology :
+  </dt>
+  <dd>
+    <?= $row['question14'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question14_no'] ?>
+  </dd>
+
+  <dt>
+    15) Clarity - There are no any contradictions or inconsistencies:
+  </dt>
+  <dd>
+    <?= $row['question15'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question15_no'] ?>
+  </dd>
+
+  <dt>
+    16) Clarity - The paper stays focused :
+  </dt>
+  <dd>
+    <?= $row['question16'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question16_no'] ?>
+  </dd>
+
+  <dt>
+    17) Organization - Ideas are developed and related in a logic sequence :
+  </dt>
+  <dd>
+    <?= $row['question17'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question17_no'] ?>
+  </dd>
+
+  <dt>
+    18) Organization - Transitions between discussion are smooth and easy to follow :
+  </dt>
+  <dd>
+    <?= $row['question18'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question18_no'] ?>
+  </dd>
+
+  <dt>
+    19) Accuracy - The supporting evidence ( literature referenced ) is appopriately cited :
+  </dt>
+  <dd>
+    <?= $row['question19'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question19_no'] ?>
+  </dd>
+
+  <dt>
+    20) Accuracy - Tables and figures are of clear and satisfactory quality :
+  </dt>
+  <dd>
+    <?= $row['question20'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question20_no'] ?>
+  </dd>
+
+  <dt>
+    21) Accuracy - There are no math or text errors in tables or figures :
+  </dt>
+  <dd>
+    <?= $row['question21'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question21_no'] ?>
+  </dd>
+
+  <dt>
+    22) Accuracy - Legends and titles of tables and figures are clearly given :
+  </dt>
+  <dd>
+    <?= $row['question22'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question22_no'] ?>
+  </dd>
+
+  <dt>
+    23) Accuracy - The paper is free from grammatical or spelling errors : 
+  </dt>
+  <dd>
+    <?= $row['question23'] ?>
+  </dd>
+
+  <dt>
+    (If 'no', Please give reasons) :
+  </dt>
+  <dd>
+    <?= $row['question23_no'] ?>
+  </dd>
+
+  <dt>
+    24) Quality of the paper :
+  </dt>
+  <dd>
+    <?= $row['question24'] ?>
+  </dd>
+
+  <dt>
+    25) Recommendation :
+  </dt>
+  <dd>
+    <?= $row['question25'] ?>
+  </dd>
+
+  <dt>
+    26) Overall Recommendation :
+  </dt>
+  <dd>
+    <?= $row['question26'] ?>
+  </dd>
+
+  <dt>
+    27) Comments to author :
+  </dt>
+  <dd>
+    <?= $row['question27'] ?>
+  </dd>
+</dl>
 
 
 <!-- Footer section -->

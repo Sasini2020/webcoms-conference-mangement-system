@@ -163,7 +163,8 @@
 
       <td>
       <?php
-      
+
+      // add review button
       if($file['isRved'] == 0){
         echo "<i class='far fa-plus-square' style='color:#1A5276'></i>
          <a href='route.php?addReviewRP_Id=".$file['idrp']."&RP_title=".$file['title']."' style='color:#1A5276; text-decoration:none;'> 
@@ -177,14 +178,28 @@
       
       
       echo "<br><br>";
-      
-      echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?editReviewRP_id=".$file['idrp']."&RP_title=".$file['title']."' 
-      style='color:#1A5276; text-decoration:none;'> Edit Review </a> ";
+
+      // edit review button
+      if($file['isRved'] == 1){
+        echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?editReviewRP_id=".$file['idrp']."&RP_title=".$file['title']."' 
+        style='color:#1A5276; text-decoration:none;'> Edit Review </a>";
+      }
+      else{
+        echo "<span class='disable'><i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?editReviewRP_id=".$file['idrp']."&RP_title=".$file['title']."' 
+        style='color:#1A5276; text-decoration:none;'> Edit Review </a></span> ";
+      }
       
       echo "<br><br>";
-      
-      echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='#.php?viewReviewRP_id=".$file['idrp']."&RP_title=".$file['title']."' 
-      style='color:#1A5276; text-decoration:none;'> View Review </a> ";
+
+      // view review button
+      if($file['isRved'] == 1){
+        echo "<i class='fas fa-eye' style='color:#1A5276'></i><a href='route.php?viewReviewRP_id=".$file['idrp']."&RP_title=".$file['title']."' 
+        style='color:#1A5276; text-decoration:none;'> View Review </a>";
+      }
+      else{
+        echo "<span class='disable'><i class='fas fa-eye' style='color:#1A5276'></i><a href='#.php?viewReviewRP_id=".$file['idrp']."&RP_title=".$file['title']."' 
+        style='color:#1A5276; text-decoration:none;'> View Review </a></span> ";
+      }
 
       $count++;
       ?>

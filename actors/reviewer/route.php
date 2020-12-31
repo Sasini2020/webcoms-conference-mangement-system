@@ -23,4 +23,10 @@
       $_SESSION['RPaperTitle'] = $_GET['RP_title'];
       header('location:addreview.php');
     }
+
+    if(isset($_GET['viewReviewRP_id'])){
+      $_SESSION['RPaperId'] = $_GET['viewReviewRP_id'];
+      $_SESSION['RPaperTitle'] = $_GET['RP_title'];
+      header('location:viewreview.php');
+    }
 ?>
