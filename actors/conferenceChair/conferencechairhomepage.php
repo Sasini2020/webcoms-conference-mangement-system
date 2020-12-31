@@ -47,8 +47,8 @@
       <li><a href="addnotemplates.php">Add notification templates</a></li>
       <li><a href="upudetauls.php">Upload User Details</a></li>
 	    <li><a href="registerUsers.php">User Registration</a></li>
-	    <li><a href="updateprofile.php">Update Profile</a></li>
-      <!--<li><a href="con_change_password.php">Change Password</a></li>-->
+	    <!--<li><a href="updateprofile.php">Update Profile</a></li>
+      <li><a href="con_change_password.php">Change Password</a></li>-->
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
     </ul>

@@ -169,12 +169,12 @@
 
 
 			<li><a class="active" href="publicationchairhomepage.php">Home</a></li>
-			<li><a href="publishSubmissionGuidelines.php">Upload Guidelines For Paper Submission</a></li>
+			<!--<li><a href="publishSubmissionGuidelines.php">Upload Guidelines For Paper Submission</a></li>
 			<li><a href="uploadcoversub.php">Upload Pages</a></li>
 			<li><a href="viewcamerareadycopies.php">View Camera-ready copy</a></li>
 			<li><a href="autoproceeding.php">Auto generate proceeding</a></li>
 	    	        <li><a href="updateprofile.php">Update Profie</a></li>
-      <!--<li><a href="pub_change_password.php">Change Password</a></li>-->
+      <li><a href="pub_change_password.php">Change Password</a></li>-->
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
 
