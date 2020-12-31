@@ -9,7 +9,11 @@
         $_SESSION['conId'] = $_GET['viewRPaper_cid'];
         header('location:submittedRPaperList.php');
     }
-
+    if(isset($_GET['ConfGuid_Id'])){
+      $_SESSION['c_id'] = $_GET['ConfGuid_Id'];
+      header('location:ViewConfGuidelines.php');
+  }
+    // ConfGuid_Id
     // Downloads files
     if (isset($_GET['downPId'])) {
       $id = $_GET['downPId'];
