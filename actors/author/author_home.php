@@ -170,7 +170,7 @@ $(document).ready(function(){
 		while ($row = $result-> fetch_assoc()){
 
 	    echo "</tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"];
-      echo "<td><a href='routeforConfGuidelines.php?Conf_Id=". $row['id'] . "&Conf_Name=". $row['name'] . " '    class='conListLink' > View </a></td>";
+      echo "<td><a href='route.php?ConfGuid_Id=". $row['id'] . "&Conf_Name=". $row['name'] . " '    class='conListLink' > View </a></td>";
 
       echo "<td><a href='papersubmission.php?c_id=". $row['id'] ." ' title='submit paper' class='linkDec'><span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a></td>";
 
