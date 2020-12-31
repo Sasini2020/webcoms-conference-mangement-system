@@ -53,4 +53,25 @@
       $_SESSION['showReviewREmail'] = $_GET['showReviewREmail'];
       header('location:showReviewerReview.php');
     }
+
+    if(isset($_GET['acceptRPaper'])){
+      $rpId = $_GET['acceptRPaper'];
+
+      $query = mysqli_query($con,"update researchpaper set acceptancy=1 where idrp=$rpId");
+      header('location:reaserchPaperList.php');
+    }
+
+    if(isset($_GET['rejectRPaper'])){
+      $rpId = $_GET['rejectRPaper'];
+
+      $query = mysqli_query($con,"update researchpaper set acceptancy=2 where idrp=$rpId");
+      header('location:reaserchPaperList.php');
+    }
+
+    if(isset($_GET['pendingRPaper'])){
+      $rpId = $_GET['pendingRPaper'];
+
+      $query = mysqli_query($con,"update researchpaper set acceptancy=0 where idrp=$rpId");
+      header('location:reaserchPaperList.php');
+    }
 ?>

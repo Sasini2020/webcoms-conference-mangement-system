@@ -112,6 +112,8 @@
   font-weight: bold;
   color: #009879;
 }
+
+
  
 </style>
 
@@ -176,7 +178,13 @@
           <td><?= $row['aConNum'] ?></td>
           <td><i class="fas fa-file-download" style="color:#1F618D;"></i><b> </b><a style="text-decoration:none;color:#1F618D" href="route.php?downPId=<?= $row['p_id'] ?>">Download</a></td>
           <td><a href="route.php?assignRPId=<?= $row['p_id'] ?>&rPtitle=<?= $row['Title'] ?>" class="conListLink">Select</a></td>
-          <td></td>
+          <td>
+            <a href="route.php?acceptRPaper=<?= $row['p_id'] ?>" style="text-decoration:none;color:#1F618D" ><i class="fa fa-check" aria-hidden="true" style="color:#1F618D"></i><b> </b>Accept</a>
+              <br><br>
+            <a href="route.php?rejectRPaper=<?= $row['p_id'] ?>" style="text-decoration:none;color:#1F618D" ><i class="fa fa-times" aria-hidden="true"></i><b> </b>Reject</a>
+            <br><br>
+            <a href="route.php?pendingRPaper=<?= $row['p_id'] ?>" style="text-decoration:none;color:#1F618D" ><b> </b>Pending</a>
+          </td>
           <td>
             <?php
               /* show paper acceptancy or rejection flag
@@ -185,6 +193,12 @@
                2 = Reject */
               if($row['p_acceptancy'] == 0){
                 echo '---';
+              }
+              elseif($row['p_acceptancy'] == 1){
+                echo 'Accept';
+              }
+              elseif($row['p_acceptancy'] == 2){
+                echo 'Reject';
               }
             ?>
           </td>
