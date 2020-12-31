@@ -181,7 +181,7 @@
 
       // edit review button
       if($file['isRved'] == 1){
-        echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='#.php?editReviewRP_id=".$file['idrp']."&RP_title=".$file['title']."' 
+        echo "<i class='fas fa-pen' style='color:#1A5276'></i><a href='route.php?editReviewRP_id=".$file['idrp']."&RP_title=".$file['title']."' 
         style='color:#1A5276; text-decoration:none;'> Edit Review </a>";
       }
       else{

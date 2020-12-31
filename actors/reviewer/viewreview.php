@@ -20,11 +20,13 @@
 	    max-width: 1600px;
 	    padding: 20px 12px 10px 20px;
 	    font: 15px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      font-weight: bold;
     }
     .dlStyle dd{
       margin-left:40px;
       margin-top:20px;
       margin-bottom: 20px;
+      font-weight: normal;
     }
 
     .dlStyle .required{
