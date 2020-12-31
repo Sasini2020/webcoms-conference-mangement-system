@@ -66,7 +66,7 @@
               <i class="fas fa-bars"></i>
             </label>
     <ul>
-      <li><a href="author_home.php">Home</a></li>
+      <li><a href="author_home.php">Back</a></li>
       <!--<li><a href="viewConferencesForCC.php">View Conf</a></li>-->
      
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
@@ -112,10 +112,14 @@
   <?php foreach ($files as $file): ?>
     
       <!-- <td><?php// echo $file['conf_id']; ?></td>
-      <td><?php //echo $file['name']; ?></td>
-      <td><?php //echo floor($file['size'] / 1000) . ' KB'; ?></td> -->
+      <td><?php 
+      //echo $file['name'];
+       ?></td>
+      <td><?php 
+      //echo floor($file['size'] / 1000) . ' KB'; 
+      ?>
+      </td> -->
       <a id="button" class="button"  href="../../uploads/conferenceGuidelines/<?php echo $file['name']; ?>" target="_blank"><i style="color:white;margin-right:10px;" class="fas fa-link" ></i>View Conference Guidelines</a></td>
-
     
   <?php endforeach;?>
 
