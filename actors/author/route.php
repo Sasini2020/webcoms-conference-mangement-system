@@ -11,6 +11,8 @@
     }
     if(isset($_GET['ConfGuid_Id'])){
       $_SESSION['c_id'] = $_GET['ConfGuid_Id'];
+      $_SESSION['c_name'] = $_GET['Conf_Name'];
+
       header('location:ViewConfGuidelines.php');
   }
     // ConfGuid_Id
