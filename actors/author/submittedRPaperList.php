@@ -18,25 +18,25 @@
    <link rel="stylesheet" href="../../css/table_style.css">
 
 
-  <title>My Submitted Reaserch Paper List</title>
+  <title>My Submitted Reaserch Papers List</title>
 
 <style>
 
-
 .conListLink{
   color:white;
-  text-shadow: 1px 1px 0 #444;
+  /* text-shadow: 1px 1px 0 #444; */
 }
 
 .conListLink:link,
 .conListLink:link:visited{
-  background-color: #00ccff;
+  background-color: dodgerblue;
   color: white;
-  padding: 10px 20px;
-  width:130px;
+  padding: 7px 15px;
+  width:110px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border-radius:6px;
 }  
 
 .conListLink:hover, 
@@ -46,6 +46,7 @@
 
 .content-table {
   border-collapse: collapse;
+  color:black;
   margin: 25px 0;
   font-size: 0.9em;
   min-width: 1400px;
@@ -119,11 +120,14 @@
         <th>Other Authors</th>
         <th>Download</th>
         <th>Acceptancy</th>
+        <th>View Camera-Ready <br>Submission Guidelines</th>
         <th>Submit Camera Ready</th>
     </thead>
     <tbody>
       <?php
+
         $conId = $_SESSION['conId'];
+        $conName=$_SESSION['conName'];
         $aEmail = $_SESSION['au_email'];
 
         $queryResult = mysqli_query($con,"select * from researchpaper
@@ -147,6 +151,12 @@
               if($row['acceptancy'] == 0){
                 echo '';
               }
+            ?>
+          </td>
+         
+          <td>
+            <?php 
+              echo "<a href='route.php?CamSubGuid_Id=". $conId. " &CamSubGuid_Name=".$conName." '    class='conListLink' > View </a>";
             ?>
           </td>
           <td></td>
