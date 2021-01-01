@@ -17,82 +17,35 @@
 
    <link rel="stylesheet" href="../../css/table_style.css">
 
-   
-    <!--<link rel="stylesheet" href="../../css/main_style.css">-->
 
-<!--<link rel="stylesheet" href="../../css/main_style.css">-->
-<!-- Added css to style tag to style table -->
-<!--<style>
-
-
-
-.content-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.content-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
-  font-weight: bold;
-}
-
-.content-table th,
-.content-table td {
-  padding: 12px 15px;
-}
-
-.content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.content-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
-
-.content-table tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
-}
- 
-</style>-->
 
 <style>
 
 
 .conListLink{
   color:white;
-  text-shadow: 1px 1px 0 #444;
+  /* text-shadow: 1px 1px 0 #444; */
 }
 
 .conListLink:link,
 .conListLink:link:visited{
-  background-color: #00ccff;
+  background-color: dodgerblue;
   color: white;
-  padding: 10px 20px;
-  width:130px;
+  padding: 7px 15px;
+  width:110px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border-radius:6px;
 }  
 
 .conListLink:hover, 
 .conListLink:active {
   background-color: #00b8e6;
 }
-
 .content-table {
   border-collapse: collapse;
+  color:black;
   margin: 25px 0;
   width: 1300px;
   font-size: 0.9em;
@@ -115,7 +68,7 @@
 }
 
 .content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid dodgerblue;
 }
 
 .content-table tbody tr:nth-of-type(even) {
@@ -123,7 +76,7 @@
 }
 
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid dodgerblue;
 }
 
 .content-table tbody tr.active-row {
@@ -145,13 +98,7 @@
 
 
   </style>
-
-
-
-
 </head>
-
-	
 <body>
 
 <nav>
@@ -183,10 +130,10 @@
   </nav>
 
   <br><br>
-
-
-	
 	<div>
+
+  <h2 style="margin-left:20px;">My Conferences </h2>
+
 		<center>
     
     <table class="content-table">
@@ -200,6 +147,7 @@
     <th>Start date</th>
     <th>End date</th>
     <th>Select</th>
+    <th>Upload Camera-Ready <br>  Submission Guidelines</th>
     </tr>
 </thead>
 
@@ -228,7 +176,15 @@
       <td><?=$row['start_date']?></td>
       <td><?=$row['end_date']?></td>
       <td>
-                <a href="#" class="conListLink">Select</a>
+        <a href="#" class="conListLink">Select</a>
+      </td>
+      <td>
+        <!-- <a href=" route.php?SubGuid_Id='$row['id'] ' " class="conListLink">Upload</a> -->
+      <?php 
+            echo "<a href='route.php?CamSubGuid_Id=". $row['id'] . "&Conf_Name=". $row['name'] . " '    class='conListLink' > Upload </a>";
+
+      ?>
+      
       </td>
       
 
