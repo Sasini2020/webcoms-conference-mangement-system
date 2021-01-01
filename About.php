@@ -49,10 +49,10 @@
                 <h3>User Roles</h3>
 
                 <!-- For actors -->
-                <div class="post">
+                <!-- <div class="post">
                   <i class="fas fa-user-shield"></i>
                   <span>Admin</span>
-                </div>
+                </div> -->
                 <div class="post">
                   <i class="fas fa-user-cog"></i>
                   <span>Conference-Chair</span>
