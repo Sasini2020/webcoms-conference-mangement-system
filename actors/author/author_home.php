@@ -175,7 +175,7 @@ $(document).ready(function(){
 
       echo "<td><a href='papersubmission.php?c_id=". $row['id'] ." ' title='submit paper' class='linkDec'><span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a></td>";
 
-      echo "<td><a href='route.php?viewRPaper_cid=". $row['id'] ."' class='conListLink'>View</a></td>";
+      echo "<td><a href='route.php?viewRPaper_cid=". $row['id'] . "&con_Name=". $row['name'] . "' class='conListLink'>View</a></td>";
 		
        
     }
@@ -199,12 +199,6 @@ $(document).ready(function(){
 	<div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
 	</div>
-
-
-
-
-
-
 
 </body>
 </html>
