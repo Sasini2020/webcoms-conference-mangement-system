@@ -85,7 +85,7 @@
               <i class="fas fa-bars"></i>
             </label>
     <ul>
-      <li><a href="conferencechairhomepage.php">Home</a></li>
+      <li><a href="conferencechairhomepage.php">Back to Home</a></li>
       <!-- <li><a href="create_conference.php">Request Conference</a></li>
       <li><a href="addnotemplates.php">Notification templates</a></li>
       <li><a href="upudetauls.php">Upload User Details</a></li>
@@ -134,12 +134,12 @@
 
 <table class="content-table">
 <thead>
-    <th>Conference ID</th>
-    <!-- <th>Conference Name</th> -->
+    <!--<th>Number</th>
+     <th>Conference Name</th> -->
     <th>Guidelines File </th>
     <th>File size (in KB)</th>
     <th>View</th>
-    <th>Delete</th>
+    <!--<th>Delete</th>-->
 
 </thead>
 <tbody>
@@ -148,13 +148,13 @@
     
   <?php foreach ($files as $file): ?>
     <tr>
-      <td><?php echo $file['conf_id']; ?></td>
+      <!--<td><?php //echo $file['conf_id']; ?></td>-->
       <td><?php echo $file['name']; ?></td>
       <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
       <td><i style="color:#1A5276" class="fas fa-eye"></i><a style="color:#1A5276 ;text-decoration:none;margin-right:10px;" href="../../uploads/conferenceGuidelines/<?php echo $file['name']; ?>" target="_blank">View file</a></td>
-      <!-- delete is not working yet complete it -->
-      <td><i style="color:red" class="fas fa-trash-alt"></i><a href="reject.php?op=delete&name=<?php echo $row['name']; ?>" style="color:red;text-decoration:none;">Delete file</a></td>
-
+      <!-- delete is not working yet complete it 
+      <td><i style="color:red" class="fas fa-trash-alt"></i><a href="reject.php?op=delete&name=<?php //echo $row['name']; ?>" style="color:red;text-decoration:none;">Delete file</a></td>-->
+      
     </tr>
   <?php endforeach;?>
 

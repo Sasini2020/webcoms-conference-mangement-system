@@ -2,7 +2,9 @@
 // connect to the database
 $conn = $con;
 
-$sql = "SELECT * FROM conferenceguidelinedetails";
+$c_id = $_SESSION['c_id'];
+
+$sql = "SELECT * FROM conferenceguidelinedetails where conf_id=$c_id";
 
 $result = mysqli_query($conn, $sql);
 
@@ -34,9 +36,9 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
         if(move_uploaded_file($file, $destination)) {
 
         
-            $c_id = $_SESSION['c_id'];
+            
 
-            $query1="select * from conferenceguidelinedetails where conf_id='$c_id' ";
+            $query1="select * from conferenceguidelinedetails where conf_id=$c_id ";
             $query1_run=mysqli_query($con,$query1);
             if(mysqli_num_rows($query1_run)>0){
                 echo '<script type="text/javascript">alert("This conference has been already uploaded conference guidelines..!!")</script>';
@@ -48,7 +50,12 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
                
                 if (mysqli_query($conn, $sql)) {
                     // echo "File uploaded successfully";
-                    echo '<script type="text/javascript"> alert("Conference Guidelines was uploaded successfully!!") </script>';
+                    echo '<script type="text/javascript"> 
+                    if (window.confirm("Registration Successfully")) 
+                    {
+                    window.location.href="publish_conf_guidelines.php";
+                    };
+                  </script>';
     
                 }
             }
