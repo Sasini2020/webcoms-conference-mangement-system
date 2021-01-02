@@ -149,7 +149,13 @@
                1 = Accept
                2 = Reject */
               if($row['acceptancy'] == 0){
-                echo '';
+                echo 'Pending';
+              }
+              elseif($row['acceptancy'] == 1){
+                echo 'Accept';
+              }
+              elseif($row['acceptancy'] == 2){
+                echo 'Reject';
               }
             ?>
           </td>
