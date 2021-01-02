@@ -99,11 +99,16 @@
 <br><br><br><br>
 <center>
   
-<button class="btn" id="btnex" >  Report Download    <i class="fa fa-download"></i></button>
+<button onclick="myfunction()" class="btn" id="btnex" >  Report Download    <i class="fa fa-download"></i></button> 
+
+ <script> function myfunction(){
+    alert("Report Download Successfully");
+
+ }</script>
 	<table id="dpdf" class="content-table">
 	
 	<thead>
-	
+
 		<tr>
 		<th>Full name</th>
 		<th>Email</th>
@@ -143,9 +148,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
   
-  
 
- 
   <script type="text/javascript">
         $("body").on("click", "#btnex", function () {
             html2canvas($('#dpdf')[0], {
@@ -158,14 +161,13 @@
                         }]
                     };
                     pdfMake.createPdf(docDefinition).download("author-details.pdf");
+                   
+
                 }
             });
         });
     </script>
  
-
-
-	
 
 	<br/>	
 
