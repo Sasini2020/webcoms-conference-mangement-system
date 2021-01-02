@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="../../css/about_help_styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<style>
 
 
@@ -56,6 +58,21 @@
   color: #009879;
 }
 
+.btn{
+
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.btn:hover{
+
+
+	background-color: RoyalBlue;
+}
+
 </style>
 </head>
 <body>	
@@ -79,11 +96,12 @@
 
 	</nav>
 
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
 <center>
   
-<input  type="button" id="btnExport" value="Report Download" name="rest" /><br><br>
-	<table class="content-table">
+<!--<input  class="btn" type="button" id="btnExport" value="Report Download" name="rest" /><br><br>-->
+<button class="btn" id="btnex" >  Report Download    <i class="fa fa-download"></i></button>
+	<table id="dpdf" class="content-table">
 	
 	<thead>
 	
@@ -122,6 +140,7 @@
 	?>
 	
 	</table>
+	
 
 	<br/>	
 
