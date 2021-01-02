@@ -81,8 +81,12 @@
 
 <br><br><br><br><br><br><br><br><br><br>
 <center>
+  
+<input  type="button" id="btnExport" value="Report Download" name="rest" /><br><br>
 	<table class="content-table">
+	
 	<thead>
+	
 		<tr>
 		<th>Full name</th>
 		<th>Email</th>
