@@ -65,4 +65,37 @@
     $_SESSION['rPaperId'] = $_GET['submiteCameraReadyRPId'];
     header('location:cameraReadySubmission.php');
   }
+
+  if(isset($_GET['viewSubmittedCameraReadyPId'])){
+    $_SESSION['rPaperId'] = $_GET['viewSubmittedCameraReadyPId'];
+    header('location:viewSubmittedCameraReady.php');
+  }
+
+  //camera ready download
+  if (isset($_GET['downCameraReadyPId'])) {
+    $id = $_GET['downCameraReadyPId'];
+
+    // fetch file to download from database
+    $sql = "SELECT * FROM camera_ready_research_paper WHERE id=$id";
+    $result = mysqli_query($con, $sql);
+
+    $file = mysqli_fetch_assoc($result);
+    $filepath = '../../uploads/cameraReadyUploads/' . $file['NameOfFile'];
+
+    if (file_exists($filepath)) {
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename=' . basename($filepath));
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize('../../uploads/cameraReadyUploads/' . $file['NameOfFile']));
+        readfile('../../uploads/cameraReadyUploads/' . $file['NameOfFile']);
+
+        exit;
+    }
+
+    header('location:viewSubmittedCameraReady.php');
+    
+  }
 ?>

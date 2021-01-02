@@ -117,7 +117,6 @@
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
     </ul>
   </nav>
-<body>
   
 <br>
 <div>
@@ -135,6 +134,7 @@
         <th>Acceptancy</th>
         <th>View Camera-Ready <br>Submission Guidelines</th>
         <th>Submit Camera Ready</th>
+        <th>View Submitted Camera Ready</th>
     </thead>
     <tbody>
       <?php
@@ -195,6 +195,16 @@
                   <span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a>"; 
                 }
               ?>
+          </td>
+          <td>
+                <?php
+                  if(($row['acceptancy'] == 1) and ($row['isCameraReadyUpload'] == 1)){
+                    echo "<a href='route.php?viewSubmittedCameraReadyPId=".$row['idrp']."' class='conListLink' > View </a>";
+                  }
+                  else{
+                    echo "<a href='route.php?viewSubmittedCameraReadyPId=".$row['idrp']."' class='conListLink isDisable' > View </a>";
+                  }
+                ?>
           </td>
       </tr>
 
