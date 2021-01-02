@@ -83,6 +83,19 @@
   font-weight: bold;
   color: #009879;
 }
+
+.isDisable{
+  color:currentColor;
+  cursor:default;
+  pointer-events:none;
+  opacity:0.5;
+  text-decoration:none;
+}
+
+.linkDec, .link:visited{
+  text-decoration:none;
+  color:currentColor;
+}
  
 </style>
 
@@ -165,7 +178,24 @@
               echo "<a href='route.php?CamSubGuid_Id=". $conId. " &CamSubGuid_Name=".$conName." '    class='conListLink' > View </a>";
             ?>
           </td>
-          <td></td>
+          <td>
+              <?php
+                if($row['acceptancy'] == 1){
+                  if($row['isCameraReadyUpload'] == 0){
+                    echo "<a href='route.php?submiteCameraReadyRPId=".$row['idrp']." ' title='Submit Camera Ready Reaserch Paper' 
+                    class='linkDec'>
+                    <span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a>"; 
+                  }
+                  elseif($row['isCameraReadyUpload'] == 1){
+                    echo 'Submitted';
+                  }
+                }else{
+                  echo "<a href='route.php?submiteCameraReadyRPId=".$row['idrp']." ' title='Submit Camera Ready Reaserch Paper' 
+                  class='linkDec isDisable'>
+                  <span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a>"; 
+                }
+              ?>
+          </td>
       </tr>
 
       <?php 

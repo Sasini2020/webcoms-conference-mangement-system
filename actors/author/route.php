@@ -59,4 +59,10 @@
     header('location:viewCamSubGuidelines.php');
 
     }
+
+  // Go to camera ready submission page
+  if(isset($_GET['submiteCameraReadyRPId'])){
+    $_SESSION['rPaperId'] = $_GET['submiteCameraReadyRPId'];
+    header('location:cameraReadySubmission.php');
+  }
 ?>

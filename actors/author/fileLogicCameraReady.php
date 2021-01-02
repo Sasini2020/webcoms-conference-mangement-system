@@ -1,20 +1,20 @@
 <?php
 // connect to the database
-$conn = mysqli_connect('localhost', 'root', '', 'webcomsdb');
+$conn = $con;
 
 // $sql = "SELECT name,size,downloads,full_name,university,contact_details,other_links FROM fileuploadtable";
-$sql = "SELECT crc_id,name,size,downloads,title,abstract FROM camerareadycopypaper";
+//$sql = "SELECT crc_id,name,size,downloads,title,abstract FROM camerareadycopypaper";
 
-$result = mysqli_query($conn, $sql);
+//$result = mysqli_query($conn, $sql);
 
-$files = mysqli_fetch_all($result, MYSQLI_ASSOC);
+//$files = mysqli_fetch_all($result, MYSQLI_ASSOC);
 // Uploads files
 if (isset($_POST['save'])) { // if save button on the form is clicked
     // name of the uploaded file
     $filename = $_FILES['myfile']['name'];
 
     // destination of the file on the server
-    $destination = '../../cameraReadyUploads/' . $filename;
+    $destination = '../../uploads/cameraReadyUploads/' . $filename;
 
     // get the file extension
     $extension = pathinfo($filename, PATHINFO_EXTENSION);
@@ -40,13 +40,24 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
         // move the uploaded (temporary) file to the specified destination
         if(move_uploaded_file($file, $destination)) {
 
+            $rPaperId = $_SESSION['rPaperId'];
+            $conferenceId = $_SESSION['conId'];
+            $authorEmail = $_SESSION['au_email'];
             //I inserted values in a different special way
-            $sql = "INSERT INTO camerareadycopypaper(name, size, downloads,title,abstract) VALUES ('$filename', $size, 0,'$_POST[title]','$_POST[abstract]')";
+            $sql = "INSERT INTO camera_ready_research_paper VALUES (NULL,'$_POST[title]','$_POST[abstract]','$_POST[OtherAutherE]',
+            '$filename', $size, $rPaperId, $conferenceId,'$authorEmail')";
            
             if (mysqli_query($conn, $sql)) {
-                // echo "File uploaded successfully";
-                echo '<script type="text/javascript"> alert("Your paper was submitted successfully!!") </script>';
-
+                
+                $query2 = mysqli_query($conn,"update researchpaper set isCameraReadyUpload=1 where idrp=$rPaperId");
+                if($query2){
+                    echo '<script type="text/javascript"> 
+                        if (window.confirm("Research Paper Uploaded Successfully")) 
+                        {
+                        window.location.href="submittedRPaperList.php";
+                        };
+                    </script>';
+                }
             }
         }
          else {
