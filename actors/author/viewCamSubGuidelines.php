@@ -66,7 +66,7 @@
               <i class="fas fa-bars"></i>
             </label>
     <ul>
-      <li><a href="submittedRPaperList.php">Back</a></li>
+      <li><a href="author_home.php">Back</a></li>
       <!--<li><a href="viewConferencesForCC.php">View Conf</a></li>-->
      
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>

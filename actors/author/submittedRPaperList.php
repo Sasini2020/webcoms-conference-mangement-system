@@ -132,7 +132,7 @@
         <th>Other Authors</th>
         <th>Download</th>
         <th>Acceptancy</th>
-        <th>View Camera-Ready <br>Submission Guidelines</th>
+        <!--<th>View Camera-Ready <br>Submission Guidelines</th>-->
         <th>Submit Camera Ready</th>
         <th>View Submitted Camera Ready</th>
     </thead>
@@ -173,11 +173,11 @@
             ?>
           </td>
          
-          <td>
+          <!--<td>
             <?php 
-              echo "<a href='route.php?CamSubGuid_Id=". $conId. " &CamSubGuid_Name=".$conName." '    class='conListLink' > View </a>";
+              //echo "<a href='route.php?CamSubGuid_Id=". $conId. " &CamSubGuid_Name=".$conName." '    class='conListLink' > View </a>";
             ?>
-          </td>
+          </td>-->
           <td>
               <?php
                 if($row['acceptancy'] == 1){

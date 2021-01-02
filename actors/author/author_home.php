@@ -74,6 +74,7 @@ $(document).ready(function(){
 .content-table th,
 .content-table td {
   padding: 12px 15px;
+  min-width:180px;
 }
 
 .content-table tbody tr {
@@ -139,6 +140,7 @@ $(document).ready(function(){
 	   <th>Conference Start Date</th>
 	   <th>Paper Submission Due Date</th>
 	   <th>Conference Guidelines</th>
+     <th>View Camera-Ready <br>Submission Guidelines</th>
 	   <th>Submit Research Paper</th>
 	   <th>Submitted Research Papers</th>
 
@@ -173,6 +175,7 @@ $(document).ready(function(){
 	    echo "</tr><td>". $row["name"] ."</td><td>". $row["venue"] ."</td><td>". $row["start_date"] ."</td><td>". $row["end_date"];
       echo "<td><a href='route.php?ConfGuid_Id=". $row['id'] . "&Conf_Name=". $row['name'] . " '    class='conListLink' > View </a></td>";
 
+      echo "<td><a href='route.php?CamSubGuid_Id=". $row['id'] . "&CamSubGuid_Name=". $row['name'] . " '    class='conListLink' > View </a></td>";
       echo "<td><a href='papersubmission.php?c_id=". $row['id'] ." ' title='submit paper' class='linkDec'><span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a></td>";
 
       echo "<td><a href='route.php?viewRPaper_cid=". $row['id'] . "&con_Name=". $row['name'] . "' class='conListLink'>View</a></td>";

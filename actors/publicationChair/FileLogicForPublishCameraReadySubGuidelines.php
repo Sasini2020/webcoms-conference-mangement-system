@@ -3,8 +3,9 @@
 <?php
 // connect to the database
 $conn = $con;
+$c_id = $_SESSION['c_id'];
 
-$sql = "SELECT * FROM camera_ready_submission_guidelines";
+$sql = "SELECT * FROM camera_ready_submission_guidelines where conf_id=$c_id";
 
 $result = mysqli_query($conn, $sql);
 
@@ -36,9 +37,9 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
         if(move_uploaded_file($file, $destination)) {
 
         
-            $c_id = $_SESSION['c_id'];
+            
 
-            $query1="select * from camera_ready_submission_guidelines where conf_id='$c_id' ";
+            $query1="select * from camera_ready_submission_guidelines where conf_id=$c_id ";
             $query1_run=mysqli_query($con,$query1);
             if(mysqli_num_rows($query1_run)>0){
                 echo '<script type="text/javascript">alert("This conference has been already uploaded camera ready submission guidelines..!!")</script>';
@@ -50,7 +51,12 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
                
                 if (mysqli_query($conn, $sql)) {
                     // echo "File uploaded successfully";
-                    echo '<script type="text/javascript"> alert("Camera Ready Submission Guidelines was uploaded successfully!!") </script>';
+                    echo '<script type="text/javascript"> 
+                    if (window.confirm("Registration Successfully")) 
+                    {
+                    window.location.href="camera_ready_sub_guidelines.php";
+                    };
+                  </script>';
     
                 }
             }
