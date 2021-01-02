@@ -6,7 +6,7 @@
     require '../../dbconfig/config.php';
 ?>
 <!-- Accessing the FilesLogic.php -->
-<?php include 'fileLogicCameraReady.php';?>
+<?php //include 'fileLogicCameraReady.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -146,7 +146,7 @@
     <th>Country</th>
     <th>Start date</th>
     <th>End date</th>
-    <th>Select</th>
+    <th>Submitted Camera<br> Ready Papers</th>
     <th>Upload Camera-Ready <br>  Submission Guidelines</th>
     </tr>
 </thead>
@@ -158,7 +158,9 @@
    
    $p_email=$_SESSION['p_email'];
    
-   $sql=mysqli_query($con,"SELECT conferences.name,conferences.venue,conferences.country,conferences.start_date,conferences.end_date,conference_and_publicationchair.conferenceId,conference_and_publicationchair.publicationChairEmail,conferences.id
+   $sql=mysqli_query($con,"SELECT conferences.name,conferences.venue,conferences.country,conferences.start_date,
+   conferences.end_date,conference_and_publicationchair.conferenceId,conference_and_publicationchair.publicationChairEmail,
+   conferences.id
    from conferences LEFT JOIN  conference_and_publicationchair ON conferences.id=conference_and_publicationchair.conferenceId
    WHERE conference_and_publicationchair.publicationChairEmail='$p_email';") or die(mysqli_error($con));
    $counter=1;
@@ -176,7 +178,7 @@
       <td><?=$row['start_date']?></td>
       <td><?=$row['end_date']?></td>
       <td>
-        <a href="#" class="conListLink">Select</a>
+        <a href="route.php?cameraReadyConfId=<?=$row['id']?>" class="conListLink">View</a>
       </td>
       <td>
         <!-- <a href=" route.php?SubGuid_Id='$row['id'] ' " class="conListLink">Upload</a> -->

@@ -3,9 +3,8 @@
     if($_SESSION['login_s'] != '6'){
         header('location:../../login.php');
     }
+    require '../../dbconfig/config.php';
 ?>
-<!-- Accessing the FilesLogic.php -->
-<?php include 'fileLogicCameraReady.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +21,7 @@
 
    <link rel="stylesheet" href="../../css/table_style.css">
 
-  <title>Uploaded camera ready copies</title>
+  <title>Submitted Camera Ready Copies</title>
 
   <style>
 
@@ -48,6 +47,7 @@
 .content-table th,
 .content-table td {
   padding: 12px 15px;
+  min-width:130px;
 }
 
 .content-table tbody tr {
@@ -79,102 +79,58 @@
                 <i class="fas fa-bars"></i>
               </label>
     <ul>
-      <li><a href="publicationchairhomepage.php">Home</a></li>
-			<li><a href="publishSubmissionGuidelines.php">Upload Guidelines For Paper Submission</a></li>
-			<li><a href="uploadcoversub.php">Upload Pages</a></li>
-			<li><a class="active" href="viewcamerareadycopies.php">View Camera-ready copy</a></li>
-			<li><a href="autoproceeding.php">Auto generate proceeding</a></li>
+      <li><a href="publicationchairhomepage.php">Back to Home</a></li>
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
     </ul>
   </nav>
 <h2></h2><br>
 <center>
-<h2 style="color:#283747 ;margin-left:20px;">Uploaded camera ready copies</h2><br>
+<h2 style="color:#283747 ;margin-left:20px;">Submitted Camera Ready Copies</h2><br>
 <!-- <p style="color:#283747 ;margin-left:20px;">As publownload final camera-ready copies and generate proceeding preparation</p> -->
 
 <table class="content-table">
-<thead>
-    <!-- file id -->
-    <th>ID </th> 
-    <!-- <th>Author's name</th> -->
-    <th>Paper Title</th>
-    <th>File</th>
-    <th>Conference name</th>
-    <th>University(Author)</th>
-    <th>File size (in KB)</th>
-    <!-- <th>Contact details</th>
-    <th>Other links</th> -->
-    <th>Downloads</th>
-    <th>Action</th>
-    <th>Action</th>
-    <th>Action</th>
-
-
-</thead>
-<tbody>
-  <?php foreach ($files as $file): ?>
+  <thead>
     <tr>
-      <td><?php echo $file['crc_id']; ?></td>
-      <td><?php echo $file['title']; ?></td>
-      <td><?php echo $file['name']; ?></td>
-  
-  
-      <!-- show conference name here in below php tag -->
-      <td><?php ?></td>
-      <td><?php ?></td>
-
-      <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
-      <td><?php echo $file['downloads']; ?></td>
-      
-      <td><i class="fas fa-download" style="color:dodgerblue;" ></i><a style="text-decoration:none;color:dodgerblue;" href="viewcamerareadycopies.php?file_id=<?php echo $file['crc_id'] ?>"> Download </a></td>
-      
-      <form action="viewcamerareadycopies.php" method="post">
-
-       <td><i style="color:red" class="fas fa-trash-alt"></i><input style="color:red;text-decoration:none;" name="action" type="submit" value="Reject"/></td>
-       <td><i style="color:#2ECC71" class="fas fa-share-square"></i><input style="color:green;text-decoration:none;" name="action" type="submit" value="Accept" /></td>
-           <input type="hidden" name="crc_id" value="<?php echo $file['crc_id']; ?>"  />
-           <input type="hidden" name="button" value="<?php echo $file['button'];?>" />
-      </form>
-      <!--<td><i style="color:red" class="fas fa-trash-alt"></i><a href="#"style="color:red;text-decoration:none;">Reject</a></td>
-      <td><i style="color:#2ECC71 " class="fas fa-share-square"></i><a href="#" style="color:green;text-decoration:none;">Accept</a></td>-->
+      <th>Number</th>
+      <th>Paper Title</th>
+      <th>Abstract</th>
+      <th>Author Name</th>
+      <th>Organization</th>
+      <th>Other Authors</th>
+      <th>Download Paper</th>
     </tr>
- 
+  </thead>
+  <tbody>
+  <?php
+    $confId = $_SESSION['conf_id'];
 
-</tbody>
-<?php endforeach;?>
+    $query_result = mysqli_query($con,"select crrp.id as Id, crrp.title as Title, crrp.abstract as Abstract, a.fullname as aName,
+    a.organization as Organization, crrp.otherAuthorDetails as otherAthors
+    from camera_ready_research_paper as crrp, author as a
+    where (crrp.conferenceId = $confId) and (crrp.authorEmail=a.emailauthor)");
 
-<?php
-   if(isset($_POST['action'])&& isset($_POST['crc_id'])){
+    $count = 1;
+    while($row = mysqli_fetch_assoc($query_result)){
+  ?>
+  <tr>
+      <td><?= $count ?></td>
+      <td><?= $row['Title'] ?></td>
+      <td><?= $row['Abstract'] ?></td>
+      <td><?= $row['aName'] ?></td>
+      <td><?= $row['Organization'] ?></td>
+      <td><?= $row['otherAthors'] ?></td>
+      <td>
+      <i class="fas fa-file-download" style="color:#1F618D;"></i><b> </b><a style="text-decoration:none;color:#1F618D" 
+      href="route.php?downCameraRPId=<?= $row['Id']  ?> ">Download</a>
+      </td>
+  </tr>
 
-      if($_POST['action']=='Reject'){
-        $p_id=$_POST['crc_id'];
-              if($_POST['button']=='1'){
-                  echo '<script type="text/javascript">alert("Already  Rejected")</script>';
-
-              }else{
-                   $qr=mysqli_query($conn,"update camerareadycopypaper set button='1' where crc_id='$p_id'");
-                   echo '<script type="text/javascript">alert("Rejected low quality camera ready copies ")</script>';
-
-              }
-      }
-      elseif($_POST['action']=='Accept'){
-        $p_id=$_POST['crc_id'];
-             if($_POST['button']=='2'){
-
-                 echo '<script type="text/javascript">alert("Already  Rejected")</script>';
-             }else{
-                 $qr=mysqli_query($conn,"update camerareadycopypaper set button='2' where crc_id='$p_id'");
-                 echo '<script type="text/javascript">alert("Accepted")</script>';
-
-             }
-
-      }
-
-   }
-
-
-?>
+  <?php
+    $count++; }
+  ?>
+  
+  </tbody>
 </table>
 </center>
  <!-- Footer section -->
