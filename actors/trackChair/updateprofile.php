@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require '../../dbconfig/config.php';
+  
   if($_SESSION['login_s'] != '5'){
     header('location:../../login.php');
   }
@@ -61,7 +61,7 @@
 
 <body>
 
-<nav>
+  <nav>
   <div class="logo">Web-COMS</div>
   <input type="checkbox" id="click">
   <label for="click" class="menu-btn">
@@ -105,8 +105,8 @@
       <label for="fname">Full Name:</label><br>
 			<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 			
-	 <label for="email">Email:</label><br>
-			<input id="email" name="email" type="text" class="inputvalues" placeholder="Type your current Email" required/><br>
+	 <!--<label for="email">Email:</label><br>
+			<input id="email" name="email" type="text" class="inputvalues" placeholder="Type your current Email" required/><br>-->
 			
 
 
@@ -133,17 +133,36 @@
 		<?php
 			if(isset($_POST['submit_btn']))
 			{
-				
+        require '../../dbconfig/config.php';
+          $email=$_SESSION['t_email'];
+          $aTitle = $_POST['acTitle'];
+          $fullname =$_POST['fullname'];
+				  $Organization = $_POST['Organization'];
+				  $ContactDetails = $_POST['ContactDetails'];
+          
+          $query="SELECT * from userinfotable WHERE email=? AND user_type=?;";
+              
+          $user_type='TrackChair';
+         $stmt=mysqli_stmt_init($con);
 
-                $email= $_POST['email'];
-				$aTitle = $_POST['acTitle'];
-                $fullname =$_POST['fullname'];
-				$Organization = $_POST['Organization'];
-				$ContactDetails = $_POST['ContactDetails'];
-				
+         if(!mysqli_stmt_prepare($stmt,$query)){
+                                   
+          echo "There was an error2";
+          exit();
+        }else{
+          mysqli_stmt_bind_param($stmt,"ss",$email,$user_type);
+          mysqli_stmt_execute($stmt);
+          $result=mysqli_stmt_get_result($stmt);
+
+          if(!$row=mysqli_fetch_assoc($result) ){
+                         
+              echo "There was a error3!";
+              exit();
+          }else{
+
                 $query = "UPDATE userinfotable SET full_name = '$fullname',
                 organization = '$Organization', contactdetails = '$ContactDetails'
-                WHERE email = '$email'";
+                WHERE email = '$email' AND user_type='$user_type'";
                 $query_run = mysqli_query($con,$query);
 				
 				if($query_run)
@@ -153,8 +172,9 @@
                   </script>';
                 }
 			
-					
-            }
+          }
+        } 
+      }
         ?>
 	</div>
 
