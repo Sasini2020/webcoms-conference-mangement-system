@@ -47,7 +47,7 @@
     <ul>
 <!--     <li><a href="ConferenceListForA.php">Back</a></li> -->
 	    
-    <li><a class="active" href="papersubmission.php">Submit Reseach Paper</a></li>
+    <li><a class="active" href="author_home.php">Back to Home</a></li>
 <!--     <li><a href="../../About.php">About</a></li> -->
 <!--     <li><a href="../../help.php">Help</a></li> -->
     <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>

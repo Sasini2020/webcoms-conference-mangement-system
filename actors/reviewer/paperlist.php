@@ -25,10 +25,11 @@
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 1300px;
-  border-radius: 5px 5px 0 0;
+  min-width: 100%;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  display: block;
+  overflow-x: auto;
 }
 
 .content-table thead tr {
@@ -66,6 +67,9 @@
   cursor:default;
   opacity:0.6;
 }
+.forAbstractwidth{
+  min-width:500px !important;
+}
  
 </style>
 
@@ -101,7 +105,7 @@
     <!-- file id -->
     <th>Number</th>
     <th>Paper Title</th> 
-    <th>Abstract</th>
+    <th class="forAbstractwidth">Abstract</th>
     <th>Conference Name</th>
     <th>Action</th>
     <th>Is Reviewed</th>
@@ -121,7 +125,7 @@
     FROM researchpaper as rp, reviewerandpaper as rap, conferencetrack as ct, conferences as c
     where (rap.reviewerEmail = '$rEmail') and (rap.paperId = rp.idrp) and (rp.trackID = ct.ID) and (ct.systemTrackId = $sysTrackId)
      and (rp.conferenceId = c.id)
-     order by rap.ID";
+     order by rap.ID DESC";
 
     $result = mysqli_query($conn, $query);
 
@@ -133,7 +137,7 @@
       <td><?php echo $count ?></td>
       <td><?php echo $file['title']; ?></td>
       <!-- show conference name here in below php tag -->
-      <td><?php echo $file['abstract']; ?></td>
+      <td class="forAbstractwidth"><?php echo $file['abstract']; ?></td>
       <td><?php echo $file['cName']; ?></td>
 
       <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" 

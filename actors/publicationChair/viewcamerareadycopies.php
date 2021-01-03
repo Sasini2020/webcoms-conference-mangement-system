@@ -66,6 +66,9 @@
   font-weight: bold;
   color: #009879;
 }
+.forAbstract{
+  min-width:500px !important;
+}
  
 </style>
 
@@ -94,7 +97,7 @@
     <tr>
       <th>Number</th>
       <th>Paper Title</th>
-      <th>Abstract</th>
+      <th class="forAbstract">Abstract</th>
       <th>Author Name</th>
       <th>Organization</th>
       <th>Other Authors</th>
@@ -116,7 +119,7 @@
   <tr>
       <td><?= $count ?></td>
       <td><?= $row['Title'] ?></td>
-      <td><?= $row['Abstract'] ?></td>
+      <td class="forAbstract"><?= $row['Abstract'] ?></td>
       <td><?= $row['aName'] ?></td>
       <td><?= $row['Organization'] ?></td>
       <td><?= $row['otherAthors'] ?></td>

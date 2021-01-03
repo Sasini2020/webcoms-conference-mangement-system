@@ -49,10 +49,11 @@
   color:black;
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 1400px;
-  border-radius: 5px 5px 0 0;
+  min-width: 100%;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  display:block;
+  overflow-x: auto;
 }
 
 .content-table thead tr {
@@ -65,6 +66,7 @@
 .content-table th,
 .content-table td {
   padding: 12px 15px;
+  min-width:200px;
 }
 
 .content-table tbody tr {
@@ -95,6 +97,9 @@
 .linkDec, .link:visited{
   text-decoration:none;
   color:currentColor;
+}
+.forAbstract{
+  min-width:500px !important;
 }
  
 </style>
@@ -128,7 +133,7 @@
         <!-- file id -->
         <th>Number</th>
         <th>Paper Title</th> 
-        <th>Abstract</th>
+        <th class="forAbstract">Abstract</th>
         <th>Other Authors</th>
         <th>Download</th>
         <th>Acceptancy</th>
@@ -152,7 +157,7 @@
       <tr>
           <td><?= $count ?></td>
           <td><?= $row['title'] ?></td>
-          <td><?= $row['abstract'] ?></td>
+          <td class="forAbstract"><?= $row['abstract'] ?></td>
           <td><?= $row['corautherdetails'] ?></td>
           <td><i class="fas fa-file-download" style="color:#1F618D;"></i><b> </b><a style="text-decoration:none;color:#1F618D" href="route.php?downPId=<?= $row['idrp']  ?> ">Download</a></td>
           <td>

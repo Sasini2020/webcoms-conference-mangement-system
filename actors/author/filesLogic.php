@@ -39,7 +39,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             $OtherAuthorE = $_POST['OtherAutherE'];
             $authorEmail = $_SESSION['au_email'];
             $c_id = $_SESSION['con_id'];
-
+            //echo "<script>console.log('.$abstract.');</script>";
             //I inserted values in a different special way
             $sql = "INSERT INTO researchpaper(title,abstract,NameOfFile,size,Downloads,acceptancy,trackID,conferenceId,corautherdetails,isCameraReadyUpload,emailauthor) VALUES 
             ('$title','$abstract','$filename',$size,0,0,$trackId,$c_id,'$OtherAuthorE',0,'$authorEmail')";

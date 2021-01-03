@@ -77,10 +77,12 @@
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 1400px;
-  border-radius: 5px 5px 0 0;
+  width: 100%;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  display: block;
+  overflow-x: auto;
+  
 }
 
 .content-table thead tr {
@@ -112,7 +114,9 @@
   font-weight: bold;
   color: #009879;
 }
-
+.forAbstractWidth{
+  min-width:500px !important;
+}
 
  
 </style>
@@ -147,7 +151,7 @@
         <!-- file id -->
         <th>Number</th>
         <th>Paper Title</th> 
-        <th>Abstrackt</th>
+        <th class="forAbstractWidth">Abstrackt</th>
         <th>Author name</th>
         <th>Co Authors</th>   
         <th>Organization(Author)</th>
@@ -171,7 +175,7 @@
       <tr>
           <td><?= $count ?></td>
           <td><?= $row['Title'] ?></td>
-          <td><?= $row['Abstract'] ?></td>
+          <td class="forAbstractWidth"><?= $row['Abstract'] ?></td>
           <td><?= $row['aName'] ?></td>
           <td><?= $row['coAuthors'] ?></td>
           <td><?= $row['aOrganization'] ?></td>
