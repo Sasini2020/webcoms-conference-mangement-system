@@ -1,23 +1,26 @@
 
-  .conListLink{
-    color:white;
-    text-shadow: 1px 1px 0 #444;
-  }
   
-  .conListLink:link,
-  .conListLink:link:visited{
-    background-color: #00ccff;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }  
-  
-  .conListLink:hover, 
-  .conListLink:active {
-    background-color: #00b8e6;
-  }
+.conListLink{
+  color:white;
+  /* text-shadow: 1px 1px 0 #444; */
+}
+
+.conListLink:link,
+.conListLink:link:visited{
+  background-color: dodgerblue;
+  color: white;
+  padding: 7px 15px;
+  width:110px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius:6px;
+}  
+
+.conListLink:hover, 
+.conListLink:active {
+  background-color: #00b8e6;
+}
   
   .content-table {
     border-collapse: collapse;
