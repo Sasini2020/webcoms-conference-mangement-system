@@ -87,7 +87,7 @@
           <!-- <textarea name="abstract" rows="10" cols="40"><?php //echo $comment;?></textarea> -->
           <textarea name="abstract" rows="10" cols="40"></textarea><br>
 
-          <label><b>Other Authors Email*</b></label><br>
+          <label><b>Other Authors Email</b></label><br>
           <input name="OtherAutherE" type="text" class="inputvalues" placeholder="Enter Emails"/><br>
           
           <label><b>Select Paper *</b></label><br>
