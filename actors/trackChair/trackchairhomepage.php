@@ -49,10 +49,10 @@
   <br><br>
 
 	<div id="main-wrapper">
-		<center>
+		
 
-    <h2 style="color:#111 ;margin-left:20px;">You Assign Conference List</h2>
-
+<h2 style="color:#2E4053 ;margin-left:20px;">Already Assigned Conferences List</h2>
+    <center>
 <table class="content-table">
     <thead>
       <tr>
