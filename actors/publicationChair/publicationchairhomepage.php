@@ -179,7 +179,7 @@
       <td><?=$row['start_date']?></td>
       <td><?=$row['end_date']?></td>
       <td>
-        <a href="route.php?cameraReadyConfId=<?=$row['id']?>" class="conListLink">View</a>
+        <a href="route.php?cameraReadyConfId=<?=$row['id']?>&conferenceName=<?=$row['name']?>" class="conListLink">View</a>
       </td>
       <td>
         <!-- <a href=" route.php?SubGuid_Id='$row['id'] ' " class="conListLink">Upload</a> -->

@@ -82,7 +82,7 @@
                 <i class="fas fa-bars"></i>
               </label>
     <ul>
-      <li><a href="publicationchairhomepage.php">Back to Home</a></li>
+      <li><a href="selectConfTrackForViewCRP.php">Back to Home</a></li>
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
     </ul>
@@ -107,11 +107,13 @@
   <tbody>
   <?php
     $confId = $_SESSION['conf_id'];
+    $confTrackId = $_SESSION['conferenceTrackId'];
 
     $query_result = mysqli_query($con,"select crrp.id as Id, crrp.title as Title, crrp.abstract as Abstract, a.fullname as aName,
     a.organization as Organization, crrp.otherAuthorDetails as otherAthors
-    from camera_ready_research_paper as crrp, author as a
-    where (crrp.conferenceId = $confId) and (crrp.authorEmail=a.emailauthor)");
+    from camera_ready_research_paper as crrp, author as a, researchpaper as rp
+    where (crrp.conferenceId = $confId) and (crrp.authorEmail=a.emailauthor) and 
+    (crrp.rPaperId = rp.idrp) and (rp.trackID = $confTrackId)");
 
     $count = 1;
     while($row = mysqli_fetch_assoc($query_result)){

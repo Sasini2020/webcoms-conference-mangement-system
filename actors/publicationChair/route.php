@@ -14,7 +14,8 @@
 
     if(isset($_GET['cameraReadyConfId'])){
       $_SESSION['conf_id'] = $_GET['cameraReadyConfId'];
-      header('location:viewcamerareadycopies.php');
+      $_SESSION['ConfereceName'] = $_GET['conferenceName'];
+      header('location:selectConfTrackForViewCRP.php');
     }
 
     //camera ready download
@@ -43,5 +44,10 @@
 
     header('location:viewcamerareadycopies.php');
     
+  }
+
+  if(isset($_GET['confTackIdForViewCameraReady'])){
+    $_SESSION['conferenceTrackId'] = $_GET['confTackIdForViewCameraReady'];
+    header("location:viewcamerareadycopies.php");
   }
 ?>
