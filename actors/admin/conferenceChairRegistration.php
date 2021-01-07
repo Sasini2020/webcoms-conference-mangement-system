@@ -368,10 +368,10 @@
 			<input onkeyup="check()" id='email' name="email" type="text" class="inputvalues" placeholder="Type your email" autocomplete="off" pattern="^[^ ]+@[^ ]+\.[a-z]{2,3}$" required/><br>
 			<div class="error-text" style="color:red;margin-top:-15px;margin-left:10px;font-weight:600;"> Please Enter Valid Email Address</div>
                         <br>
-			
+			<!--
 				<label for="passW">Password:</label><br>
 				<input id="passW" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"class="inputvalues" placeholder="Your password" required/><br>
-				<!-- Validations passwod -->
+				 Validations passwod 
 			<div id="message">
 			<h3>Password must contain the following:</h3>
 			<p id="letter" class="invalid">A <b>lowercase</b> letter</p>
@@ -380,7 +380,7 @@
 			<p id="length" class="invalid">Minimum <b>8 characters</b></p>
 			</div>
 				<label for="CpassW">Confirm Password:</label><br>
-				<input id="CpassW" name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>
+				<input id="CpassW" name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>-->
 			</fieldset>
 		
 				<button name="submit_btn" type="submit" id='btnValidate' value="Sign Up" >Register</button><br>
@@ -398,8 +398,8 @@
 					$fullname =$_POST['fullname'];
 					$aCountry = $_POST['country'];
 					$email = $_POST['email'];
-					$password = $_POST['password'];
-					$cpassword = $_POST['cpassword'];
+					$password = "ConfChair123";
+					$cpassword = "ConfChair123";
 					$usertype = "Conference_chair";
 					$Organization = $_POST['Organization'];
 					$ContactDetails = $_POST['ContactDetails'];
