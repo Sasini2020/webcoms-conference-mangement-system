@@ -77,7 +77,7 @@
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  width: 100%;
+  min-width: 1200px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   display: block;
@@ -115,7 +115,6 @@
   color: #009879;
 }
 .forAbstractWidth{
-  min-width:500px !important;
 }
 
  
@@ -148,18 +147,20 @@
 
     <table class="content-table">
     <thead>
+      <tr>
         <!-- file id -->
         <th>Number</th>
         <th>Paper Title</th> 
         <th class="forAbstractWidth">Abstrackt</th>
-        <th>Author name</th>
+        <!--<th>Author name</th>
         <th>Co Authors</th>   
         <th>Organization(Author)</th>
-        <th>Contact Number(Author)</th>
+        <th>Contact Number(Author)</th>-->
         <th>Download</th>
         <th>Assign Reviewers<br>/ View Review</th>
-        <th>Accept/Reject</th>
+        <!--<th>Accept/Reject</th>-->
         <th>Acceptancy</th>
+      </tr>
     </thead>
     <tbody>
       <?php
@@ -176,19 +177,19 @@
           <td><?= $count ?></td>
           <td><?= $row['Title'] ?></td>
           <td class="forAbstractWidth"><?= $row['Abstract'] ?></td>
-          <td><?= $row['aName'] ?></td>
+          <!--<td><?= $row['aName'] ?></td>
           <td><?= $row['coAuthors'] ?></td>
           <td><?= $row['aOrganization'] ?></td>
-          <td><?= $row['aConNum'] ?></td>
+          <td><?= $row['aConNum'] ?></td>-->
           <td><i class="fas fa-file-download" style="color:#1F618D;"></i><b> </b><a style="text-decoration:none;color:#1F618D" href="route.php?downPId=<?= $row['p_id'] ?>">Download</a></td>
           <td><a href="route.php?assignRPId=<?= $row['p_id'] ?>&rPtitle=<?= $row['Title'] ?>" class="conListLink">Select</a></td>
-          <td>
+          <!--<td>
             <a href="route.php?acceptRPaper=<?= $row['p_id'] ?>" style="text-decoration:none;color:#1F618D" ><i class="fa fa-check" aria-hidden="true" style="color:#1F618D"></i><b> </b>Accept</a>
               <br><br>
             <a href="route.php?rejectRPaper=<?= $row['p_id'] ?>" style="text-decoration:none;color:#1F618D" ><i class="fa fa-times" aria-hidden="true"></i><b> </b>Reject</a>
             <br><br>
             <a href="route.php?pendingRPaper=<?= $row['p_id'] ?>" style="text-decoration:none;color:#1F618D" ><b> </b>Pending</a>
-          </td>
+          </td>-->
           <td>
             <?php
               /* show paper acceptancy or rejection flag

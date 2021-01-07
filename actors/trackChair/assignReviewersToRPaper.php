@@ -17,6 +17,15 @@
 	<link rel="stylesheet" href="../../css/sty.css">
 	<link rel="stylesheet" href="../../css/table_style.css">
     <link rel="stylesheet" href="../../css/new_table_and_button.css">
+    <style>
+    .paperAcceptT{
+      width:500px !important;
+    }
+
+    .paperAcceptT th,td{
+      text-align:center;
+    }
+    </style>
     
 </head>
 <body>
@@ -153,6 +162,47 @@
             $count++;}
           ?>
         </tbody>
+      </table>
+    </div>
+
+    <hr>
+    <br>
+
+    <div style="margin:20px 40px;">
+      <h2>Accept / Reject research paper</h2>
+      <table class="content-table paperAcceptT">
+        <thead>
+          <tr>
+            <th>Accept / Reject</th>
+            <th>Acceptancy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="route.php?acceptRPaper=<?= $rPaperId ?>" style="text-decoration:none;color:#1F618D" ><i class="fa fa-check" aria-hidden="true" style="color:#1F618D"></i><b> </b>Accept</a>
+                <br><br>
+              <a href="route.php?rejectRPaper=<?= $rPaperId ?>" style="text-decoration:none;color:#1F618D" ><i class="fa fa-times" aria-hidden="true"></i><b> </b>Reject</a>
+              <br><br>
+              <a href="route.php?pendingRPaper=<?= $rPaperId ?>" style="text-decoration:none;color:#1F618D" ><b> </b>Pending</a>
+            </td>
+            <td>
+              <?php
+                $query_result = mysqli_query($con, "select acceptancy from researchpaper where idrp = $rPaperId");
+                $row = mysqli_fetch_assoc($query_result);
+                if($row['acceptancy'] == 0){
+                  echo '---';
+                }
+                elseif($row['acceptancy'] == 1){
+                  echo 'Accept';
+                }
+                elseif($row['acceptancy'] == 2){
+                  echo 'Reject';
+                }
+              ?>
+            </td>
+          </tr>
+        </tbody>      
       </table>
     </div>
  
