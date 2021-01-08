@@ -115,7 +115,7 @@ $status=$statusMsg='';
                 echo '<script type="text/javascript"> 
                   if (window.confirm("Registration Successfully")) 
                   {
-                  window.location.href="Register.php";
+                  window.location.href="login.php";
                   };
                 </script>';
               }
@@ -146,10 +146,31 @@ $status=$statusMsg='';
           }
         } /*end of pass email*/
           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+
 				
 				
-}
-?>
+			}
+		?>
 <!DOCTYPE html>
 <html>
 	<head>
