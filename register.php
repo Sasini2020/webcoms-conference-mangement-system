@@ -2,22 +2,163 @@
 	require 'dbconfig/config.php';
 ?>		
 
+<?php
+$status=$statusMsg='';
+
+			if(isset($_POST['submit_btn']))
+			{
+        if(!empty($_POST['email'])){
+          //Include Library File
+          require_once 'VerifyEmail.class.php';
+  
+          //Intialize library class
+          $mail = new VerifyEmail();
+  
+          //Set the timeout value on stream
+          $mail->setStreamTimeoutWait(20);
+  
+          //Set email address for SMTP request
+          $mail->setEmailFrom('2018cs147@stu.ucsc.cmb.ac.lk');
+  
+          //Email to check
+          $email=$_POST['email'];
+  
+      //check if email is valid and exist
+          if($mail->check($email)){
+              $status='succ';
+             // $statusMsg='Given email &lt; '.$email.'&gt;  is exist!';
+              $aTitle = $_POST['acTitle'];
+              $fullname =$_POST['fullname'];
+              $aCountry = $_POST['country'];
+            //	$email = $_POST['email'];
+              $password = $_POST['password'];
+              $cpassword = $_POST['cpassword'];
+              //$gender = $_POST['gender'];
+              $usertype = "Author";
+              $Organization = $_POST['Organization'];
+              $ContactDetails = $_POST['ContactDetails'];
+          //$ContactLinks = $_POST['ContactLinks'];
+  
+          //echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
+          //echo '<script type="text/javascript"> alert("'.$fullname.' ---'.$username.' --- '.$password.' --- '.$gender.' --- '.$qualification.'"  ) </script>';
+  
+          if($password==$cpassword)
+          {
+            $encrypted_pass = md5($password);	//password encrypted
+  
+            $query= "select * from userinfotable WHERE email='$email'";
+            $query_run = mysqli_query($con,$query);
+            
+            if(mysqli_num_rows($query_run)>0)
+            {
+              // there is already a user with the same email
+              $checkDublicate = 0;
+              //avoid same password duplication in same user
+              while($row = mysqli_fetch_assoc($query_run)){
+                if($encrypted_pass==$row['password']){
+                  $checkDublicate = 1;
+                }
+              }
+              if($checkDublicate == 1){
+                echo '<script type="text/javascript"> 
+                    alert("You entered password is can not use with this user email. please use another password"); 
+                  </script>';
+              }
+              else{
+                $query= "select * from author WHERE emailauthor='$email'";
+                $query_run = mysqli_query($con,$query);
+                if(mysqli_num_rows($query_run)>0){
+                  echo '<script type="text/javascript"> 
+                    alert("This Email is allready registered as Author."); 
+                  </script>';
+                }
+                else{
+                  $query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
+                  values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
+                  $query_run = mysqli_query($con,$query);
+                  
+                  $query2= "insert into author 
+                  values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+                  $query_run2 = mysqli_query($con,$query2);
+  
+                  if($query_run and $query_run2)
+                  {
+                    echo '<script type="text/javascript"> 
+                      if (window.confirm("Registration Successfully")) 
+                      {
+                      window.location.href="login.php";
+                      };
+                    </script>';
+                  }
+                  else
+                  {
+                    echo  '<script type="text/javascript">alert("'.mysqli_error($con).'")</script>';
+                  }
+                }
+              } 
+            }
+            else
+            {
+              $query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
+              values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
+              $query_run = mysqli_query($con,$query);
+  
+              
+              $query2= "insert into author 
+                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+              $query_run2 = mysqli_query($con,$query2);
+                  
+  
+              
+              if($query_run and $query_run2)
+              {
+                echo '<script type="text/javascript"> 
+                  if (window.confirm("Registration Successfully")) 
+                  {
+                  window.location.href="Register.php";
+                  };
+                </script>';
+              }
+              else
+              {
+                echo '<script type="text/javascript"> alert("'.mysqli_error($con).'") </script>';
+              }
+            }
+            
+            
+          }
+          else{
+          echo '<script type="text/javascript"> alert("Password and confirm password does not match!") </script>';	
+          }
+          } /*end of confirm pwd*/
+
+       
+
+          elseif(verifyEmail::validate($email)){
+              $status='err';
+              $statusMsg='Given e-mail '.$email. ' does not exist . Please give an existing e-mail ddress !';
+  
+          }
+          else{
+              $status='err';
+              $statusMsg='Given e-mail  '.$email. ' is invalid .Please give a valid email address !';
+  
+          }
+        } /*end of pass email*/
+          
+				
+				
+}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Registration</title>
 
 		<link rel="stylesheet" href="css/nav_footer_styles.css">
-		<!-- <link rel="stylesheet" href="css/sty.css"> -->
 		<link rel="stylesheet" href="css/reg_form_style.css">
 		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- email Validation jquery -->
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
-
-    <!-- Email Validations Jquery my file -->
-    <!-- <script type="text/javascript" src="js/emailvalidation.js"></script> -->
 
 	<style>
 	/* The message box is shown when the user clicks on the password field */
@@ -57,6 +198,24 @@
   left: -35px;
   content: "✖";
 }
+
+/* alert message */
+.alert {
+  padding: 20px;
+  height:70px;
+  margin-left:60px;
+  margin-right:60px;
+  border-radius:5px;
+  background-color: white;
+  color: #E74C3C;
+  font-size:20px;
+  font-weight:600;
+  text-align:center;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
 </style>	
 </head>
 
@@ -77,8 +236,11 @@
 			<li><a href="About.php">About</a></li>
 		</ul>
 	</nav>
-	<br><br><br><br>
-
+	<br><br>
+<div class="alert">
+  <p class="statusMsg <?php echo $status; ?>"> <?php echo $statusMsg?></p>
+</div>
+<br><br>
 	<!--Registration form-->
 	<div id="main-wrapper">
 		
@@ -378,9 +540,8 @@
       	<legend><span class="number">2</span>Your Login Information</legend><br>
 			<label for="Email">Email:</label><br>
 			<!-- Validate uni emails as well -->
-			<input onkeyup="check()" id='email' name="email" type="text" class="inputvalues" placeholder="Type your email" autocomplete="off" pattern="^[^ ]+@[^ ]+\.[a-z]{2,3}$" required/><br>
-			<div class="error-text" style="color:red;margin-top:-15px;margin-left:10px;font-weight:600;"> Please Enter Valid Email Address</div>
-                        <br>
+			<input  id='email' name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
+			
 			
 			<label for="passW">Password:</label><br>
 			<input id="passW" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"class="inputvalues" placeholder="Your password" required/><br>
@@ -401,158 +562,10 @@
 		</form>
 
 
-
-		<?php
-			if(isset($_POST['submit_btn']))
-			{
-				//echo '<script type="text/javascript"> alert("Sign Up button clicked") </script>';
-
-        $aTitle = $_POST['acTitle'];
-        $fullname =$_POST['fullname'];
-        $aCountry = $_POST['country'];
-				$email = $_POST['email'];
-				$password = $_POST['password'];
-				$cpassword = $_POST['cpassword'];
-				//$gender = $_POST['gender'];
-				$usertype = "Author";
-				$Organization = $_POST['Organization'];
-				$ContactDetails = $_POST['ContactDetails'];
-				//$ContactLinks = $_POST['ContactLinks'];
-
-				//echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
-				//echo '<script type="text/javascript"> alert("'.$fullname.' ---'.$username.' --- '.$password.' --- '.$gender.' --- '.$qualification.'"  ) </script>';
-
-				if($password==$cpassword)
-				{
-					$encrypted_pass = md5($password);	//password encrypted
-
-					$query= "select * from userinfotable WHERE email='$email'";
-					$query_run = mysqli_query($con,$query);
-					
-					if(mysqli_num_rows($query_run)>0)
-					{
-						// there is already a user with the same email
-						$checkDublicate = 0;
-            //avoid same password duplication in same user
-            while($row = mysqli_fetch_assoc($query_run)){
-              if($encrypted_pass==$row['password']){
-                $checkDublicate = 1;
-              }
-            }
-            if($checkDublicate == 1){
-              echo '<script type="text/javascript"> 
-									alert("You entered password is can not use with this user email. please use another password"); 
-								</script>';
-            }
-						else{
-							$query= "select * from author WHERE emailauthor='$email'";
-							$query_run = mysqli_query($con,$query);
-							if(mysqli_num_rows($query_run)>0){
-								echo '<script type="text/javascript"> 
-									alert("This Email is allready registered as Author."); 
-								</script>';
-							}
-							else{
-								$query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
-						    values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
-                $query_run = mysqli_query($con,$query);
-                
-                $query2= "insert into author 
-                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
-                $query_run2 = mysqli_query($con,$query2);
-
-                if($query_run and $query_run2)
-                {
-                  echo '<script type="text/javascript"> 
-                    if (window.confirm("Registration Successfully")) 
-                    {
-                    window.location.href="login.php";
-                    };
-                  </script>';
-                }
-                else
-                {
-                  echo  '<script type="text/javascript">alert("'.mysqli_error($con).'")</script>';
-                }
-							}
-            } 
-					}
-					else
-					{
-						$query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
-						values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
-						$query_run = mysqli_query($con,$query);
-
-						
-						$query2= "insert into author 
-							values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
-						$query_run2 = mysqli_query($con,$query2);
-								
-
-						
-						if($query_run and $query_run2)
-						{
-              echo '<script type="text/javascript"> 
-                if (window.confirm("Registration Successfully")) 
-                {
-                window.location.href="login.php";
-                };
-              </script>';
-						}
-						else
-						{
-							echo '<script type="text/javascript"> alert("'.mysqli_error($con).'") </script>';
-						}
-					}
-					
-					
-				}
-				else{
-				echo '<script type="text/javascript"> alert("Password and confirm password does not match!") </script>';	
-				}
-				
-				
-				
-				
-			}
-		?>
 	</div>
 
 	
-<!-- for email validation -->
-	<script>
-      const email = document.querySelector("#email");
-      // const icon1 = document.querySelector(".icon1");
-      // const icon2 = document.querySelector(".icon2");
-      const error = document.querySelector(".error-text");
-      // const btn = document.querySelector("button");
-      let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-      function check(){
-        if(email.value.match(regExp)){
-          email.style.borderColor = "#27ae60";
-          email.style.background = "#eafaf1";
-          // icon1.style.display = "none";
-          // icon2.style.display = "block";
-          error.style.display = "none";
-          // btn.style.display = "block";
-        }else{
-          email.style.borderColor = "#e74c3c";
-          email.style.background = "#fceae9";
-          icon1.style.display = "block";
-          // icon2.style.display = "none";
-          // error.style.display = "block";
-          // btn.style.display = "none";
-        }
-        if(email.value == ""){
-          email.style.borderColor = "lightgrey";
-          email.style.background = "#fff";
-          // icon1.style.display = "none";
-          // icon2.style.display = "none";
-          error.style.display = "none";
-          // btn.style.display = "none";
-        }
-      }
-    </script>
+
 	
 <!-- for password validation pwd stuffs		 -->
 	
