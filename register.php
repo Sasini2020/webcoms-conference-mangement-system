@@ -145,29 +145,7 @@ $status=$statusMsg='';
   
           }
         } /*end of pass email*/
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-         
-
-				
+          				
 				
 			}
 		?>
