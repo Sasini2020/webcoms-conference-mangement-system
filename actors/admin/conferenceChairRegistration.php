@@ -5,7 +5,139 @@
     header('location:../../login.php');
   }
 ?>
+<?php
+$status=$statusMsg='';
+	if(isset($_POST['submit_btn']))
+	{
+		if(!empty($_POST['email'])){
+			//Include Library File
+			require_once '../../VerifyEmail.class.php';
+	
+			//Intialize library class
+			$mail = new VerifyEmail();
+	
+			//Set the timeout value on stream
+			$mail->setStreamTimeoutWait(20);
+	
+			//Set email address for SMTP request
+			$mail->setEmailFrom('2018cs147@stu.ucsc.cmb.ac.lk');
+	
+			//Email to check
+			$email=$_POST['email'];
+	
+		//check if email is valid and exist
+			if($mail->check($email)){
+				$status='succ';
+				// $statusMsg='Given email &lt; '.$email.'&gt;  is exist!';
+		
 
+		$aTitle = $_POST['acTitle'];
+		$fullname =$_POST['fullname'];
+		$aCountry = $_POST['country'];
+	//	$email = $_POST['email'];
+		$password = "ConfChair123";
+		$cpassword = "ConfChair123";
+		$usertype = "Conference_chair";
+		$Organization = $_POST['Organization'];
+		$ContactDetails = $_POST['ContactDetails'];
+
+
+		if($password==$cpassword)
+		{
+			$encrypted_pass = md5($password);	//password encrypted
+
+			$query= "select * from userinfotable WHERE email='$email'";
+			$query_run = mysqli_query($con,$query);
+			
+			if(mysqli_num_rows($query_run)>0)
+			{
+				// there is already a user with the same email
+				$checkDublicate = 0;
+				//avoid same password duplication in same user
+				while($row = mysqli_fetch_assoc($query_run)){
+					if($encrypted_pass==$row['password']){
+						$checkDublicate = 1;
+					}
+				}
+				if($checkDublicate == 1){
+					echo '<script type="text/javascript"> 
+										alert("You entered password is can not use with this user email. please use another password"); 
+									</script>';
+				}
+				else{
+					$query= "select * from conferencechair WHERE emailconfchair='$email'";
+					$query_run = mysqli_query($con,$query);
+					if(mysqli_num_rows($query_run)>0){
+						echo '<script type="text/javascript"> 
+							alert("This Email is allready registered as Conference Chair."); 
+						</script>';
+					}
+					else{
+						$query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
+						values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
+						$query_run = mysqli_query($con,$query);
+						
+						$query2= "insert into conferencechair 
+						values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+						$query_run2 = mysqli_query($con,$query2);
+
+						if($query_run and $query_run2)
+						{
+							echo '<script type="text/javascript"> 
+								alert("Registration Successfully.");
+							</script>';
+						}
+						else
+						{
+							echo  '<script type="text/javascript">alert("'.mysqli_error($con).'")</script>';
+						}
+					}
+				} 
+			}
+			else
+			{
+				$query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
+				values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
+				$query_run = mysqli_query($con,$query);
+
+				
+				$query2= "insert into conferencechair 
+					values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+				$query_run2 = mysqli_query($con,$query2);
+						
+
+				
+				if($query_run and $query_run2)
+				{
+					echo '<script type="text/javascript"> 
+								alert("Registration Successfully.");
+							</script>';
+				}
+				else
+				{
+					echo '<script type="text/javascript"> alert("'.mysqli_error($con).'") </script>';
+				}
+			}
+			
+			
+		}
+		else{
+		echo '<script type="text/javascript"> alert("Password and confirm password does not match!") </script>';	
+		}
+	}/*end of confirm pwd*/
+	elseif(verifyEmail::validate($email)){
+		$status='err';
+		$statusMsg='Given e-mail '.$email. ' does not exist . Please give an existing e-mail ddress !';
+
+	}
+	else{
+		$status='err';
+		$statusMsg='Given e-mail  '.$email. ' is invalid .Please give a valid email address !';
+
+	}
+	} /*end of pass email*/
+}	
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,6 +185,24 @@
 		left: -35px;
 		content: "✖";
 		}
+		
+		/* alert message */
+		.alert {
+		padding: 20px;
+		height:70px;
+		margin-left:60px;
+		margin-right:60px;
+		border-radius:5px;
+		background-color: white;
+		color: #E74C3C;
+		font-size:20px;
+		font-weight:600;
+		text-align:center;
+		opacity: 1;
+		transition: opacity 0.6s;
+		margin-bottom: 15px;
+		}
+
 	</style>
 </head>
 <body>
@@ -75,7 +225,11 @@
 		
 
 	</nav>
-  <br><br>
+	<br><br>
+<div class="alert">
+  <p class="statusMsg <?php echo $status; ?>"> <?php echo $statusMsg?></p>
+</div>
+<br><br>
 
 	<!--Conference Chair Registration form-->
 	<div id="main-wrapper">
@@ -85,7 +239,7 @@
 	
 	<form action="conferenceChairRegistration.php" method="post">
 		<br><br>
-			<h1>Conf Chair Registration</h1>
+			<h1>Conference Chair Registration</h1>
 			<fieldset>
       		<legend><span class="number">1</span>Personal Information</legend><br>
 		
@@ -365,8 +519,7 @@
 			<legend><span class="number">2</span>Your Login Information</legend><br>
 			<label for="Email">Email:</label><br>
 			<!-- Validate uni emails as well -->
-			<input onkeyup="check()" id='email' name="email" type="text" class="inputvalues" placeholder="Type your email" autocomplete="off" pattern="^[^ ]+@[^ ]+\.[a-z]{2,3}$" required/><br>
-			<div class="error-text" style="color:red;margin-top:-15px;margin-left:10px;font-weight:600;"> Please Enter Valid Email Address</div>
+			<input id='email' name="email" type="text" class="inputvalues" placeholder="Type your email"  required/><br>
                         <br>
 			<!--
 				<label for="passW">Password:</label><br>
@@ -389,147 +542,8 @@
 
 
 
-			<?php
-				if(isset($_POST['submit_btn']))
-				{
-					
-
-					$aTitle = $_POST['acTitle'];
-					$fullname =$_POST['fullname'];
-					$aCountry = $_POST['country'];
-					$email = $_POST['email'];
-					$password = "ConfChair123";
-					$cpassword = "ConfChair123";
-					$usertype = "Conference_chair";
-					$Organization = $_POST['Organization'];
-					$ContactDetails = $_POST['ContactDetails'];
 			
-
-					if($password==$cpassword)
-					{
-						$encrypted_pass = md5($password);	//password encrypted
-
-						$query= "select * from userinfotable WHERE email='$email'";
-						$query_run = mysqli_query($con,$query);
-						
-						if(mysqli_num_rows($query_run)>0)
-						{
-							// there is already a user with the same email
-							$checkDublicate = 0;
-							//avoid same password duplication in same user
-							while($row = mysqli_fetch_assoc($query_run)){
-								if($encrypted_pass==$row['password']){
-									$checkDublicate = 1;
-								}
-							}
-							if($checkDublicate == 1){
-								echo '<script type="text/javascript"> 
-													alert("You entered password is can not use with this user email. please use another password"); 
-												</script>';
-							}
-							else{
-								$query= "select * from conferencechair WHERE emailconfchair='$email'";
-								$query_run = mysqli_query($con,$query);
-								if(mysqli_num_rows($query_run)>0){
-									echo '<script type="text/javascript"> 
-										alert("This Email is allready registered as Conference Chair."); 
-									</script>';
-								}
-								else{
-									$query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
-									values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
-									$query_run = mysqli_query($con,$query);
-									
-									$query2= "insert into conferencechair 
-									values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
-									$query_run2 = mysqli_query($con,$query2);
-
-									if($query_run and $query_run2)
-									{
-										echo '<script type="text/javascript"> 
-											alert("Registration Successfully.");
-										</script>';
-									}
-									else
-									{
-										echo  '<script type="text/javascript">alert("'.mysqli_error($con).'")</script>';
-									}
-								}
-							} 
-						}
-						else
-						{
-							$query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
-							values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
-							$query_run = mysqli_query($con,$query);
-
-							
-							$query2= "insert into conferencechair 
-								values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
-							$query_run2 = mysqli_query($con,$query2);
-									
-
-							
-							if($query_run and $query_run2)
-							{
-								echo '<script type="text/javascript"> 
-											alert("Registration Successfully.");
-										</script>';
-							}
-							else
-							{
-								echo '<script type="text/javascript"> alert("'.mysqli_error($con).'") </script>';
-							}
-						}
-						
-						
-					}
-					else{
-					echo '<script type="text/javascript"> alert("Password and confirm password does not match!") </script>';	
-					}
-					
-					
-					
-					
-				}
-			?>
 		</div>
-
-	
-<!-- for email validation -->
-<script>
-      const email = document.querySelector("#email");
-      // const icon1 = document.querySelector(".icon1");
-      // const icon2 = document.querySelector(".icon2");
-      const error = document.querySelector(".error-text");
-      // const btn = document.querySelector("button");
-      let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-      function check(){
-        if(email.value.match(regExp)){
-          email.style.borderColor = "#27ae60";
-          email.style.background = "#eafaf1";
-          // icon1.style.display = "none";
-          // icon2.style.display = "block";
-          error.style.display = "none";
-          // btn.style.display = "block";
-        }else{
-          email.style.borderColor = "#e74c3c";
-          email.style.background = "#fceae9";
-          icon1.style.display = "block";
-          // icon2.style.display = "none";
-          // error.style.display = "block";
-          // btn.style.display = "none";
-        }
-        if(email.value == ""){
-          email.style.borderColor = "lightgrey";
-          email.style.background = "#fff";
-          // icon1.style.display = "none";
-          // icon2.style.display = "none";
-          error.style.display = "none";
-          // btn.style.display = "none";
-        }
-      }
-    </script>	
 				
 <script>
 var myInput = document.getElementById("passW");
