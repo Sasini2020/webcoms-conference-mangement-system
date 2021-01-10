@@ -88,7 +88,7 @@ input[type="checkbox"]{
     content: "\f00d";
   }
   nav ul{
-    position: fixed;
+    position: absolute;
     top: 80px;
     left: -100%;
     background: #111;
