@@ -336,8 +336,8 @@ $status=$statusMsg='';
 			<fieldset>
       		<legend><span class="number">1</span>Personal Information</legend><br>
 
-			  <label for="actor">Select User Type:</label><br>
-				<select id="actor" class="" name="usertype">
+			  <label for="actorType">Select User Type:</label><br>
+				<select id="actorType" class="" name="usertype">
   					<option value="">- Select User Type -</option>
 					<option value="Reviewer">Reviewer</option>
 					<option value="TrackChair">Track Chair</option>
@@ -669,6 +669,7 @@ var number = document.getElementById("number");
 var length = document.getElementById("length");
 
 // When the user clicks on the password field, show the message box
+/*
 myInput.onfocus = function() {
   document.getElementById("message").style.display = "block";
 }
@@ -719,13 +720,13 @@ myInput.onkeyup = function() {
     length.classList.add("invalid");
   }
 }
-
+*/
 // Show and hide reviewer interest track field
 document
-  .getElementById('actor')
+  .getElementById('actorType')
   .addEventListener('change',function(){
     //console.log("change");
-    var target = document.getElementById("actor").value;
+    var target = document.getElementById("actorType").value;
     if(target == "Reviewer"){
       //console.log("Reviewer");
       rInterestTrack.className = 'showContent';
@@ -736,6 +737,8 @@ document
       rInterestTrack.className = 'hideContent';
     }
   });
+
+  //console.log(document.getElementById('actorType'));
 </script>
 
 
