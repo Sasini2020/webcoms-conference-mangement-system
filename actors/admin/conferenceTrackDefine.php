@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="../../css/reg_form_style.css">
 	<link rel="stylesheet" href="../../css/sty.css">
 	<link rel="stylesheet" href="../../css/table_style.css">
+	<link rel="stylesheet" href="../../css/DropDownListToNav.css">
 	<style>
 
 
@@ -79,7 +80,15 @@
 			<li><a href="authordetails.php">Author details</a></li>
 			<li><a href="conferenceChairRegistration.php">Conf Chair Registration</a></li>
             <li><a class="active" href="conferenceTrackDefine.php">Conf Track Defination</a></li>
-			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+			<li class="dropdown">				
+					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
+					
+					<div class="dropdown-content">
+						<a href="updateprofile.php">Update profile</a>
+						<a href="#">Link 2</a>
+						<a href="../logout.php">Log Out</a>
+					</div>
+			</li>
 		</ul>
 
 	</nav>
