@@ -6,6 +6,240 @@
   }
 ?>
 
+<?php
+$status=$statusMsg='';
+
+    if(isset($_POST['submit_btn']))
+    {
+      if(!empty($_POST['email'])){
+        //Include Library File
+        require_once '../../VerifyEmail.class.php';
+
+        //Intialize library class
+        $mail = new VerifyEmail();
+
+        //Set the timeout value on stream
+        $mail->setStreamTimeoutWait(20);
+
+        //Set email address for SMTP request
+        $mail->setEmailFrom('2018cs147@stu.ucsc.cmb.ac.lk');
+
+        //Email to check
+        $email=$_POST['email'];
+
+    //check if email is valid and exist
+        if($mail->check($email)){
+            $status='succ';
+            $usertype = $_POST['usertype'];;
+            $aTitle = $_POST['acTitle'];
+            $fullname =$_POST['fullname'];
+            $intTrackN = "";
+            $intTrackN = $_POST['iTrackN'];
+            $aCountry = $_POST['country'];
+      // $email = $_POST['email'];
+
+        //assign default password
+
+        if($usertype=="Reviewer"){
+          $password = "Reviewer123";
+          $cpassword = "Reviewer123";
+        }
+        elseif($usertype=="TrackChair"){
+          $password = "TrackChair123";
+          $cpassword = "TrackChair123";
+        }
+        elseif($usertype=="PublicationChair"){
+          $password = "PublicationChair123";
+          $cpassword = "PublicationChair123";
+        }
+
+      //$gender = $_POST['gender'];				
+      $Organization = $_POST['Organization'];
+      $ContactDetails = $_POST['ContactDetails'];
+      //$ContactLinks = $_POST['ContactLinks'];
+
+      //echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
+      //echo '<script type="text/javascript"> alert("'.$fullname.' ---'.$username.' --- '.$password.' --- '.$gender.' --- '.$qualification.'"  ) </script>';
+
+      if($password==$cpassword)
+      {
+        $encrypted_pass = md5($password);	//password encrypted
+
+        $query= "select * from userinfotable WHERE email='$email'";
+        $query_run = mysqli_query($con,$query);
+        
+        if(mysqli_num_rows($query_run)>0)
+        {
+          // there is already a user with the same email
+          $checkDublicate = 0;
+          //avoid same password duplication in same user
+          while($row = mysqli_fetch_assoc($query_run)){
+            if($encrypted_pass==$row['password']){
+              $checkDublicate = 1;
+            }
+          }
+          if($checkDublicate == 1){
+            echo '<script type="text/javascript"> 
+                alert("You entered password is can not use with this user email. please use another password"); 
+              </script>';
+          }
+          elseif($usertype=="Reviewer"){
+            $query= "select * from reviewer WHERE emailreviewer='$email'";
+            $query_run = mysqli_query($con,$query);
+            if(mysqli_num_rows($query_run)>0){
+              echo '<script type="text/javascript"> 
+                alert("This user allready registred as Reviewer in the system."); 
+              </script>';
+            }
+            else{
+              $query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
+              values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
+              $query_run = mysqli_query($con,$query);
+              
+              $query2= "insert into reviewer 
+              values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+              $query_run2 = mysqli_query($con,$query2);
+
+              foreach($intTrackN as $interestTrack){
+                $query_run3 = mysqli_query($con,"insert into reviewer_interest_track values(NULL,$interestTrack,'$email')");
+              }
+
+              if($query_run and $query_run2)
+              {
+                echo '<script type="text/javascript"> 
+                    alert("Registration Successfully.");
+                </script>';
+              }
+              else
+              {
+                echo  '<script type="text/javascript">alert("'.mysqli_error($con).'")</script>';
+              }
+            }
+          }
+          elseif($usertype=="TrackChair"){
+            $query= "select * from trackchair WHERE emailtrackchair='$email'";
+            $query_run = mysqli_query($con,$query);
+            if(mysqli_num_rows($query_run)>0){
+              echo '<script type="text/javascript"> 
+                alert("This user allready registred as TrackChair in the system therefor you can add this user to conference."); 
+              </script>';
+            }
+            else{
+              $query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
+              values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
+              $query_run = mysqli_query($con,$query);
+
+              $query2= "insert into trackchair 
+                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+              $query_run2 = mysqli_query($con,$query2);
+              
+              if($query_run and $query_run2)
+              {
+                echo '<script type="text/javascript"> 
+                  alert("Registration Successfully.");
+                </script>';
+              }
+              else
+              {
+                echo '<script type="text/javascript">alert("'.mysqli_error($con).'")</script>';
+              }
+            }
+          }
+          elseif($usertype=="PublicationChair"){
+            $query= "select * from publicationchair WHERE emailpubchair='$email'";
+            $query_run = mysqli_query($con,$query);
+            if(mysqli_num_rows($query_run)>0){
+              echo '<script type="text/javascript"> 
+                alert("This user allready registred as Publication Chair in the system therefor you can add this user to conference."); 
+              </script>';
+            }
+            else{
+              $query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
+              values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
+              $query_run = mysqli_query($con,$query);
+              $query2= "insert into publicationchair 
+              values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+              $query_run2 = mysqli_query($con,$query2);
+
+              if($query_run and $query_run2)
+              {
+                echo '<script type="text/javascript"> 
+                  alert("Registration Successfully.");
+                </script>';
+              }
+              else
+              {
+                echo '<script type="text/javascript"> alert("'.mysqli_error($con).'") </script>';
+              }
+            }
+          }
+          
+        }
+        else
+        {
+          $query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
+          values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
+          $query_run = mysqli_query($con,$query);
+
+          switch($usertype){
+            case "Reviewer":
+              $query2= "insert into reviewer 
+                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+              $query_run2 = mysqli_query($con,$query2);
+
+              foreach($intTrackN as $interestTrack){
+                $query_run3 = mysqli_query($con,"insert into reviewer_interest_track values(NULL,$interestTrack,'$email')");
+              }
+              break;
+            case "TrackChair":
+              $query2= "insert into trackchair 
+                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+              $query_run2 = mysqli_query($con,$query2);
+              break;
+            case "PublicationChair":
+              $query2= "insert into publicationchair 
+                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
+              $query_run2 = mysqli_query($con,$query2);
+              break;
+            default:
+              $query_run2 = false;
+          }
+
+          
+          if($query_run and $query_run2)
+          {
+            echo '<script type="text/javascript"> 
+              alert("Registration Successfully.");
+            </script>';
+          }
+          else
+          {
+            echo '<script type="text/javascript"> alert("'.mysqli_error($con).'") </script>';
+          }
+        }
+        
+        
+      }
+      else{
+      echo '<script type="text/javascript"> alert("Password and confirm password does not match!") </script>';	
+      }	
+    } /*end of confirm pwd*/
+    elseif(verifyEmail::validate($email)){
+      $status='err';
+      $statusMsg='Given e-mail '.$email. ' does not exist . Please give an existing e-mail ddress !';
+
+  }
+  else{
+      $status='err';
+      $statusMsg='Given e-mail  '.$email. ' is invalid .Please give a valid email address !';
+
+  }
+} /*end of pass email*/
+          
+  
+}
+		?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,6 +319,10 @@
     </ul>
   </nav>
   <br><br>
+<div class="alert">
+  <p class="statusMsg <?php echo $status; ?>"> <?php echo $statusMsg?></p>
+</div>
+<br><br>
 
 	<!--Conference Chair Registration form-->
 	<div id="main-wrapper">
@@ -400,8 +638,7 @@
       	<legend><span class="number">2</span>Your Login Information</legend><br>
         <label for="Email">Email:</label><br>
 			<!-- Validate uni emails as well -->
-			<input onkeyup="check()" id='email' name="email" type="text" class="inputvalues" placeholder="Type your email" autocomplete="off" pattern="^[^ ]+@[^ ]+\.[a-z]{2,3}$" required/><br>
-			<div class="error-text" style="color:red;margin-top:-15px;margin-left:10px;font-weight:600;"> Please Enter Valid Email Address</div>
+			<input id='email' name="email" type="text" class="inputvalues" placeholder="Type your email" autocomplete="off" pattern="^[^ ]+@[^ ]+\.[a-z]{2,3}$" required/><br>
                         <br>
 			<!--<label for="passW">Password:</label><br>
 			<input id="passW" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"class="inputvalues" placeholder="Your password" required/><br>
@@ -421,248 +658,8 @@
 			<!--<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>-->
 		</form>
 
-
-
-		<?php
-			if(isset($_POST['submit_btn']))
-			{
-				//echo '<script type="text/javascript"> alert("Sign Up button clicked") </script>';
-				$usertype = $_POST['usertype'];;
-				$aTitle = $_POST['acTitle'];
-        $fullname =$_POST['fullname'];
-        $intTrackN = "";
-        $intTrackN = $_POST['iTrackN'];
-				$aCountry = $_POST['country'];
-        $email = $_POST['email'];
-
-          //assign default password
-
-          if($usertype=="Reviewer"){
-            $password = "Reviewer123";
-            $cpassword = "Reviewer123";
-          }
-          elseif($usertype=="TrackChair"){
-            $password = "TrackChair123";
-            $cpassword = "TrackChair123";
-          }
-          elseif($usertype=="PublicationChair"){
-            $password = "PublicationChair123";
-            $cpassword = "PublicationChair123";
-          }
-
-				//$gender = $_POST['gender'];				
-				$Organization = $_POST['Organization'];
-				$ContactDetails = $_POST['ContactDetails'];
-				//$ContactLinks = $_POST['ContactLinks'];
-
-				//echo '<script type="text/javascript"> alert("User already exists.. try another username") </script>';
-				//echo '<script type="text/javascript"> alert("'.$fullname.' ---'.$username.' --- '.$password.' --- '.$gender.' --- '.$qualification.'"  ) </script>';
-
-				if($password==$cpassword)
-				{
-					$encrypted_pass = md5($password);	//password encrypted
-
-					$query= "select * from userinfotable WHERE email='$email'";
-					$query_run = mysqli_query($con,$query);
-					
-					if(mysqli_num_rows($query_run)>0)
-					{
-            // there is already a user with the same email
-            $checkDublicate = 0;
-            //avoid same password duplication in same user
-            while($row = mysqli_fetch_assoc($query_run)){
-              if($encrypted_pass==$row['password']){
-                $checkDublicate = 1;
-              }
-            }
-            if($checkDublicate == 1){
-              echo '<script type="text/javascript"> 
-									alert("You entered password is can not use with this user email. please use another password"); 
-								</script>';
-            }
-						elseif($usertype=="Reviewer"){
-							$query= "select * from reviewer WHERE emailreviewer='$email'";
-							$query_run = mysqli_query($con,$query);
-							if(mysqli_num_rows($query_run)>0){
-								echo '<script type="text/javascript"> 
-									alert("This user allready registred as Reviewer in the system."); 
-								</script>';
-							}
-							else{
-								$query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
-						    values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
-                $query_run = mysqli_query($con,$query);
-                
-                $query2= "insert into reviewer 
-                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
-                $query_run2 = mysqli_query($con,$query2);
-
-                foreach($intTrackN as $interestTrack){
-                  $query_run3 = mysqli_query($con,"insert into reviewer_interest_track values(NULL,$interestTrack,'$email')");
-                }
-
-                if($query_run and $query_run2)
-                {
-                  echo '<script type="text/javascript"> 
-                     alert("Registration Successfully.");
-                  </script>';
-                }
-                else
-                {
-                  echo  '<script type="text/javascript">alert("'.mysqli_error($con).'")</script>';
-                }
-							}
-            }
-            elseif($usertype=="TrackChair"){
-              $query= "select * from trackchair WHERE emailtrackchair='$email'";
-              $query_run = mysqli_query($con,$query);
-              if(mysqli_num_rows($query_run)>0){
-								echo '<script type="text/javascript"> 
-									alert("This user allready registred as TrackChair in the system therefor you can add this user to conference."); 
-								</script>';
-              }
-              else{
-                $query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
-						    values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
-                $query_run = mysqli_query($con,$query);
-
-                $query2= "insert into trackchair 
-									values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
-                $query_run2 = mysqli_query($con,$query2);
-                
-                if($query_run and $query_run2)
-                {
-                  echo '<script type="text/javascript"> 
-                    alert("Registration Successfully.");
-                  </script>';
-                }
-                else
-                {
-                  echo '<script type="text/javascript">alert("'.mysqli_error($con).'")</script>';
-                }
-              }
-            }
-            elseif($usertype=="PublicationChair"){
-              $query= "select * from publicationchair WHERE emailpubchair='$email'";
-              $query_run = mysqli_query($con,$query);
-              if(mysqli_num_rows($query_run)>0){
-								echo '<script type="text/javascript"> 
-									alert("This user allready registred as Publication Chair in the system therefor you can add this user to conference."); 
-								</script>';
-              }
-              else{
-                $query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
-						    values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
-                $query_run = mysqli_query($con,$query);
-                $query2= "insert into publicationchair 
-                values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
-                $query_run2 = mysqli_query($con,$query2);
-
-                if($query_run and $query_run2)
-                {
-                  echo '<script type="text/javascript"> 
-                    alert("Registration Successfully.");
-                  </script>';
-                }
-                else
-                {
-                  echo '<script type="text/javascript"> alert("'.mysqli_error($con).'") </script>';
-                }
-              }
-            }
-            
-					}
-					else
-					{
-						$query= "insert into userinfotable (email, title, full_name, country, user_type, password, organization, contactdetails) 
-						values('$email', '$aTitle', '$fullname', '$aCountry', '$usertype', '$encrypted_pass', '$Organization','$ContactDetails')";
-						$query_run = mysqli_query($con,$query);
-
-						switch($usertype){
-							case "Reviewer":
-								$query2= "insert into reviewer 
-									values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
-                $query_run2 = mysqli_query($con,$query2);
-
-                foreach($intTrackN as $interestTrack){
-                  $query_run3 = mysqli_query($con,"insert into reviewer_interest_track values(NULL,$interestTrack,'$email')");
-                }
-								break;
-							case "TrackChair":
-								$query2= "insert into trackchair 
-									values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
-								$query_run2 = mysqli_query($con,$query2);
-								break;
-							case "PublicationChair":
-								$query2= "insert into publicationchair 
-									values('$email', '$aTitle','$fullname', '$aCountry', '$Organization', '$ContactDetails', '$encrypted_pass', '$email')";
-								$query_run2 = mysqli_query($con,$query2);
-								break;
-							default:
-								$query_run2 = false;
-						}
-
-						
-						if($query_run and $query_run2)
-						{
-							echo '<script type="text/javascript"> 
-								alert("Registration Successfully.");
-							</script>';
-						}
-						else
-						{
-							echo '<script type="text/javascript"> alert("'.mysqli_error($con).'") </script>';
-						}
-					}
-					
-					
-				}
-				else{
-				echo '<script type="text/javascript"> alert("Password and confirm password does not match!") </script>';	
-				}
-				
-				
-				
-				
-			}
-		?>
 	</div>
-  	
-<!-- for email validation -->
-	<script>
-      const email = document.querySelector("#email");
-      // const icon1 = document.querySelector(".icon1");
-      // const icon2 = document.querySelector(".icon2");
-      const error = document.querySelector(".error-text");
-      // const btn = document.querySelector("button");
-      let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-      function check(){
-        if(email.value.match(regExp)){
-          email.style.borderColor = "#27ae60";
-          email.style.background = "#eafaf1";
-          // icon1.style.display = "none";
-          // icon2.style.display = "block";
-          error.style.display = "none";
-          // btn.style.display = "block";
-        }else{
-          email.style.borderColor = "#e74c3c";
-          email.style.background = "#fceae9";
-          icon1.style.display = "block";
-          // icon2.style.display = "none";
-          // error.style.display = "block";
-          // btn.style.display = "none";
-        }
-        if(email.value == ""){
-          email.style.borderColor = "lightgrey";
-          email.style.background = "#fff";
-          // icon1.style.display = "none";
-          // icon2.style.display = "none";
-          error.style.display = "none";
-          // btn.style.display = "none";
-        }
-      }
-    </script>
-	
+ 
 				
 <script>
 var myInput = document.getElementById("passW");
