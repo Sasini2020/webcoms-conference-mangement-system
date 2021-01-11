@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../css/nav_footer_styles.css">
     <link rel="stylesheet" href="../../css/reg_form_style.css">
     <link rel="stylesheet" href="../../css/table_style.css">
+    <link rel="stylesheet" href="../../css/DropDownListToNav.css">
 
 
 <!-- Here added jquery to add a filter-search bar -->
@@ -120,7 +121,15 @@ $(document).ready(function(){
 	<ul>  
 	  <li><a class="active" href="author_home.php">Home</a></li> 
 	  <!-- <li><a href="updateprofile.php">Update Profie</a></li> -->
-    <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+    <li class="dropdown">				
+					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
+					
+					<div class="dropdown-content">
+						<a href="updateprofile.php">Update profile</a>
+						<a href="#">Link 2</a>
+						<a href="../logout.php">Log Out</a>
+					</div>
+			</li>
 	</ul>
 </nav>
 

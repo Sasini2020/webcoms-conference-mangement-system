@@ -14,6 +14,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="../../css/nav_footer_styles.css">
     <link rel="stylesheet" href="../../css/table_style.css">
+    <link rel="stylesheet" href="../../css/DropDownListToNav.css">
 
   <style>
 
@@ -76,7 +77,15 @@
  		  <li><a href="paperlist.php">Review papers</a></li> -->
       <!--<li><a href="rev_change_password.php">Change Password</a></li>
 	    <li><a href="updateprofile.php">Update Profie</a></li>-->
-	    <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>		
+	    <li class="dropdown">				
+					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
+					
+					<div class="dropdown-content">
+						<a href="updateprofile.php">Update profile</a>
+						<a href="#">Link 2</a>
+						<a href="../logout.php">Log Out</a>
+					</div>
+			</li>		
     </ul>
   </nav>
 

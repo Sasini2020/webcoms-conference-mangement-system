@@ -149,7 +149,7 @@
 
       <label for="country">Country:<br>Current country : <?= $row['country'] ?></label><br>
 				<select id="country" class="" name="country">
-                <option value="">Select Your Country</option>
+                <option value="<?= $row['country'] ?>">Select Your Country</option>
 				        <option value="Afghanistan">Afghanistan</option>
                 <option value="Aland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>

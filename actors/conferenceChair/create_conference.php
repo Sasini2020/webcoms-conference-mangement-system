@@ -16,6 +16,7 @@
 
 	<link rel="stylesheet" href="../../css/reg_form_style.css">
 	<link rel="stylesheet" href="../../css/about_help_styles.css">
+  <link rel="stylesheet" href="../../css/DropDownListToNav.css">
 
  <!-- styles for dots in paragraphs -->
  <style>
@@ -46,7 +47,15 @@
       <li><a href="addnotemplates.php">Add notification templates</a></li>
       <li><a href="upudetauls.php">Upload User Details</a></li>-->
       <li><a href="registerUsers.php">User Registration</a></li>
-      <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
+      <li class="dropdown">				
+					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
+					
+					<div class="dropdown-content">
+						<a href="updateprofile.php">Update profile</a>
+						<a href="#">Link 2</a>
+						<a href="../logout.php">Log Out</a>
+					</div>
+			</li>
 
     </ul>
   </nav>
