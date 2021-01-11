@@ -43,7 +43,7 @@
 					
 					<div class="dropdown-content">
 						<a href="updateprofile.php">Update profile</a>
-						<a href="#">Link 2</a>
+						<a href="trackchair_change_password.php">Change Password</a>
 						<a href="../logout.php">Log Out</a>
 					</div>
 			</li>	

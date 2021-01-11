@@ -227,7 +227,7 @@ $status=$statusMsg='';
 					
 					<div class="dropdown-content">
 						<a href="updateprofile.php">Update profile</a>
-						<a href="#">Link 2</a>
+						<a href="admin_change_password.php">Change Password</a>
 						<a href="../logout.php">Log Out</a>
 					</div>
 			</li>

@@ -543,7 +543,7 @@ $status=$statusMsg='';
 			
 			
 			<label for="passW">Password:</label><br>
-			<input id="passW" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"class="inputvalues" placeholder="Your password" required/><br>
+			<input id="passW" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="inputvalues" placeholder="Your password" required/><br>
               <!-- Validations passwod -->
           <div id="message">
           <h3>Password must contain the following:</h3>
