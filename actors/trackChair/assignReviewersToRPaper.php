@@ -17,6 +17,12 @@
 	<link rel="stylesheet" href="../../css/sty.css">
 	<link rel="stylesheet" href="../../css/table_style.css">
     <link rel="stylesheet" href="../../css/new_table_and_button.css">
+
+<!-- import jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../../css/jquery.dropdown.min.css">
+  <script src="../../javascript/jquery.dropdown.min.js"></script>
+
     <style>
     .paperAcceptT{
       width:500px !important;
@@ -51,7 +57,7 @@
 </span></h4>
 <br>
 
-<div id="main-wrapper" style="margin:20px auto;height:360px">
+<div id="main-wrapper" style="margin:20px auto;height:500px">
         <center>
 			<h2>Assign Reviewers to Reaserch Paper</h2>
 		</center>
@@ -59,6 +65,10 @@
         <form action="assignReviewersToRPaper.php" class="myform" method="post" style="height:280px;">
             <fieldset>
                 <label for="selectR"><b>Choose Reviewers:</b><br>(Hold Ctrl to select multiple tracks)</label><br>
+                
+                <!-- Drop down list field -->
+
+                <div class="dropDownWithSearch">
                 <select name="selectedR[]" id="selectR" multiple="multiple" style="height: 100px;">
                     <?php
                         $conTrack = $_SESSION['conTrack_id'];
@@ -73,6 +83,9 @@
                         }
                     ?>
                 </select>
+              </div>
+               
+                <br>
             <button name="addR_btn" id='login_btn' value="addR" >Add Reviewer</button><br>
             </fieldset>
             <br>
@@ -205,6 +218,18 @@
         </tbody>      
       </table>
     </div>
+
+    <script type="text/javascript">
+
+    $('.dropDownWithSearch').dropdown({
+      // options here
+      input:'<input type="text" maxLength="20" style="width:370px" placeholder="Search">',
+      searchable:true,
+      multipleMode: 'label',
+      searchNoData: '<li style="color:#ddd">No Results</li>'
+    });
+
+  </script>
  
 <div class="footer">
     <p>&copy;2020, All rights reserved by www.WebComs.lk</p>

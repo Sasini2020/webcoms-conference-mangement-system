@@ -18,6 +18,11 @@
 	<link rel="stylesheet" href="../../css/table_style.css">
   <link rel="stylesheet" href="../../css/new_table_and_button.css">
 
+  <!-- import jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../../css/jquery.dropdown.min.css">
+  <script src="../../javascript/jquery.dropdown.min.js"></script>
+
 </head>
 <body>
 <nav>
@@ -31,7 +36,7 @@
     </ul>
 </nav>
 
-<div id="main-wrapper" style="margin:20px auto;height:360px">
+<div id="main-wrapper" style="margin:20px auto;height:500px">
         <center>
 			<h2>Assign Publication chairs to Conference</h2>
 		</center>
@@ -39,16 +44,22 @@
         <form action="assignPublicationChairToConference.php" class="myform" method="post" style="height:280px;">
             <fieldset>
                 <label for="selectPc"><b>Choose Publication Chairs:</b><br>(Hold Ctrl to select multiple tracks)</label><br>
-                <select name="selectedPC[]" id="selectPc" multiple="multiple" style="height: 100px;">
-                    <?php
-                        $query_result = mysqli_query($con,"select * from publicationchair;");
-                        while($row = mysqli_fetch_assoc($query_result)){
-                    ?>
-                    <option value="<?= $row['emailpubchair'] ?>"><?= $row['emailpubchair'] ?></option>
-                    <?php 
-                        }
-                    ?>
-                </select>
+                
+                <!-- Drop down list field -->
+
+                <div class="dropDownWithSearch">
+                  <select name="selectedPC[]" id="selectPc" multiple="multiple" style="height: 100px;">
+                      <?php
+                          $query_result = mysqli_query($con,"select * from publicationchair;");
+                          while($row = mysqli_fetch_assoc($query_result)){
+                      ?>
+                      <option value="<?= $row['emailpubchair'] ?>"><?= $row['emailpubchair'] ?></option>
+                      <?php 
+                          }
+                      ?>
+                  </select>
+                </div>
+                <br>
             <button name="addPubC_btn" id='login_btn' value="addTC" >Add Publication Chair</button><br>
             </fieldset>
             <br>
@@ -131,6 +142,18 @@
         </tbody>
       </table>
     </div>
+
+    <script type="text/javascript">
+
+    $('.dropDownWithSearch').dropdown({
+      // options here
+      input:'<input type="text" maxLength="20" style="width:370px" placeholder="Search">',
+      searchable:true,
+      multipleMode: 'label',
+      searchNoData: '<li style="color:#ddd">No Results</li>'
+    });
+
+  </script>
 
 
 <div class="footer">
