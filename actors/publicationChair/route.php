@@ -50,4 +50,9 @@
     $_SESSION['conferenceTrackId'] = $_GET['confTackIdForViewCameraReady'];
     header("location:viewcamerareadycopies.php");
   }
+
+  if(isset($_GET['ViewCameraReadyAbstractId'])){
+    $_SESSION['CameraReadyPaperId'] = $_GET['ViewCameraReadyAbstractId'];
+    header('location:viewRPaperAbstract.php');
+  }
 ?>

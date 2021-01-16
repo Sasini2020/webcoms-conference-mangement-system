@@ -173,6 +173,15 @@ select{
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.qSetHide{  
+  height: 0px;
+  overflow: hidden;
+}
+.qSetShow{
+  height: auto;
+  margin-left: 10px;
+}
 </style>
 
 </head>
@@ -210,7 +219,10 @@ select{
 
 <form action="addreview.php" method="post">
 <ul class="form-style-1">
-    
+  <!--<h2 id="questionSet1">1) Question Set 1</h2>-->
+  <br>
+  <div class="" id="questionSet1Con">
+      <li>
         <label>1) While performing my duties as a reviewer(including writing reviewes and partcipating in discussion), I have
         and will continue to abide by the xxxx code of conduct <span class="required">*</span ><span style="color:dodgerblue;">(visible to other reviewer)</span></label>
         <!-- <input type="email" name="field3" class="field-long" /> -->
@@ -230,7 +242,7 @@ select{
     </li>       
     
     <br><br>
-
+    <li>
     <label>3) Have you previously reviewed or area chaired ( a version of ) this work for another archival venue ?</label><br>
     <input id="yes" type="radio" name="question3" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -247,7 +259,9 @@ select{
         <option value="Low">Low</option>
         </select>
     </li>
+  </div>
     <br>
+    <li>
     <label>5) Relevance : </label><br>
     <input id="yes" type="radio" name="question5" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -259,6 +273,7 @@ select{
         <textarea name="question5_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
+    <li>
     <label>6) Novelty or Originality - The paper reflects current information on this topic : </label><br>
 		<input id="yes" type="radio" name="question6" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -270,6 +285,7 @@ select{
         <textarea name="question6_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
+    <li>
     <label>7) The title is clear and informative : </label><br>
 		<input id="yes" type="radio" name="question7" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -281,6 +297,7 @@ select{
         <textarea name="question7_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
+    <li>
     <label>8) The title reflects the content and purpose of the paper : </label><br>
 		<input id="yes" type="radio" name="question8" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -292,6 +309,7 @@ select{
         <textarea name="question8_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
+    <li>
     <label>9) Abstract : </label><br>
     <input id="yes" type="radio" name="question9" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -303,7 +321,7 @@ select{
         <textarea name="question9_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>10) Keywords : </label><br>
     <input id="yes" type="radio" name="question10" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -315,7 +333,7 @@ select{
         <textarea name="question10_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>11) Content - Introduction : </label><br>
 	<input id="yes" type="radio" name="question11" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -327,7 +345,7 @@ select{
         <textarea name="question11_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>12) Content - Background / Literature Study - The most current references on this topic have been included : </label><br>
 		<input id="yes" type="radio" name="question12" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -339,7 +357,7 @@ select{
         <textarea name="question12_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>13) Content - Background / Literature Study - The most relevant references on this topic have been included : </label><br>
     <input id="yes" type="radio" name="question13" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -351,7 +369,7 @@ select{
         <textarea name="question13_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>14) Content - Methodology : </label><br>
    <input id="yes" type="radio" name="question14" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -363,7 +381,7 @@ select{
         <textarea name="question14_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>15) Clarity - There are no any contradictions or inconsistencies: </label><br>
     <input id="yes" type="radio" name="question15" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -375,6 +393,7 @@ select{
         <textarea name="question15_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
+    <li>
     <label>16) Clarity - The paper stays focused : </label><br>
 		<input id="yes" type="radio" name="question16" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -386,7 +405,7 @@ select{
         <textarea name="question16_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>17) Organization - Ideas are developed and related in a logic sequence : </label><br>
 		<input id="yes" type="radio" name="question17" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -398,7 +417,7 @@ select{
         <textarea name="question17_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>18) Organization - Transitions between discussion are smooth and easy to follow : </label><br>
 		<input id="yes" type="radio" name="question18" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -410,7 +429,7 @@ select{
         <textarea name="question18_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>19) Accuracy - The supporting evidence ( literature referenced ) is appopriately cited : </label><br>
 		<input id="yes" type="radio" name="question19" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -422,7 +441,7 @@ select{
         <textarea name="question19_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>20) Accuracy - Tables and figures are of clear and satisfactory quality : </label><br>
 		<input id="yes" type="radio" name="question20" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -434,7 +453,7 @@ select{
         <textarea name="question20_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>21) Accuracy - There are no math or text errors in tables or figures : </label><br>
 		<input id="yes" type="radio" name="question21" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -446,7 +465,7 @@ select{
         <textarea name="question21_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>22) Accuracy - Legends and titles of tables and figures are clearly given : </label><br>
 		<input id="yes" type="radio" name="question22" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -458,7 +477,7 @@ select{
         <textarea name="question22_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
     <br>
-
+    <li>
     <label>23) Accuracy - The paper is free from grammatical or spelling errors : </label><br>
 	<input id="yes" type="radio" name="question23" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -615,5 +634,19 @@ select{
         <div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
          </div>
+
+<script>
+  var questionSet1 = 0;
+  document.getElementById("questionSet1").addEventListener("click",function(){
+    if(questionSet1==0){
+      document.getElementById("questionSet1Con").className = "qSetShow";
+      questionSet1 = 1;
+    }
+    else{
+      document.getElementById("questionSet1Con").className = "qSetHide";
+      questionSet1 = 0;
+    }
+  })
+</script>
 </body>
 </html>

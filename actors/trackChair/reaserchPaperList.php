@@ -80,8 +80,6 @@
   min-width: 1200px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  display: block;
-  overflow-x: auto;
   
 }
 
@@ -114,9 +112,6 @@
   font-weight: bold;
   color: #009879;
 }
-.forAbstractWidth{
-}
-
  
 </style>
 
@@ -151,7 +146,7 @@
         <!-- file id -->
         <th>Number</th>
         <th>Paper Title</th> 
-        <th class="forAbstractWidth">Abstrackt</th>
+        <th>Abstrackt</th>
         <!--<th>Author name</th>
         <th>Co Authors</th>   
         <th>Organization(Author)</th>
@@ -176,7 +171,7 @@
       <tr>
           <td><?= $count ?></td>
           <td><?= $row['Title'] ?></td>
-          <td class="forAbstractWidth"><?= $row['Abstract'] ?></td>
+          <td><a style="text-decoration:none;color:#1F618D" href="route.php?viewAbstractPId=<?= $row['p_id'] ?>">View</a></td>
           <!--<td><?= $row['aName'] ?></td>
           <td><?= $row['coAuthors'] ?></td>
           <td><?= $row['aOrganization'] ?></td>

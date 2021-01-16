@@ -98,4 +98,9 @@
     header('location:viewSubmittedCameraReady.php');
     
   }
+
+  if(isset($_GET["viewAbstractPId"])){
+    $_SESSION["RpaperId"] = $_GET["viewAbstractPId"];
+    header("location:viewRPaperAbstract.php");
+  }
 ?>

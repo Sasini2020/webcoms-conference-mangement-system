@@ -25,11 +25,9 @@
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 100%;
+  min-width: 95%;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  display: block;
-  overflow-x: auto;
 }
 
 .content-table thead tr {
@@ -42,7 +40,7 @@
 .content-table th,
 .content-table td {
   padding: 15px 11px;
-  min-width: 200px;
+  min-width: 100px;
 }
 
 .content-table tbody tr {
@@ -66,9 +64,6 @@
   pointer-events:none;
   cursor:default;
   opacity:0.6;
-}
-.forAbstractwidth{
-  min-width:500px !important;
 }
  
 </style>
@@ -105,7 +100,7 @@
     <!-- file id -->
     <th>Number</th>
     <th>Paper Title</th> 
-    <th class="forAbstractwidth">Abstract</th>
+    <th>Abstract</th>
     <th>Conference Name</th>
     <th>Action</th>
     <th>Is Reviewed</th>
@@ -137,7 +132,9 @@
       <td><?php echo $count ?></td>
       <td><?php echo $file['title']; ?></td>
       <!-- show conference name here in below php tag -->
-      <td class="forAbstractwidth"><?php echo $file['abstract']; ?></td>
+      <td><a style="text-decoration:none;color:dodgerblue;" 
+      href="route.php?viewAbstractPId=<?php echo $file['idrp'] ?>">View</a></td>
+
       <td><?php echo $file['cName']; ?></td>
 
       <td><i class="fas fa-file-download" style="color:#1A5276;"></i><a style="text-decoration:none;color:dodgerblue;" 

@@ -74,4 +74,9 @@
       $query = mysqli_query($con,"update researchpaper set acceptancy=0 where idrp=$rpId");
       header('location:assignReviewersToRPaper.php');
     }
+
+    if(isset($_GET["viewAbstractPId"])){
+      $_SESSION["RpaperId"] = $_GET["viewAbstractPId"];
+      header("location:viewRPaperAbstract.php");
+    }
 ?>

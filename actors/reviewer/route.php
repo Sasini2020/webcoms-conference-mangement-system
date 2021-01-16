@@ -35,4 +35,9 @@
       $_SESSION['RPaperTitle'] = $_GET['RP_title'];
       header('location:editreview.php');
     }
+
+    if(isset($_GET["viewAbstractPId"])){
+      $_SESSION["RpaperId"] = $_GET["viewAbstractPId"];
+      header("location:viewRPaperAbstract.php");
+    }
 ?>
