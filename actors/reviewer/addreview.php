@@ -219,9 +219,9 @@ select{
 
 <form action="addreview.php" method="post">
 <ul class="form-style-1">
-  <h2 id="questionSet1">1) Question Set 1</h2>
+  <h2 id="questionSet1-">1) Question Set 1</h2>
   <br>
-  <div class="" id="questionSet1Con">
+  <div class="qSetShow" id="questionSet1Con-">
       <li>
         <label>1) While performing my duties as a reviewer(including writing reviewes and partcipating in discussion), I have
         and will continue to abide by the xxxx code of conduct <span class="required">*</span ><span style="color:dodgerblue;">(visible to other reviewer)</span></label>
