@@ -219,7 +219,7 @@ select{
 
 <form action="addreview.php" method="post">
 <ul class="form-style-1">
-  <!--<h2 id="questionSet1">1) Question Set 1</h2>-->
+  <h2 id="questionSet1">1) Question Set 1</h2>
   <br>
   <div class="" id="questionSet1Con">
       <li>

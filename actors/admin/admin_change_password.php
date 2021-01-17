@@ -136,14 +136,14 @@
                 // update password query
                 $encriptedNewPass = md5($newPass);
 
-                $query1_r = mysqli_query($con,"update userinfotable set password='$encriptedNewPass'
-                            where (email = '$aEmail') and (user_type = 'Admin')");
-                
-                $query2_r = mysqli_query($con,"update admin set password='$encriptedNewPass' where AdminEmail = '$aEmail'");
+                  $query1_r = mysqli_query($con,"update userinfotable set password='$encriptedNewPass'
+                              where (email = '$aEmail') and (user_type = 'Admin')");
+                  
+                  $query2_r = mysqli_query($con,"update admin set password='$encriptedNewPass' where AdminEmail = '$aEmail'");
 
-                if($query1_r and $query2_r){
-                  echo '<script type="text/javascript"> alert("Successfully.. Password is updated..!") </script>';
-                }
+                  if($query1_r and $query2_r){
+                    echo '<script type="text/javascript"> alert("Successfully.. Password is updated..!") </script>';
+                  }
                 
               }
               else{
