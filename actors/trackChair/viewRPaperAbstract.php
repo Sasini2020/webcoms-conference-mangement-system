@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Paper Abstract</title>
+    <title>Abstract</title>
     <link rel="stylesheet" href="../../css/nav_footer_styles.css">
 
     <style>
@@ -39,7 +39,7 @@
 
 <br>
 <div class="container">
-    <h2>Research Paper Abstract</h2>
+    <h2> Abstract</h2>
 
     <div class="sub_con">
 
