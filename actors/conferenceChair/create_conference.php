@@ -11,7 +11,7 @@
 <html>
 <head>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Request a new conference</title>
+	<title>Request new conference</title>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 	<link rel="stylesheet" href="../../css/reg_form_style.css">
@@ -42,7 +42,7 @@
             </label>
     <ul>
 	  <li><a href="conferencechairhomepage.php">Home</a></li>
-      <li><a class="active" href="create_conference.php">Request a Conference</a></li>
+      <li><a class="active" href="create_conference.php">Request Conference</a></li>
       <!--<li><a href="viewConferencesForCC.php">View Conf</a></li>
       <li><a href="addnotemplates.php">Add notification templates</a></li>
       <li><a href="upudetauls.php">Upload User Details</a></li>-->
@@ -89,7 +89,7 @@
 		<h3 style="margin-left:25px;color:dodgerblue;">Request Form</h3>
 
 		<form action="create_conference.php"method="post">
-			<br><h1>Request a Conference</h1>
+			<br><h1>Request Conference</h1>
 
 			<label>Conference Title <span style="color:red;">*</span></b></label><br>
 			<input name="name" type="text" class="inputvalues" placeholder="Type your conference's title" required/><br>
