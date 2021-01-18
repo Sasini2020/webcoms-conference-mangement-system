@@ -219,7 +219,7 @@ select{
 
 <form action="addreview.php" method="post">
 <ul class="form-style-1">
-  <h2 id="questionSet1-">1) Question Set 1</h2>
+  <h2 id="questionSet1-" style="color:#273746;border-bottom: 3px solid dodgerblue;">I. General</h2>
   <br>
   <div class="qSetShow" id="questionSet1Con-">
       <li>
@@ -260,7 +260,9 @@ select{
         </select>
     </li>
   </div>
-    <br>
+    <br><br>
+    <h2 id="questionSet1-" style="color:#273746;border-bottom: 3px solid dodgerblue;">II. Subject Treatment </h2>
+    <br><br>
     <li>
     <label>5) Relevance : </label><br>
     <input id="yes" type="radio" name="question5" value="Yes" style="margin-left:20px;" required> Yes
@@ -332,8 +334,10 @@ select{
         <label>(If 'no', Please give reasons) : </label>
         <textarea name="question10_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
-    <br>
+    <br><br>
     <li>
+    <h2 id="questionSet1-" style="color:#273746;border-bottom: 3px solid dodgerblue;">III. Content</h2>
+    <br><br>
     <label>11) Content - Introduction : </label><br>
 	<input id="yes" type="radio" name="question11" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -380,8 +384,10 @@ select{
         <label>(If 'no', Please give reasons) : </label>
         <textarea name="question14_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
-    <br>
-    <li>
+    <br><br>
+    <h2 id="questionSet1-" style="color:#273746;border-bottom: 3px solid dodgerblue;">IV. Clarity</h2>
+
+    <li><br><br>
     <label>15) Clarity - There are no any contradictions or inconsistencies: </label><br>
     <input id="yes" type="radio" name="question15" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
@@ -428,7 +434,9 @@ select{
         <label>(If 'no', Please give reasons) : </label>
         <textarea name="question18_no" id="field5" class="field-long field-textarea"></textarea>
     </li>
-    <br>
+    <br><br>
+    <h2 id="questionSet1-" style="color:#273746;border-bottom: 3px solid dodgerblue;">V. Accuracy And Quality </h2>
+    <br><br>
     <li>
     <label>19) Accuracy - The supporting evidence ( literature referenced ) is appopriately cited : </label><br>
 		<input id="yes" type="radio" name="question19" value="Yes" style="margin-left:20px;" required> Yes
@@ -501,7 +509,9 @@ select{
           <option value="Poor">Poor</option>
         </select>
     </li>
-    <br>
+    <br><br>
+    <h2 id="questionSet1-" style="color:#273746;border-bottom: 3px solid dodgerblue;">VI. Recommendations</h2>
+    <br><br>
     <li>
         <label>25) Recommendation : </label>
           <select name="question25" class="field-select">
