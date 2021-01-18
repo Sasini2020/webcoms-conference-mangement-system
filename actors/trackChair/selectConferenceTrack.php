@@ -45,10 +45,10 @@
   <br><br>
 
 	<div id="main-wrapper">
-		<center>
+	
 
-    <h2 style="color:#111 ;margin-left:20px;">You Assign Conference Track List</h2>
-
+    <h2 style="color:#111 ;margin-left:20px;">My Tracks List</h2>
+    <center>
 <table class="content-table">
     <thead>
       <tr>
