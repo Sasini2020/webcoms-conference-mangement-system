@@ -52,7 +52,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
                 if (mysqli_query($conn, $sql)) {
                     // echo "File uploaded successfully";
                     echo '<script type="text/javascript"> 
-                    if (window.confirm("Registration Successfully")) 
+                    if (window.confirm("Camera Ready Submission Guidelines Successfully")) 
                     {
                     window.location.href="camera_ready_sub_guidelines.php";
                     };
