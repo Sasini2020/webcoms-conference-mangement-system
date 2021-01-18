@@ -19,6 +19,7 @@
   <!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">-->
    <link rel="stylesheet" href="../../css/reg_form_style.css">
+   <link rel="stylesheet" href="../../css/new_table_and_button.css">
 
    <link rel="stylesheet" href="../../css/table_style.css">
 
@@ -52,7 +53,7 @@
 </style>-->
 <style>
 
-.conListLink{
+/* .conListLink{
   color:white;
   text-shadow: 1px 1px 0 #444;
 }
@@ -71,7 +72,7 @@
 .conListLink:hover, 
 .conListLink:active {
   background-color: #00b8e6;
-}
+} */
 
 .content-table {
   border-collapse: collapse;
@@ -105,7 +106,7 @@
 }
 
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid dodgerblue;
 }
 
 .content-table tbody tr.active-row {
@@ -137,16 +138,16 @@
   
 <br>
 <div>
+    
+    <h2 style="color:#111 ;margin-left:20px;">Uploaded Research Papers</h2>
     <center>
-    <h1 style="color:#111 ;margin-left:20px;">Research Papers</h1>
-
     <table class="content-table">
     <thead>
       <tr>
         <!-- file id -->
         <th>Number</th>
         <th>Paper Title</th> 
-        <th>Abstrackt</th>
+        <th>Abstract</th>
         <!--<th>Author name</th>
         <th>Co Authors</th>   
         <th>Organization(Author)</th>
