@@ -248,7 +248,7 @@ $status=$statusMsg='';
 <html>
 <head>
 
-    <title>Reviewer Registration</title>
+    <title>User Registration</title>
 	
     <link rel="stylesheet" href="../../css/nav_footer_styles.css">
 	<link rel="stylesheet" href="../../css/reg_form_style.css">
