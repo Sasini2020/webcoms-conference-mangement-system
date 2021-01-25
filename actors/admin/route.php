@@ -17,4 +17,16 @@
             header('location:requested_conferences.php');
           }
         }
+
+        if(isset($_GET['archiveConfId'])){
+          $confId = $_GET['archiveConfId'];
+          $qur = mysqli_query($con,"update conferences set Accepted = '2' where id='$confId'");
+          header('location:conference_list.php');
+        }
+
+        if(isset($_GET['restArchiveConfId'])){
+          $confId = $_GET['restArchiveConfId'];
+          $qur = mysqli_query($con,"update conferences set Accepted = '1' where id='$confId'");
+          header('location:conference_list.php');
+        }
 ?>

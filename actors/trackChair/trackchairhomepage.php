@@ -79,7 +79,7 @@
         $query_result = mysqli_query($con,"select distinct c.id as Id, c.name as Name, c.venue as Venue, c.country as Country,
         c.start_date as st_d, c.end_date as end_d, c.deadline_date as de_d  
         from conferences as c, conferencetrack as ct, conferencetrack_and_trackchair as ctt
-        where (ctt.trackChairEmail = '$tEmail') and (ctt.conferenceTrackId = ct.ID) and (ct.conferenceID = c.id)
+        where (ctt.trackChairEmail = '$tEmail') and (ctt.conferenceTrackId = ct.ID) and (ct.conferenceID = c.id) and (c.Accepted = '1')
         order by ctt.ID DESC");
         $count = 1;
         while($row = mysqli_fetch_assoc($query_result)){

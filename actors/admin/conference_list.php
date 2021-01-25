@@ -26,7 +26,7 @@
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 400px;
+  min-width: 1400px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -59,6 +59,22 @@
 .content-table tbody tr.active-row {
   font-weight: bold;
   color: #009879;
+}
+
+.linkStyle:link, .linkStyle:visited{
+  text-decoration:none;
+  color: #404040;
+}
+
+.linkStyle:hover, .linkStyle:active{
+  text-decoration:none;
+  color: black;
+}
+
+.archivedText{
+  color:black;
+  opacity:0.5;
+  cursor: default;
 }
 
 </style>
@@ -110,6 +126,7 @@
           <th>Deadline</th>
           <th>Sponser details</th>
           <th>Conference Chair</th>
+          <th>Archive</th>
       	</tr>
       </thead>
 </center>
@@ -123,10 +140,11 @@
           conferences.end_date,
           conferences.deadline_date,
           conferences.sponsor_details,
-          conferencechair.fullname
+          conferencechair.fullname,
+          conferences.Accepted
           from conferences
           inner join conferencechair on conferences.emailconfchair = conferencechair.emailconfchair
-          where conferences.Accepted='1'
+          where conferences.Accepted <> '0'
           group by conferences.id DESC;") or die(mysqli_error($con));
           $counter = 1;
           while ($row = mysqli_fetch_assoc($sql)) {
@@ -141,6 +159,20 @@
 							<td><?=$row['deadline_date']?></td>
               <td><?=$row['sponsor_details']?></td>
               <td><?=$row['fullname']?></td>
+              <td>
+                <?php
+                  if($row['Accepted'] == '1'){
+                    echo '<a class="linkStyle" 
+                    href="route.php?archiveConfId='.$row['id'].'"><i class="fa fa-archive" aria-hidden="true"></i> Archive</a>';
+                  }
+                  // accepted = 2 is used to achive conferences
+                  elseif($row['Accepted'] == '2'){
+                    echo '<span class="archivedText"><i class="fa fa-archive" aria-hidden="true"></i> Archived</span>
+                          <b>&nbsp; </b> <a class="linkStyle" 
+                          href="route.php?restArchiveConfId='.$row['id'].'"> <u>Reset</u></a>';
+                  }
+                ?>
+              </td>
             </tr>
       </tbody>
 			<?php

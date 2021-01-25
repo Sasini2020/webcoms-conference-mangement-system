@@ -171,7 +171,7 @@ $(document).ready(function(){
 	
 	$conn = $con;
 	
-  $sql = "SELECT * from conferences 
+  $sql = "SELECT * from conferences where conferences.Accepted = '1' 
           group by conferences.id DESC";
   $result = $conn-> query($sql);
   

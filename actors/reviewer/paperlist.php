@@ -119,7 +119,7 @@
     c.name as cName, rap.isReviewed as isRved
     FROM researchpaper as rp, reviewerandpaper as rap, conferencetrack as ct, conferences as c
     where (rap.reviewerEmail = '$rEmail') and (rap.paperId = rp.idrp) and (rp.trackID = ct.ID) and (ct.systemTrackId = $sysTrackId)
-     and (rp.conferenceId = c.id)
+     and (rp.conferenceId = c.id) and (c.Accepted = '1')
      order by rap.ID DESC";
 
     $result = mysqli_query($conn, $query);

@@ -170,7 +170,7 @@
    conferences.end_date,conference_and_publicationchair.conferenceId,conference_and_publicationchair.publicationChairEmail,
    conferences.id
    from conferences LEFT JOIN  conference_and_publicationchair ON conferences.id=conference_and_publicationchair.conferenceId
-   WHERE conference_and_publicationchair.publicationChairEmail='$p_email'
+   WHERE (conference_and_publicationchair.publicationChairEmail='$p_email') and (conferences.Accepted = '1')
    order by conference_and_publicationchair.ID DESC;") or die(mysqli_error($con));
    $counter=1;
 
