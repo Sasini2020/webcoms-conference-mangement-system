@@ -26,7 +26,7 @@
             </label>
 		<ul>
 			<li><a href="index.php">Home</a></li>
-			<li><a class="active" href="login.php">Login</a></li>
+			<li><a class="active" href="login.php">Log In</a></li>
 			<li><a href="register.php">Register</a></li>
 			<li><a href="help.php">Help</a></li>
 			<li><a href="About.php">About</a></li>
@@ -43,7 +43,7 @@
 				<input id="UpassW" name="password" type="password" placeholder="Password"/>
 
 
-			<button name="login" type="submit" id="login_btn" value="Login">login</button>
+			<button name="login" type="submit" id="login_btn" value="Login">log In</button>
 			<!--<p style="text-align:center;" class="message">Not registered? <a style="text-decoration:none;color:dodgerblue" href="register.php">Create an account</a></p>-->
 
 			<p style="text-align:center;" class="message"> <a style="text-decoration:none;color:dodgerblue" href="forgetpassword.php">Forgot your password? </a> &nbsp;|&nbsp; New to Web-Coms? <a style="text-decoration:none;color:dodgerblue" href="register.php">Register</a></p>
