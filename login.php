@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login</title>
+		<title>Log In</title>
 
 		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 		<!-- <link rel="stylesheet" href="css/main_style.css"> -->
