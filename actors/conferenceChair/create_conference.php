@@ -18,6 +18,14 @@
 	<link rel="stylesheet" href="../../css/about_help_styles.css">
   <link rel="stylesheet" href="../../css/DropDownListToNav.css">
 
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- JQuery UI -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/hot-sneaks/jquery-ui.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  
+
  <!-- styles for dots in paragraphs -->
  <style>
 .dot {
@@ -347,13 +355,13 @@
 				</select><br>
 			
 			<label >Conference Start Date <span style="color:red;">*</span></b></label><br>
-			<input name="start_date" required type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2020-12-15" required/><br>
+			<input name="start_date" required type="text" class="inputvalues" placeholder="dd-M-yy" id="dt1"  required/><br>
 			
 			<label>Conference End Date <span style="color:red;">*</span></b></label><br>
-			<input name="end_date" type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2021-01-15" required/><br>
+			<input name="end_date" type="text" class="inputvalues" placeholder="dd-M-yy" id="dt2" required/><br>
 			
 			<label>Paper Submission Due Date <span style="color:red;">*</span></b></label><br>
-			<input name="deadline" type="date" class="inputvalues" placeholder="dd-mm-yyyy" min="2021-02-15" required/><br>
+			<input name="deadline" type="text" class="inputvalues" placeholder="dd-M-yy"  id="dt3" required/><br>
 
       <label>Sponsers Details <span style="color:red;">*</span></b></label><br>
 			<input name="sponserD" type="text" class="inputvalues" placeholder="Type Sponsers Details"/><br>
@@ -365,6 +373,49 @@
 
 		</form>
 		
+  <!-- Datepicker code for Fromdate Todate -->
+  <script>
+      $(document).ready(function () {
+
+      $("#dt1").datepicker({
+          dateFormat: "dd-M-yy",
+          minDate: 0,
+          onSelect: function () {
+              var dt2 = $('#dt2');
+              var dt3 = $('#dt3');
+              var startDate = $(this).datepicker('getDate');
+              var minDate = $(this).datepicker('getDate');
+              var dt2Date = dt2.datepicker('getDate');
+              //difference in days. 86400 seconds in day, 1000 ms in second
+              var dateDiff = (dt2Date - minDate)/(86400 * 1000);
+              
+              startDate.setDate(startDate.getDate() + 30);
+              if (dt2Date == null || dateDiff < 0) {
+                  dt2.datepicker('setDate', minDate);
+              }
+              else if (dateDiff > 30){
+                  dt2.datepicker('setDate', startDate);
+              }
+              //sets dt2 maxDate to the last day of 30 days window
+              dt2.datepicker('option', 'maxDate', startDate);
+              dt2.datepicker('option', 'minDate', minDate);
+          }
+      });
+      $('#dt2').datepicker({
+          dateFormat: "dd-M-yy",
+          minDate: 0
+      });
+
+      //For dt3
+      $('#dt3').datepicker({
+          dateFormat: "dd-M-yy",
+          minDate: 0
+      });
+
+      });
+  </script>
+
+
 		<?php
 			if(isset($_POST['create_btn']))
 			{				
