@@ -516,7 +516,6 @@ $status=$statusMsg='';
                 <option value="Zimbabwe">Zimbabwe</option>
 				</select><br>
 			
-			<!-- Used input type as tel -->
 			<label for="ContactDetails"><b>Telephone No:</b></label><br>
      
      <select id="phoneCode" name="phoneCode" style="width:100px;" required >
