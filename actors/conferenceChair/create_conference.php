@@ -99,13 +99,13 @@
 		<form action="create_conference.php"method="post">
 			<br><h1>Request Conference</h1>
 
-			<label>Conference Title <span style="color:red;">*</span></b></label><br>
+			<label><b>Conference Title <span style="color:red;"> * </span></b></label><br>
 			<input name="name" type="text" class="inputvalues" placeholder="Type your conference's title" required/><br>
 			
-			<label>City <span style="color:red;">*</span></b></label><br>
+			<label><b>City<span style="color:red;"> * </span></b></label><br>
 			<input name="venue" type="text" class="inputvalues" placeholder="City" required/><br>
 			
-			<label>Country  <span style="color:red;">*</span></b></label><br>
+			<label><b>Country  <span style="color:red;">*</span></b></label><br>
 				<select name="country" class="" name="country">
 				<option value=""></option>
 				<option value="Afghanistan">Afghanistan</option>
@@ -354,16 +354,16 @@
                 <option value="Zimbabwe">Zimbabwe</option>
 				</select><br>
 			
-			<label >Conference Start Date <span style="color:red;">*</span></b></label><br>
+			<label><b>Conference Start Date <span style="color:red;">*</span></b></label><br>
 			<input name="start_date" required type="text" class="inputvalues" placeholder="dd-M-yy" id="dt1"  required/><br>
 			
-			<label>Conference End Date <span style="color:red;">*</span></b></label><br>
+			<label><b>Conference End Date <span style="color:red;">*</span></b></label><br>
 			<input name="end_date" type="text" class="inputvalues" placeholder="dd-M-yy" id="dt2" required/><br>
 			
-			<label>Paper Submission Due Date <span style="color:red;">*</span></b></label><br>
+			<label><b>Paper Submission Due Date <span style="color:red;">*</span></b></label><br>
 			<input name="deadline" type="text" class="inputvalues" placeholder="dd-M-yy"  id="dt3" required/><br>
 
-      <label>Sponsers Details <span style="color:red;">*</span></b></label><br>
+      <label><b>Sponsor Details </b></label><br>
 			<input name="sponserD" type="text" class="inputvalues" placeholder="Type Sponsers Details"/><br>
 		
 
