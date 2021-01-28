@@ -39,7 +39,7 @@
 }
 
 .content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid dodgerblue;
 }
 
 .content-table tbody tr:nth-of-type(even) {
@@ -61,9 +61,8 @@
 
   <br><br>
 
-  <center>
-    <p><h3>Conference List</h3></p>
-  </center>
+  <h2 style="margin-left:20px;">Conferences List</h2>
+
 
   <br><br>
 

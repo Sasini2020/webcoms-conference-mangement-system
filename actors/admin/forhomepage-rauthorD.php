@@ -59,14 +59,14 @@
 <body>
 	
 	
-<center><p><h3>Author Details</h3></p></center>
+<h2 style="margin-left:20px;">Author Details </h2>
 
 	<table class="content-table">
 	<thead>
 		<tr>
 		<th>Full name</th>
 		<th>Email</th>	
-		<th></th>
+		<!-- <th></th> -->
 		</tr>
 	</thead>	
 	
