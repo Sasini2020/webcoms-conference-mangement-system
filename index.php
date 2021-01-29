@@ -36,7 +36,7 @@
             </label>
 		<ul>
 			<li><a class="active" href="index.php">Home</a></li>
-			<li><a href="login.php">Login</a></li>
+			<li><a href="login.php">Log In</a></li>
 			<li><a href="register.php">Register</a></li>
 			<li><a href="help.php">Help</a></li>
 			<li><a href="About.php">About</a></li>

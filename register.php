@@ -250,8 +250,8 @@ $status=$statusMsg='';
 			<fieldset>
       		<legend><span class="number">1</span>Your Basic Information</legend><br>
 			
-      <label for="aTitle"><b>Title:</b></label><br>
-      <select name="acTitle" id="aTitle">
+      <label for="aTitle"><b>Title <span style="color:red;">*</span></b></label><br>
+      <select name="acTitle" id="aTitle" required>
         <option value="Mr">Mr.</option>
         <option value="Ms">Ms.</option>
         <option value="Mrs">Mrs.</option>
@@ -260,15 +260,15 @@ $status=$statusMsg='';
         <option value="Dr">Dr.</option>
       </select>
      
-        <label for="fname"><b>Full Name:</b></label><br>
+        <label for="fname"><b>Full Name <span style="color:red;">*</span></b></label><br>
         <input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/>
        
 
-      <label for="aOrganization"><b>Organization:</b></label><br>
+      <label for="aOrganization"><b>Organization </b></label><br>
 			<input id="aOrganization" name="Organization" type="text" class="inputvalues" placeholder="Type your Organization" /><br>
 
-			<label for="country"><b>Country:</b></label><br>
-				<select id="country" class="" name="country">
+			<label for="country"><b>Country <span style="color:red;">*</span></b></label><br>
+				<select id="country" class="" name="country" required>
                 <option value="">Select Your Country</option>
 				        <option value="Afghanistan">Afghanistan</option>
                 <option value="Aland Islands">Åland Islands</option>
@@ -516,7 +516,7 @@ $status=$statusMsg='';
                 <option value="Zimbabwe">Zimbabwe</option>
 				</select><br>
 			
-			<label for="ContactDetails"><b>Telephone No:</b></label><br>
+			<label for="ContactDetails"><b>Telephone No <span style="color:red;">*</span></b></label><br>
      
      <select id="phoneCode" name="phoneCode" style="width:100px;" required >
         
@@ -749,12 +749,11 @@ $status=$statusMsg='';
 		</fieldset>
 		<fieldset>
       	<legend><span class="number">2</span>Your Login Information</legend><br>
-			<label for="Email"><b>Email:</b></label><br>
-			<!-- Validate uni emails as well -->
+			<label for="Email"><b>Email <span style="color:red;">*</span></b></label><br>
 			<input  id='email' name="email" type="text" class="inputvalues" placeholder="Type your email" required/><br>
 			
 			
-			<label for="passW"><b>Password:</b></label><br>
+			<label for="passW"><b>Password <span style="color:red;">*</span></b></label><br>
 			<input id="passW" name="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" class="inputvalues" placeholder="Your password" required/><br>
               <!-- Validations passwod -->
           <div id="message">
@@ -764,7 +763,7 @@ $status=$statusMsg='';
           <p id="number" class="invalid">A <b>number</b></p>
           <p id="length" class="invalid">Minimum <b>8 characters</b></p>
         </div>
-			<label for="CpassW"><b>Confirm Password:<b></label><br>
+			<label for="CpassW"><b>Confirm Password <span style="color:red;">*</span><b></label><br>
 			<input id="CpassW" name="cpassword" type="password" class="inputvalues" placeholder="Confirm password" required/><br>
 		</fieldset>
 	
@@ -772,12 +771,8 @@ $status=$statusMsg='';
 			<!--<a href="index.php"><input type="button" id="back_btn" value="Back"/></a>-->
 		</form>
 
-
 	</div>
 
-	
-
-	
 <!-- for password validation pwd stuffs		 -->
 	
 <script>
@@ -840,11 +835,9 @@ myInput.onkeyup = function() {
 }
 </script>
 
-
-<!-- Footer section -->
-<div class="footer">
-            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
-        </div>
+    <!-- Footer section -->
+    <div class="footer">
+        <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+    </div>
 </body>
-
 </html>
