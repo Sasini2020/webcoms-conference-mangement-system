@@ -70,7 +70,7 @@
 				if(mysqli_num_rows($select_query)>0)
 				{
 					// valid
-					//$_SESSION['email']= $email;
+					$_SESSION['user_password']= $password;
 
 					if($user_type=="Admin"){
 						$_SESSION['login_s'] = '1';

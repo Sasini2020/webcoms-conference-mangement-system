@@ -5,6 +5,15 @@
     }
     require '../../dbconfig/config.php';
 
+    if($_SESSION['user_password'] == "Reviewer123"){
+      echo '<script type="text/javascript"> 
+                    if (window.confirm("Your Password is still having default one. Please change it..!")) 
+                    {
+                    window.location.href="rev_change_password.php";
+                    };
+                  </script>';
+    }
+
 ?>
 
 <!DOCTYPE html>

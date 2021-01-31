@@ -5,6 +5,15 @@
     header('location:../../login.php');
   }
 
+  if($_SESSION['user_password'] == "ConfChair123"){
+    echo '<script type="text/javascript"> 
+                  if (window.confirm("Your Password is still having default one. Please change it..!")) 
+                  {
+                  window.location.href="con_change_password.php";
+                  };
+                </script>';
+  }
+
 ?>
 <!DOCTYPE html>
 <html>

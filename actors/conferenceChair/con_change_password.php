@@ -127,16 +127,40 @@
 
               if($newPass == $conNewPass){
                 //echo '<script type="text/javascript"> alert("yahoo") </script>';
-                // update password query
-                $encriptedNewPass = md5($newPass);
 
-                $query1_r = mysqli_query($con,"update userinfotable set password='$encriptedNewPass'
-                            where (email = '$aEmail') and (user_type = 'Conference_chair')");
-                
-                $query2_r = mysqli_query($con,"update conferencechair set password='$encriptedNewPass' where emailconfchair = '$aEmail'");
+                if($currentPass <> $newPass){  
+                    
+                  $encriptedNewPass = md5($newPass);
 
-                if($query1_r and $query2_r){
-                  echo '<script type="text/javascript"> alert("Successfully.. Password is updated..!") </script>';
+                  // avoid new password duplication
+                  $query_result_CD = mysqli_query($con,"select password from userinfotable where (email='$aEmail')
+                  and (user_type <> 'Conference_chair')");
+                  $CDCount = 0;
+                  while($rowCD = mysqli_fetch_assoc($query_result_CD)){
+                    if($rowCD['password']==$encriptedNewPass){
+                      $CDCount++;
+                    }
+                  }
+
+                  if($CDCount == 0){
+                    // update password query
+
+                    $query1_r = mysqli_query($con,"update userinfotable set password='$encriptedNewPass'
+                                where (email = '$aEmail') and (user_type = 'Conference_chair')");
+                    
+                    $query2_r = mysqli_query($con,"update conferencechair set password='$encriptedNewPass' where emailconfchair = '$aEmail'");
+
+                    if($query1_r and $query2_r){
+                      $_SESSION['user_password'] = $newPass;
+                      echo '<script type="text/javascript"> alert("Successfully.. Password is updated..!") </script>';
+                    }
+                  }
+                  else{
+                    echo '<script type="text/javascript"> alert("You entered new password is allready used with another actor type. Please add another new password..!") </script>';
+                  }
+                }
+                else{
+                  echo '<script type="text/javascript"> alert("You added new password is same as current password. Please add another new password..!") </script>';
                 }
                 
               }

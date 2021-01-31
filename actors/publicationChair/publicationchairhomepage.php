@@ -4,6 +4,15 @@
         header('location:../../login.php');
     }
     require '../../dbconfig/config.php';
+
+    if($_SESSION['user_password'] == "PublicationChair123"){
+      echo '<script type="text/javascript"> 
+                    if (window.confirm("Your Password is still having default one. Please change it..!")) 
+                    {
+                    window.location.href="pub_change_password.php";
+                    };
+                  </script>';
+    }
 ?>
 <!-- Accessing the FilesLogic.php -->
 <?php //include 'fileLogicCameraReady.php';?>
