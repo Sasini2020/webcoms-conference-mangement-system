@@ -105,38 +105,21 @@
   <div class="logo">Web-COMS</div>
   <input type="checkbox" id="click">
   <label for="click" class="menu-btn">
-              <i class="fas fa-bars"></i>
-            </label>
+    <i class="fas fa-bars"></i>
+  </label>
     <ul>
-      <!--<li><a href="publishcameracopy.php">Publish Camera ready copy guideline</a></li>
-      <li><a href="uploadcoversub.php">Upload Cover Pages and sub page</a></li>
-      <li><a href="viewcamerareadycopies.php">View Camera-ready copy</a></li>
-      <li><a href="autoproceeding.php">Auto generate proceeding</a></li>
-	  <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>-->
-
-
-			<li><a class="active" href="publicationchairhomepage.php">Home</a></li>
-			<!--<li><a href="publishSubmissionGuidelines.php">Upload Guidelines For Paper Submission</a></li>
-			<li><a href="uploadcoversub.php">Upload Pages</a></li>
-			<li><a href="viewcamerareadycopies.php">View Camera-ready copy</a></li>
-			<li><a href="autoproceeding.php">Auto generate proceeding</a></li>
-	    	        <li><a href="updateprofile.php">Update Profie</a></li>
-      <li><a href="pub_change_password.php">Change Password</a></li>-->
+			<li><a class="active" href="publicationchairhomepage.php">Home</a></li>	
 			<li class="dropdown">				
-					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
-					
+					<a href="#" class="dropdown">Publication Chair <i class="fa fa-caret-down"></i></a>		
 					<div class="dropdown-content">
 						<a href="updateprofile.php">Update profile</a>
 						<a href="pub_change_password.php">Change Password</a>
 						<a href="../logout.php">Log Out</a>
 					</div>
 			</li>
-		
-
 
     </ul>
   </nav>
-
   <br><br>
 	<div>
 

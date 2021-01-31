@@ -9,18 +9,12 @@
 <head>
 
 	<title>Conferences List</title>
-
 	
  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
  	<link rel="stylesheet" href="../../css/nav_footer_styles.css">
    <link rel="stylesheet" href="../../css/table_style.css">
  
-
-
 <style>
-
-
-
 .content-table {
   border-collapse: collapse;
   margin: 25px 0;
@@ -61,14 +55,8 @@
 }
  
 </style>
-
-
-
 </head>
 <body>
-
-
-
 
   <nav>
   <div class="logo">Web-COMS</div>
@@ -77,31 +65,21 @@
               <i class="fas fa-bars"></i>
             </label>
     <ul>
-      
-
-	     <li><a href="reviewerhomepage.php">Home</a></li>
+	    <li><a href="reviewerhomepage.php">Home</a></li>
 			<li><a class="active" href="ConferenceListForR.php">Conference List</a></li>
       <li><a href="paperlist.php">Review papers</a></li>	
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
-		
-
 
     </ul>
   </nav>
 
   <br><br>
-
-
-
-
-
-
 <br>
   <h2 style="margin-left:20px;">Conferences List</h2>
 <center>
 	<table class="content-table">
 	<tr>
-       <th>ID</th>
+     <th>ID</th>
 	   <th>Conference</th>
 	   <th>Venue</th>
 	   <th>Conference Start date</th>

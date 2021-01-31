@@ -20,35 +20,22 @@
 
 <body >
 	
-
-
-
   <nav>
   <div class="logo">Web-COMS</div>
   <input type="checkbox" id="click">
   <label for="click" class="menu-btn">
               <i class="fas fa-bars"></i>
             </label>
-    <ul>
-     
-
-
+    <ul>  
 			<li><a class="active" href="trackchairhomepage.php">Home</a></li>
-			<!--<li><a href="firstround.php">First-round paper evaluation</a></li>
-      <li><a href="assignreviewrs.php">Assign Reviewers </a></li>
-      <li><a href="trackchair_change_password.php">Change Password</a></li>
-	    	  <li><a href="updateprofile.php">Update Profie</a></li>-->
 			<li class="dropdown">				
-					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
-					
+					<a href="#" class="dropdown">Track Chair <i class="fa fa-caret-down"></i></a>				
 					<div class="dropdown-content">
 						<a href="updateprofile.php">Update profile</a>
 						<a href="trackchair_change_password.php">Change Password</a>
 						<a href="../logout.php">Log Out</a>
 					</div>
 			</li>	
-		
-
 
     </ul>
   </nav>

@@ -119,11 +119,11 @@
 			<li><a href="adminhomepage.php">Home</a></li>
 			<li><a class="active" href="requested_conferences.php">Requested conferences</a></li>
 			<li><a href="conference_list.php">Conference List</a></li>
-			<li><a href="authordetails.php">Author details</a></li>
+			<li><a href="authordetails.php">Author Details</a></li>
 			<li><a href="conferenceChairRegistration.php">Conf Chair Registration</a></li>
       <li><a href="conferenceTrackDefine.php">Conf Track Defination</a></li>
 			<li class="dropdown">				
-					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
+					<a href="#" class="dropdown">Admin <i class="fa fa-caret-down"></i></a>
 					
 					<div class="dropdown-content">
 						<a href="updateprofile.php">Update profile</a>

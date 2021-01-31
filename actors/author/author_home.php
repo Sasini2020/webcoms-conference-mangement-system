@@ -122,7 +122,7 @@ $(document).ready(function(){
 	  <li><a class="active" href="author_home.php">Home</a></li> 
 	  <!-- <li><a href="updateprofile.php">Update Profie</a></li> -->
     <li class="dropdown">				
-					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
+					<a href="#" class="dropdown">Author <i class="fa fa-caret-down"></i></a>
 					
 					<div class="dropdown-content">
 						<a href="updateprofile.php">Update profile</a>

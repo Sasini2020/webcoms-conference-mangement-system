@@ -17,9 +17,6 @@
     <link rel="stylesheet" href="../../css/DropDownListToNav.css">
 
   <style>
-
-
-
 .content-table {
   border-collapse: collapse;
   margin: 25px 0;
@@ -78,7 +75,7 @@
       <!--<li><a href="rev_change_password.php">Change Password</a></li>
 	    <li><a href="updateprofile.php">Update Profie</a></li>-->
 	    <li class="dropdown">				
-					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
+					<a href="#" class="dropdown">Reviewer <i class="fa fa-caret-down"></i></a>
 					
 					<div class="dropdown-content">
 						<a href="updateprofile.php">Update profile</a>

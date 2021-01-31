@@ -77,11 +77,9 @@
   <input type="checkbox" id="click">
             <label for="click" class="menu-btn">
               <i class="fas fa-bars"></i>
-            </label>
-    
-    <ul>
-      
-		 <li><a href="reviewerhomepage.php">Back to Home</a></li>
+            </label> 
+    <ul>     
+		  <li><a href="reviewerhomepage.php">Back to Home</a></li>
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 		
     </ul>

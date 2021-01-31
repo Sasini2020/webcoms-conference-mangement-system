@@ -84,7 +84,7 @@
               <i class="fas fa-bars"></i>
             </label>
 	<ul>
-  <li><a href="author_home.php">home</a></li>
+  <li><a href="author_home.php">Home</a></li>
 	  <li><a class="active" href="ConferenceListForA.php">Conferences List</a></li>
     <!-- <li><a href="submission_guidlines.php">Submission Guidlines</a></li> -->
     <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>

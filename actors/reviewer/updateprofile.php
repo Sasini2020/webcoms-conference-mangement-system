@@ -16,21 +16,14 @@
 		<link rel="stylesheet" href="../../css/reg_form_style.css">
 		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
 </head>
-
 <body>
-
 	<nav>
-	
 	  <div class="logo">Web-COMS</div>
       <input type="checkbox" id="click">
             <label for="click" class="menu-btn">
               <i class="fas fa-bars"></i>
-            </label>
-	
+            </label>	
 		<ul>
 			<li><a class="active" href="reviewerhomepage.php">Back to Home</a></li>
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>

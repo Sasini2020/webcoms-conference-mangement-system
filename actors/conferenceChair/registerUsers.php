@@ -321,7 +321,7 @@ $status=$statusMsg='';
       <li><a href="upudetauls.php">Upload User Details</a></li>-->
 	  <li><a class="active" href="registerUsers.php">User Registration</a></li>
     <li class="dropdown">				
-					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
+					<a href="#" class="dropdown">Conference Chair <i class="fa fa-caret-down"></i></a>
 					
 					<div class="dropdown-content">
 						<a href="updateprofile.php">Update profile</a>

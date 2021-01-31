@@ -26,53 +26,7 @@
 
   <title>Reaserch Paper List</title>
 
-<!-- Added css to style tag to style table -->
-  <!--<style>
-#papersDownloads {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#papersDownloads td, #papersDownloads th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#papersDownloads tr:nth-child(even){background-color: #f2f2f2;}
-
-#papersDownloads tr:hover {background-color: #ddd;}
-
-#papersDownloads th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #5DADE2;
-  color: white;
-}
-</style>-->
 <style>
-
-/* .conListLink{
-  color:white;
-  text-shadow: 1px 1px 0 #444;
-}
-
-.conListLink:link,
-.conListLink:link:visited{
-  background-color: #00ccff;
-  color: white;
-  padding: 10px 20px;
-  width:130px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}  
-
-.conListLink:hover, 
-.conListLink:active {
-  background-color: #00b8e6;
-} */
 
 .content-table {
   border-collapse: collapse;
@@ -115,9 +69,6 @@
 }
  
 </style>
-
-
-
 
 </head>
 <body>

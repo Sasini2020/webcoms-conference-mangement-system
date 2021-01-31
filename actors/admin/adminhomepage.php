@@ -28,7 +28,7 @@
             </label>
 	
 		<ul>
-			<!--<li><a class="active" href="index.php">WebCOMS</a></li>-->
+			<!-- <li><a class="active" href="index.php">WebCOMS</a></li> -->
 			<li><a class="active" href="adminhomepage.php">Home</a></li>
 			<li><a href="requested_conferences.php">Requested conferences</a></li>
 			<li><a href="conference_list.php">Conference List</a></li>
@@ -38,7 +38,7 @@
 		        <!--<li><a href="updateprofile.php">Update Profie</a></li>
 			<li><a href="admin_change_password.php">Change Password</a></li>   -->
 			<li class="dropdown">				
-					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
+					<a href="#" class="dropdown">Admin <i class="fa fa-caret-down"></i></a>
 					
 					<div class="dropdown-content">
 						<a href="updateprofile.php">Update profile</a>

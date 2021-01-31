@@ -81,7 +81,7 @@
 			<li><a href="conferenceChairRegistration.php">Conf Chair Registration</a></li>
             <li><a class="active" href="conferenceTrackDefine.php">Conf Track Defination</a></li>
 			<li class="dropdown">				
-					<a href="#" class="dropdown">Profile <i class="fa fa-caret-down"></i></a>
+					<a href="#" class="dropdown">Admin <i class="fa fa-caret-down"></i></a>
 					
 					<div class="dropdown-content">
 						<a href="updateprofile.php">Update profile</a>

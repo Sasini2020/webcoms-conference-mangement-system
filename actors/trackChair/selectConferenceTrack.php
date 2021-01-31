@@ -15,15 +15,9 @@
    <link rel="stylesheet" href="../../css/new_table_and_button.css">
    <link rel="stylesheet" href="../../css/table_style.css">
 
-
-
 </head>
 
 <body >
-	
-
-
-
   <nav>
   <div class="logo">Web-COMS</div>
   <input type="checkbox" id="click">
@@ -32,13 +26,9 @@
             </label>
     <ul>
      
-
-
 			<li><a class="active" href="trackchairhomepage.php">Back to Home</a></li>
 			<li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
-		
-
-
+	
     </ul>
   </nav>
 

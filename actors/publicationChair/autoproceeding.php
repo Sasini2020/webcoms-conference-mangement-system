@@ -7,50 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  * {
-  font-family: sans-serif; /* Change your font family */
-}
 
-</style>
-<!--<style>
-    
-
-.button {
-  border: none;
-  color: white;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-
-.gen {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
-}
-
-.gen:hover {
-  background-color: #008CBA;
-  color: white;
-}
-.down {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
-}
-
-.down:hover {
-  background-color: #008CBA;
-  color: white;
-}
-
-</style>-->
 <style>
     /* Styles for two buttons in the form*/
     .button {
@@ -66,34 +23,14 @@
   cursor: pointer;
 }
 
-  </style>
+</style>
 
-
-
-<!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>
- 	  <link rel="stylesheet" href="../../css/nav_footer_styles.css">
-    <link rel="stylesheet" href="../../css/reg_form_style.css">-->
-
-<!--<link rel="stylesheet" href="../../css/main_style.css">-->
-
-<!--<link rel="stylesheet" href="../../css/sty.css">-->
-<link rel="stylesheet" href="../../css/nav_footer_styles.css">
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
- 	  <link rel="stylesheet" href="../../css/nav_footer_styles.css">
-    <link rel="stylesheet" href="../../css/reg_form_style.css">
+  <link rel="stylesheet" href="../../css/nav_footer_styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="../../css/nav_footer_styles.css">
+  <link rel="stylesheet" href="../../css/reg_form_style.css">
 </head>
 
-<!--<nav>
-    <ul>
-      <li><a href="publicationchairhomepage.php">Back</a></li>
-      
-    </ul>
-  </nav>
-
-  <br><br>-->
-
-
-  <!-- navbar -->
 <nav>
   <div class="logo">Web-COMS</div>
         <input type="checkbox" id="click">
