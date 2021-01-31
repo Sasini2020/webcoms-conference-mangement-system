@@ -303,6 +303,24 @@ $status=$statusMsg='';
     .showContent{
       display:block;
     }
+
+    
+/* alert message */
+.alert {
+  padding: 20px;
+  height:70px;
+  margin-left:60px;
+  margin-right:60px;
+  border-radius:5px;
+  background-color: white;
+  color: #E74C3C;
+  font-size:20px;
+  font-weight:600;
+  text-align:center;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
 		</style>
 </head>
 <body>
@@ -854,7 +872,7 @@ $status=$statusMsg='';
      </select>
     
       
-			<input id="ContactDetails"  name="ContactDetails" type="text" class="inputvalues"  placeholder="Type your Contact Number" />
+			<input id="ContactDetails"  name="ContactDetails" type="text" class="inputvalues"  placeholder="Type your Contact Number"  />
       
       <!--<br><br>
 			<label for="ContactLinks">Contact Links:</label><br>
