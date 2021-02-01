@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="../../css/nav_footer_styles.css">
 	<link rel="stylesheet" href="../../css/reg_form_style.css">
 	<link rel="stylesheet" href="../../css/DropDownListToNav.css">
-</head>
+<!-- Here added jquery to add a filter-search bar -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	
+</head>
 
 <body>
-
-
 	<nav>
 	
 	  <div class="logo">Web-COMS</div>
@@ -49,13 +49,26 @@
 		</ul>
 
 	</nav>
-	
+	<script>
+	$(document).ready(function(){
+	$("#myInput").on("keyup", function() {
+		var value = $(this).val().toLowerCase();
+		$("#myTable tr").filter(function() {
+		$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		});
+	});
+	});
+	</script>
+<br><br>
+<input style="margin-left:735px;width:348px;height:45px;color:#111;" id="myInput" type="text" placeholder="Type to search..">
+
 <center>
 
 	<?php
         include "forhomepage-conferenceL.php";
 	?>
-	</br></br></br></br>
+	</br></br></br>
+	
 	<?php
         include "forhomepage-rauthorD.php";
 	?>

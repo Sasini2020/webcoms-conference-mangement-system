@@ -83,7 +83,9 @@
       </thead>
 
 	    
-      <tbody>                                     
+      <!-- <tbody>    -->
+      <tbody id="myTable">
+                                  
         <?php
           $sql = mysqli_query($con, "select conferences.id,
           conferences.name,
@@ -111,7 +113,7 @@
               <td><?=$row['sponsor_details']?></td>
               <td><?=$row['fullname']?></td>
             </tr>
-      </tbody>
+      <!-- </tbody> -->
 			<?php
         $counter++;}
       ?>
