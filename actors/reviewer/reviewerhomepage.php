@@ -86,7 +86,7 @@
 	    <li class="dropdown">				
 					<a href="#" class="dropdown">Reviewer <i class="fa fa-caret-down"></i></a>
 					
-					<div class="dropdown-content">
+					<div class="dropdown-content" style="margin-left:-10px !important">
 						<a href="updateprofile.php">Update profile</a>
 						<a href="rev_change_password.php">Change Password</a>
 						<a href="../logout.php">Log Out</a>

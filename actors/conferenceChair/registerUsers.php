@@ -341,7 +341,7 @@ $status=$statusMsg='';
     <li class="dropdown">				
 					<a href="#" class="dropdown">Conference Chair <i class="fa fa-caret-down"></i></a>
 					
-					<div class="dropdown-content">
+					<div class="dropdown-content" style="margin-left:0px !important">
 						<a href="updateprofile.php">Update profile</a>
 						<a href="con_change_password.php">Change Password</a>
 						<a href="../logout.php">Log Out</a>
