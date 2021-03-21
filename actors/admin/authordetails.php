@@ -9,16 +9,14 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Author details</title>
-	<link rel="stylesheet" href="../../css/table_style.css">
-	<link rel="stylesheet" href="../../css/about_help_styles.css">
+  <title>Author details</title>
+  <link rel="stylesheet" href="../../css/table_style.css">
+  <link rel="stylesheet" href="../../css/about_help_styles.css">
   <link rel="stylesheet" href="../../css/DropDownListToNav.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<style>
-
+<style>
 
 .content-table {
   border-collapse: collapse;
@@ -63,14 +61,13 @@
 
   background-color: DodgerBlue;
   border: none;
+  border-radius:8px;
   color: white;
   padding: 12px 30px;
   cursor: pointer;
   font-size: 20px;
 }
 .btn:hover{
-
-
 	background-color: RoyalBlue;
 }
 
@@ -108,7 +105,7 @@
 <br><br><br><br>
 <center>
   
-<button onclick="myfunction()" class="btn" id="btnex" >  Report Download    <i class="fa fa-download"></i></button> 
+<button onclick="myfunction()" class="btn" id="btnex" >  Download Report    <i class="fa fa-download"></i></button> 
 
  <script> function myfunction(){
     alert("Report Download Successfully");
