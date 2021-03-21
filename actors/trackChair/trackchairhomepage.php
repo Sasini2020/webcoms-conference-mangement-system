@@ -39,7 +39,7 @@
 			<li><a class="active" href="trackchairhomepage.php">Home</a></li>
 			<li class="dropdown">				
 					<a href="#" class="dropdown">Track Chair <i class="fa fa-caret-down"></i></a>				
-					<div class="dropdown-content">
+					<div class="dropdown-content" style="margin-left:0px !important">
 						<a href="updateprofile.php">Update profile</a>
 						<a href="trackchair_change_password.php">Change Password</a>
 						<a href="../logout.php">Log Out</a>
