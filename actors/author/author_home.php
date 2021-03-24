@@ -5,8 +5,6 @@
     }
     require '../../dbconfig/config.php';
 ?>
-<?php //include 'fileLogicForViewConfGuidelines.php';?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,20 +15,21 @@
     <link rel="stylesheet" href="../../css/table_style.css">
     <link rel="stylesheet" href="../../css/DropDownListToNav.css">
 
-
-<!-- Here added jquery to add a filter-search bar -->
+<!-- Here added jquery to add a  filter-search bar(case insensitive) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+  <script>
+    
+    //myInput = id of the input field
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
     });
   });
-});
-</script>
-  <style>
+  </script>
+<style>
 
 .conListLink{
   color:white;
@@ -109,9 +108,6 @@ $(document).ready(function(){
 </style>
 </head>
 <body>
-
-
-
 <nav>
 <div class="logo">Web-COMS</div>
       <input type="checkbox" id="click">
@@ -140,7 +136,6 @@ $(document).ready(function(){
 <br>
   <center>
 
-
 <table class="content-table" >
   <thead>
   <tr>
@@ -152,14 +147,9 @@ $(document).ready(function(){
      <th>View Camera-Ready <br>Submission Guidelines</th>
 	   <th>Submit Research Paper</th>
 	   <th>Submitted Research Papers</th>
-
 	 </tr>
    </thead>
-
-	<!-- <br> -->
-  <tbody id="myTable">
-
-	
+  <tbody id="myTable">	
 	<?php
 	
 	 if(isset($_POST['back']))
@@ -173,9 +163,6 @@ $(document).ready(function(){
           group by conferences.id DESC";
   $result = $conn-> query($sql);
   
-  // $c_id = $_SESSION['id'];
-
-	
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
 
@@ -185,8 +172,7 @@ $(document).ready(function(){
       echo "<td><a href='route.php?CamSubGuid_Id=". $row['id'] . "&CamSubGuid_Name=". $row['name'] . " '    class='conListLink' > View </a></td>";
       echo "<td><a href='papersubmission.php?c_id=". $row['id'] ." ' title='submit paper' class='linkDec'><span style='margin-right:5px;'><i class='fas fa-file-upload'></i></span>Submit</a></td>";
 
-      echo "<td><a href='route.php?viewRPaper_cid=". $row['id'] . "&con_Name=". $row['name'] . "' class='conListLink'>View</a></td>";
-		
+      echo "<td><a href='route.php?viewRPaper_cid=". $row['id'] . "&con_Name=". $row['name'] . "' class='conListLink'>View</a></td>";	
        
     }
 		echo "</table>";
@@ -196,18 +182,14 @@ $(document).ready(function(){
 	}
 	
 	?>
-
-
-</tbody>
-	
+</tbody>	
 	</table>
 </center>
+</div>	 
 
-</div>
-	   	
   <!-- Footer section -->
 	<div class="footer">
-            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+    <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
 	</div>
 
 </body>
