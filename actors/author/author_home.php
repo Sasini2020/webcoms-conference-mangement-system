@@ -167,8 +167,6 @@ $(document).ready(function(){
 				header('location:.php');
 	}
 
-
-	
 	$conn = $con;
 	
   $sql = "SELECT * from conferences where conferences.Accepted = '1' 
@@ -194,7 +192,7 @@ $(document).ready(function(){
 		echo "</table>";
 	}
 	else {
-		echo "0 result";
+		echo "No results";
 	}
 	
 	?>

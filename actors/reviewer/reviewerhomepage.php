@@ -79,10 +79,6 @@
     
     <ul>      
 		  <li><a class="active" href="reviewerhomepage.php">Home</a></li>
-      <!--<li><a href="ConferenceListForR.php">Conference List</a></li>
- 		  <li><a href="paperlist.php">Review papers</a></li> -->
-      <!--<li><a href="rev_change_password.php">Change Password</a></li>
-	    <li><a href="updateprofile.php">Update Profie</a></li>-->
 	    <li class="dropdown">				
 					<a href="#" class="dropdown">Reviewer <i class="fa fa-caret-down"></i></a>
 					
@@ -109,7 +105,6 @@
       <thead>
 	      <tr>
           <th>Number</th>
-          <!-- <th>System Track Id</th> -->
           <th>Track name</th>
           <th>Action</th>          
       	</tr>
@@ -137,7 +132,7 @@
               }
               echo "</table>";
           } else {
-              echo "0 results";
+              echo "You have not been assigned to any conference.";
           }
           
           $con->close();
@@ -145,14 +140,6 @@
       
 	  </table>	
   </div>
-
-
-     <?php 
-     //By following echo we can print the logged reviewer email
-    // echo "{$_SESSION['r_email']}";
-     ?>
-    <!-- Footer section -->
-
 
     <div class="footer">
             <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
