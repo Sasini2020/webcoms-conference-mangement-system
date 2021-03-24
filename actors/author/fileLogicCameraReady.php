@@ -33,8 +33,8 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
 
     if (!in_array($extension, ['pdf'])) {
         echo '<script type="text/javascript"> alert("You file extension must be .pdf") </script>';
-    } elseif ($_FILES['myfile']['size'] > 1000000) { // file shouldn't be larger than 1MB
-        echo '<script type="text/javascript"> alert("file size larger than 1 MB.. Try another file") </script>';
+    } elseif ($_FILES['myfile']['size'] > 150000000) { // file shouldn't be larger than 1MB
+        echo '<script type="text/javascript"> alert("file size larger than 150 MB.. ") </script>';
 
     } else {
         // move the uploaded (temporary) file to the specified destination

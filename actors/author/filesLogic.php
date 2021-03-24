@@ -39,7 +39,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
             $OtherAuthorE = $_POST['OtherAutherE'];
             $authorEmail = $_SESSION['au_email'];
             $c_id = $_SESSION['con_id'];
-            //echo "<script>console.log('.$abstract.');</script>";
+
             //I inserted values in a different special way
             $sql = "INSERT INTO researchpaper(title,abstract,NameOfFile,size,Downloads,acceptancy,trackID,conferenceId,corautherdetails,isCameraReadyUpload,emailauthor) VALUES 
             ('$title','$abstract','$filename',$size,0,0,$trackId,$c_id,'$OtherAuthorE',0,'$authorEmail')";
@@ -56,9 +56,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
                 </script>';
 
             }
-            //echo "<script>console.log('Before Error check');</script>";
-            //echo "<script>alert('".mysqli_error($conn)."');</script>";
-            //echo "<script>console.log('after Error check');</script>";
+           
         }
          else {
             echo '<script type="text/javascript"> alert("Failed to submit your paper !!") </script>';
@@ -86,14 +84,10 @@ if (isset($_GET['file_id'])) {
         header('Content-Length: ' . filesize('../../uploads/' . $file['name']));
         readfile('../../uploads/' . $file['name']);
 
-        // Now update downloads count
-        // $newCount = $file['downloads'] + 1;
-        // $updateQuery = "UPDATE files SET downloads=$newCount WHERE id=$id";
-        // mysqli_query($conn, $updateQuery);
         exit;
     }
 
 }
-// sql to delete a record
+
 
 
