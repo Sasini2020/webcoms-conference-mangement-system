@@ -24,7 +24,7 @@
 
 .content-table {
   border-collapse: collapse;
-  margin: 25px 0;
+  margin: 40px 0;
   font-size: 0.9em;
   min-width: 1400px;
   border-radius: 5px 5px 0 0;
@@ -77,6 +77,23 @@
   cursor: default;
 }
 
+nav{
+  margin-bottom:40px !important;
+}
+
+#reportG, #reportG:visited{
+  margin-left:80px;
+  text-decoration:none;
+  padding: 10px 10px;
+  background-color:#00bfff;
+  color:black;
+  font-size:18px;
+}
+
+#reportG:hover, #reportG:active{
+  background-color:#00ace6;
+}
+
 </style>
 
 </head>
@@ -107,12 +124,11 @@
 						<a href="../logout.php">Log Out</a>
 					</div>
 			</li>
-		
+		</ul>
 
 	</nav>
 
-  
-
+  <a href="getReport.php" id="reportG">Generate Report</a>
 
   <center>
     <table class="content-table">
@@ -129,7 +145,7 @@
           <th>Archive</th>
       	</tr>
       </thead>
-</center>
+
 	    
       <tbody>                                     
         <?php
@@ -180,6 +196,7 @@
       ?>
 
 	  </table>	
+  </center>
  
 
     <div class="footer">
