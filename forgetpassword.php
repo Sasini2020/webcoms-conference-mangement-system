@@ -19,11 +19,7 @@
             <i class="fas fa-bars"></i>
             </label>
           <ul>
-               <li> <a href="index.php">Home</a></li>
-               <li><a href="login.php">login</a></li>
-               <li><a href="register.php">Register</a></li>
-               <li><a href="help.php">help</a></li>
-               <li><a href="About.php">About</a></li>  
+               <li><a href="login.php">Back</a></li> 
           </ul>  
 
   </nav>
