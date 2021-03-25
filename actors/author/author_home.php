@@ -163,6 +163,7 @@
           group by conferences.id DESC";
   $result = $conn-> query($sql);
   
+  //num_rows return no of rows in the table
 	if ($result-> num_rows> 0){
 		while ($row = $result-> fetch_assoc()){
 

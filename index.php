@@ -54,22 +54,17 @@
         <p>Web-coms can cater to your multiple requirements proficiently.
           Web-coms is a solution that aids in the organization of 
           conferences. With this unique software, you can easily manage
-            members of a conference management system on one platform.
+            all the users in a conference management system on one platform.
           <br><br>"We are incredibly responsive to your requests and value your questions."</p>
     </section>
 <!-- End of Top content -->
 <?php
-            if(isset($_GET["newpwd"])){
-                 if($_GET["newpwd"]=="passwordupdated"){
-
-                   echo '<script type="text/javascript">alert("Password Reset Successfully!!")</script>';
-
-
-                 }
-
-            }
-        
-       ?>
+   if(isset($_GET["newpwd"])){
+    if($_GET["newpwd"]=="passwordupdated"){
+      echo '<script type="text/javascript">alert("Password Reset Successfully!!")</script>';
+    }
+  }
+?>
 
   <?php
         include "forhomepage-conferenceList.php";
