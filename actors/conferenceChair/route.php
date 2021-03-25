@@ -24,4 +24,10 @@
       $_SESSION['c_name']= $_GET['Conf_Name'];;
       header('location:publish_conf_guidelines.php');
     }
+
+    if(isset($_GET['ReportConf_Id'])){
+      $_SESSION['c_id'] = $_GET['ReportConf_Id'];
+      $_SESSION['c_name']= $_GET['ReportConf_Name'];;
+      header('location:researchPapersReport.php');
+    }
 ?>

@@ -40,7 +40,7 @@
   color:#2E4053;
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 1400px;
+  min-width: 1500px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -113,6 +113,7 @@
          <th>Modify Tracks</th>
          <th>Assign Publication Chair</th>
          <th>Upload Conference Guidelines</th>
+         <th>Research papers report</th>
 
          </tr>
      </thead>
@@ -139,27 +140,31 @@ $conn = $con;
        ?>                                            
            <tr id="row<?php echo $row['id'];?>">
 
-            <td><?=$counter?></td>
-            <td><?=$row['name']?></td>
-            <td><?=$row['venue']?></td>
-            <td><?=$row['country']?></td>
-            <td><?=$row['start_date']?></td>
-            <td><?=$row['end_date']?></td>
-            <td><?=$row['deadline_date']?></td>
-            <td><?=$row['sponsor_details']?></td>
-            <td>
-                <a href="route.php?modifyTrackCId=<?= $row['id'] ?>" class="conListLink">Modify</a>
-            </td>
-            <td>
-                <a href="route.php?assignPubC_CId=<?= $row['id'] ?>" class="conListLink">Assign</a>
-            </td>
-            <td>
-            <a href="route.php?Conf_Id=<?= $row['id'] ."& Conf_Name=".$row['name'] ?>" class="conListLink">Upload</a>
+              <td><?=$counter?></td>
+              <td><?=$row['name']?></td>
+              <td><?=$row['venue']?></td>
+              <td><?=$row['country']?></td>
+              <td><?=$row['start_date']?></td>
+              <td><?=$row['end_date']?></td>
+              <td><?=$row['deadline_date']?></td>
+              <td><?=$row['sponsor_details']?></td>
+              <td>
+                  <a href="route.php?modifyTrackCId=<?= $row['id'] ?>" class="conListLink">Modify</a>
+              </td>
+              <td>
+                  <a href="route.php?assignPubC_CId=<?= $row['id'] ?>" class="conListLink">Assign</a>
+              </td>
+              <td>
+                  <a href="route.php?Conf_Id=<?= $row['id'] ."&Conf_Name=".$row['name'] ?>" class="conListLink">Upload</a>
 
-            <?php 
-            //echo "<a href='publish_conf_guidelines.php?c_id=". $row['id'] ."& c_name=".$row['name']."'  class='conListLink'>Upload</a>";
-            ?>
-            </td>
+              <?php 
+              //echo "<a href='publish_conf_guidelines.php?c_id=". $row['id'] ."& c_name=".$row['name']."'  class='conListLink'>Upload</a>";
+              ?>
+              </td>
+
+              <td>
+                  <a href="route.php?ReportConf_Id=<?= $row['id'] ."&ReportConf_Name=".$row['name'] ?>" class="conListLink">See</a>
+              </td>
            </tr>
      </tbody>
         <?php
