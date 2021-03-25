@@ -21,7 +21,7 @@
       $pdf -> Addpage();
       $pdf->SetFont('Arial','B',16);
       $pdf->Cell(60,10,'Conference Name',1,0,'C');
-      $pdf->Cell(120,10,'Number of research paper submisiion',1,1,'C');
+      $pdf->Cell(120,10,'Number of research paper submission',1,1,'C');
 
       while($row = mysqli_fetch_assoc($result)){
         $pdf->Cell(60,10,$row['c_name'],1,0,'C');
