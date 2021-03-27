@@ -106,12 +106,12 @@
       <table class="content-table" style="">
         <thead>
           <tr>
-            <th>Number</th>
-            <th>Track Chair Email</th>
+            <th>Number</th>            
             <th>Title</th>
             <th>Full Name</th>
             <th>Organaization</th>
             <th>Country</th>
+            <th>Email</th>
             <th>Contact Number</th>
           </tr>
         </thead>
@@ -130,12 +130,12 @@
             while($row = mysqli_fetch_assoc($query_result)){
           ?>
           <tr>
-            <td><?= $count ?></td>
-            <td><?= $row['tcEmail'] ?></td>
+            <td><?= $count ?></td>            
             <td><?= $row['title'] ?></td>
             <td><?= $row['fullName'] ?></td>
             <td><?= $row['organization'] ?></td>
             <td><?= $row['country'] ?></td>
+            <td><?= $row['tcEmail'] ?></td>
             <td><?= $row['coNum'] ?></td>
           </tr>
           <?php

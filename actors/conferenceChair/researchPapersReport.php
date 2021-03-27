@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../../css/nav_footer_styles.css">
 	<link rel="stylesheet" href="../../css/reg_form_style.css">
 	<link rel="stylesheet" href="../../css/sty.css">
-	<link rel="stylesheet" href="../../css/table_style.css">
   <link rel="stylesheet" href="../../css/new_table_and_button.css">
 </head>
 
@@ -21,14 +20,22 @@
 #heading1{
     text-align:center;
     margin-top:30px;
-    font-size:20px;
+    font-size:25px;
     color:black;
+    text-decoration: underline;
 }
 
 #conNameH{
   margin-left:30px;
   margin-top:20px;
   font-size:22px;
+}
+#conuntRP{
+  margin-left:60px;
+  margin-top:30px;
+}
+#conuntRP td{
+  padding:20px;
 }
 </style>
 	
@@ -81,10 +88,34 @@
 
     <h2 id="heading1">Research papers status</h2>
 
-    <!--<p><?= $c_name ?></p>
-    <p><?= $pendingC ?></p>
-    <p><?= $acceptC ?></p>
-    <p><?= $rejectC ?></p>-->
+    <div id="conuntRP">
+      <table>
+        <tr>
+          <td>
+            <p>Pending Research Papers Count -: </p> 
+          </td>
+          <td>
+            <?= $pendingC ?>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Accepted Research Papers Count -: </p> 
+          </td>
+          <td>
+            <?= $acceptC ?>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Rejected Research Papers Count -: </p>
+          </td>
+          <td> 
+            <?= $rejectC ?>
+          </td>
+        </tr>
+      <table>
+    </div>
 
     <div id="piechart" align="center"></div>
 
@@ -106,7 +137,7 @@ function drawChart() {
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options = {'width':750, 'height':600};
+  var options = {'width':850, 'height':700};
 
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));

@@ -129,12 +129,12 @@
       <table class="content-table" style="">
         <thead>
           <tr>
-            <th>Number</th>
-            <th>Reviewer Email</th>
+            <th>Number</th>            
             <th>Title</th>
             <th>Full Name</th>
             <th>Organaization</th>
             <th>Country</th>
+            <th>Email</th>
             <th>Contact Number</th>
             <th>View Review</th>
           </tr>
@@ -152,12 +152,12 @@
             while($row = mysqli_fetch_assoc($query_result)){
           ?>
           <tr>
-            <td><?= $count ?></td>
-            <td><?= $row['rEmail'] ?></td>
+            <td><?= $count ?></td>            
             <td><?= $row['title'] ?></td>
             <td><?= $row['fullName'] ?></td>
             <td><?= $row['organization'] ?></td>
             <td><?= $row['country'] ?></td>
+            <td><?= $row['rEmail'] ?></td>
             <td><?= $row['coNum'] ?></td>
             <td>
               <?php
