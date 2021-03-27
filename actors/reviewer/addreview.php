@@ -263,25 +263,17 @@ select{
       <ul>
         <li><a href="paperlist.php">Back to Paper List</a></li>
         <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
-
       </ul>
 </nav>
 <br>
 <h2 style="color:#2E4053 ;margin-left:40px;">Add Review</h2>
 <br><br>
-<!--<h4 style="color:#2874A6 ;margin-left:20px;">Paper ID<span style=margin-left:79px;>:</span ><span style=margin-left:65px;> </span>
-<?php 
-      //$f_id = $_SESSION['f_id'];
-      //echo "$f_id";
-?></h4>-->
 <h4 style="color:#2874A6 ;margin-left:40px;">Paper Title<span style=margin-left:60px;>:</span><span style=margin-left:65px;> </span>
 <?php 
-      $f_title = $_SESSION['RPaperTitle'];
-      echo "$f_title";
+  $f_title = $_SESSION['RPaperTitle'];
+  echo "$f_title";
 ?></h4>
-<!--<h4 style="color:#2874A6 ;margin-left:20px;">Track Name<span style=margin-left:48px;>:</span><span style=margin-left:65px;> </span>
 
-</h4>-->
 <br><br><br>
 
 <form action="addreview.php" method="post" style="width:1200px;margin:0 auto">
@@ -332,7 +324,7 @@ select{
     <br><br>
     <div class="qSetHide2">
       <li>    
-      <label>5) Relevance : </label><br>
+      <label>1) Relevance : </label><br>
       <input id="yes" type="radio" name="question5" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question5" value="No" style="margin-left:20px;" required> No
@@ -344,7 +336,7 @@ select{
       </li>
       <br>
       <li>
-      <label>6) Novelty or Originality - The paper reflects current information on this topic : </label><br>
+      <label>2) Novelty or Originality - The paper reflects current information on this topic : </label><br>
       <input id="yes" type="radio" name="question6" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question6" value="No" style="margin-left:20px;" required> No
@@ -356,7 +348,7 @@ select{
       </li>
       <br>
       <li>
-      <label>7) The title is clear and informative : </label><br>
+      <label>3) The title is clear and informative : </label><br>
       <input id="yes" type="radio" name="question7" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question7" value="No" style="margin-left:20px;" required> No
@@ -368,7 +360,7 @@ select{
       </li>
       <br>
       <li>
-      <label>8) The title reflects the content and purpose of the paper : </label><br>
+      <label>4) The title reflects the content and purpose of the paper : </label><br>
       <input id="yes" type="radio" name="question8" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question8" value="No" style="margin-left:20px;" required> No
@@ -380,7 +372,7 @@ select{
       </li>
       <br>
       <li>
-      <label>9) Abstract : </label><br>
+      <label>5) Abstract : </label><br>
       <input id="yes" type="radio" name="question9" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question9" value="No" style="margin-left:20px;" required> No
@@ -392,7 +384,7 @@ select{
       </li>
       <br>
       <li>
-      <label>10) Keywords : </label><br>
+      <label>6) Keywords : </label><br>
       <input id="yes" type="radio" name="question10" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question10" value="No" style="margin-left:20px;" required> No
@@ -409,7 +401,7 @@ select{
     <br><br>
     <div class="qSetHide3">
       <li> 
-        <label>11) Content - Introduction : </label><br>
+        <label>1) Content - Introduction : </label><br>
         <input id="yes" type="radio" name="question11" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question11" value="No" style="margin-left:20px;" required> No
@@ -421,7 +413,7 @@ select{
       </li>
       <br>
       <li>
-      <label>12) Content - Background / Literature Study - The most current references on this topic have been included : </label><br>
+      <label>2) Content - Background / Literature Study - The most current references on this topic have been included : </label><br>
       <input id="yes" type="radio" name="question12" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question12" value="No" style="margin-left:20px;" required> No
@@ -433,7 +425,7 @@ select{
       </li>
       <br>
       <li>
-      <label>13) Content - Background / Literature Study - The most relevant references on this topic have been included : </label><br>
+      <label>3) Content - Background / Literature Study - The most relevant references on this topic have been included : </label><br>
       <input id="yes" type="radio" name="question13" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question13" value="No" style="margin-left:20px;" required> No
@@ -445,7 +437,7 @@ select{
       </li>
       <br>
       <li>
-      <label>14) Content - Methodology : </label><br>
+      <label>4) Content - Methodology : </label><br>
       <input id="yes" type="radio" name="question14" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question14" value="No" style="margin-left:20px;" required> No
@@ -461,7 +453,7 @@ select{
     <h2 class="trigger4 catogeryHead" style="color:#273746;border-bottom: 3px solid dodgerblue;">IV. Clarity  &nbsp;&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></h2>
     <div class="qSetHide4">
       <li><br><br>
-      <label>15) Clarity - There are no any contradictions or inconsistencies: </label><br>
+      <label>1) Clarity - There are no any contradictions or inconsistencies: </label><br>
       <input id="yes" type="radio" name="question15" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question15" value="No" style="margin-left:20px;" required> No
@@ -473,7 +465,7 @@ select{
       </li>
       <br>
       <li>
-      <label>16) Clarity - The paper stays focused : </label><br>
+      <label>2) Clarity - The paper stays focused : </label><br>
       <input id="yes" type="radio" name="question16" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question16" value="No" style="margin-left:20px;" required> No
@@ -485,7 +477,7 @@ select{
       </li>
       <br>
       <li>
-      <label>17) Organization - Ideas are developed and related in a logic sequence : </label><br>
+      <label>3) Organization - Ideas are developed and related in a logic sequence : </label><br>
       <input id="yes" type="radio" name="question17" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question17" value="No" style="margin-left:20px;" required> No
@@ -497,7 +489,7 @@ select{
       </li>
       <br>
       <li>
-      <label>18) Organization - Transitions between discussion are smooth and easy to follow : </label><br>
+      <label>4) Organization - Transitions between discussion are smooth and easy to follow : </label><br>
       <input id="yes" type="radio" name="question18" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question18" value="No" style="margin-left:20px;" required> No
@@ -514,7 +506,7 @@ select{
     <br><br>
     <div class="qSetHide5">
       <li>
-      <label>19) Accuracy - The supporting evidence ( literature referenced ) is appopriately cited : </label><br>
+      <label>1) Accuracy - The supporting evidence ( literature referenced ) is appopriately cited : </label><br>
       <input id="yes" type="radio" name="question19" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question19" value="No" style="margin-left:20px;" required> No
@@ -526,7 +518,7 @@ select{
       </li>
       <br>
       <li>
-      <label>20) Accuracy - Tables and figures are of clear and satisfactory quality : </label><br>
+      <label>2) Accuracy - Tables and figures are of clear and satisfactory quality : </label><br>
       <input id="yes" type="radio" name="question20" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question20" value="No" style="margin-left:20px;" required> No
@@ -538,7 +530,7 @@ select{
       </li>
       <br>
       <li>
-      <label>21) Accuracy - There are no math or text errors in tables or figures : </label><br>
+      <label>3) Accuracy - There are no math or text errors in tables or figures : </label><br>
       <input id="yes" type="radio" name="question21" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question21" value="No" style="margin-left:20px;" required> No
@@ -550,7 +542,7 @@ select{
       </li>
       <br>
       <li>
-      <label>22) Accuracy - Legends and titles of tables and figures are clearly given : </label><br>
+      <label>4) Accuracy - Legends and titles of tables and figures are clearly given : </label><br>
       <input id="yes" type="radio" name="question22" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question22" value="No" style="margin-left:20px;" required> No
@@ -562,7 +554,7 @@ select{
       </li>
       <br>
       <li>
-      <label>23) Accuracy - The paper is free from grammatical or spelling errors : </label><br>
+      <label>5) Accuracy - The paper is free from grammatical or spelling errors : </label><br>
     <input id="yes" type="radio" name="question23" value="Yes" style="margin-left:20px;" required> Yes
         <br><br>
         <input id="no" type="radio"  name="question23" value="No" style="margin-left:20px;" required> No
@@ -575,7 +567,7 @@ select{
       
       <br>
       <li>
-          <label>24) Quality of the paper : </label>
+          <label>6) Quality of the paper : </label>
           <select name="question24" class="field-select">
             <option value=""></option>
             <option value="Excellent">Excellent</option>
@@ -593,24 +585,24 @@ select{
     <br><br>
     <div class="qSetHide6">
       <li>
-          <label>25) Recommendation : </label>
-            <select name="question25" class="field-select">
-            <option value=""> </option>
-            <option value="Yes - no changes">Yes - no changes</option>
-            <option value="Yes - with minor revisions">Yes - with minor revisions</option>
-            <option value="Yes - with major revisions">Yes - with major revisions</option>
-            <option value="No">No</option>
+          <label>1) Recommendation <span style="color:red;"> *</span> </label>
+            <select name="question25" class="field-select" required>
+              <option value=""> </option>
+              <option value="Yes - no changes">Yes - no changes</option>
+              <option value="Yes - with minor revisions">Yes - with minor revisions</option>
+              <option value="Yes - with major revisions">Yes - with major revisions</option>
+              <option value="No">No</option>
 
           </select>
       </li>
       <br>
       <li>
-          <label>26) Overall Recommendation :</label>
+          <label>2) Overall Recommendation :</label>
           <textarea name="question26" id="field5" class="field-long field-textarea"></textarea>
       </li>
       <br>
       <li>
-          <label>27) Comments to author :</label>
+          <label>3) Comments to author :</label>
           <textarea name="question27" id="field5" class="field-long field-textarea"></textarea>
       </li>
     </div>

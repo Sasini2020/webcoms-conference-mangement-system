@@ -48,11 +48,6 @@
             <div class="footcol">
                 <h3>User Roles</h3>
 
-                <!-- For actors -->
-                <!-- <div class="post">
-                  <i class="fas fa-user-shield"></i>
-                  <span>Admin</span>
-                </div> -->
                 <div class="post">
                   <i class="fas fa-user-cog"></i>
                   <span>Conference-Chair</span>
@@ -85,23 +80,13 @@
 
             <div class="footcol">
                 <h3>Files and Media,Full submission cycle</h3>
-                <p>Unlimited file upload. Max file size 100MB. Support pdf for now..</p>
+                <p>Unlimited file upload. Max file size 150MB. Support pdf for now..</p>
                 <p>Abstract, full paper, camera-ready, presentation</p>
                
             </div><!--footcol-->
 
             <div class="footcol">
               <h3>Multi Tracks</h3>
-              <!-- <div class="post">
-                  <h4>POST TITLE</h4>
-                  <p><a href="#">Admin</a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, magni. Corrupti tee,nm lihtiuhcs jg7slojc yfr6sxkn</p>
-                  <a  class="readmore" href="#" >read more &raquo;</a>
-              </div>
-              <div class="post">
-                  <h4>pOST TITLE</h4>
-                  <p><a href="#">Admin</a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, magni. Corrupti tee,nm lihtiuhcs jg7slojc yfr6sxkn</p>
-                  <a  class="readmore" href="#" >read more &raquo;</a>
-              </div>post -->
                 <p>No limit on number of tracks in a conference with each track independently configured</p>
                   <br><br>
               </div><!--footcol-->
