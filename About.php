@@ -85,7 +85,7 @@
 
             <div class="footcol">
                 <h3>Files and Media,Full submission cycle</h3>
-                <p>Unlimited file upload. Max file size 100MB. Support pdf for now..</p>
+                <p>Unlimited file upload. Max file size 150MB. Support pdf for now..</p>
                 <p>Abstract, full paper, camera-ready, presentation</p>
                
             </div><!--footcol-->
