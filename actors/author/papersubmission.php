@@ -44,26 +44,20 @@
             <label for="click" class="menu-btn">
               <i class="fas fa-bars"></i>
             </label>
-    <ul>
-<!--     <li><a href="ConferenceListForA.php">Back</a></li> -->
-	    
-    <li><a class="active" href="author_home.php">Back to Home</a></li>
-<!--     <li><a href="../../About.php">About</a></li> -->
-<!--     <li><a href="../../help.php">Help</a></li> -->
-    <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
-
+    <ul>	    
+      <li><a class="active" href="author_home.php">Back to Home</a></li>
+      <li ><a style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
     </ul>
   </nav>
   <br>
   <h2 style="margin-left:25px;color:#283747;">Create New Submission</h2><br>
 	
-
   <div class="container">
       <div class="row">
 
         <form action="papersubmission.php" method="post" enctype="multipart/form-data" >
           
-          <label for="trackp"><b>Select Track*</b></label><br>
+          <label for="trackp"><b>Select Track <span style="color:red;">*</span></b></label><br>
       
           <select name="Ptrack" id="trackp" class="inputvalues">
             <option value="">-- Select --</option>
@@ -78,19 +72,19 @@
             <?php $counter++;} ?>
           </select>
           
-          <label><b>Paper Title*</b></label><br>
+          <label><b>Paper Title <span style="color:red;">*</span></b></label><br>
           <input name="title" type="text" class="inputvalues" placeholder="Title" required/><br>
 
           <!-- Text-area -->
-          <label><b>Abstract*</b></label><br>
+          <label><b>Abstract <span style="color:red;">*</span></b></label><br>
 
           <!-- <textarea name="abstract" rows="10" cols="40"><?php //echo $comment;?></textarea> -->
           <textarea name="abstract" rows="10" cols="40"></textarea><br>
 
-          <label><b>Other Authors Email</b></label><br>
+          <label><b>Other Authors' Emails</b></label><br>
           <input name="OtherAutherE" type="text" class="inputvalues" placeholder="Enter Emails"/><br>
           
-          <label><b>Select Paper *</b></label><br>
+          <label><b>Select Paper <span style="color:red;">*</span></b></label><br>
           <input type="file" name="myfile" > <br>
           <br>
           <button type="submit" class="button" id="save_btn" name="save">Upload</button>
@@ -106,7 +100,7 @@
     
     <!-- Footer section -->
 	<div class="footer">
-            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
-        </div>
+    <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+  </div>
   </body>
 </html>

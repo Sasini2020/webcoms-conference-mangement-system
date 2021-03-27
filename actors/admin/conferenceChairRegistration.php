@@ -263,7 +263,7 @@ $status=$statusMsg='';
 			<option value="Dr">Dr.</option>
 		</select>
 		
-		<label for="fname"><b>Full Name:</b></label><br>
+		<label for="fname"><b>Full Name <span style="color:red;">*</span></b></label><br>
 				<input id="fname" name="fullname" type="text" class="inputvalues" placeholder="Type your Full Name" required/><br>
 	
 		<label for="aOrganization"><b>Organization:</b></label><br>
@@ -522,7 +522,7 @@ $status=$statusMsg='';
 				<!-- <label for="ContactDetails"><b>Telephone No:</b></label><br>
 				<input id="ContactDetails"  name="ContactDetails" type="tel" class="inputvalues" pattern="[0-9]{1}[0-9]{9}" placeholder="Type your Contact Number" title="Phone number with 0-9 and remaing 9 digit with 0-9"required/>
 		 -->
-		<label for="ContactDetails"><b>Telephone No:</b></label><br>	
+		<label for="ContactDetails"><b>Telephone No <span style="color:red;">*</span></b></label><br>	
 		<select id="phoneCode" name="phoneCode" style="width:100px;" required >			
 		<!-- <option>Code</option> -->
 		  <option value="1">+1</option>
@@ -740,7 +740,7 @@ $status=$statusMsg='';
 			</fieldset>
 			<fieldset>
 			<legend><span class="number">2</span>Your Login Information</legend><br>
-			<label for="Email"><b>Email:</b></label><br>
+			<label for="Email"><b>Email <span style="color:red;">*</span></b></label><br>
 			<!-- Validate uni emails as well -->
 			<input id='email' name="email" type="text" class="inputvalues" placeholder="Type your email"  required/><br>
                         <br>
