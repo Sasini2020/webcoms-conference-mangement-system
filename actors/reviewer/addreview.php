@@ -597,8 +597,8 @@ select{
       </li>
       <br>
       <li>
-          <label>2) Overall Recommendation :</label>
-          <textarea name="question26" id="field5" class="field-long field-textarea"></textarea>
+          <label>2) Overall Recommendation <span style="color:red;"> *</span></label>
+          <textarea name="question26" id="field5" class="field-long field-textarea" required></textarea>
       </li>
       <br>
       <li>

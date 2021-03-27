@@ -20,7 +20,7 @@
     <style>
     /* Styles for two buttons in the form*/
     .button {
-  background-color: #5DADE2; /* Green */
+  background-color: #5DADE2; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -59,7 +59,7 @@
           
           <label for="trackp"><b>Select Track <span style="color:red;">*</span></b></label><br>
       
-          <select name="Ptrack" id="trackp" class="inputvalues">
+          <select name="Ptrack" id="trackp" class="inputvalues" required>
             <option value="">-- Select --</option>
             <?php 
               $c_id = $_GET['c_id'];
