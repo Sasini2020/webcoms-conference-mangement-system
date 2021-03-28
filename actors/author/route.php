@@ -22,6 +22,7 @@
       header('location:ViewConfGuidelines.php');
    }
 
+   //In submitted research paper list this is passed to download submitted research paper
     if (isset($_GET['downPId'])) {
       $id = $_GET['downPId'];
 

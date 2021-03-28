@@ -20,7 +20,7 @@
     <style>
     /* Styles for two buttons in the form*/
     .button {
-  background-color: #5DADE2; /* Green */
+  background-color: #5DADE2; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -59,7 +59,7 @@
           
           <label for="trackp"><b>Select Track <span style="color:red;">*</span></b></label><br>
       
-          <select name="Ptrack" id="trackp" class="inputvalues">
+          <select name="Ptrack" id="trackp" class="inputvalues" required>
             <option value="">-- Select --</option>
             <?php 
               $c_id = $_GET['c_id'];
@@ -77,8 +77,6 @@
 
           <!-- Text-area -->
           <label><b>Abstract <span style="color:red;">*</span></b></label><br>
-
-          <!-- <textarea name="abstract" rows="10" cols="40"><?php //echo $comment;?></textarea> -->
           <textarea name="abstract" rows="10" cols="40"></textarea><br>
 
           <label><b>Other Authors' Emails</b></label><br>
@@ -88,11 +86,8 @@
           <input type="file" name="myfile" > <br>
           <br>
           <button type="submit" class="button" id="save_btn" name="save">Upload</button>
-          <!-- <button type="submit" id="" name="">Cancel</button> -->
           <button type="cancel" class="button" onclick="javascript:window.location='papersubmission.php';">Cancel</button>
  
-         <!-- <button name="submit_btn" type="submit" id="signup_btn" value="Sign Up">Register</button><br> -->
-
         </form>
 
       </div>

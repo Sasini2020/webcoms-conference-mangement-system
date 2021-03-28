@@ -294,7 +294,7 @@ select{
     </li>
     <br>
     <li>
-    <label>2) Have you seen this submission online (e.g.arXiv, personal website, social media ) ?<span class="required">*</span><span style="c olor:dodgerblue;">(visible to other reviewer)</span></label><br>
+    <label>2) Have you seen this submission online <span class="required">*</span ><span style="color:dodgerblue;">(e.g.arXiv, personal website, social media ) ?<span class="required"></span><span style="c olor:dodgerblue;"></span></label><br>
 			<input id="yes" type="radio" name="question2" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
 			<input id="no" type="radio"  name="question2" value="No" style="margin-left:20px;" required> No
@@ -302,7 +302,7 @@ select{
     
     <br><br>
     <li>
-    <label>3) Have you previously reviewed or area chaired ( a version of ) this work for another archival venue ?</label><br>
+    <label>3) Have you previously reviewed or area chaired ( a version of ) this work for another archival venue ? <span class="required"> *</span ></label><br>
     <input id="yes" type="radio" name="question3" value="Yes" style="margin-left:20px;" required> Yes
       <br><br>
 			<input id="no" type="radio"  name="question3" value="No" style="margin-left:20px;" required> No
@@ -325,9 +325,9 @@ select{
     <div class="qSetHide2">
       <li>    
       <label>1) Relevance : </label><br>
-      <input id="yes" type="radio" name="question5" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question5" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question5" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question5" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -337,9 +337,9 @@ select{
       <br>
       <li>
       <label>2) Novelty or Originality - The paper reflects current information on this topic : </label><br>
-      <input id="yes" type="radio" name="question6" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question6" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question6" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question6" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -349,9 +349,9 @@ select{
       <br>
       <li>
       <label>3) The title is clear and informative : </label><br>
-      <input id="yes" type="radio" name="question7" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question7" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question7" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question7" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -361,9 +361,9 @@ select{
       <br>
       <li>
       <label>4) The title reflects the content and purpose of the paper : </label><br>
-      <input id="yes" type="radio" name="question8" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question8" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question8" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question8" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -373,9 +373,9 @@ select{
       <br>
       <li>
       <label>5) Abstract : </label><br>
-      <input id="yes" type="radio" name="question9" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question9" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question9" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question9" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -385,9 +385,9 @@ select{
       <br>
       <li>
       <label>6) Keywords : </label><br>
-      <input id="yes" type="radio" name="question10" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question10" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question10" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question10" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -402,9 +402,9 @@ select{
     <div class="qSetHide3">
       <li> 
         <label>1) Content - Introduction : </label><br>
-        <input id="yes" type="radio" name="question11" value="Yes" style="margin-left:20px;" required> Yes
+        <input id="yes" type="radio" name="question11" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question11" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question11" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -414,9 +414,9 @@ select{
       <br>
       <li>
       <label>2) Content - Background / Literature Study - The most current references on this topic have been included : </label><br>
-      <input id="yes" type="radio" name="question12" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question12" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question12" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question12" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -426,9 +426,9 @@ select{
       <br>
       <li>
       <label>3) Content - Background / Literature Study - The most relevant references on this topic have been included : </label><br>
-      <input id="yes" type="radio" name="question13" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question13" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question13" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question13" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -438,9 +438,9 @@ select{
       <br>
       <li>
       <label>4) Content - Methodology : </label><br>
-      <input id="yes" type="radio" name="question14" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question14" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question14" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question14" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -454,9 +454,9 @@ select{
     <div class="qSetHide4">
       <li><br><br>
       <label>1) Clarity - There are no any contradictions or inconsistencies: </label><br>
-      <input id="yes" type="radio" name="question15" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question15" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question15" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question15" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -466,9 +466,9 @@ select{
       <br>
       <li>
       <label>2) Clarity - The paper stays focused : </label><br>
-      <input id="yes" type="radio" name="question16" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question16" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question16" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question16" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -478,9 +478,9 @@ select{
       <br>
       <li>
       <label>3) Organization - Ideas are developed and related in a logic sequence : </label><br>
-      <input id="yes" type="radio" name="question17" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question17" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question17" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question17" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -490,9 +490,9 @@ select{
       <br>
       <li>
       <label>4) Organization - Transitions between discussion are smooth and easy to follow : </label><br>
-      <input id="yes" type="radio" name="question18" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question18" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question18" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question18" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -507,9 +507,9 @@ select{
     <div class="qSetHide5">
       <li>
       <label>1) Accuracy - The supporting evidence ( literature referenced ) is appopriately cited : </label><br>
-      <input id="yes" type="radio" name="question19" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question19" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question19" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question19" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -519,9 +519,9 @@ select{
       <br>
       <li>
       <label>2) Accuracy - Tables and figures are of clear and satisfactory quality : </label><br>
-      <input id="yes" type="radio" name="question20" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question20" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question20" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question20" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -531,9 +531,9 @@ select{
       <br>
       <li>
       <label>3) Accuracy - There are no math or text errors in tables or figures : </label><br>
-      <input id="yes" type="radio" name="question21" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question21" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question21" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question21" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -543,9 +543,9 @@ select{
       <br>
       <li>
       <label>4) Accuracy - Legends and titles of tables and figures are clearly given : </label><br>
-      <input id="yes" type="radio" name="question22" value="Yes" style="margin-left:20px;" required> Yes
+      <input id="yes" type="radio" name="question22" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question22" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question22" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -555,9 +555,9 @@ select{
       <br>
       <li>
       <label>5) Accuracy - The paper is free from grammatical or spelling errors : </label><br>
-    <input id="yes" type="radio" name="question23" value="Yes" style="margin-left:20px;" required> Yes
+    <input id="yes" type="radio" name="question23" value="Yes" style="margin-left:20px;" > Yes
         <br><br>
-        <input id="no" type="radio"  name="question23" value="No" style="margin-left:20px;" required> No
+        <input id="no" type="radio"  name="question23" value="No" style="margin-left:20px;" > No
       </li>       
       <br><br>
       <li>
@@ -597,8 +597,8 @@ select{
       </li>
       <br>
       <li>
-          <label>2) Overall Recommendation :</label>
-          <textarea name="question26" id="field5" class="field-long field-textarea"></textarea>
+          <label>2) Overall Recommendation <span style="color:red;"> *</span></label>
+          <textarea name="question26" id="field5" class="field-long field-textarea" required></textarea>
       </li>
       <br>
       <li>

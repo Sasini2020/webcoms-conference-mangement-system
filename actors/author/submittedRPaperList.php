@@ -99,9 +99,6 @@
  
 </style>
 
-
-
-
 </head>
 <body>
 <!-- navbar -->
@@ -154,7 +151,8 @@
           <td><?= $row['title'] ?></td>
           <td><a style="text-decoration:none;color:#1F618D" href="route.php?viewAbstractPId=<?= $row['idrp']  ?> ">View</a></td>
           <td><?= $row['corautherdetails'] ?></td>
-          <td><i class="fas fa-file-download" style="color:#1F618D;"></i><b> </b><a style="text-decoration:none;color:#1F618D" href="route.php?downPId=<?= $row['idrp']  ?> ">Download</a></td>
+          <td><i class="fas fa-file-download" style="color:#1F618D;"></i>
+            <a style="text-decoration:none;color:#1F618D" href="route.php?downPId=<?= $row['idrp']  ?> ">Download</a></td>
           <td>
             <?php
               /* show paper acceptancy or rejection flag

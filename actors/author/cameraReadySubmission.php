@@ -55,19 +55,18 @@
         <form action="cameraReadySubmission.php" method="post" enctype="multipart/form-data" >
           <h2 style="color:#5DADE2;">Title AND Abstract</h2><br><br>
 
-          <label><b>Title*</b></label><br>
+          <label><b>Title <span style="color:red;">*</span></b></label><br>
           <input name="title" type="text" class="inputvalues" placeholder="Title" required/><br>
 
           <!-- Text-area -->
-          <label><b>Abstract*</b></label><br>
+          <label><b>Abstract <span style="color:red;">*</span></b></label><br>
+          <textarea name="abstract" rows="10" cols="40" required></textarea><br>
 
-          <textarea name="abstract" rows="10" cols="40"></textarea><br>
-
-          <label><b>Other Authors Email*</b></label><br>
+          <label><b>Other Authors' Emails</b></label><br>
           <input name="OtherAutherE" type="text" class="inputvalues" placeholder="Enter Emails"/><br>
           
-          <label><b>Upload File*</b></label>
-          <input type="file" name="myfile"> <br>
+          <label><b>Upload File <span style="color:red;">*</span></b></label>
+          <input type="file" name="myfile" required> <br>
           <br><br>
 
           <button type="submit" class="button" id="save_btn" name="save">Submit</button>

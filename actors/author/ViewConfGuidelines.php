@@ -51,13 +51,10 @@
   top: 5px;
 }
 
- 
+</style>
+</head>
 
-  </style>
-  </head>
-
-  <body>
-
+<body>
 <!-- navbar -->
   <nav>
   <div class="logo">Web-COMS</div>
@@ -66,9 +63,7 @@
               <i class="fas fa-bars"></i>
             </label>
     <ul>
-      <li><a href="author_home.php">Back</a></li>
-      <!--<li><a href="viewConferencesForCC.php">View Conf</a></li>-->
-     
+      <li><a href="author_home.php">Back</a></li>  
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
     </ul>
@@ -79,27 +74,9 @@
   <?php 
     
       // echo "Conference Id :"." ". $_SESSION['c_id'];
-      echo "Conference Name :"." ". $_SESSION['c_name'];
-      
-?></h1>
+      echo "Conference Name :"." ". $_SESSION['c_name'];    
+  ?></h1>
 <br><br><br>
-	
-
-  
-
-    <!-- <h3 style="margin-left:25px;color:dodgerblue;">Conference Guidelines</h3><br> -->
-
-
-<!-- <table class="content-table"> -->
-<!-- <thead> -->
-    <!-- <th>Conference ID</th> -->
-    <!-- <th>Guidelines File </th> -->
-    <!-- <th>File size (in KB)</th> -->
-    <!-- <th>View</th> -->
-
-<!-- </thead> -->
-<!-- <tbody> -->
-<!-- By following code inside php tag , I keep the particular conference Id -->
 
 <section id="ABC" class="ABC">
   <br>
@@ -110,27 +87,16 @@
 
 <center>
   <?php foreach ($files as $file): ?>
-    
-      <!-- <td><?php// echo $file['conf_id']; ?></td>
-      <td><?php 
-      //echo $file['name'];
-       ?></td>
-      <td><?php 
-      //echo floor($file['size'] / 1000) . ' KB'; 
-      ?>
-      </td> -->
-      <a id="button" class="button"  href="../../uploads/conferenceGuidelines/<?php echo $file['name']; ?>" target="_blank"><i style="color:white;margin-right:10px;" class="fas fa-link" ></i>View Conference Guidelines</a></td>
-    
+    <a id="button" class="button"  href="../../uploads/conferenceGuidelines/<?php echo $file['name']; ?>" target="_blank">
+    <i style="color:white;margin-right:10px;" class="fas fa-link" ></i>View Conference Guidelines</a></td>
   <?php endforeach;?>
 
-<!-- </tbody>
-</table> -->
 </center>
 <br><br><br><br>
 </section>
     <!-- Footer section -->
 	<div class="footer">
-            <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
-        </div>
-  </body>
+    <p>&copy;2020, All rights reserved by www.WebComs.lk</p>
+  </div>
+</body>
 </html>
