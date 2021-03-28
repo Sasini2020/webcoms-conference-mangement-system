@@ -163,7 +163,7 @@ $conn = $con;
               </td>
 
               <td>
-                  <a href="route.php?ReportConf_Id=<?= $row['id'] ."&ReportConf_Name=".$row['name'] ?>" class="conListLink">See</a>
+                  <a href="route.php?ReportConf_Id=<?= $row['id'] ."&ReportConf_Name=".$row['name'] ?>" class="conListLink">View</a>
               </td>
            </tr>
      </tbody>
