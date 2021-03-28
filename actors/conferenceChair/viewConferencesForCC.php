@@ -56,6 +56,7 @@
 .content-table th,
 .content-table td {
   padding: 12px 15px;
+  max-width:350px;
 }
 
 .content-table tbody tr {
