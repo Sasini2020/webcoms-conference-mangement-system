@@ -207,10 +207,10 @@
                   echo '---';
                 }
                 elseif($row['acceptancy'] == 1){
-                  echo 'Accept';
+                  echo 'Accepted';
                 }
                 elseif($row['acceptancy'] == 2){
-                  echo 'Reject';
+                  echo 'Rejected';
                 }
               ?>
             </td>

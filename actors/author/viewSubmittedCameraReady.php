@@ -5,8 +5,6 @@
     }
     require '../../dbconfig/config.php';
 ?>
-<!-- Accessing the FilesLogic.php -->
-<?php //include 'filesLogic.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +27,6 @@
   }
   table td{
       min-width:20px;
-      padding:0;
       padding:30px;
   }
   </style>
@@ -51,7 +48,7 @@
 
     <div class="container">
         <br>
-        <h2>Submitted Camera Ready paper Detail</h2>
+        <h2>Submitted Camera Ready Paper Details</h2>
         <br>
 
         <?php
