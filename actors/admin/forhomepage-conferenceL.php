@@ -71,7 +71,7 @@
     <table class="content-table">
       <thead>
 	      <tr>
-          <th>ID</th>
+          <th>Number</th>
           <th>Conference</th>
           <th>Venue</th>
           <th>Start date</th>
