@@ -75,7 +75,6 @@
 .content-table td {
   padding: 12px 15px;
   min-width:180px;
-  max-width:350px;
 }
 
 .content-table tbody tr {
@@ -119,7 +118,7 @@
 	  <li><a class="active" href="author_home.php">Home</a></li> 
 	  <!-- <li><a href="updateprofile.php">Update Profie</a></li> -->
     <li class="dropdown">				
-					<a href="#" class="dropdown">Author <i class="fa fa-caret-down"></i></a>
+					<a href="#" class="dropdown"><b>Author</b> <i class="fa fa-caret-down"></i></a>
 					
 					<div class="dropdown-content">
 						<a href="updateprofile.php">Update profile</a>

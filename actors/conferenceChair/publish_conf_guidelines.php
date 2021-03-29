@@ -137,8 +137,6 @@
       <td><?php echo $file['name']; ?></td>
       <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
       <td><i style="color:#1A5276" class="fas fa-eye"></i><a style="color:#1A5276 ;text-decoration:none;margin-right:10px;" href="../../uploads/conferenceGuidelines/<?php echo $file['name']; ?>" target="_blank">View file</a></td>
-      <!-- delete is not working yet complete it 
-      <td><i style="color:red" class="fas fa-trash-alt"></i><a href="reject.php?op=delete&name=<?php //echo $row['name']; ?>" style="color:red;text-decoration:none;">Delete file</a></td>-->
       
     </tr>
   <?php endforeach;?>

@@ -34,9 +34,7 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     } else {
         // move the uploaded (temporary) file to the specified destination
         if(move_uploaded_file($file, $destination)) {
-
-        
-            
+         
 
             $query1="select * from conferenceguidelinedetails where conf_id=$c_id ";
             $query1_run=mysqli_query($con,$query1);
@@ -88,15 +86,7 @@ if (isset($_GET['file_id'])) {
         header('Content-Length: ' . filesize('../../uploads/conferenceGuidelines/' . $file['name']));
         readfile('../../uploads/conferenceGuidelines/' . $file['name']);
 
-        // Now update downloads count
-        // $newCount = $file['downloads'] + 1;
-        // $updateQuery = "UPDATE conferenceguidelinedetails SET downloads=$newCount WHERE id=$id";
-        // mysqli_query($conn, $updateQuery);
         exit;
     }
 
 }
-// sql to delete a record
-
-
-

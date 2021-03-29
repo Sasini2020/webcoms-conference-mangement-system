@@ -142,12 +142,7 @@
       <i style="color:#1A5276" class="fas fa-eye"></i><a style="color:dodgerblue ;text-decoration:none;" 
       href="../../uploads/<?php echo $file['NameOfFile']; ?>" target="_blank">View paper</a>
       <br><br>
-      <!-- <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" 
-      href="../../uploads/<?php //echo $file['NameOfFile']; ?>"> View abstract</a>
-      <i style="color:#1A5276" class="fas fa-newspaper"></i><a style="text-decoration:none;color:dodgerblue;" href="#"> 
-      View abstract</a>
-
-      <br><?php //echo $file['abstract']; ?> -->
+      
       </td>
       
       <td>
