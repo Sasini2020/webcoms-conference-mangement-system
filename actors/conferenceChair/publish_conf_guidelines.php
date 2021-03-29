@@ -86,12 +86,6 @@
             </label>
     <ul>
       <li><a href="conferencechairhomepage.php">Back to Home</a></li>
-      <!-- <li><a href="create_conference.php">Request Conference</a></li>
-      <li><a href="addnotemplates.php">Notification templates</a></li>
-      <li><a href="upudetauls.php">Upload User Details</a></li>
-	    <li><a href="registerUsers.php">User Registration</a></li>
-	    <li><a href="updateprofile.php">Update Profie</a></li>
-	    <li><a class="active" href="publish_conference_guidelines.php">Publish Conf Guidelines</a></li> -->
       <li style="float:right; margin-right:40px"><a href="../logout.php">Log Out</a></li>
 
     </ul>
@@ -109,7 +103,6 @@
 <br><br><br>
   <h3 style="margin-left:25px;color:#283747;">Upload Conference Guidelines as a pdf file</h3><br>
 	
-
   <div class="container">
       <div class="row">
 
@@ -118,11 +111,7 @@
           <input type="file" name="myfile" > <br>
           <br>
           <button type="submit" class="button" id="save_btn" name="save">Upload</button>
-          <!-- <button type="submit" id="" name="">Cancel</button> -->
-          <!-- <button type="cancel" class="button" onclick="javascript:window.location='publish_conf_guidelines.php';">Cancel</button> -->
- 
-         <!-- <button name="submit_btn" type="submit" id="signup_btn" value="Sign Up">Register</button><br> -->
-
+          
         </form>
 
       </div>
@@ -134,17 +123,13 @@
 
 <table class="content-table">
 <thead>
-    <!--<th>Number</th>
-     <th>Conference Name</th> -->
     <th>Guidelines File </th>
     <th>File size (in KB)</th>
     <th>View</th>
-    <!--<th>Delete</th>-->
-
 </thead>
 <tbody>
+
 <!-- By following code inside php tag , I keep the particular conference Id -->
-  
     
   <?php foreach ($files as $file): ?>
     <tr>
