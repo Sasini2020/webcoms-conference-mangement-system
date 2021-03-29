@@ -28,7 +28,13 @@
       width:500px !important;
     }
 
-    .paperAcceptT th,td{
+    th, td{
+      min-width:150px;
+      max-width:350px;
+    }
+
+    .paperAcceptT th,
+    .paperAcceptT td{      
       text-align:center;
     }
     </style>

@@ -60,19 +60,23 @@
         <table>
         <tr>
             <td>Title</td>
-            <td>:&nbsp;&nbsp;&nbsp;&nbsp;<?= $row['title'] ?></td>
+            <td>:</td>
+            <td><?= $row['title'] ?></td>
         </tr>
         <tr>
             <td>Abstract  </td>
-            <td>:&nbsp;&nbsp;&nbsp;&nbsp;<?= $row['abstract'] ?></td>
+            <td>:</td>
+            <td><?= $row['abstract'] ?></td>
         </tr>
         <tr>
             <td>Other authors </td>
-            <td>:&nbsp;&nbsp;&nbsp;&nbsp;<?= $row['otherAuthorDetails'] ?></td>
+            <td>:</td>
+            <td><?= $row['otherAuthorDetails'] ?></td>
         </tr>
         <tr>
             <td>Download </td>
-            <td>:&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-file-download" style="color:#1F618D;"></i><b> </b><a style="text-decoration:none;color:#1F618D" 
+            <td>:</td>
+            <td><i class="fas fa-file-download" style="color:#1F618D;"></i><b> </b><a style="text-decoration:none;color:#1F618D" 
             href="route.php?downCameraReadyPId=<?= $row['id'] ?>" >Download</a></td>
         </tr>
         </table>

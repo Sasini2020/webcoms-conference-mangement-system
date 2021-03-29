@@ -42,6 +42,7 @@
 .content-table th,
 .content-table td {
   padding: 12px 15px;
+  max-width:350px;
 }
 
 .content-table tbody tr {
@@ -167,7 +168,7 @@ nav{
         ?>                                            
             <tr id="row<?php echo $row['id'];?>">
 
-              <td><?=$counter?></td>
+              <td><?=$row['id']?></td>
               <td><?=$row['name']?></td>
               <td><?=$row['venue']?></td>
               <td><?=$row['start_date']?></td>

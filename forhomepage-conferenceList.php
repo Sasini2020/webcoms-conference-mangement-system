@@ -33,10 +33,12 @@
 
 .content-table th{
   padding: 12px 15px;
+  max-width:350px;
 }
 .content-table td {
   padding: 12px 15px;
-  color:#1C2833
+  color:#1C2833;
+  max-width:350px;
 }
 
 .content-table tbody tr {

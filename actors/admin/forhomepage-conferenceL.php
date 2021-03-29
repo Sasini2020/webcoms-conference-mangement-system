@@ -36,6 +36,7 @@
 .content-table th,
 .content-table td {
   padding: 12px 15px;
+  max-width:350px;
 }
 
 .content-table tbody tr {
@@ -71,7 +72,7 @@
     <table class="content-table">
       <thead>
 	      <tr>
-          <th>ID</th>
+          <th>Number</th>
           <th>Conference</th>
           <th>Venue</th>
           <th>Start date</th>

@@ -56,6 +56,7 @@
 .content-table th,
 .content-table td {
   padding: 12px 15px;
+  max-width:350px;
 }
 
 .content-table tbody tr {
@@ -163,7 +164,7 @@ $conn = $con;
               </td>
 
               <td>
-                  <a href="route.php?ReportConf_Id=<?= $row['id'] ."&ReportConf_Name=".$row['name'] ?>" class="conListLink">See</a>
+                  <a href="route.php?ReportConf_Id=<?= $row['id'] ."&ReportConf_Name=".$row['name'] ?>" class="conListLink">View</a>
               </td>
            </tr>
      </tbody>
