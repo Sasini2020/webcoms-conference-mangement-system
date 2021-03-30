@@ -128,7 +128,7 @@ $status=$statusMsg='';
 	}/*end of confirm pwd*/
 	elseif(verifyEmail::validate($email)){
 		$status='err';
-		$statusMsg='Given e-mail '.$email. ' does not exist . Please give an existing e-mail ddress !';
+		$statusMsg='Given e-mail '.$email. ' does not exist . Please give an existing e-mail address !';
 
 	}
 	else{
