@@ -20,6 +20,7 @@
       $pdf = NEW FPDF();
       $pdf -> Addpage();
       $pdf->SetFont('Arial','B',16);
+      $pdf->SetTitle("Conference and it's submitted research paper count");
       $pdf->Cell(60,10,'Conference ID',1,0,'C');
       $pdf->Cell(120,10,'Number of research paper submission',1,1,'C');
 
